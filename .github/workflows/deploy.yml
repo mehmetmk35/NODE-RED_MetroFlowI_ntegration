@@ -22,7 +22,6 @@ jobs:
           forticlientsslvpn_cli --server 85.98.92.196:19443 \
           --vpnuser metropols4in --password M3tr0pols4in.. \
           --keepalive
-         
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
