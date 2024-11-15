@@ -34,7 +34,8 @@ jobs:
           username: ${{ secrets.PROD_SSH_USERNAME }}
           password: ${{ secrets.PROD_SSH_PASSWORD }} 
           port: ${{ secrets.PROD_SSH_PORT }} 
-          script: | 
-              cd /data/projects/MetropolUnFlowIntegration 
-              git pull https://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@github.com:mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
-              bash start.sh
+         script: | 
+            cd /data/projects/MetropolUnFlowIntegration
+            git pull https://:${{ secrets.GITHUB_TOKEN }}@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+            bash start.sh
+
