@@ -48,8 +48,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 140,
+        "x": 640,
+        "y": 240,
         "wires": [
             [
                 "9894db7a8ec6497a"
@@ -71,5 +71,34 @@
         "x": 770,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "a9bee470a9671934",
+        "type": "inject",
+        "z": "1d6a7d51e14487fe",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "6aa310697d612280"
+            ]
+        ]
     }
 ]
