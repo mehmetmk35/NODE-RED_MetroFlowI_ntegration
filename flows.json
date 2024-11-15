@@ -1,13 +1,5 @@
 [
     {
-        "id": "1d6a7d51e14487fe",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "97e7314f695bb652",
         "type": "tab",
         "label": "UrlCollection",
@@ -3799,8 +3791,7 @@
         "z": "c34fc38f83091edb",
         "name": "SFORIN to Netsis Stock Card(MSSQL)In",
         "links": [
-            "a7f8959b3820e088",
-            "6cb893c09d41c35a"
+            "a7f8959b3820e088"
         ],
         "x": 75,
         "y": 640,
@@ -6186,8 +6177,7 @@
         "name": "Netsis  To SFORIN Stock Card(MMSQL)OutTBLSTOKBAR",
         "mode": "link",
         "links": [
-            "58519c213a7f5f5a",
-            "3f59a17f3a14ca5c"
+            "58519c213a7f5f5a"
         ],
         "x": 755,
         "y": 1120,
@@ -6211,8 +6201,7 @@
         "g": "ce76bc547c1a82fe",
         "name": "Netsis  To SFORIN Stock Card(MMSQL)InTBLSTOKBARResponse",
         "links": [
-            "21882ae1acd70ff2",
-            "b5126747a6c358e6"
+            "21882ae1acd70ff2"
         ],
         "x": 845,
         "y": 1080,
@@ -9681,8 +9670,7 @@
         "name": "MetropolUnGenerateGroupCodeOut ",
         "mode": "link",
         "links": [
-            "0d109ce5201c7170",
-            "65641e55ef8dbede"
+            "0d109ce5201c7170"
         ],
         "x": 285,
         "y": 280,
@@ -10055,9 +10043,7 @@
         "g": "5b75673458d774a7",
         "name": "MetropolUnNetsisToSFORINFieldIntegrationRootIn",
         "links": [
-            "1ddc986150f81f61",
-            "82931f543fc87e4d",
-            "ff7a59192e2baa24"
+            "1ddc986150f81f61"
         ],
         "x": 95,
         "y": 500,
@@ -11039,8 +11025,7 @@
         "name": "GetAllProductCataOut",
         "mode": "link",
         "links": [
-            "8ee4e16f7af8eb35",
-            "2f5943ac5384a518"
+            "8ee4e16f7af8eb35"
         ],
         "x": 1765,
         "y": 1520,
@@ -11363,8 +11348,7 @@
         "g": "69a8c850b940485b",
         "name": "MetropolUnNetsisToSFORINStockCard(MMSQL)matchingItemsIn",
         "links": [
-            "8d8bacc664ddc537",
-            "72f6c3e767b534f2"
+            "8d8bacc664ddc537"
         ],
         "x": 85,
         "y": 820,
@@ -11558,8 +11542,7 @@
         "name": "MetropolUnNetsisToSFORINStockCard(MMSQL)OutTBLSTOKBAR",
         "mode": "link",
         "links": [
-            "1957f1b821b1f4f1",
-            "6f2f812dce339386"
+            "1957f1b821b1f4f1"
         ],
         "x": 755,
         "y": 800,
@@ -11583,7 +11566,6 @@
         "g": "69a8c850b940485b",
         "name": "MetropolUnNetsisToSFORINStockCard(MMSQL)InTBLSTOKBARResponse",
         "links": [
-            "9a170973b76a2b8c",
             "4dda1622c9781aad"
         ],
         "x": 845,
@@ -11808,8 +11790,7 @@
         "name": "MetropolUnNetsisToSFORINStock Card(MMSQL)OUT",
         "mode": "link",
         "links": [
-            "3e29b77e3521d84e",
-            "2f8006cc384b47c6"
+            "3e29b77e3521d84e"
         ],
         "x": 705,
         "y": 320,
@@ -12453,8 +12434,7 @@
         "g": "87d43c6fb5912917",
         "name": "MetropolUnNetsisToSFORINCustomer(MMSQL)In",
         "links": [
-            "c171daf381137d01",
-            "3da89ac1c6313e7c"
+            "c171daf381137d01"
         ],
         "x": 125,
         "y": 440,
@@ -13917,8 +13897,7 @@
         "name": "MetropolUnNetsisToSFORINStock Card(MMSQL)IN",
         "links": [
             "bb19590bab6bf786",
-            "326b7025dfe0b336",
-            "d01c9dca3dc0a770"
+            "326b7025dfe0b336"
         ],
         "x": 165,
         "y": 900,
@@ -14690,8 +14669,7 @@
         "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0 Out_GetwareHouse",
         "mode": "link",
         "links": [
-            "6b1db2938b49fc97",
-            "f953b160e8760724"
+            "6b1db2938b49fc97"
         ],
         "x": 645,
         "y": 900,
@@ -14735,8 +14713,7 @@
         "g": "4370a35114295e81",
         "name": "ResultGetWarehouseLocationsIn",
         "links": [
-            "c08a4b7860d81ea4",
-            "377c2af2300391e0"
+            "c08a4b7860d81ea4"
         ],
         "x": 585,
         "y": 1000,
