@@ -23,13 +23,7 @@ jobs:
           VPN_PWD: ${{ secrets.VPN_PWD }}
           VPN_HOST: ${{ secrets.VPN_HOST }}
           VPN_PORT: 19443
-          #VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
-
-    
-      - name: Test Network Connectivity
-        run: |
-          ping -c 4 ${{ secrets.PROD_SSH_HOST }}
-          nc -zv ${{ secrets.PROD_SSH_HOST }} ${{ secrets.PROD_SSH_PORT }}
+          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
 
       # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
@@ -40,8 +34,10 @@ jobs:
           password: ${{ secrets.PROD_SSH_PASSWORD }}
           port: ${{ secrets.PROD_SSH_PORT }}
           script: |    
-           docker exec -it 2d5c3835ffb7  /bin/bash
-           cd/
+           docker exec -it 2d5c3835ffb7 /bin/bash
            cd /data/projects/MetropolUnFlowIntegration
            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
-           
+
+      # Ağ Bağlantısını Test Etme (Alternatif yöntem)
+      - name: Test Network Connectivity with nc
+        run: nc -zv ${{ secrets.PROD_SSH_HOST }} ${{ secrets.PROD_SSH_PORT }}
