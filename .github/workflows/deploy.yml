@@ -1,4 +1,4 @@
-name: Publish Node-Red
+ name: Publish Node-Red
 
 on:
   push:
@@ -7,8 +7,6 @@ on:
 
 jobs:
   release:
-    concurrency:
-      group: ${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Install FortiClient dependencies
@@ -20,6 +18,14 @@ jobs:
         run: |
           wget https://forticlient.com/download/linux/forticlient-sslvpn_4.4.2333-1_amd64.deb -O forticlient.deb
           sudo dpkg -i forticlient.deb || sudo apt-get install -f -y
+
+      - name: Verify FortiClient Installation
+        run: |
+          if ! command -v forticlientsslvpn_cli &> /dev/null
+          then
+            echo "FortiClient is not installed or not found in PATH."
+            exit 1
+          fi
 
       - name: Connect to VPN
         run: |
