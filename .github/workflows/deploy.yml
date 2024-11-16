@@ -23,7 +23,7 @@ jobs:
           VPN_PWD: ${{ secrets.VPN_PWD }}
           VPN_HOST: ${{ secrets.VPN_HOST }}
           VPN_PORT: 19443
-          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
+          #VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
 
     
       - name: Test Network Connectivity
