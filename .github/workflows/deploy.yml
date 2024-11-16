@@ -25,6 +25,14 @@ jobs:
           VPN_PORT: 19443
           VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
 
+      # VPN bağlantısını doğrula
+      - name: Test VPN Connection
+        run: ifconfig
+
+      # SSH bağlantısını test et
+      - name: Test SSH Connection
+        run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} echo "SSH connection successful"
+
       # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
@@ -37,7 +45,3 @@ jobs:
            docker exec -it 2d5c3835ffb7 /bin/bash
            cd /data/projects/MetropolUnFlowIntegration
            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
-
-      # Ağ Bağlantısını Test Etme (Alternatif yöntem)
-      - name: Test Network Connectivity with nc
-        run: nc -zv ${{ secrets.PROD_SSH_HOST }} ${{ secrets.PROD_SSH_PORT }}
