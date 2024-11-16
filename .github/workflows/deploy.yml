@@ -31,7 +31,8 @@ jobs:
 
       # SSH bağlantısını test et
       - name: Test SSH Connection
-        run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} echo "SSH connection successful"
+        run: |
+          ssh -o StrictHostKeyChecking=no -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} echo "SSH connection successful"
 
       # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
