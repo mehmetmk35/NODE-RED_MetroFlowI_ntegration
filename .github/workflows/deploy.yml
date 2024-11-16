@@ -1,44 +1,40 @@
- name: Publish Node-Red
+name: FortiClient VPN Connection
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
-  release:
+  vpn_connect:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Install FortiClient dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget libgtk2.0-0 libnss3-dev libxss1
+      # Kodu al
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Download and install FortiClient
-        run: |
-          wget https://forticlient.com/download/linux/forticlient-sslvpn_4.4.2333-1_amd64.deb -O forticlient.deb
-          sudo dpkg -i forticlient.deb || sudo apt-get install -f -y
+      # FortiClient VPN bağlantısı
+      - name: Forticlient VPN
+        uses: horellana/openconnect@v1.0.1
+        with:
+          VPN_USER: ${{ secrets.VPN_USER }}         # VPN kullanıcı adı
+          VPN_PWD: ${{ secrets.VPN_PWD }}           # VPN şifresi
+          VPN_HOST: ${{ secrets.VPN_HOST }}         # VPN sunucu adresi (örneğin 85.98.92.196)
+          VPN_PORT: 19443                           # VPN bağlantı portu
+          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }} # Sertifika gerekirse ekleyin
 
-      - name: Verify FortiClient Installation
-        run: |
-          if ! command -v forticlientsslvpn_cli &> /dev/null
-          then
-            echo "FortiClient is not installed or not found in PATH."
-            exit 1
-          fi
-
-      - name: Connect to VPN
-        run: |
-          forticlientsslvpn_cli --server 85.98.92.196:19443 --vpnuser metropols4in --password M3tr0pols4in.. --keepalive
-
+      # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.PROD_SSH_HOST }}
-          username: ${{ secrets.PROD_SSH_USERNAME }}
-          password: ${{ secrets.PROD_SSH_PASSWORD }}
-          port: ${{ secrets.PROD_SSH_PORT }}
+          host: ${{ secrets.PROD_SSH_HOST }}       # Hedef sunucu IP'si
+          username: ${{ secrets.PROD_SSH_USERNAME }} # SSH kullanıcı adı
+          password: ${{ secrets.PROD_SSH_PASSWORD }} # SSH şifresi
+          port: ${{ secrets.PROD_SSH_PORT }}       # SSH portu
           script: |
+            echo "VPN bağlantısı başarılı!"
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://${{ secrets.GITHUB_TOKEN }}@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
             bash start.sh
