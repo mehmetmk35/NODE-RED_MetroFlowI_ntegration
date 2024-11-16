@@ -11,16 +11,21 @@ jobs:
       group: ${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Install FortiClient
+      - name: Install FortiClient dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y forticlient
+          sudo apt-get install -y wget libgtk2.0-0 libnss3-dev libxss1
+
+      - name: Download and install FortiClient
+        run: |
+          wget https://forticlient.com/download/linux/forticlient-sslvpn_4.4.2333-1_amd64.deb -O forticlient.deb
+          sudo dpkg -i forticlient.deb || sudo apt-get install -f -y
 
       - name: Connect to VPN
         run: |
           forticlientsslvpn_cli --server 85.98.92.196:19443 --vpnuser metropols4in --password M3tr0pols4in.. --keepalive
 
-      - name: executing remote ssh commands using password
+      - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_SSH_HOST }}
