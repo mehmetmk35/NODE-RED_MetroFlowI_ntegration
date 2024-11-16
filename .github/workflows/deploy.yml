@@ -25,10 +25,11 @@ jobs:
           VPN_PORT: 19443
           VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
 
-      # SSH bağlantısını kontrol etme
-      - name: Test SSH Connection
-        run: |       
-          ssh -o StrictHostKeyChecking=no -v -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} "echo 'SSH bağlantısı başarılı!'"
+    
+      - name: Test Network Connectivity
+        run: |
+          ping -c 4 ${{ secrets.PROD_SSH_HOST }}
+          nc -zv ${{ secrets.PROD_SSH_HOST }} ${{ secrets.PROD_SSH_PORT }}
 
       # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
