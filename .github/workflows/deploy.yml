@@ -1,5 +1,4 @@
 name: FortiClient VPN Connection
-
 on:
   push:
     branches:
@@ -25,7 +24,19 @@ jobs:
           VPN_PORT: 19443                           # VPN bağlantı portu
           VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }} # Sertifika gerekirse ekleyin
 
-      # VPN bağlantısından sonra SSH ile komut çalıştırma
+      # Değişkenleri ekrana yazdırma
+      - name: Print Variables
+        run: |
+          echo "VPN_USER: ${{ secrets.VPN_USER }}"
+          echo "VPN_PWD: ${{ secrets.VPN_PWD }}"
+          echo "VPN_HOST: ${{ secrets.VPN_HOST }}"
+          echo "VPN_PORT: 19443" 
+          echo "SSH Host: ${{ secrets.PROD_SSH_HOST }}"
+          echo "SSH Username: ${{ secrets.PROD_SSH_USERNAME }}"
+          echo "SSH Port: ${{ secrets.PROD_SSH_PORT }}"
+          echo "VPN bağlantısı başarılı!"
+
+      # VPN bağlantısından sonra SSH ile komut çalıştırma ve değişkenleri ekrana yazdırma
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
@@ -33,8 +44,7 @@ jobs:
           username: ${{ secrets.PROD_SSH_USERNAME }} # SSH kullanıcı adı
           password: ${{ secrets.PROD_SSH_PASSWORD }} # SSH şifresi
           port: ${{ secrets.PROD_SSH_PORT }}       # SSH portu
-          script: |
-            echo "VPN bağlantısı başarılı!"
+          script: |           
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
             bash start.sh
