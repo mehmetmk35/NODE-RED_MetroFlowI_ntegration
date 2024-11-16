@@ -36,5 +36,5 @@ jobs:
           script: |
             echo "VPN bağlantısı başarılı!"
             cd /data/projects/MetropolUnFlowIntegration
-            git pull https://${{ secrets.GITHUB_TOKEN }}@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
             bash start.sh
