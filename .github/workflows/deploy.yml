@@ -1,4 +1,5 @@
 name: FortiClient VPN Connection
+
 on:
   push:
     branches:
@@ -12,38 +13,31 @@ jobs:
     steps:
       # Kodu al
       - name: Checkout Code
-        uses: actions/checkout@v4 # v3 yerine v4 kullanın
+        uses: actions/checkout@v4
 
       # FortiClient VPN bağlantısı
       - name: Forticlient VPN
         uses: horellana/openconnect@v1.0.1
         with:
-          VPN_USER: ${{ secrets.VPN_USER }}         # VPN kullanıcı adı
-          VPN_PWD: ${{ secrets.VPN_PWD }}           # VPN şifresi
-          VPN_HOST: ${{ secrets.VPN_HOST }}         # VPN sunucu adresi (örneğin 85.98.92.196)
-          VPN_PORT: 19443                           # VPN bağlantı portu
-          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }} # Sertifika gerekirse ekleyin
+          VPN_USER: ${{ secrets.VPN_USER }}
+          VPN_PWD: ${{ secrets.VPN_PWD }}
+          VPN_HOST: ${{ secrets.VPN_HOST }}
+          VPN_PORT: 19443
+          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
 
-      # Değişkenleri ekrana yazdırma
-      - name: Print Variables
-        run: |
-          echo "VPN_USER: ${{ secrets.VPN_USER }}"
-          echo "VPN_PWD: ${{ secrets.VPN_PWD }}"
-          echo "VPN_HOST: ${{ secrets.VPN_HOST }}"
-          echo "VPN_PORT: 19443" 
-          echo "SSH Host: ${{ secrets.PROD_SSH_HOST }}"
-          echo "SSH Username: ${{ secrets.PROD_SSH_USERNAME }}"
-          echo "SSH Port: ${{ secrets.PROD_SSH_PORT }}"
-          echo "VPN bağlantısı başarılı!"
+      # SSH bağlantısını kontrol etme
+      - name: Test SSH Connection
+        run: |       
+          ssh -o StrictHostKeyChecking=no -v -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} "echo 'SSH bağlantısı başarılı!'"
 
-      # VPN bağlantısından sonra SSH ile komut çalıştırma ve değişkenleri ekrana yazdırma
+      # VPN bağlantısından sonra SSH ile komut çalıştırma
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.PROD_SSH_HOST }}       # Hedef sunucu IP'si
-          username: ${{ secrets.PROD_SSH_USERNAME }} # SSH kullanıcı adı
-          password: ${{ secrets.PROD_SSH_PASSWORD }} # SSH şifresi
-          port: ${{ secrets.PROD_SSH_PORT }}       # SSH portu
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USERNAME }}
+          password: ${{ secrets.PROD_SSH_PASSWORD }}
+          port: ${{ secrets.PROD_SSH_PORT }}
           script: |           
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
