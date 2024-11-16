@@ -13,7 +13,7 @@ jobs:
     steps:
       # Kodu al
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # v3 yerine v4 kullanın
 
       # FortiClient VPN bağlantısı
       - name: Forticlient VPN
