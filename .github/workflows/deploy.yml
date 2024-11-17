@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add FortiClient Repository
+      - name: Download FortiClient .deb package
         run: |
-          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
-          sudo apt-get update || { echo "Failed to update repositories. Exiting..."; exit 1; }
-
+          curl -LO https://fortinet.com/downloads/forticlient_7.2.0_amd64.deb # Replace with the actual download URL
+          
       - name: Install FortiClient
         run: |
-          sudo apt-get install -y forticlient || { echo "FortiClient installation failed. Exiting..."; exit 1; }
+          sudo dpkg -i forticlient_7.2.0_amd64.deb
+          sudo apt-get install -f  # To fix any missing dependencies
 
       - name: Connect to FortiClient VPN
         run: |
