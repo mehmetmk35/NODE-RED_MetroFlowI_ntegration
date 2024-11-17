@@ -13,15 +13,18 @@ jobs:
     steps:
       - name: Install FortiClient
         run: |
-          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/6.0/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
-          wget -O - https://repo.fortinet.com/repo.gpg | sudo apt-key add -
+          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/7.2/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
+          wget -O - https://repo.fortinet.com/repo/forticlient/7.2/debian/DEB-GPG-KEY | gpg --dearmor | sudo tee /usr/share/keyrings/repo.fortinet.com.gpg
           sudo apt-get update
           sudo apt-get install -y forticlient
 
       - name: Connect to FortiClient VPN
         run: |
           echo "Starting FortiClient VPN..."
-          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{secrets.VPN_HOST}}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} --passwd stdin
+          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{
+            secrets.VPN_HOST
+          }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} \
+          --passwd stdin
 
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
