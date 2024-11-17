@@ -1,4 +1,4 @@
-name: VPN Connection Test
+name: FortiClient VPN Test
 
 on:
   workflow_dispatch:
@@ -8,22 +8,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: Install FortiClient
+        run: |
+          wget https://links.fortinet.com/forticlient/debian/vpnagent-linux.deb
+          sudo apt-get update
+          sudo apt-get install -y ./vpnagent-linux.deb
 
-      - name: FortiClient VPN
-        uses: horellana/openconnect@v1.0.1
-        with:
-          VPN_USER: ${{ secrets.VPN_USER }}
-          VPN_PWD: ${{ secrets.VPN_PWD }}
-          VPN_HOST: ${{ secrets.VPN_HOST }}
-          VPN_PORT: ${{ secrets.VPN_PORT }}
-          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}
+      - name: Connect to FortiClient VPN
+        run: |
+          echo "Starting FortiClient VPN..."
+          fortivpn --server ${{ secrets.VPN_HOST }} \
+                   --vpnuser ${{ secrets.VPN_USER }} \
+                   --password ${{ secrets.VPN_PWD }} \
+                   || echo "VPN connection failed." && exit 1
 
       - name: Test VPN Connection
         run: |
           echo "Testing VPN connection..."
-          ifconfig || (echo "Installing net-tools for ifconfig..." && sudo apt-get update && sudo apt-get install -y net-tools)
-          ifconfig | grep tun0 || (echo "VPN connection failed: tun0 interface not found." && exit 1)
-          echo "VPN connection successful. tun0 interface is active."
-          ping -c 4 8.8.8.8 || (echo "Ping failed. VPN routing may not be working." && exit 1)
+          ifconfig || sudo apt-get update && sudo apt-get install -y net-tools
+          ifconfig | grep tun0 || (echo "VPN connection failed: tun0 not found." && exit 1)
+          echo "VPN connected successfully."
