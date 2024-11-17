@@ -13,19 +13,19 @@ jobs:
     steps:
       - name: Install FortiClient
         run: |
-          wget https://links.fortinet.com/forticlient/debian/vpnagent-linux.deb
+          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/6.0/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
+          wget -O - https://repo.fortinet.com/repo.gpg | sudo apt-key add -
           sudo apt-get update
-          sudo apt-get install -y ./vpnagent-linux.deb
+          sudo apt-get install -y forticlient
 
       - name: Connect to FortiClient VPN
         run: |
           echo "Starting FortiClient VPN..."
-          fortivpn --server ${{ secrets.VPN_HOST }} \
-                   --vpnuser ${{ secrets.VPN_USER }} \
-                   --password ${{ secrets.VPN_PWD }} \
-                   || echo "VPN connection failed." && exit 1      
-    
-      # VPN bağlantısından sonra SSH ile komut çalıştırma
+          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{
+            secrets.VPN_HOST
+          }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} \
+          --passwd stdin
+
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.PROD_SSH_USERNAME }}
           password: ${{ secrets.PROD_SSH_PASSWORD }}
           port: ${{ secrets.PROD_SSH_PORT }}
-          script: |    
-           docker exec -it 2d5c3835ffb7 /bin/bash
-           cd /data/projects/MetropolUnFlowIntegration
-           git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+          script: |
+            docker exec -it 2d5c3835ffb7 /bin/bash
+            cd /data/projects/MetropolUnFlowIntegration
+            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
