@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Kaynak kodu al
+      # 1. Kod al
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. FortiClient VPN'e bağlan
+      # 2. FortiClient VPN bağlantısı
       - name: FortiClient VPN
         uses: horellana/openconnect@v1.0.1
         with:
@@ -23,7 +23,6 @@ jobs:
           VPN_PWD: ${{ secrets.VPN_PWD }}
           VPN_HOST: ${{ secrets.VPN_HOST }}
           VPN_PORT: 19443
-          # Sertifika zorunlu değilse boş bırakabilirsiniz
           VPN_SERVER_CERT: ""
 
       # 3. VPN bağlantısını test et
@@ -31,26 +30,6 @@ jobs:
         run: |
           echo "Testing VPN connection..."
           ifconfig || (echo "ifconfig not found, installing net-tools..." && sudo apt-get update && sudo apt-get install -y net-tools)
-          ifconfig | grep tun0 || (echo "VPN connection failed. Exiting..." && exit 1)
-          echo "VPN connection successful!"
-          echo "Pinging external address to confirm VPN routing..."
-          ping -c 4 8.8.8.8
-
-      # 4. SSH bağlantısını test et
-      - name: Test SSH Connection
-        run: |
-          echo "Testing SSH connection..."
-          ssh -o StrictHostKeyChecking=no -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} echo "SSH connection successful"
-
-      # 5. SSH ile uzaktan komut çalıştır
-      - name: Execute remote SSH commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.PROD_SSH_HOST }}
-          username: ${{ secrets.PROD_SSH_USERNAME }}
-          password: ${{ secrets.PROD_SSH_PASSWORD }}
-          port: ${{ secrets.PROD_SSH_PORT }}
-          script: |
-            docker exec -it 2d5c3835ffb7 /bin/bash
-            cd /data/projects/MetropolUnFlowIntegration
-            git pull https://<GITHUB_PERSONAL_ACCESS_TOKEN>@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+          ifconfig | grep tun0 || (echo "VPN connection failed. tun0 interface not found." && exit 1)
+          echo "VPN connection successful. tun0 interface is active."
+          ping -c 4 8.8.8.8 || (echo "Ping failed. VPN routing may not be working." && exit 1)
