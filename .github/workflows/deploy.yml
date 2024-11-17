@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Add FortiClient Repository
+        run: |
+          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
+          sudo apt-get update || { echo "Failed to update repositories. Exiting..."; exit 1; }
+
       - name: Install FortiClient
         run: |
-          echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/7.2/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
-          sudo apt-get update
-          sudo apt-get install -y forticlient
+          sudo apt-get install -y forticlient || { echo "FortiClient installation failed. Exiting..."; exit 1; }
 
       - name: Connect to FortiClient VPN
         run: |
           echo "Starting FortiClient VPN..."
-          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{
-            secrets.VPN_HOST
-          }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} \
-          --passwd stdin
+          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{ secrets.VPN_HOST }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} --passwd stdin
 
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
