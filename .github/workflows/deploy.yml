@@ -11,30 +11,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Install curl and required dependencies
-      - name: Install required dependencies
+      - name: Update and Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl wget lsb-release apt-transport-https
+          sudo apt-get install -y curl wget
 
-      # Step 2: Download the FortiClient .deb package from Fortinet
-      - name: Download FortiClient
+      - name: Download FortiClient .deb Package
         run: |
-          curl -LO https://fortinet.com/downloads/forticlient_7.2.0_amd64.deb  # Ensure this URL is correct
-          
-      # Step 3: Install the downloaded FortiClient package using dpkg
+          # Replace with the correct download URL for the FortiClient .deb package
+          curl -LO https://fortinet.com/downloads/forticlient_7.2.0_amd64.deb
+
+      - name: Verify the downloaded file
+        run: |
+          # Check if the file is a valid Debian package
+          file forticlient_7.2.0_amd64.deb
+          # Verify the package integrity (optional)
+          dpkg-deb --info forticlient_7.2.0_amd64.deb
+
       - name: Install FortiClient
         run: |
-          sudo dpkg -i forticlient_7.2.0_amd64.deb
-          sudo apt-get install -f -y  # Install missing dependencies if any
+          # Install the FortiClient package using apt to handle dependencies
+          sudo apt-get install -y ./forticlient_7.2.0_amd64.deb
 
-      # Step 4: Connect to FortiClient VPN
       - name: Connect to FortiClient VPN
         run: |
           echo "Starting FortiClient VPN..."
-          echo ${{ secrets.VPN_PWD }} | sudo forticlient connect -s ${{ secrets.VPN_HOST }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} --passwd stdin
+          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{ secrets.VPN_HOST }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} --passwd stdin
 
-      # Step 5: Execute remote SSH commands
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
