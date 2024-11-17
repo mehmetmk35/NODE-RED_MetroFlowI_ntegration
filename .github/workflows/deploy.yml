@@ -14,7 +14,6 @@ jobs:
       - name: Install FortiClient
         run: |
           echo "deb [arch=amd64] https://repo.fortinet.com/forticlient/7.2/debian/ stable multiverse" | sudo tee -a /etc/apt/sources.list.d/forticlient.list
-          wget -O - https://repo.fortinet.com/repo/forticlient/7.2/debian/DEB-GPG-KEY | gpg --dearmor | sudo tee /usr/share/keyrings/repo.fortinet.com.gpg
           sudo apt-get update
           sudo apt-get install -y forticlient
 
