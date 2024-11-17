@@ -28,3 +28,4 @@ jobs:
           ifconfig || sudo apt-get update && sudo apt-get install -y net-tools
           ifconfig | grep tun0 || (echo "VPN connection failed: tun0 not found." && exit 1)
           echo "VPN connected successfully."
+ 
