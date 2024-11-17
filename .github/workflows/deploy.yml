@@ -23,11 +23,15 @@ jobs:
 
       - name: Check if the downloaded file is a valid Debian package
         run: |
-          # Check if the file is an HTML document (likely a download page)
-          file forticlient_7.2.0_amd64.deb
+          # Check the file type using the 'file' command
+          FILE_TYPE=$(file forticlient_7.2.0_amd64.deb)
 
-          # If it’s an HTML page, print its contents for debugging
-          if [[ $(file forticlient_7.2.0_amd64.deb) == *HTML* ]]; then
+          # Print the file type for debugging
+          echo "File type: $FILE_TYPE"
+
+          # Check if the file is an HTML document (likely a download page)
+          if [[ $FILE_TYPE == *HTML* ]]; then
+            echo "Error: The file is an HTML document, not a valid Debian package."
             cat forticlient_7.2.0_amd64.deb
             exit 1  # Exit with an error to stop the workflow
           fi
