@@ -11,31 +11,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Kaynak kodu al
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Test Initial Connection
-        run: ifconfig
-
-      - name: Forticlient VPN
+      # 2. FortiClient VPN'e bağlan
+      - name: FortiClient VPN
         uses: horellana/openconnect@v1.0.1
         with:
           VPN_USER: ${{ secrets.VPN_USER }}
           VPN_PWD: ${{ secrets.VPN_PWD }}
           VPN_HOST: ${{ secrets.VPN_HOST }}
           VPN_PORT: 19443
-     
+          # Sertifika doğrulama zorunlu değilse bu alanı boş bırakabilirsiniz:
+          VPN_SERVER_CERT: ""
+          # Debug modunu aç
+          VPN_DEBUG: true
 
+      # 3. VPN bağlantısını test et
       - name: Test VPN Connection
         run: |
-          ifconfig | grep tun0 || exit 1
-          ping -c 4 ${{ secrets.INTERNAL_SERVER_IP }}
+          echo "Testing VPN connection..."
+          ifconfig | grep tun0 || (echo "VPN connection failed. Exiting..." && exit 1)
+          echo "VPN connection successful!"
+          ping -c 4 8.8.8.8
 
+      # 4. SSH bağlantısını test et
       - name: Test SSH Connection
         run: |
+          echo "Testing SSH connection..."
           ssh -o StrictHostKeyChecking=no -p ${{ secrets.PROD_SSH_PORT }} ${{ secrets.PROD_SSH_USERNAME }}@${{ secrets.PROD_SSH_HOST }} echo "SSH connection successful"
 
-      - name: Execute Remote SSH Commands
+      # 5. SSH ile uzaktan komut çalıştır
+      - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_SSH_HOST }}
@@ -45,4 +53,12 @@ jobs:
           script: |
             docker exec -it 2d5c3835ffb7 /bin/bash
             cd /data/projects/MetropolUnFlowIntegration
-            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+            git pull https://<GITHUB_PERSONAL_ACCESS_TOKEN>@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+
+      # 6. Post VPN Kontrol (Opsiyonel)
+      - name: Post VPN Debugging
+        run: |
+          echo "Listing network interfaces for debugging:"
+          ifconfig
+          echo "Listing running processes:"
+          ps aux
