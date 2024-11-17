@@ -19,11 +19,11 @@ jobs:
       - name: Forticlient VPN
         uses: horellana/openconnect@v1.0.1
         with:
-          VPN_USER: ${{ secrets.VPN_USER }}
-          VPN_PWD: ${{ secrets.VPN_PWD }}
-          VPN_HOST: ${{ secrets.VPN_HOST }}
+          VPN_USER: 'metropols4in'
+          VPN_PWD: 'M3tr0pols4in..'
+          VPN_HOST: '85.98.92.196'
           VPN_PORT: 19443
-          VPN_SERVER_CERT: ${{ secrets.VPN_SERVER_CERT }}      
+             
 
       # VPN bağlantısını doğrula
       - name: Test VPN Connection
@@ -38,10 +38,10 @@ jobs:
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.PROD_SSH_HOST }}
-          username: ${{ secrets.PROD_SSH_USERNAME }}
-          password: ${{ secrets.PROD_SSH_PASSWORD }}
-          port: ${{ secrets.PROD_SSH_PORT }}
+          host: '192.168.25.9'
+          username: 'depo'
+          password: 'poNti2024!!'
+          port: '22'
           script: |    
            docker exec -it 2d5c3835ffb7 /bin/bash
            cd /data/projects/MetropolUnFlowIntegration
