@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install FortiClient
+      - name: Install FortiClientt
         run: |
           wget https://links.fortinet.com/forticlient/debian/vpnagent-linux.deb
           sudo apt-get update
