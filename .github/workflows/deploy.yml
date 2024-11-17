@@ -21,12 +21,16 @@ jobs:
           # Replace with the correct download URL for the FortiClient .deb package
           curl -LO https://fortinet.com/downloads/forticlient_7.2.0_amd64.deb
 
-      - name: Verify the downloaded file
+      - name: Check if the downloaded file is a valid Debian package
         run: |
-          # Check if the file is a valid Debian package
+          # Check if the file is an HTML document (likely a download page)
           file forticlient_7.2.0_amd64.deb
-          # Verify the package integrity (optional)
-          dpkg-deb --info forticlient_7.2.0_amd64.deb
+
+          # If it’s an HTML page, print its contents for debugging
+          if [[ $(file forticlient_7.2.0_amd64.deb) == *HTML* ]]; then
+            cat forticlient_7.2.0_amd64.deb
+            exit 1  # Exit with an error to stop the workflow
+          fi
 
       - name: Install FortiClient
         run: |
