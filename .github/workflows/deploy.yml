@@ -1,4 +1,4 @@
-name: FortiClient VPN Connection
+name: FortiClient VPN Connection and SSH Test
 
 on:
   push:
@@ -11,11 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # OpenFortiVPN kurulumu
       - name: Install OpenFortiVPN
         run: |
           sudo apt-get update
           sudo apt-get install -y openfortivpn
 
+      # VPN yapılandırması oluşturma
       - name: Configure VPN
         env:
           VPN_USER: metropols4in
@@ -28,19 +30,39 @@ jobs:
           password = M3tr0pols4in..
           trusted-cert = 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160" > vpn-config.conf
 
+      # VPN'e bağlanma
       - name: Connect to VPN
         run: |
           sudo openfortivpn -c vpn-config.conf > vpn.log 2>&1 &
-
+      
+      # VPN bağlantısının oturması için bekleme
       - name: Wait for VPN Connection
         run: sleep 20
 
+      # VPN loglarını kontrol etme
       - name: Check VPN Logs
         run: cat vpn.log
 
+      # Ağ arabirimlerini kontrol etme
       - name: Check Network Interfaces
         run: ip addr
 
+      # Hedef IP'ye ping atma
       - name: Check VPN Connectivity
         run: |
           ping -c 10 192.168.25.9
+
+      # SSH ile uzak sunucuda komut çalıştırma
+      - name: Execute remote SSH commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: 192.168.25.9
+          username: depo
+          password: poNti2024!!
+          port: 22
+          timeout: 120s
+          command_timeout: 15m
+          script: |
+            echo "VPN bağlantısı başarılı. SSH üzerinden komut çalıştırılıyor."
+            cd /data/projects/MetropolUnFlowIntegration
+            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
