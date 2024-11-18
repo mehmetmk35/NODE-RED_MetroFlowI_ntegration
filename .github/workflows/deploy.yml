@@ -11,42 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Update and Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl wget
+      - name: Setup VPN Connection
+        uses: horellana/openconnect@v1.0.1
+        with:
+          VPN_USER: ${{ secrets.VPN_USER }}
+          VPN_PWD: ${{ secrets.VPN_PWD }}
+          VPN_HOST: ${{ secrets.VPN_HOST }}
+          VPN_PORT: ${{ secrets.VPN_PORT }}
+          VPN_SERVER_CERT: ''
 
-      - name: Download FortiClient .deb Package
-        run: |
-          # Replace with the correct download URL for the FortiClient .deb package
-          curl -LO https://fortinet.com/downloads/forticlient_7.2.0_amd64.deb
-
-      - name: Check if the downloaded file is a valid Debian package
-        run: |
-          # Check the file type using the 'file' command
-          FILE_TYPE=$(file forticlient_7.2.0_amd64.deb)
-
-          # Print the file type for debugging
-          echo "File type: $FILE_TYPE"
-
-          # Check if the file is an HTML document (likely a download page)
-          if [[ $FILE_TYPE == *HTML* ]]; then
-            echo "Error: The file is an HTML document, not a valid Debian package."
-            cat forticlient_7.2.0_amd64.deb
-            exit 1  # Exit with an error to stop the workflow
-          fi
-
-      - name: Install FortiClient
-        run: |
-          # Install the FortiClient package using apt to handle dependencies
-          sudo apt-get install -y ./forticlient_7.2.0_amd64.deb
-
-      - name: Connect to FortiClient VPN
-        run: |
-          echo "Starting FortiClient VPN..."
-          echo ${{ secrets.VPN_PWD }} | forticlient connect -s ${{ secrets.VPN_HOST }}:${{ secrets.VPN_PORT }} --vpnuser ${{ secrets.VPN_USER }} --passwd stdin
-
-      - name: Execute remote SSH commands
+      - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_SSH_HOST }}
