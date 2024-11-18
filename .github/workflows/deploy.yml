@@ -24,8 +24,9 @@ jobs:
           VPN_HOST: 85.98.92.196
           VPN_USERNAME: metropols4in
           VPN_PASSWORD: M3tr0pols4in..
+          VPN_PORT: 19443
         run: |
-          echo -e "[vpn]\nhost = $VPN_HOST\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
+          echo -e "[vpn]\nhost = $VPN_HOST\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
           sudo openfortivpn -c vpn.conf -v --insecure
       - name: Check VPN Connectivity
         run: |
