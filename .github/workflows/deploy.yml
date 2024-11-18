@@ -63,6 +63,7 @@ jobs:
           password: ${{ secrets.PROD_SSH_PASSWORD }}
           port: ${{ secrets.PROD_SSH_PORT }}
           script: |
+            echo "asd"
             docker exec -it 2d5c3835ffb7 /bin/bash
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
