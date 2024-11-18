@@ -22,15 +22,15 @@ jobs:
           VPN_PWD: M3tr0pols4in..
           VPN_HOST: 85.98.92.196
         run: |
-          echo "[openfortivpn]
-          host = 85.98.92.196
+          echo "host = 85.98.92.196
           port = 19443
           username = metropols4in
-          password = M3tr0pols4in.." > vpn-config.conf
+          password = M3tr0pols4in..
+          trusted-cert = 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160" > vpn-config.conf
 
       - name: Connect to VPN
         run: |
-          sudo openfortivpn -c vpn-config.conf --trusted-cert "" > vpn.log 2>&1 &
+          sudo openfortivpn -c vpn-config.conf > vpn.log 2>&1 &
 
       - name: Wait for VPN Connection
         run: sleep 20
