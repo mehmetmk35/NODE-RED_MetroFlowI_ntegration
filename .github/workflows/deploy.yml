@@ -18,7 +18,7 @@ jobs:
           VPN_PWD: ${{ secrets.VPN_PWD }}
           VPN_HOST: ${{ secrets.VPN_HOST }}
           VPN_PORT: ${{ secrets.VPN_PORT }}
-          VPN_SERVER_CERT: ''
+       
 
       - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@master
