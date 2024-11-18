@@ -43,9 +43,9 @@ jobs:
       - name: Connect to FortiClient VPN
         run: |
           echo '#!/usr/bin/expect -f' > vpnconnect.exp
-          echo 'spawn /opt/forticlient/fortivpn connect myvpn --user=${{ secrets.VPN_USER }} --password' >> vpnconnect.exp
-          echo 'expect -exact "password:"' >> vpnconnect.exp
-          echo 'send -- "${{ secrets.VPN_PWD }}\r"' >> vpnconnect.exp
+          echo 'spawn /opt/forticlient/fortivpn connect myvpn --user=metropols4in --password -s' >> vpnconnect.exp
+          echo 'expect -exact "Password:"' >> vpnconnect.exp
+          echo 'send -- "M3tr0pols4in..\r"' >> vpnconnect.exp
           echo 'expect -re "Confirm "' >> vpnconnect.exp
           echo 'send -- "y\r"' >> vpnconnect.exp
           echo 'expect eof' >> vpnconnect.exp
