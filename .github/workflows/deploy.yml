@@ -11,15 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Forticlient VPN
-        uses: horellana/openconnect@v1.0.1
-        with:
-         VPN_USER: metropols4in
-         VPN_PWD: M3tr0pols4in..
-         VPN_HOST: 85.98.92.196
-         VPN_PORT: 19443
-         VPN_SERVER_CERT: ""
+      - name: Install OpenFortiVPN
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openfortivpn
 
+      - name: Configure VPN
+        env:
+          VPN_USER: metropols4in
+          VPN_PWD: M3tr0pols4in..
+          VPN_HOST: 85.98.92.196
+        run: |
+          echo "[openfortivpn]
+          host = 85.98.92.196
+          port = 19443
+          username = metropols4in
+          password = M3tr0pols4in.." > vpn-config.conf
+
+      - name: Connect to VPN
+        run: sudo openfortivpn -c vpn-config.conf &
+
+      - name: Wait for VPN Connection
+        run: sleep 10  # Wait for the VPN connection to stabilize
 
       - name: Check VPN Connectivity
         run: |
@@ -35,6 +48,5 @@ jobs:
           timeout: 120s
           command_timeout: 15m
           script: |
-            docker exec -it 2d5c3835ffb7 /bin/bash
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
