@@ -642,8 +642,8 @@
     {
         "id": "5b2ae23bfd497a94",
         "type": "subflow",
-        "name": "MetropolUn_Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
-        "info": "",
+        "name": "NTSF000V1.0",
+        "info": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
         "category": "",
         "in": [
             {
@@ -675,8 +675,8 @@
     {
         "id": "17803f695ab8af0d",
         "type": "subflow",
-        "name": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0",
-        "info": "",
+        "name": "NTSP000V1.0",
+        "info": "Netsis2SFORIN_InsertStock",
         "category": "",
         "in": [
             {
@@ -763,7 +763,7 @@
     {
         "id": "3179678ca8b98244",
         "type": "subflow",
-        "name": "MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0",
+        "name": "NTSC000V1.0",
         "info": "",
         "category": "",
         "in": [
@@ -812,8 +812,8 @@
     {
         "id": "a464cb4f18f8f1f5",
         "type": "subflow",
-        "name": "GROUPMetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0",
-        "info": "",
+        "name": "GNTSC000V1.0",
+        "info": "Netsis2SFORIN_Customers",
         "category": "",
         "in": [
             {
@@ -861,8 +861,8 @@
     {
         "id": "b9701e9ae1caaffd",
         "type": "subflow",
-        "name": "GroupMetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0",
-        "info": "",
+        "name": "GNTSF000V1.0",
+        "info": "Netsis2SFORIN_InsertStock_MSSQL_v1.0",
         "category": "",
         "in": [
             {
@@ -910,7 +910,7 @@
     {
         "id": "bf7e6ed2256e3a44",
         "type": "subflow",
-        "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
+        "name": "NTSBSO000V1.0",
         "info": "",
         "category": "",
         "in": [
@@ -953,8 +953,8 @@
     {
         "id": "f62922f2ea3dfbe6",
         "type": "subflow",
-        "name": "GroupMetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
-        "info": "",
+        "name": "GNTSBSO000V1.0",
+        "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
         "category": "",
         "in": [
             {
@@ -998,156 +998,6 @@
         ],
         "meta": {},
         "color": "#DDAA99"
-    },
-    {
-        "id": "706f23c6f30383df",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "73a39c4d26d953f7",
-            "0a9d0c09e5e66bfc",
-            "800f172a148debe2",
-            "1dd8035c60ce989d",
-            "3b4d93c16d3a5168"
-        ],
-        "x": 74,
-        "y": 19,
-        "w": 1012,
-        "h": 122
-    },
-    {
-        "id": "12c2f3079075e98b",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "66ea17c08b9dbd90",
-            "aa2a44f844bd5722",
-            "f6f0cf50a4a358aa",
-            "8ee80d8e6fb9b7dc",
-            "6ad448f9a70ec0ae"
-        ],
-        "x": 74,
-        "y": 199,
-        "w": 1132,
-        "h": 122
-    },
-    {
-        "id": "fb7c7f527c78e092",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "316b5a0a239a2c20",
-            "6511671270bb981d",
-            "b59e709b49ffbc58",
-            "d541408c55a68f9f",
-            "d928709505e723b9"
-        ],
-        "x": 74,
-        "y": 379,
-        "w": 1132,
-        "h": 122
-    },
-    {
-        "id": "2559be7f150b7436",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "5c4b09de06572d97",
-            "db9c75c6aef4f10c",
-            "be0d5d30b7e02e90",
-            "b89a9a7d58f87d47",
-            "386d57ac9b4e7638"
-        ],
-        "x": 74,
-        "y": 539,
-        "w": 1132,
-        "h": 122
-    },
-    {
-        "id": "29b238b19b78a24b",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "35930a7d3a915a90",
-            "45c3178534c0e16d",
-            "32eb9c991ec5ea3f",
-            "6e8404b6a19ab18e",
-            "88b4cf6c8c3666ea"
-        ],
-        "x": 74,
-        "y": 699,
-        "w": 1132,
-        "h": 122
-    },
-    {
-        "id": "3c4e8c93618bf8f5",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "96e2565c84d35dff",
-            "65db466543736034",
-            "d99f18df9a178802",
-            "b6dd1452cf044784",
-            "54fb37b5146084ab"
-        ],
-        "x": 74,
-        "y": 839,
-        "w": 1132,
-        "h": 122
     },
     {
         "id": "f95fc539736e93fc",
@@ -2261,48 +2111,10 @@
             "4f378fca2f4fd15c",
             "e47f8c49f8f6c022"
         ],
-        "x": 74,
-        "y": 999,
+        "x": 34,
+        "y": 79,
         "w": 1182,
         "h": 142
-    },
-    {
-        "id": "d1440fa0abfac893",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [],
-        "x": 0,
-        "y": 0,
-        "w": 40,
-        "h": 40
-    },
-    {
-        "id": "62b3f581ad49b8f4",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [],
-        "x": 0,
-        "y": 0,
-        "w": 40,
-        "h": 40
     },
     {
         "id": "24904440bd5e033d",
@@ -2329,8 +2141,8 @@
             "b4ed7f0c34af5f24",
             "fe04c86380256fe1"
         ],
-        "x": 54,
-        "y": 1359,
+        "x": 34,
+        "y": 399,
         "w": 1302,
         "h": 302
     },
@@ -2357,8 +2169,8 @@
             "84924e6e0470a11f",
             "e09ad973954473b9"
         ],
-        "x": 64,
-        "y": 1179,
+        "x": 34,
+        "y": 239,
         "w": 1182,
         "h": 142
     },
@@ -13157,7 +12969,7 @@
                 "type": "bool"
             }
         ],
-        "x": 1130,
+        "x": 1000,
         "y": 240,
         "wires": [
             [
@@ -13419,7 +13231,7 @@
         "type": "subflow:5b2ae23bfd497a94",
         "z": "b9701e9ae1caaffd",
         "name": "",
-        "x": 960,
+        "x": 820,
         "y": 220,
         "wires": [
             [
@@ -13439,7 +13251,7 @@
                 "type": "bool"
             }
         ],
-        "x": 1430,
+        "x": 1300,
         "y": 220,
         "wires": [
             [
@@ -14925,7 +14737,7 @@
         "type": "subflow:bf7e6ed2256e3a44",
         "z": "f62922f2ea3dfbe6",
         "name": "",
-        "x": 1280,
+        "x": 1110,
         "y": 260,
         "wires": [
             [
@@ -14934,7 +14746,8 @@
             [
                 "1ccbfd52b75b7c7f"
             ]
-        ]
+        ],
+        "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer"
     },
     {
         "id": "53f19905e5016960",
@@ -14986,498 +14799,23 @@
         ]
     },
     {
-        "id": "73a39c4d26d953f7",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "706f23c6f30383df",
-        "name": "",
-        "url": "SFORIN2Netsis_InsertStock_MSSQL_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 280,
-        "y": 100,
-        "wires": [
-            [
-                "3b4d93c16d3a5168"
-            ]
-        ]
-    },
-    {
-        "id": "0a9d0c09e5e66bfc",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "706f23c6f30383df",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1000,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "800f172a148debe2",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "706f23c6f30383df",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 100,
-        "wires": [
-            [
-                "0a9d0c09e5e66bfc"
-            ]
-        ]
-    },
-    {
-        "id": "1dd8035c60ce989d",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "706f23c6f30383df",
-        "name": "SFORIN to Netsis Stock Card(MSSQL)",
-        "info": "",
-        "x": 250,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "66ea17c08b9dbd90",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "12c2f3079075e98b",
-        "name": "",
-        "url": "SFORIN2Netsis_InsertStock_Rest_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 270,
-        "y": 280,
-        "wires": [
-            [
-                "6ad448f9a70ec0ae"
-            ]
-        ]
-    },
-    {
-        "id": "aa2a44f844bd5722",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "12c2f3079075e98b",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "f6f0cf50a4a358aa",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "12c2f3079075e98b",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 280,
-        "wires": [
-            [
-                "aa2a44f844bd5722"
-            ]
-        ]
-    },
-    {
-        "id": "8ee80d8e6fb9b7dc",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "12c2f3079075e98b",
-        "name": "SFORIN to Netsis Stock Card(Rest)",
-        "info": "",
-        "x": 240,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "316b5a0a239a2c20",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "fb7c7f527c78e092",
-        "name": "",
-        "url": "Netsis2SFORIN_InsertStock_Rest_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 270,
-        "y": 460,
-        "wires": [
-            [
-                "d928709505e723b9"
-            ]
-        ]
-    },
-    {
-        "id": "6511671270bb981d",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "fb7c7f527c78e092",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "b59e709b49ffbc58",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "fb7c7f527c78e092",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 460,
-        "wires": [
-            [
-                "6511671270bb981d"
-            ]
-        ]
-    },
-    {
-        "id": "d541408c55a68f9f",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "fb7c7f527c78e092",
-        "name": "Netsis  To SFORIN Stock Card(REST)",
-        "info": "",
-        "x": 250,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "5c4b09de06572d97",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "2559be7f150b7436",
-        "name": "",
-        "url": "Netsis2SFORIN_InsertStock_MSSQL_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 280,
-        "y": 620,
-        "wires": [
-            [
-                "386d57ac9b4e7638"
-            ]
-        ]
-    },
-    {
-        "id": "db9c75c6aef4f10c",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "2559be7f150b7436",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "be0d5d30b7e02e90",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "2559be7f150b7436",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 620,
-        "wires": [
-            [
-                "db9c75c6aef4f10c"
-            ]
-        ]
-    },
-    {
-        "id": "b89a9a7d58f87d47",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "2559be7f150b7436",
-        "name": "Netsis  To SFORIN Stock Card(MMSQL)",
-        "info": "",
-        "x": 250,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "35930a7d3a915a90",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "29b238b19b78a24b",
-        "name": "",
-        "url": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 300,
-        "y": 780,
-        "wires": [
-            [
-                "88b4cf6c8c3666ea"
-            ]
-        ]
-    },
-    {
-        "id": "45c3178534c0e16d",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "29b238b19b78a24b",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "32eb9c991ec5ea3f",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "29b238b19b78a24b",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 780,
-        "wires": [
-            [
-                "45c3178534c0e16d"
-            ]
-        ]
-    },
-    {
-        "id": "6e8404b6a19ab18e",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "29b238b19b78a24b",
-        "name": "NetsisToSFORINFieldIntegration(MMSQL)",
-        "info": "",
-        "x": 260,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "96e2565c84d35dff",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "3c4e8c93618bf8f5",
-        "name": "",
-        "url": "Netsis2SFORIN_ProductTypeIntegration_v1.0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 290,
-        "y": 920,
-        "wires": [
-            [
-                "54fb37b5146084ab"
-            ]
-        ]
-    },
-    {
-        "id": "65db466543736034",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "3c4e8c93618bf8f5",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "d99f18df9a178802",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "3c4e8c93618bf8f5",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"success\",\n    message: \"Aktarım başarılı.\",\n    timestamp: new Date().toISOString()\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 920,
-        "wires": [
-            [
-                "65db466543736034"
-            ]
-        ]
-    },
-    {
-        "id": "b6dd1452cf044784",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "3c4e8c93618bf8f5",
-        "name": "NetsisToSFORINProductTypeIntegration",
-        "info": "",
-        "x": 260,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "3b4d93c16d3a5168",
-        "type": "subflow:c34fc38f83091edb",
-        "z": "97e7314f695bb652",
-        "g": "706f23c6f30383df",
-        "name": "",
-        "x": 565,
-        "y": 100,
-        "wires": [
-            [
-                "800f172a148debe2"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "6ad448f9a70ec0ae",
-        "type": "subflow:73bcc0f49f21e3cf",
-        "z": "97e7314f695bb652",
-        "g": "12c2f3079075e98b",
-        "name": "",
-        "x": 585,
-        "y": 280,
-        "wires": [
-            [
-                "f6f0cf50a4a358aa"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "d928709505e723b9",
-        "type": "subflow:7defd81363e19950",
-        "z": "97e7314f695bb652",
-        "g": "fb7c7f527c78e092",
-        "name": "",
-        "x": 585,
-        "y": 460,
-        "wires": [
-            [
-                "b59e709b49ffbc58"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "386d57ac9b4e7638",
-        "type": "subflow:c98479901d9e9b95",
-        "z": "97e7314f695bb652",
-        "g": "2559be7f150b7436",
-        "name": "",
-        "x": 595,
-        "y": 620,
-        "wires": [
-            [
-                "be0d5d30b7e02e90"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "88b4cf6c8c3666ea",
-        "type": "subflow:01bb3059fc08565d",
-        "z": "97e7314f695bb652",
-        "g": "29b238b19b78a24b",
-        "name": "",
-        "x": 585,
-        "y": 780,
-        "wires": [
-            [
-                "32eb9c991ec5ea3f"
-            ],
-            []
-        ],
-        "l": false
-    },
-    {
-        "id": "54fb37b5146084ab",
-        "type": "subflow:8436fe1a449a7297",
-        "z": "97e7314f695bb652",
-        "g": "3c4e8c93618bf8f5",
-        "name": "",
-        "x": 595,
-        "y": 920,
-        "wires": [
-            [
-                "d99f18df9a178802"
-            ],
-            []
-        ],
-        "l": false
-    },
-    {
         "id": "1826ee9bcabfc964",
         "type": "http in",
         "z": "97e7314f695bb652",
         "g": "79c60a5c83f1f09d",
         "name": "",
-        "url": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0",
+        "url": "NTSP000V1",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 330,
-        "y": 1080,
+        "x": 150,
+        "y": 160,
         "wires": [
             [
                 "e47f8c49f8f6c022"
             ]
-        ]
+        ],
+        "info": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0"
     },
     {
         "id": "cce8f946aa3f45d9",
@@ -15489,8 +14827,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1170,
-        "y": 1080,
+        "x": 1130,
+        "y": 160,
         "wires": []
     },
     {
@@ -15506,8 +14844,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 1060,
+        "x": 920,
+        "y": 140,
         "wires": [
             [
                 "cce8f946aa3f45d9"
@@ -15519,10 +14857,10 @@
         "type": "comment",
         "z": "97e7314f695bb652",
         "g": "79c60a5c83f1f09d",
-        "name": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0",
+        "name": "Netsis2SFORIN_InsertStock_MSSQL_v1.0",
         "info": "",
-        "x": 350,
-        "y": 1040,
+        "x": 220,
+        "y": 120,
         "wires": []
     },
     {
@@ -15538,8 +14876,8 @@
                 "type": "bool"
             }
         ],
-        "x": 775,
-        "y": 1080,
+        "x": 735,
+        "y": 160,
         "wires": [
             [
                 "6d3ab5afe316e058"
@@ -15556,8 +14894,8 @@
         "z": "97e7314f695bb652",
         "g": "79c60a5c83f1f09d",
         "name": "",
-        "x": 665,
-        "y": 1080,
+        "x": 625,
+        "y": 160,
         "wires": [
             [
                 "2cccaae036a25b9b"
@@ -15578,8 +14916,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 1100,
+        "x": 920,
+        "y": 180,
         "wires": [
             [
                 "cce8f946aa3f45d9"
@@ -15599,8 +14937,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 605,
-        "y": 1080,
+        "x": 565,
+        "y": 160,
         "wires": [
             [
                 "c68136d45539bedd"
@@ -15614,17 +14952,18 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "",
-        "url": "MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0",
+        "url": "NTSC000V1",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 310,
-        "y": 1260,
+        "x": 150,
+        "y": 320,
         "wires": [
             [
                 "84924e6e0470a11f"
             ]
-        ]
+        ],
+        "info": "Netsis2SFORIN_Customers_MSSQL_v1.0"
     },
     {
         "id": "dd81d2e8b3a0179d",
@@ -15636,8 +14975,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1160,
-        "y": 1260,
+        "x": 1130,
+        "y": 320,
         "wires": []
     },
     {
@@ -15653,8 +14992,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 1240,
+        "x": 920,
+        "y": 300,
         "wires": [
             [
                 "dd81d2e8b3a0179d"
@@ -15666,10 +15005,10 @@
         "type": "comment",
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
-        "name": "MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0",
+        "name": "Netsis2SFORIN_Customers_MSSQL_v1.0",
         "info": "",
-        "x": 340,
-        "y": 1220,
+        "x": 270,
+        "y": 280,
         "wires": []
     },
     {
@@ -15678,8 +15017,8 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "",
-        "x": 655,
-        "y": 1260,
+        "x": 625,
+        "y": 320,
         "wires": [
             [
                 "e09ad973954473b9"
@@ -15700,8 +15039,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 1280,
+        "x": 920,
+        "y": 340,
         "wires": [
             [
                 "dd81d2e8b3a0179d"
@@ -15721,8 +15060,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 595,
-        "y": 1260,
+        "x": 565,
+        "y": 320,
         "wires": [
             [
                 "f3f8ebe822bf26c4"
@@ -15743,8 +15082,8 @@
                 "type": "bool"
             }
         ],
-        "x": 725,
-        "y": 1260,
+        "x": 695,
+        "y": 320,
         "wires": [
             [
                 "4e36532310976efb"
@@ -15761,17 +15100,18 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "",
-        "url": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
+        "url": "NTSBSO000V1",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 360,
-        "y": 1440,
+        "x": 160,
+        "y": 480,
         "wires": [
             [
                 "ebf9b753c0db2888"
             ]
-        ]
+        ],
+        "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0"
     },
     {
         "id": "9114887d0e7b9eb5",
@@ -15783,8 +15123,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1240,
-        "y": 1500,
+        "x": 1220,
+        "y": 540,
         "wires": []
     },
     {
@@ -15800,8 +15140,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 1480,
+        "x": 940,
+        "y": 520,
         "wires": [
             [
                 "9114887d0e7b9eb5",
@@ -15814,10 +15154,10 @@
         "type": "comment",
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
-        "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
+        "name": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
         "info": "",
-        "x": 380,
-        "y": 1400,
+        "x": 320,
+        "y": 440,
         "wires": []
     },
     {
@@ -15826,8 +15166,8 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "",
-        "x": 665,
-        "y": 1500,
+        "x": 645,
+        "y": 540,
         "wires": [
             [
                 "583958b872d4e043"
@@ -15848,8 +15188,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 1520,
+        "x": 940,
+        "y": 560,
         "wires": [
             [
                 "9114887d0e7b9eb5",
@@ -15870,8 +15210,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 695,
-        "y": 1440,
+        "x": 675,
+        "y": 480,
         "wires": [
             [
                 "ea8abe837b06040d"
@@ -15892,8 +15232,8 @@
                 "type": "bool"
             }
         ],
-        "x": 775,
-        "y": 1500,
+        "x": 755,
+        "y": 540,
         "wires": [
             [
                 "5699609978be02fc"
@@ -15917,8 +15257,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1250,
-        "y": 1620,
+        "x": 1230,
+        "y": 660,
         "wires": []
     },
     {
@@ -15934,8 +15274,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1150,
-        "y": 1440,
+        "x": 1130,
+        "y": 480,
         "wires": []
     },
     {
@@ -16400,32 +15740,17 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "Netsis2SFORIN_ProductTypeIntegration_v1.0",
+                "v": "NTSP000V1.0",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "v": "NTSC000V1.0",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "SFORIN2Netsis_InsertStock_MSSQL_v1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
+                "v": "NTSBSO000V1.0",
                 "vt": "str"
             },
             {
@@ -16434,19 +15759,10 @@
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 7,
+        "outputs": 4,
         "x": 645,
         "y": 200,
         "wires": [
-            [
-                "4d79a7540825ca01"
-            ],
-            [
-                "e9b00d76b05cca6f"
-            ],
-            [
-                "a9a7fbf037ab7c98"
-            ],
             [
                 "9c64778cbb22874a"
             ],
@@ -16483,35 +15799,6 @@
         "l": false
     },
     {
-        "id": "4d79a7540825ca01",
-        "type": "subflow:533e6c27c7c050c1",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1220,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "e9b00d76b05cca6f",
-        "type": "subflow:c751949c59f2c3bc",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1210,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "a9a7fbf037ab7c98",
-        "type": "subflow:cff71436fcabdffa",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1190,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "dda4347789d8592e",
         "type": "debug",
         "z": "68459bb5ee15fc71",
@@ -16524,8 +15811,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1130,
-        "y": 560,
+        "x": 990,
+        "y": 300,
         "wires": []
     },
     {
@@ -16533,8 +15820,8 @@
         "type": "subflow:a464cb4f18f8f1f5",
         "z": "68459bb5ee15fc71",
         "name": "",
-        "x": 1050,
-        "y": 280,
+        "x": 1000,
+        "y": 220,
         "wires": [
             [],
             []
@@ -16669,8 +15956,8 @@
         "type": "subflow:b9701e9ae1caaffd",
         "z": "68459bb5ee15fc71",
         "name": "",
-        "x": 1060,
-        "y": 240,
+        "x": 1000,
+        "y": 180,
         "wires": [
             [],
             []
@@ -16681,8 +15968,8 @@
         "type": "subflow:f62922f2ea3dfbe6",
         "z": "68459bb5ee15fc71",
         "name": "",
-        "x": 1100,
-        "y": 340,
+        "x": 1010,
+        "y": 260,
         "wires": [
             [],
             []
@@ -16938,7 +16225,7 @@
         "type": "subflow:bf7e6ed2256e3a44",
         "z": "6ef8732eb0726477",
         "name": "",
-        "x": 1420,
+        "x": 1250,
         "y": 560,
         "wires": [
             [
@@ -16978,7 +16265,7 @@
                 "type": "bool"
             }
         ],
-        "x": 1050,
+        "x": 920,
         "y": 740,
         "wires": [
             [
@@ -17040,7 +16327,7 @@
         "type": "subflow:5b2ae23bfd497a94",
         "z": "6ef8732eb0726477",
         "name": "",
-        "x": 640,
+        "x": 500,
         "y": 640,
         "wires": [
             [
