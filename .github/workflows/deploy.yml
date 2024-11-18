@@ -62,8 +62,7 @@ jobs:
           username: ${{ secrets.PROD_SSH_USERNAME }}
           password: ${{ secrets.PROD_SSH_PASSWORD }}
           port: ${{ secrets.PROD_SSH_PORT }}
-          timeout: 60s # Zaman aşımı artırıldı
-          command_timeout: 15m # Komut zaman aşımı artırıldı
+          debug: true
           script: |
             echo "Bağlantı testi başarılı"
             docker exec -it 2d5c3835ffb7 /bin/bash
