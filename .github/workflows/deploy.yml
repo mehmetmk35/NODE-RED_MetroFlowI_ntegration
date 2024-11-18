@@ -21,25 +21,13 @@ jobs:
 
       - name: Configure and Connect to VPN
         run: |
-          echo -e "[vpn]\nhost = 85.98.92.196\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
-          sudo openfortivpn -c vpn.conf -v --insecure --trusted-cert 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160
-          rm -f vpn.conf # VPN bilgilerini barındıran dosyayı temizliyoruz.
-
+          echo -e "[config]\nhost = 85.98.92.196\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
+          sudo openfortivpn -c vpn.conf -v --trusted-cert 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160
+          rm -f vpn.conf
+          
       - name: Test VPN Connectivity
         run: |
           echo "VPN bağlantısını test ediyoruz..."
           ping -c 10 192.168.25.9
 
-      - name: Execute remote SSH commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: 192.168.25.9
-          username: depo
-          password: poNti2024!!
-          port: 22
-          timeout: 120s
-          command_timeout: 15m
-          script: |
-            echo "VPN bağlantısı başarılı. SSH üzerinden komut çalıştırılıyor."
-            cd /data/projects/MetropolUnFlowIntegration
-            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
+       
