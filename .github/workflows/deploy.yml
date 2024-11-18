@@ -38,6 +38,7 @@ jobs:
           echo 'expect eof' >> create_vpn_profile.exp
           chmod +x create_vpn_profile.exp
           ./create_vpn_profile.exp
+          cat create_vpn_profile.exp
 
       - name: Connect to FortiClient VPN
         run: |
@@ -50,6 +51,7 @@ jobs:
           echo 'expect eof' >> vpnconnect.exp
           chmod +x vpnconnect.exp
           ./vpnconnect.exp
+          cat vpnconnect.exp
 
       - name: VPN Status
         run: |
