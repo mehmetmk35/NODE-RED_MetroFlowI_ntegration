@@ -22,7 +22,7 @@ jobs:
       - name: Configure and Connect to VPN
         run: |
           echo -e "[vpn]\nhost = 85.98.92.196\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
-          sudo openfortivpn -c vpn.conf -v --insecure
+          sudo openfortivpn -c vpn.conf -v --insecure --trusted-cert 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160
           rm -f vpn.conf # VPN bilgilerini barındıran dosyayı temizliyoruz.
 
       - name: Test VPN Connectivity
