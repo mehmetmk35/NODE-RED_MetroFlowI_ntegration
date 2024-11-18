@@ -29,13 +29,14 @@ jobs:
           password = M3tr0pols4in.." > vpn-config.conf
 
       - name: Connect to VPN
-        run: sudo openfortivpn -c vpn-config.conf --trusted-cert "" &
+        run: |
+          sudo openfortivpn -c vpn-config.conf --trusted-cert "" > vpn.log 2>&1 &
 
       - name: Wait for VPN Connection
         run: sleep 20
 
-      - name: Debug VPN Connection
-        run: sudo cat /var/log/syslog | grep openfortivpn
+      - name: Check VPN Logs
+        run: cat vpn.log
 
       - name: Check Network Interfaces
         run: ip addr
@@ -43,16 +44,3 @@ jobs:
       - name: Check VPN Connectivity
         run: |
           ping -c 10 192.168.25.9
-
-      - name: Execute remote SSH commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: 192.168.25.9
-          username: depo
-          password: poNti2024!!
-          port: 22
-          timeout: 120s
-          command_timeout: 15m
-          script: |
-            cd /data/projects/MetropolUnFlowIntegration
-            git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
