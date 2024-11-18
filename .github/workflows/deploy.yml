@@ -29,10 +29,16 @@ jobs:
           password = M3tr0pols4in.." > vpn-config.conf
 
       - name: Connect to VPN
-        run: sudo openfortivpn -c vpn-config.conf &
+        run: sudo openfortivpn -c vpn-config.conf --trusted-cert "" &
 
       - name: Wait for VPN Connection
-        run: sleep 10  # Wait for the VPN connection to stabilize
+        run: sleep 20
+
+      - name: Debug VPN Connection
+        run: sudo cat /var/log/syslog | grep openfortivpn
+
+      - name: Check Network Interfaces
+        run: ip addr
 
       - name: Check VPN Connectivity
         run: |
