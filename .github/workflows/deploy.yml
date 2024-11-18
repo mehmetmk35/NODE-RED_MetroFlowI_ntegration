@@ -11,18 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup VPN Connection
-        uses: horellana/openconnect@v1.0.1
-        with:
-          VPN_USER: ${{ secrets.VPN_USER }}
-          VPN_PWD: ${{ secrets.VPN_PWD }}
-          VPN_HOST: ${{ secrets.VPN_HOST }}
-          VPN_PORT: ${{ secrets.VPN_PORT }}
-       
+     - name: Update System and Install FortiClient
+       run: sudo apt-get update
+          sudo apt-get install -y curl wget
+          curl -LO https://forticlient.com/downloads/forticlient_7.2.0_amd64.deb
+          sudo apt-get install -y ./forticlient_7.2.0_amd64.deb
 
-      - name: Execute Remote SSH Commands
-        uses: appleboy/ssh-action@master
-        with:
+     - name: Connect to VPN with FortiClient
+       run: |
+          echo "${{ secrets.VPN_PASSWORD }}" | forticlient connect \
+            --server ${{ secrets.VPN_SERVER }} \
+            --user ${{ secrets.VPN_USER }} \
+            --passwd stdin       
+
+     - name: Execute Remote SSH Commands
+       uses: appleboy/ssh-action@master
+       with:
           host: ${{ secrets.PROD_SSH_HOST }}
           username: ${{ secrets.PROD_SSH_USERNAME }}
           password: ${{ secrets.PROD_SSH_PASSWORD }}
