@@ -11,17 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # OpenFortiVPN kurulumu
       - name: Install OpenFortiVPN
         run: |
           sudo apt-get update
           sudo apt-get install -y openfortivpn
 
-      # VPN yapılandırması oluşturma
       - name: Configure VPN
         env:
           VPN_USER: metropols4in
-          VPN_PWD: M3tr0pols4in..
+          VPN_PWD: M3tr0pols4in.. # Eğer OTP gerekliyse buraya ekleyin: M3tr0pols4in..123456
           VPN_HOST: 85.98.92.196
         run: |
           echo "host = 85.98.92.196
@@ -30,29 +28,23 @@ jobs:
           password = M3tr0pols4in..
           trusted-cert = 688de510aacbe2492b9d975b532315ddfd2bfd238c6f72fad91fcb8094396160" > vpn-config.conf
 
-      # VPN'e bağlanma
       - name: Connect to VPN
         run: |
           sudo openfortivpn -c vpn-config.conf > vpn.log 2>&1 &
       
-      # VPN bağlantısının oturması için bekleme
       - name: Wait for VPN Connection
         run: sleep 20
 
-      # VPN loglarını kontrol etme
       - name: Check VPN Logs
         run: cat vpn.log
 
-      # Ağ arabirimlerini kontrol etme
       - name: Check Network Interfaces
         run: ip addr
 
-      # Hedef IP'ye ping atma
       - name: Check VPN Connectivity
         run: |
           ping -c 10 192.168.25.9
 
-      # SSH ile uzak sunucuda komut çalıştırma
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
