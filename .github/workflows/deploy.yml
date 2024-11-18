@@ -55,6 +55,10 @@ jobs:
         run: |
           /opt/forticlient/fortivpn status
 
+      - name: Check VPN Connectivity
+        run: |
+          ping -c 10 192.168.25.9
+
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
@@ -62,6 +66,8 @@ jobs:
           username: depo
           password: poNti2024!!
           port: 22
+          timeout: 120s
+          command_timeout: 15m
           script: |
             docker exec -it 2d5c3835ffb7 /bin/bash
             cd /data/projects/MetropolUnFlowIntegration
