@@ -28,7 +28,7 @@ jobs:
           echo 'expect -re "Type"' >> create_vpn_profile.exp
           echo 'send -- "1\r"' >> create_vpn_profile.exp
           echo 'expect -re "Remote Gateway:"' >> create_vpn_profile.exp
-          echo 'send -- "85.98.92.196"\r' >> create_vpn_profile.exp
+          echo 'send -- "85.98.92.196\r"' >> create_vpn_profile.exp
           echo 'expect -re "Port"' >> create_vpn_profile.exp
           echo 'send -- "19443\r"' >> create_vpn_profile.exp
           echo 'expect -re "Authentication"' >> create_vpn_profile.exp
