@@ -1,4 +1,4 @@
-name: FortiClient VPN Connection and SSH
+name: FortiClient VPN Connection
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  vpn_and_ssh:
+  vpn_connect:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,9 +16,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libnss3-tools ppp libappindicator1 expect ca-certificates
 
-      - name: Download and Install FortiClient
+      - name: Download FortiClient .deb Package
         run: |
-          wget https://filestore.fortinet.com/forticlient/forticlient_vpn_7.4.0_1636_amd64.deb -O forticlient.deb
+          wget https://filestore.fortinet.com/forticlient/forticlient_vpn_7.4.0.1636_amd64.deb -O forticlient.deb
           sudo dpkg -i forticlient.deb
 
       - name: Create VPN Profile
@@ -51,19 +51,18 @@ jobs:
           chmod +x vpnconnect.exp
           ./vpnconnect.exp
 
-      - name: Execute SSH Commands
-        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
+      - name: VPN Status
+        run: |
+          /opt/forticlient/fortivpn status
+
+      - name: Execute remote SSH commands
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USERNAME }}
+          password: ${{ secrets.PROD_SSH_PASSWORD }}
           port: ${{ secrets.PROD_SSH_PORT }}
-          user: ${{ secrets.PROD_SSH_USER }}
-          pass: ${{ secrets.PROD_SSH_PASSWORD }}
-          connect_timeout: 60s
-          first_ssh: echo "SSH bağlantısı başarılı."
-          scp: |
-           docker exec -it 2d5c3835ffb7 /bin/bash
+          script: |
+            docker exec -it 2d5c3835ffb7 /bin/bash
             cd /data/projects/MetropolUnFlowIntegration
             git pull https://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@github.com/mehmetmk35/NODE-RED_MetroFlowI_ntegration.git
-
-     
-           
