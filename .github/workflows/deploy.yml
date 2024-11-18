@@ -42,29 +42,16 @@ jobs:
 
       - name: Connect to FortiClient VPN
         run: |
-            echo '#!/usr/bin/expect -f' > vpnconnect.exp
-            echo 'spawn /opt/forticlient/fortivpn connect myvpn --user=metropols4in --password -s -w' >> vpnconnect.exp
-            echo 'expect "Password:"' >> vpnconnect.exp
-            echo 'send -- "M3tr0pols4in..\r"' >> vpnconnect.exp
-            echo 'expect {' >> vpnconnect.exp
-            echo '    "Confirm " {' >> vpnconnect.exp
-            echo '        send -- "y\r"' >> vpnconnect.exp
-            echo '        exp_continue' >> vpnconnect.exp
-            echo '    }' >> vpnconnect.exp
-            echo '    "Connected" {' >> vpnconnect.exp
-            echo '        puts "VPN bağlantısı başarılı."' >> vpnconnect.exp
-            echo '    }' >> vpnconnect.exp
-            echo '    eof {' >> vpnconnect.exp
-            echo '        puts "Bağlantı tamamlandı."' >> vpnconnect.exp
-            echo '    }' >> vpnconnect.exp
-            echo '    timeout {' >> vpnconnect.exp
-            echo '        puts "Bağlantı zaman aşımına uğradı."' >> vpnconnect.exp
-            echo '        exit 1' >> vpnconnect.exp
-            echo '    }' >> vpnconnect.exp
-            echo '}' >> vpnconnect.exp
-            chmod +x vpnconnect.exp
-            ./vpnconnect.exp
-            cat vpnconnect.exp
+          echo '#!/usr/bin/expect -f' > vpnconnect.exp
+           echo 'spawn /opt/forticlient/fortivpn connect myvpn --user=metropols4in --password -s' >> vpnconnect.exp
+           echo 'expect -exact "Password:"' >> vpnconnect.exp
+           echo 'send -- "M3tr0pols4in..\r"' >> vpnconnect.exp
+           echo 'expect -re "Confirm "' >> vpnconnect.exp
+           echo 'send -- "y\r"' >> vpnconnect.exp
+           echo 'expect eof' >> vpnconnect.exp
+           chmod +x vpnconnect.exp
+           ./vpnconnect.exp
+           cat vpnconnect.exp
 
       - name: VPN Status
         run: |
