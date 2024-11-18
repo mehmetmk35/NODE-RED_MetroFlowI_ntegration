@@ -19,18 +19,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openfortivpn
 
-      - name: Configure VPN connection
-        env:
-          VPN_HOST: 85.98.92.196
-          VPN_USERNAME: metropols4in
-          VPN_PASSWORD: M3tr0pols4in..
-          VPN_PORT: 19443
+      - name: Configure and Connect to VPN
         run: |
-          echo -e "[vpn]\nhost = metropols4in.vpn.server\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
+          echo -e "[vpn]\nhost = 85.98.92.196\nport = 19443\nusername = metropols4in\npassword = M3tr0pols4in.." > vpn.conf
           sudo openfortivpn -c vpn.conf -v --insecure
+          rm -f vpn.conf # VPN bilgilerini barındıran dosyayı temizliyoruz.
 
-      - name: Check VPN Connectivity
+      - name: Test VPN Connectivity
         run: |
+          echo "VPN bağlantısını test ediyoruz..."
           ping -c 10 192.168.25.9
 
       - name: Execute remote SSH commands
