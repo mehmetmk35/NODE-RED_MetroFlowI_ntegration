@@ -15,17 +15,17 @@
         "info": ""
     },
     {
-        "id": "68459bb5ee15fc71",
+        "id": "6ef8732eb0726477",
         "type": "tab",
-        "label": "Flow 23",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "6ef8732eb0726477",
+        "id": "68459bb5ee15fc71",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Flow 23",
         "disabled": false,
         "info": "",
         "env": []
@@ -38,8 +38,8 @@
         "category": "",
         "in": [
             {
-                "x": 200,
-                "y": 200,
+                "x": 160,
+                "y": 80,
                 "wires": [
                     {
                         "id": "fc4e6bca72218567"
@@ -49,17 +49,18 @@
         ],
         "out": [
             {
-                "x": 860,
-                "y": 300,
-                "wires": [
-                    {
-                        "id": "48d66183d3f1ef66",
-                        "port": 0
-                    }
-                ]
+                "x": 1160,
+                "y": 310,
+                "wires": []
             }
         ],
-        "env": [],
+        "env": [
+            {
+                "name": "defaultData",
+                "type": "str",
+                "value": ""
+            }
+        ],
         "meta": {},
         "color": "#DDAA99"
     },
@@ -159,11 +160,11 @@
         "category": "",
         "in": [
             {
-                "x": 360,
+                "x": 240,
                 "y": 140,
                 "wires": [
                     {
-                        "id": "b055f9f7c5e3ed26"
+                        "id": "8ecc3f7b42d1bb68"
                     }
                 ]
             }
@@ -171,22 +172,7 @@
         "out": [],
         "env": [
             {
-                "name": "sourceSystem",
-                "type": "str",
-                "value": ""
-            },
-            {
                 "name": "sourceModule/Flow",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "destinationSystem",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "status",
                 "type": "str",
                 "value": ""
             }
@@ -420,7 +406,7 @@
         "category": "",
         "in": [
             {
-                "x": 380,
+                "x": 220,
                 "y": 220,
                 "wires": [
                     {
@@ -1581,7 +1567,9 @@
             "f857d4221fcefe11",
             "eac45d8363566f7b",
             "f70fb1f8fc565ffa",
-            "c1aa45c2fbe91e0f"
+            "c1aa45c2fbe91e0f",
+            "7de236fdb9f506ad",
+            "e9377d36aa253f0c"
         ],
         "x": 54,
         "y": 119,
@@ -2321,15 +2309,15 @@
         "type": "function",
         "z": "fa51d0694c73d14f",
         "name": "Get Token Params",
-        "func": " \n \nglobal.set(\"companyCode\", env.get(\"companyCode\"))\nglobal.set(\"SFORIN_URL\", env.get(\"SFORIN_URL\") )\nmsg.SFORIN_URL = env.get(\"SFORIN_URL\");\nmsg.payload = {\n    data: [\n        {\n            userName: env.get(\"userName\"),\n            password: env.get(\"password\"),\n            companyCode: env.get(\"companyCode\"),\n            rememberMe: true\n        }\n    ],   \n     methodName: \"auth/api/v1/authenticate/token\",\n   \n    clientPath: \"/login\",\n    sender: \"\",\n    current: [\n        {\n            key: \"UserId\",\n            value: \"\"\n        },\n        {\n            key: \"Company\",\n            value: \"\"\n        },\n        {\n            key: \"Language\",\n            value: \"tr\"\n        }\n    ]\n};\n\nreturn msg;\n",
+        "func": "global.set(\"companyCode\", env.get(\"companyCode\"))\nglobal.set(\"SFORIN_URL\", env.get(\"SFORIN_URL\") )\nmsg.SFORIN_URL = env.get(\"SFORIN_URL\");\nmsg.payload = {\n    data: [\n        {\n            userName: env.get(\"userName\"),\n            password: env.get(\"password\"),\n            companyCode: env.get(\"companyCode\"),\n            rememberMe: true\n        }\n    ],   \n     methodName: \"auth/api/v1/authenticate/token\",\n   \n    clientPath: \"/login\",\n    sender: \"\",\n    current: [\n        {\n            key: \"UserId\",\n            value: \"\"\n        },\n        {\n            key: \"Company\",\n            value: \"\"\n        },\n        {\n            key: \"Language\",\n            value: \"tr\"\n        }\n    ]\n};\n\nflow.set('GetTokenParams',msg.payload)\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 200,
+        "x": 370,
+        "y": 80,
         "wires": [
             [
                 "8f9f0d729ee14091"
@@ -2359,8 +2347,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 850,
-        "y": 200,
+        "x": 830,
+        "y": 60,
         "wires": [
             []
         ]
@@ -2370,19 +2358,17 @@
         "type": "function",
         "z": "fa51d0694c73d14f",
         "name": "global Token",
-        "func": "var token= msg.payload.data[0].accessToken;\nglobal.set(\"SforinToken\",token)\nmsg.token=token;\nreturn msg;",
+        "func": "var token= msg.payload?.data[0]?.accessToken;\nif(token)\n{\nglobal.set(\"SforinToken\",token)\nmsg.token=token;\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 300,
+        "x": 1020,
+        "y": 320,
         "wires": [
-            [
-                "48d66183d3f1ef66"
-            ]
+            []
         ]
     },
     {
@@ -2421,7 +2407,7 @@
                 "fc4e6bca72218567"
             ],
             [
-                "f14226dc22bd86e9"
+                "920f23f522d63658"
             ]
         ]
     },
@@ -2434,39 +2420,27 @@
             "8f9f0d729ee14091"
         ],
         "uncaught": false,
-        "x": 230,
-        "y": 300,
+        "x": 210,
+        "y": 520,
         "wires": [
             [
-                "1aaf0ca1bcd31c5c"
+                "e1f5827474c83c23"
             ]
         ]
     },
     {
-        "id": "f14226dc22bd86e9",
-        "type": "debug",
-        "z": "fa51d0694c73d14f",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "48d66183d3f1ef66",
+        "id": "e1f5827474c83c23",
         "type": "switch",
         "z": "fa51d0694c73d14f",
         "name": "",
         "property": "statusCode",
         "propertyType": "msg",
         "rules": [
+            {
+                "t": "eq",
+                "v": "401",
+                "vt": "str"
+            },
             {
                 "t": "eq",
                 "v": "200",
@@ -2478,31 +2452,108 @@
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 610,
-        "y": 300,
+        "outputs": 3,
+        "x": 400,
+        "y": 520,
         "wires": [
-            [],
             [
-                "29b62df5c628c37b"
+                "7e2fe64a37f665ab"
+            ],
+            [
+                "ea6309ba3b83cb15"
+            ],
+            [
+                "73c069e1917022fd"
             ]
         ]
     },
     {
-        "id": "29b62df5c628c37b",
+        "id": "920f23f522d63658",
         "type": "debug",
         "z": "fa51d0694c73d14f",
-        "name": "Error Handler",
+        "name": "debug 103",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "73c069e1917022fd",
+        "type": "debug",
+        "z": "fa51d0694c73d14f",
+        "name": "debug 104",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "fad9dfbfa56c24f5",
+        "type": "subflow:7cdf28f23984a61d",
+        "z": "fa51d0694c73d14f",
+        "name": "",
+        "env": [
+            {
+                "name": "sourceModule/Flow",
+                "value": "Get Token SFORINAPI",
+                "type": "str"
+            }
+        ],
+        "x": 1150,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ea6309ba3b83cb15",
+        "type": "function",
+        "z": "fa51d0694c73d14f",
+        "name": "LogJson",
+        "func": "\n\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n    _id: Math.random().toString(36), // New unique identifier\n    dataKey: result?.definitionLang || \"\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"No message provided\", // Fallback message\n    jobResult: 0|| 0, // Job result from payload or default\n    integrationName: \"token\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData:\"No additional data\", // Extra info    \n    requestPayload: JSON.stringify(flow.get('GetTokenParams') || {}), // Serialized request payload\n    responsePayload: JSON.stringify(result.data[0] || {}) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "1aaf0ca1bcd31c5c",
+                "fad9dfbfa56c24f5",
+                "48c82c3a42f77c06"
+            ]
+        ]
+    },
+    {
+        "id": "48c82c3a42f77c06",
+        "type": "debug",
+        "z": "fa51d0694c73d14f",
+        "name": "debug 110",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "logData",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
-        "y": 360,
+        "x": 930,
+        "y": 510,
         "wires": []
     },
     {
@@ -2965,6 +3016,7 @@
         "id": "b055f9f7c5e3ed26",
         "type": "function",
         "z": "7cdf28f23984a61d",
+        "d": true,
         "name": "function 12",
         "func": "msg.insertData = {\n    \"id\": generateUniqueId(), // Benzersiz bir ID oluşturma fonksiyonu (kendi implementasyonunuzu ekleyin)\n    \"timestamp\": new Date().toISOString(), // Şu anki tarihi ve saati ISO formatında alır\n    \"sourceSystem\": env.get('sourceSystem') || \"\", // SourceSystem: Verinin çıktığı sistem (örn. NetSuite).\n    \"sourceModuleFlow\": env.get('sourceModuleFlow') || \"\", // SourceModule:/Flow Kaynak sistemdeki belirli modül/Flow (örn. Stoklar, Cariler).\n    \"destinationSystem\": env.get('destinationSystem') || \"\", // Hedef Node adı veya ID'si\n    \"data\": msg.logData|| \"\", // Gönderilen veri veya mesaj\n    \"status\": env.get('status') || \"\", // İşlemin durumu    \n    \"error_description\": msg.errorDescription || \"\", // Hata açıklaması   \n};\n\n// Benzersiz ID oluşturma fonksiyonu (örnek)\nfunction generateUniqueId() {\n    return  Math.random().toString(36);\n}\n\nreturn msg;\n",
         "outputs": 1,
@@ -2973,8 +3025,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
-        "y": 160,
+        "x": 600,
+        "y": 80,
         "wires": [
             [
                 "27406d1f10c1837d"
@@ -2985,20 +3037,109 @@
         "id": "27406d1f10c1837d",
         "type": "function",
         "z": "7cdf28f23984a61d",
+        "d": true,
         "name": "MongoDbNodeRedLog_V1.0",
-        "func": "let mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\n\nif (allIntegrationCode) {\n    // Veriyi başarıyla aldınız, işlem yapabilirsiniz\n    mongoData = allIntegrationCode.find(item => item.path === \"MongoDbLogV_1.0\");\n    // node.warn(mongoData);\n}\n\nif (mongoData === null) {\n  \n    return;\n}\nconst MongoClient = global.get('mongodb');\nconst insertData = msg.insertData || {};  // Eklenecek veriyi msg.insertData içinden alıyoruz\n\nif (!MongoClient) {\n    node.error('MongoDB module not found in global context.');\n    return;\n}\n\nconst user = mongoData.user;\nconst password = mongoData.pass;\nconst server = mongoData.server;\nconst database = mongoData.dataBase;\nconst yourCollection = mongoData.collection;\n// Doğru şekilde veritabanı adı ile eşleştiğinden emin olun\n\n(async () => {\n    // MongoDB bağlantı URL'si\n    const url = `mongodb://${user}:${password}@${server}/${database}?authSource=admin`;\n   // node.warn(url)\n    let client;\n\n    try {\n        // MongoDB bağlantısı kurma\n       \n     \n        client = new MongoClient(url, {\n            useNewUrlParser: true,\n            useUnifiedTopology: true\n        });\n   \n        // Connect the client\n        await client.connect();\n \n        // Veritabanına bağlanma\n      \n        const db = client.db(database);\n     \n        // Belgeyi koleksiyona ekleme (insertOne)\n        const result = await db.collection(yourCollection).insertOne(insertData);  // Burada 'yourCollection' koleksiyon adını değiştirin\n     \n        // Başarılı işlem sonrası sonucu payload'a ekleyip ilk çıkışa gönderin\n        msg.payload = result;\n        \n        node.send([msg, null]);\n\n    } catch (err) {\n        // Bağlantı veya sorgu hatalarını loglayıp ikinci çıkışa gönderin\n      \n        msg = {\n            error: 'MongoDB insert error: ' + err.message\n        };\n        node.send([null, msg]);\n\n    } finally {\n        // Bağlantıyı kapatın\n        \n        if (client) {\n           \n            try {\n                await client.close();\n                // node.warn('MongoDB connection closed.');\n            } catch (closeErr) {\n                msg = {\n                    error: 'Error closing MongoDB connection: ' + closeErr.message\n                };\n                node.send([null, msg]);\n            }\n        }\n    }\n})();\n",
+        "func": "let mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\n\nif (allIntegrationCode) {\n    // Veriyi başarıyla aldınız, işlem yapabilirsiniz\n    mongoData = allIntegrationCode.find(item => item.path === \"MongoDbV_1.0\");\n    // node.warn(mongoData);\n}\n\nif (mongoData === null) {\n  \n    return;\n}\nconst MongoClient = global.get('mongodb');\nconst insertData = msg.insertData || {};  // Eklenecek veriyi msg.insertData içinden alıyoruz\n\nif (!MongoClient) {\n    node.error('MongoDB module not found in global context.');\n    return;\n}\n\nconst user = mongoData.user;\nconst password = mongoData.pass;\nconst server = mongoData.server;\nconst database = mongoData.dataBase;\nconst yourCollection = mongoData.collection;\n// Doğru şekilde veritabanı adı ile eşleştiğinden emin olun\n\n(async () => {\n    // MongoDB bağlantı URL'si\n    const url = `mongodb://${user}:${password}@${server}/${database}?authSource=admin`;\n   // node.warn(url)\n    let client;\n\n    try {\n        // MongoDB bağlantısı kurma\n       \n     \n        client = new MongoClient(url, {\n            useNewUrlParser: true,\n            useUnifiedTopology: true\n        });\n   \n        // Connect the client\n        await client.connect();\n \n        // Veritabanına bağlanma\n      \n        const db = client.db(database);\n     \n        // Belgeyi koleksiyona ekleme (insertOne)\n        const result = await db.collection(yourCollection).insertOne(insertData);  // Burada 'yourCollection' koleksiyon adını değiştirin\n     \n        // Başarılı işlem sonrası sonucu payload'a ekleyip ilk çıkışa gönderin\n        msg.payload = result;\n        \n        node.send([msg, null]);\n\n    } catch (err) {\n        // Bağlantı veya sorgu hatalarını loglayıp ikinci çıkışa gönderin\n      \n        msg = {\n            error: 'MongoDB insert error: ' + err.message\n        };\n        node.send([null, msg]);\n\n    } finally {\n        // Bağlantıyı kapatın\n        \n        if (client) {\n           \n            try {\n                await client.close();\n                // node.warn('MongoDB connection closed.');\n            } catch (closeErr) {\n                msg = {\n                    error: 'Error closing MongoDB connection: ' + closeErr.message\n                };\n                node.send([null, msg]);\n            }\n        }\n    }\n})();\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 160,
+        "x": 840,
+        "y": 80,
         "wires": [
             [],
             []
         ]
+    },
+    {
+        "id": "ec46b2c6b160f937",
+        "type": "function",
+        "z": "7cdf28f23984a61d",
+        "name": "function 54",
+        "func": "// Varsayılan şablon (Default değerler)\nconst defaultTemplate = {\n    _id: Math.random().toString(36),\n    dataKey: \"\",\n    dataType: 0,\n    date: new Date().toISOString(),\n    message: \"\",\n    jobResult: 0,\n    integrationName: \"\",\n    httpStatusCode: 200,\n    duration: null,\n    additionalData: \"\",\n    flowName: env.get('sourceModule/Flow'),\n    requestPayload: \"\",\n    responsePayload: \"\"\n};\n\n// Null, undefined ve boş değer kontrolü yapan yardımcı fonksiyon\nfunction isValid(value) {\n    return value !== undefined && value !== null && value !== \"\";\n}\n\n// Gelen veriyi işleme\nconst incomingDataArray = msg.logData || [];\n\n\n// Gelen nesneleri manuel eşleştir\nconst mappedData = incomingDataArray.map(item => ({\n   // _id: isValid(item._id) ? item._id : defaultTemplate._id,\n    dataKey: isValid(item.dataKey) ? item.dataKey : defaultTemplate.dataKey,\n    dataType: isValid(item.dataType) ? item.dataType : defaultTemplate.dataType,\n    date: isValid(item.date) ? item.date : defaultTemplate.date,\n    message: isValid(item.message) ? item.message : defaultTemplate.message,\n    jobResult: isValid(item.jobResult) ? item.jobResult : defaultTemplate.jobResult,\n    integrationName: isValid(item.integrationName) ? item.integrationName : defaultTemplate.integrationName,\n    httpStatusCode: isValid(item.httpStatusCode) ? item.httpStatusCode : defaultTemplate.httpStatusCode,\n    duration: isValid(item.duration) ? item.duration : defaultTemplate.duration,\n    additionalData: isValid(item.additionalData) ? item.additionalData : defaultTemplate.additionalData,\n    flowName: isValid(item.flowName) ? item.flowName : defaultTemplate.flowName,\n    requestPayload: isValid(item.requestPayload) ? item.requestPayload : defaultTemplate.requestPayload,\n    responsePayload: isValid(item.responsePayload) ? item.responsePayload : defaultTemplate.responsePayload\n}));\n\n\n// Yeni payload oluştur\nmsg.payload = {\n    requestId: \"\",\n    sender: \"NODE-RED\",\n    data: mappedData,\n    current: [\n    {\n      key: \"\",\n      value: \"\"\n    }\n  ]\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "653e2bedfcd69aa8"
+            ]
+        ]
+    },
+    {
+        "id": "653e2bedfcd69aa8",
+        "type": "http request",
+        "z": "7cdf28f23984a61d",
+        "name": "Create Log",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "{{{SFORIN_URL}}}wmsmaster/api/WmsMaster/CreateIntegrationLog",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "d812618c110a82c0"
+            ]
+        ]
+    },
+    {
+        "id": "d812618c110a82c0",
+        "type": "debug",
+        "z": "7cdf28f23984a61d",
+        "name": "debug 112",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "8ecc3f7b42d1bb68",
+        "type": "function",
+        "z": "7cdf28f23984a61d",
+        "name": "function 55",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.SFORIN_URL = global.get(\"SFORIN_URL\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 140,
+        "wires": [
+            [
+                "ec46b2c6b160f937"
+            ]
+        ],
+        "l": false
     },
     {
         "id": "2bfef7a835ff1b51",
@@ -7963,7 +8104,7 @@
         "type": "subflow:fa51d0694c73d14f",
         "z": "79ed7abbe7cc27ac",
         "name": "",
-        "x": 600,
+        "x": 440,
         "y": 220,
         "wires": [
             [
@@ -8009,7 +8150,7 @@
             "f73a9fe1942c1b07"
         ],
         "uncaught": false,
-        "x": 410,
+        "x": 330,
         "y": 420,
         "wires": [
             [
@@ -8026,7 +8167,7 @@
             "f73a9fe1942c1b07"
         ],
         "uncaught": false,
-        "x": 410,
+        "x": 330,
         "y": 340,
         "wires": [
             [
@@ -8079,7 +8220,7 @@
         "type": "function",
         "z": "79ed7abbe7cc27ac",
         "name": "/GetAllIntegrationParametersMap",
-        "func": "var jsonPayload = msg.payload.data; // Gelen veriyi al\nvar allIntegrationParameters = []; // Tüm işlenmiş veriler burada tutulacak\n \n// Gelen veriyi dönüştür\nif (jsonPayload) {\n    jsonPayload.forEach(params => {\n        // Gelen her bir parametre için işlenmiş veri\n        var processedProduct = {\n            id: params._id || \"\", // _id'yi al\n            code: params.code || \"\", // code alanı\n            type: params.type || \"\", // type alanı\n            flowName: params.flowName || \"\", // flowName alanı\n            flowEndPoint: params.flowEndPoint || \"\", // flowEndPoint alanı\n            cron: params.cron || \"\", // cron ifadesi\n            lastRun: params.lastRun || null, // lastRun tarihi\n            status: params.status || \"\", // status alanı\n            direction: params.direction || \"\", // direction alanı\n            path: params.path || \"\" // path alanı\n        };\n\n        // İşlenmiş veriyi allIntegrationParameters dizisine ekle\n        allIntegrationParameters.push(processedProduct);\n    });\n}\n\n// msg.payload'u işlenmiş veri ile değiştir\nmsg.allIntegrationParameters = allIntegrationParameters;\n\nreturn msg;\n",
+        "func": "var jsonPayload = msg.payload.data; // Gelen veriyi al\nvar allIntegrationParameters = []; // Tüm işlenmiş veriler burada tutulacak\n \n// Gelen veriyi dönüştür\nif (jsonPayload) {\n    jsonPayload.forEach(params => {\n        // Gelen her bir parametre için işlenmiş veri\n        var processedProduct = {\n            id: params._id || \"\", // _id'yi al\n            code: params.code || \"\", // code alanı\n            type: params.type || \"\", // type alanı\n            flowName: params.flowName || \"\", // flowName alanı\n            flowEndPoint: params.flowEndPoint || \"\", // flowEndPoint alanı\n            cron: params.cron || \"\", // cron ifadesi\n            lastRun: params.lastRun || null, // lastRun tarihi\n            status: params.status || \"\", // status alanı\n            direction: params.direction || \"\", // direction alanı\n            path: params.path || \"\", // path alanı\n            isDebugMode:params.isDebugMode||false\n        };\n\n        // İşlenmiş veriyi allIntegrationParameters dizisine ekle\n        allIntegrationParameters.push(processedProduct);\n    });\n}\n\n// msg.payload'u işlenmiş veri ile değiştir\nmsg.allIntegrationParameters = allIntegrationParameters;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8194,11 +8335,12 @@
             "1217ca74696da277"
         ],
         "uncaught": false,
-        "x": 410,
+        "x": 290,
         "y": 700,
         "wires": [
             [
-                "4d52d9e55adc2112"
+                "4d52d9e55adc2112",
+                "57558a00e6e55bf9"
             ]
         ]
     },
@@ -8380,6 +8522,22 @@
         "statusType": "auto",
         "x": 1470,
         "y": 340,
+        "wires": []
+    },
+    {
+        "id": "57558a00e6e55bf9",
+        "type": "debug",
+        "z": "79ed7abbe7cc27ac",
+        "name": "debug 96",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 740,
         "wires": []
     },
     {
@@ -9484,7 +9642,7 @@
         "links": [
             "0d109ce5201c7170"
         ],
-        "x": 285,
+        "x": 435,
         "y": 280,
         "wires": []
     },
@@ -9502,7 +9660,7 @@
         "y": 280,
         "wires": [
             [
-                "1ddc986150f81f61"
+                "7de236fdb9f506ad"
             ]
         ]
     },
@@ -9520,7 +9678,8 @@
         "y": 360,
         "wires": [
             [
-                "f70fb1f8fc565ffa"
+                "f70fb1f8fc565ffa",
+                "e9377d36aa253f0c"
             ]
         ]
     },
@@ -10878,6 +11037,40 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7de236fdb9f506ad",
+        "type": "debug",
+        "z": "5b2ae23bfd497a94",
+        "g": "108f2ffe217f63da",
+        "name": "debug 101",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e9377d36aa253f0c",
+        "type": "debug",
+        "z": "5b2ae23bfd497a94",
+        "g": "108f2ffe217f63da",
+        "name": "debug 102",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "d3e0544e1409e870",
@@ -15721,261 +15914,6 @@
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
     },
     {
-        "id": "f4973aa11bd2c838",
-        "type": "comment",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "info": "Tetiklenecek cron ayarlaması ve node-red entegrasyon parametrelerini okur",
-        "x": 130,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "89b91074653e42f8",
-        "type": "switch",
-        "z": "68459bb5ee15fc71",
-        "name": "flowName Switch",
-        "property": "payload.flowName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "NTSP000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "NTSC000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "NTSBSO000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 645,
-        "y": 200,
-        "wires": [
-            [
-                "9c64778cbb22874a"
-            ],
-            [
-                "a83e1f4b90df6f2f"
-            ],
-            [
-                "7bd7f234ee5da2ee"
-            ],
-            [
-                "dda4347789d8592e"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "676cf3610d10c8e3",
-        "type": "split",
-        "z": "68459bb5ee15fc71",
-        "name": "Flow Name Split",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 585,
-        "y": 200,
-        "wires": [
-            [
-                "89b91074653e42f8"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "dda4347789d8592e",
-        "type": "debug",
-        "z": "68459bb5ee15fc71",
-        "name": "OtherWise",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "a83e1f4b90df6f2f",
-        "type": "subflow:a464cb4f18f8f1f5",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 220,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "17de0232786154c4",
-        "type": "function",
-        "z": "68459bb5ee15fc71",
-        "name": "Set Prop",
-        "func": "\n \nmsg.payload=global.get('allIntegrationParameters')\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 535,
-        "y": 220,
-        "wires": [
-            [
-                "676cf3610d10c8e3"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "bb93ba3fc38d50e5",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 435,
-        "y": 200,
-        "wires": [
-            [
-                "17de0232786154c4"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "4925ffd17a7f6459",
-        "type": "cronplus",
-        "z": "68459bb5ee15fc71",
-        "name": "Cron Scheduler",
-        "outputField": "",
-        "timeZone": "",
-        "storeName": "",
-        "commandResponseMsgOutput": "output1",
-        "defaultLocation": "",
-        "defaultLocationType": "default",
-        "outputs": 1,
-        "options": [],
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "bb93ba3fc38d50e5"
-            ]
-        ]
-    },
-    {
-        "id": "3694d2189d43b4f7",
-        "type": "inject",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 100,
-        "wires": [
-            [
-                "bb93ba3fc38d50e5"
-            ]
-        ]
-    },
-    {
-        "id": "ea9fa413f8ea865b",
-        "type": "function",
-        "z": "68459bb5ee15fc71",
-        "name": "Set Cron",
-        "func": "msg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": \"*/10 * * * * *\",\n    \"payloadType\": \"json\",\n    \"payload\": { \"action\":\"Test\"}\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 130,
-        "y": 180,
-        "wires": [
-            [
-                "4925ffd17a7f6459"
-            ]
-        ]
-    },
-    {
-        "id": "f6314757a576dd0c",
-        "type": "inject",
-        "z": "68459bb5ee15fc71",
-        "name": "Inject JSON",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 140,
-        "wires": [
-            [
-                "ea9fa413f8ea865b"
-            ]
-        ]
-    },
-    {
-        "id": "9c64778cbb22874a",
-        "type": "subflow:b9701e9ae1caaffd",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 180,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "7bd7f234ee5da2ee",
-        "type": "subflow:f62922f2ea3dfbe6",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1010,
-        "y": 260,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "inject_fetch_cron",
         "type": "inject",
         "z": "6ef8732eb0726477",
@@ -16073,11 +16011,11 @@
         "type": "subflow:79ed7abbe7cc27ac",
         "z": "6ef8732eb0726477",
         "name": "",
-        "x": 460,
-        "y": 300,
+        "x": 220,
+        "y": 280,
         "wires": [
             [
-                "c1cd1026eade5518"
+                "a6fe0ee41493296a"
             ]
         ]
     },
@@ -16089,10 +16027,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -16100,10 +16034,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 320,
+        "payload": "[{\"_id\":\"customId123\",\"dataKey\":\"exampleKey\",\"dataType\":1,\"date\":\"2024-11-19T12:34:56.789Z\",\"message\":\"This is a test message.\",\"jobResult\":100,\"integrationName\":\"IntegrationExample\",\"httpStatusCode\":404,\"duration\":{\"ticks\":120},\"additionalData\":\"Extra information\",\"flowName\":\"TestFlow\",\"requestPayload\":\"{ 'test': true }\",\"responsePayload\":\"{ 'success': false }\"}]",
+        "payloadType": "json",
+        "x": 150,
+        "y": 230,
         "wires": [
             [
                 "443feae218b01232"
@@ -16340,7 +16274,7 @@
         "type": "subflow:fa51d0694c73d14f",
         "z": "6ef8732eb0726477",
         "name": "",
-        "x": 600,
+        "x": 340,
         "y": 440,
         "wires": [
             []
@@ -16743,6 +16677,314 @@
         "statusType": "auto",
         "x": 560,
         "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a6fe0ee41493296a",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 108",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 220,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "f4973aa11bd2c838",
+        "type": "comment",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "info": "Tetiklenecek cron ayarlaması ve node-red entegrasyon parametrelerini okur",
+        "x": 130,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "89b91074653e42f8",
+        "type": "switch",
+        "z": "68459bb5ee15fc71",
+        "name": "flowName Switch",
+        "property": "payload.flowName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "NTSP000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NTSC000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NTSBSO000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 645,
+        "y": 200,
+        "wires": [
+            [
+                "9c64778cbb22874a",
+                "89579fde43fa1556"
+            ],
+            [
+                "a83e1f4b90df6f2f"
+            ],
+            [
+                "7bd7f234ee5da2ee"
+            ],
+            [
+                "dda4347789d8592e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "676cf3610d10c8e3",
+        "type": "split",
+        "z": "68459bb5ee15fc71",
+        "name": "Flow Name Split",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 585,
+        "y": 200,
+        "wires": [
+            [
+                "89b91074653e42f8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "dda4347789d8592e",
+        "type": "debug",
+        "z": "68459bb5ee15fc71",
+        "name": "OtherWise",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a83e1f4b90df6f2f",
+        "type": "subflow:a464cb4f18f8f1f5",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 220,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "17de0232786154c4",
+        "type": "function",
+        "z": "68459bb5ee15fc71",
+        "name": "Set Prop",
+        "func": "\n \nmsg.payload=global.get('allIntegrationParameters')\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 535,
+        "y": 220,
+        "wires": [
+            [
+                "676cf3610d10c8e3",
+                "879f8f3fefc5df1b"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bb93ba3fc38d50e5",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 435,
+        "y": 200,
+        "wires": [
+            [
+                "17de0232786154c4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4925ffd17a7f6459",
+        "type": "cronplus",
+        "z": "68459bb5ee15fc71",
+        "name": "Cron Scheduler",
+        "outputField": "",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "bb93ba3fc38d50e5"
+            ]
+        ]
+    },
+    {
+        "id": "3694d2189d43b4f7",
+        "type": "inject",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "bb93ba3fc38d50e5"
+            ]
+        ]
+    },
+    {
+        "id": "ea9fa413f8ea865b",
+        "type": "function",
+        "z": "68459bb5ee15fc71",
+        "name": "Set Cron",
+        "func": "msg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": \"*/10 * * * * *\",\n    \"payloadType\": \"json\",\n    \"payload\": { \"action\":\"Test\"}\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "4925ffd17a7f6459"
+            ]
+        ]
+    },
+    {
+        "id": "f6314757a576dd0c",
+        "type": "inject",
+        "z": "68459bb5ee15fc71",
+        "name": "Inject JSON",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "ea9fa413f8ea865b"
+            ]
+        ]
+    },
+    {
+        "id": "9c64778cbb22874a",
+        "type": "subflow:b9701e9ae1caaffd",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7bd7f234ee5da2ee",
+        "type": "subflow:f62922f2ea3dfbe6",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1010,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "879f8f3fefc5df1b",
+        "type": "debug",
+        "z": "68459bb5ee15fc71",
+        "name": "debug 98",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "89579fde43fa1556",
+        "type": "debug",
+        "z": "68459bb5ee15fc71",
+        "name": "debug 109",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 110,
         "wires": []
     }
 ]
