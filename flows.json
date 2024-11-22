@@ -1793,8 +1793,7 @@
             "ad60f36acc269401",
             "222965ddb0e09195",
             "2f847f3ed271a069",
-            "ebb9039bf4abfc2c",
-            "0fec38a0afc8aeb7"
+            "0b419ab2e89ab4fa"
         ],
         "x": 44,
         "y": 229,
@@ -2074,11 +2073,12 @@
             "7e0182e4bfdda21d",
             "42c544e9b157280e",
             "3c7137841de56924",
-            "d7394d56848f5e93"
+            "d7394d56848f5e93",
+            "4679c16b758c538d"
         ],
-        "x": 24,
+        "x": 4,
         "y": 509,
-        "w": 1272,
+        "w": 1292,
         "h": 202
     },
     {
@@ -10366,8 +10366,7 @@
         "y": 330,
         "wires": [
             [
-                "a5bcf342b35175ca",
-                "ebb9039bf4abfc2c"
+                "a5bcf342b35175ca"
             ]
         ]
     },
@@ -10743,7 +10742,8 @@
         "y": 330,
         "wires": [
             [
-                "84f6b5a28bab6643"
+                "84f6b5a28bab6643",
+                "0b419ab2e89ab4fa"
             ]
         ]
     },
@@ -10753,7 +10753,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode)\n{\n    query += `AND A.STOK_KODU= '${paramsStockCode}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsStockCode);\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n    node.warn(paramsStockCode);\n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsStockCode);\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -10764,8 +10764,7 @@
         "y": 330,
         "wires": [
             [
-                "ad60f36acc269401",
-                "0fec38a0afc8aeb7"
+                "ad60f36acc269401"
             ]
         ]
     },
@@ -10971,24 +10970,6 @@
         ]
     },
     {
-        "id": "3a2f1f4415891923",
-        "type": "subflow:e35d14410b661a09",
-        "z": "17803f695ab8af0d",
-        "name": "",
-        "env": [
-            {
-                "name": "Url",
-                "value": "wmsmaster/api/WmsMaster/GetAllProducts",
-                "type": "str"
-            }
-        ],
-        "x": 1050,
-        "y": 110,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "1aaad88f0896c456",
         "type": "subflow:e35d14410b661a09",
         "z": "17803f695ab8af0d",
@@ -11032,39 +11013,21 @@
         "l": false
     },
     {
-        "id": "ebb9039bf4abfc2c",
+        "id": "0b419ab2e89ab4fa",
         "type": "debug",
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
-        "name": "debug 136",
+        "name": "debug 158",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
+        "x": 520,
         "y": 280,
-        "wires": []
-    },
-    {
-        "id": "0fec38a0afc8aeb7",
-        "type": "debug",
-        "z": "17803f695ab8af0d",
-        "g": "167f4d272f155624",
-        "name": "debug 137",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "query",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 370,
-        "y": 270,
         "wires": []
     },
     {
@@ -13419,7 +13382,7 @@
                 "type": "str"
             }
         ],
-        "x": 900,
+        "x": 890,
         "y": 420,
         "wires": [
             []
@@ -13766,10 +13729,11 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 150,
+        "x": 130,
         "y": 590,
         "wires": [
             [
+                "4679c16b758c538d",
                 "cd7c7b47e6c79aac"
             ]
         ],
@@ -13969,8 +13933,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 325,
-        "y": 590,
+        "x": 335,
+        "y": 600,
         "wires": [
             [
                 "ebf9b753c0db2888"
@@ -14705,6 +14669,23 @@
                 "e50bac451dbfc007"
             ]
         ]
+    },
+    {
+        "id": "4679c16b758c538d",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "debug 157",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 550,
+        "wires": []
     },
     {
         "id": "1",
@@ -15638,8 +15619,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
-        "y": 510,
+        "x": 840,
+        "y": 470,
         "wires": []
     },
     {
