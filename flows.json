@@ -1039,6 +1039,89 @@
         "color": "#DDAA99"
     },
     {
+        "id": "e02241cc3f021318",
+        "type": "subflow",
+        "name": "GDelIntLog ",
+        "info": "GroupDeleteIntegrationLog",
+        "category": "",
+        "in": [
+            {
+                "x": 130,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "1683e5b00b9f78c7"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1300,
+                "y": 510,
+                "wires": [
+                    {
+                        "id": "b7498c4725ccf723",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "manuel",
+                "type": "bool",
+                "value": "false"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e00c065eb7c30613",
+        "type": "subflow",
+        "name": "DelIntLogO000V1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 170,
+                "y": 210,
+                "wires": [
+                    {
+                        "id": "d68543ab51e43e79"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 760,
+                "y": 190,
+                "wires": [
+                    {
+                        "id": "3afaae6869304943",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Interval",
+                "type": "num",
+                "value": "10"
+            },
+            {
+                "name": "Url",
+                "type": "str",
+                "value": "CleanLog"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "f95fc539736e93fc",
         "type": "group",
         "z": "f1a7c99c.1d3f48",
@@ -1904,12 +1987,15 @@
             "3049a7107f25c59d",
             "58392219b3f9c2aa",
             "f1ac5c0632527d2c",
-            "f28bc80528e3b4c5"
+            "f28bc80528e3b4c5",
+            "b3b56432cbf56f15",
+            "3edcdf401fd21da5",
+            "5804e26ca526fd52"
         ],
-        "x": 104,
-        "y": 599,
-        "w": 972,
-        "h": 192
+        "x": 134,
+        "y": 569,
+        "w": 1222,
+        "h": 212
     },
     {
         "id": "68643bb6b5be193f",
@@ -1957,8 +2043,8 @@
             "c2d2d091215c03b5",
             "0fd6fe89414c30de"
         ],
-        "x": 124,
-        "y": 829,
+        "x": 134,
+        "y": 819,
         "w": 702,
         "h": 142
     },
@@ -1984,43 +2070,16 @@
             "8adf75c55d4276ff",
             "ebf9b753c0db2888",
             "583958b872d4e043",
-            "b4ed7f0c34af5f24",
-            "fe04c86380256fe1",
-            "cd7c7b47e6c79aac"
+            "cd7c7b47e6c79aac",
+            "7e0182e4bfdda21d",
+            "42c544e9b157280e",
+            "3c7137841de56924",
+            "d7394d56848f5e93"
         ],
-        "x": 34,
-        "y": 399,
-        "w": 1302,
-        "h": 292
-    },
-    {
-        "id": "c7a67d413d6b7731",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "4f184f848d4cf740",
-            "dd81d2e8b3a0179d",
-            "4e36532310976efb",
-            "bf9de75c1d34fac8",
-            "f3f8ebe822bf26c4",
-            "0995b23b70969aaf",
-            "84924e6e0470a11f",
-            "e09ad973954473b9",
-            "b2ad742b7f3c7e3e"
-        ],
-        "x": 34,
-        "y": 239,
-        "w": 1182,
-        "h": 142
+        "x": 24,
+        "y": 509,
+        "w": 1272,
+        "h": 202
     },
     {
         "id": "f1b021d67d3aeb12",
@@ -2102,12 +2161,82 @@
             "e47f8c49f8f6c022",
             "0d0ad8239df80579",
             "cc8d5118bd29b498",
-            "1826ee9bcabfc964"
+            "1826ee9bcabfc964",
+            "d5a070459c17282b",
+            "8afa6b7e3ad6423f",
+            "d74caaec6d92d640",
+            "9b0d5a4ffef20246"
         ],
-        "x": 34,
+        "x": 24,
         "y": 79,
-        "w": 1182,
-        "h": 142
+        "w": 1192,
+        "h": 182
+    },
+    {
+        "id": "c7a67d413d6b7731",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "4f184f848d4cf740",
+            "dd81d2e8b3a0179d",
+            "4e36532310976efb",
+            "bf9de75c1d34fac8",
+            "f3f8ebe822bf26c4",
+            "0995b23b70969aaf",
+            "84924e6e0470a11f",
+            "e09ad973954473b9",
+            "b2ad742b7f3c7e3e",
+            "a971d69137c421cb",
+            "1953c0e70b2aba3b",
+            "c8522c19b9137229",
+            "c4cb9dda0b66fa19"
+        ],
+        "x": 24,
+        "y": 289,
+        "w": 1192,
+        "h": 182
+    },
+    {
+        "id": "2d127e1eaf3e467e",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "9742d94b378f408a",
+            "0e749228f66d19be",
+            "bcc8ae3226885dad",
+            "5e5579a90a0eec10",
+            "117d1b3c16173e4c",
+            "a1bd186d52d5cacc",
+            "1b8dd17010af6ca6",
+            "cdf435c368eaa9a9",
+            "3441e14e765a31c9",
+            "367a664259a1e4ce",
+            "e50bac451dbfc007",
+            "bd183366d7e0c8f1",
+            "be3a674f2b228bc0"
+        ],
+        "x": 24,
+        "y": 739,
+        "w": 1272,
+        "h": 202
     },
     {
         "id": "873c9acca903bcab",
@@ -2193,6 +2322,11 @@
             {
                 "name": "BranchCode",
                 "value": "0",
+                "type": "str"
+            },
+            {
+                "name": "logUrlPath",
+                "value": "wmsmaster/api/WmsMaster/CreateIntegrationLog",
                 "type": "str"
             }
         ]
@@ -2940,7 +3074,7 @@
         "type": "function",
         "z": "7cdf28f23984a61d",
         "name": "Async Full HTTP Request",
-        "func": "(async function () {\n    try {\n        const http = global.get('http');\n        const { parse } = global.get('url');\n\n        // Base URL ve endpoint\n        const baseUrl = \"http://65.21.156.32:5001/\";\n        const urlPath = \"wmsmaster/api/WmsMaster/CreateIntegrationLog\";\n        const fullUrl = `${baseUrl}${urlPath}`;\n\n        // Global değişkenlerden alınan token\n        const token = global.get(\"SforinToken\");\n\n        // Varsayılan şablon (Default değerler)\n        const defaultTemplate = {\n            dataKey: \"\",\n            dataType: 0,\n            date: new Date().toISOString(),\n            message: \"\",\n            jobResult: 0,\n            integrationName: \"\",\n            httpStatusCode: 200,\n            duration: null,\n            additionalData: \"\",\n            flowName: env.get('sourceModule/Flow'),\n            requestPayload: \"\",\n            responsePayload: \"\"\n        };\n\n        // Null, undefined ve boş değer kontrolü yapan yardımcı fonksiyon\n        function isValid(value) {\n            return value !== undefined && value !== null && value !== \"\";\n        }\n\n        // Gelen veriyi işleme\n        const incomingDataArray = msg.logData || [];\n\n        // Gelen nesneleri eşleştir\n        const mappedData = incomingDataArray.map(item => {\n            return {\n                dataKey: isValid(item.dataKey) ? item.dataKey : defaultTemplate.dataKey,\n                dataType: isValid(item.dataType) ? item.dataType : defaultTemplate.dataType,\n                date: isValid(item.date) ? item.date : defaultTemplate.date,\n                message: isValid(item.message) ? item.message : defaultTemplate.message,\n                jobResult: isValid(item.jobResult) ? item.jobResult : defaultTemplate.jobResult,\n                integrationName: isValid(item.integrationName) ? item.integrationName : defaultTemplate.integrationName,\n                httpStatusCode: isValid(item.httpStatusCode) ? item.httpStatusCode : defaultTemplate.httpStatusCode,\n                duration: isValid(item.duration) ? item.duration : defaultTemplate.duration,\n                additionalData: isValid(item.additionalData) ? item.additionalData : defaultTemplate.additionalData,\n                flowName: isValid(item.flowName) ? item.flowName : defaultTemplate.flowName,\n                requestPayload: isValid(item.requestPayload) ? item.requestPayload : defaultTemplate.requestPayload,\n                responsePayload: isValid(item.responsePayload) ? item.responsePayload : defaultTemplate.responsePayload\n            };\n        });\n\n        // Yeni payload oluştur\n        const payload = {\n            requestId: \"\",\n            sender: \"NODE-RED\",\n            data: mappedData,\n            current: [\n                {\n                    key: \"\",\n                    value: \"\"\n                }\n            ]\n        };\n\n        // HTTP isteği gönderme fonksiyonu\n        const sendHttpRequest = (url, method, headers, body) => {\n            return new Promise((resolve, reject) => {\n                const parsedUrl = parse(url); // URL'yi ayrıştırıyoruz.\n                const options = {\n                    hostname: parsedUrl.hostname,\n                    port: parsedUrl.port || 80, // HTTP için varsayılan port\n                    path: parsedUrl.path,\n                    method: method,\n                    headers: headers\n                };\n\n                const req = http.request(options, (res) => {\n                    let responseData = \"\";\n                    res.on(\"data\", (chunk) => {\n                        responseData += chunk;\n                    });\n                    res.on(\"end\", () => {\n                        resolve(responseData);\n                    });\n                });\n\n                req.on(\"error\", (e) => {\n                    reject(e);\n                });\n\n                if (body) {\n                    req.write(JSON.stringify(body));\n                }\n                req.end();\n            });\n        };\n\n        // HTTP isteğini yap\n        const response = await sendHttpRequest(\n            fullUrl,\n            \"POST\",\n            {\n                \"Authorization\": `Bearer ${token}`,\n                \"Content-Type\": \"application/json\"\n            },\n            payload\n        );\n\n        // Yanıtı işleme\n        msg.payload = JSON.parse(response);\n        return msg;\n\n    } catch (error) {\n        // Hata durumunda loglama ve mesaj döndürme\n        node.error(\"Bir hata oluştu: \" + error.message);\n        msg.error = error.message;\n        return msg;\n    }\n})();\n",
+        "func": "(async function () {\n    try {\n        const http = global.get('http');\n        const { parse } = global.get('url');\n\n        // Base URL ve endpoint\n        const baseUrl = env.get('SFORIN_URL')\n        \n        const urlPath = env.get('logUrlPath');\n        const fullUrl = `${baseUrl}${urlPath}`;\n\n        // Global değişkenlerden alınan token\n        const token = global.get(\"SforinToken\");\n\n        // Varsayılan şablon (Default değerler)\n        const defaultTemplate = {\n            dataKey: \"\",\n            dataType: 0,\n            date: new Date().toISOString(),\n            message: \"\",\n            jobResult: 0,\n            integrationName: \"\",\n            httpStatusCode: 200,\n            duration: null,\n            additionalData: \"\",\n            flowName: env.get('sourceModule/Flow'),\n            requestPayload: \"\",\n            responsePayload: \"\"\n        };\n\n        // Null, undefined ve boş değer kontrolü yapan yardımcı fonksiyon\n        function isValid(value) {\n            return value !== undefined && value !== null && value !== \"\";\n        }\n\n        // Gelen veriyi işleme\n        const incomingDataArray = msg.logData || [];\n\n        // Gelen nesneleri eşleştir\n        const mappedData = incomingDataArray.map(item => {\n            return {\n                dataKey: isValid(item.dataKey) ? item.dataKey : defaultTemplate.dataKey,\n                dataType: isValid(item.dataType) ? item.dataType : defaultTemplate.dataType,\n                date: isValid(item.date) ? item.date : defaultTemplate.date,\n                message: isValid(item.message) ? item.message : defaultTemplate.message,\n                jobResult: isValid(item.jobResult) ? item.jobResult : defaultTemplate.jobResult,\n                integrationName: isValid(item.integrationName) ? item.integrationName : defaultTemplate.integrationName,\n                httpStatusCode: isValid(item.httpStatusCode) ? item.httpStatusCode : defaultTemplate.httpStatusCode,\n                duration: isValid(item.duration) ? item.duration : defaultTemplate.duration,\n                additionalData: isValid(item.additionalData) ? item.additionalData : defaultTemplate.additionalData,\n                flowName: isValid(item.flowName) ? item.flowName : defaultTemplate.flowName,\n                requestPayload: isValid(item.requestPayload) ? item.requestPayload : defaultTemplate.requestPayload,\n                responsePayload: isValid(item.responsePayload) ? item.responsePayload : defaultTemplate.responsePayload\n            };\n        });\n\n        // Yeni payload oluştur\n        const payload = {\n            requestId: \"\",\n            sender: \"NODE-RED\",\n            data: mappedData,\n            current: [\n                {\n                    key: \"\",\n                    value: \"\"\n                }\n            ]\n        };\n\n        // HTTP isteği gönderme fonksiyonu\n        const sendHttpRequest = (url, method, headers, body) => {\n            return new Promise((resolve, reject) => {\n                const parsedUrl = parse(url); // URL'yi ayrıştırıyoruz.\n                const options = {\n                    hostname: parsedUrl.hostname,\n                    port: parsedUrl.port || 80, // HTTP için varsayılan port\n                    path: parsedUrl.path,\n                    method: method,\n                    headers: headers\n                };\n\n                const req = http.request(options, (res) => {\n                    let responseData = \"\";\n                    res.on(\"data\", (chunk) => {\n                        responseData += chunk;\n                    });\n                    res.on(\"end\", () => {\n                        resolve(responseData);\n                    });\n                });\n\n                req.on(\"error\", (e) => {\n                    reject(e);\n                });\n\n                if (body) {\n                    req.write(JSON.stringify(body));\n                }\n                req.end();\n            });\n        };\n\n        // HTTP isteğini yap\n        const response = await sendHttpRequest(\n            fullUrl,\n            \"POST\",\n            {\n                \"Authorization\": `Bearer ${token}`,\n                \"Content-Type\": \"application/json\"\n            },\n            payload\n        );\n\n        // Yanıtı işleme\n        msg.payload = JSON.parse(response);\n        return msg;\n\n    } catch (error) {\n        // Hata durumunda loglama ve mesaj döndürme\n        node.error(\"Bir hata oluştu: \" + error.message);\n        msg.error = error.message;\n        return msg;\n    }\n})();\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8432,7 +8566,8 @@
                 "ae78335a68bfbfb5"
             ],
             [
-                "2e8d889d55adcab8"
+                "2e8d889d55adcab8",
+                "b0b213731fcb0f2e"
             ]
         ],
         "info": "global.get('mssql');\r\n  için   setting.js dosyalarına functionGlobalContext: {\r\n    mssql: require('mssql')  // MSSQL modülünü global context'e ekleyin\r\n}\r\n tanımlıyoruz "
@@ -8504,6 +8639,22 @@
                 "a6c3939a6263d9a7"
             ]
         ]
+    },
+    {
+        "id": "b0b213731fcb0f2e",
+        "type": "debug",
+        "z": "d296b4008b6072d8",
+        "name": "debug 144",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 310,
+        "wires": []
     },
     {
         "id": "ad4f6fbda1dd50c6",
@@ -12137,8 +12288,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 555,
-        "y": 640,
+        "x": 705,
+        "y": 630,
         "wires": [
             [
                 "58392219b3f9c2aa"
@@ -12152,11 +12303,12 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "",
-        "x": 470,
-        "y": 710,
+        "x": 500,
+        "y": 700,
         "wires": [
             [
-                "9578b0d362f0bc8b"
+                "9578b0d362f0bc8b",
+                "b3b56432cbf56f15"
             ]
         ]
     },
@@ -12166,15 +12318,15 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "BuyerAndSellerOrder",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,\n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\nif (paramsOrderNumber) {\n  node.warn(\"hayyy\");\n  query += `AND SPTRA.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsOrderNumber);\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\nif (paramsOrderNumber) {\n  node.warn(\"hayyy\");\n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsOrderNumber);\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
-        "y": 710,
+        "x": 270,
+        "y": 700,
         "wires": [
             [
                 "a209aa097313b145"
@@ -12194,8 +12346,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 710,
+        "x": 840,
+        "y": 700,
         "wires": [
             [
                 "f28bc80528e3b4c5"
@@ -12216,11 +12368,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 710,
+        "x": 700,
+        "y": 700,
         "wires": [
             [
-                "4958f6ff314c62cc"
+                "4958f6ff314c62cc",
+                "3edcdf401fd21da5"
             ]
         ]
     },
@@ -12234,8 +12387,8 @@
             "bb19590bab6bf786",
             "326b7025dfe0b336"
         ],
-        "x": 145,
-        "y": 650,
+        "x": 175,
+        "y": 640,
         "wires": [
             [
                 "6f00d978c94db6cf"
@@ -12295,8 +12448,8 @@
         "g": "4370a35114295e81",
         "name": "olcubrm 0 olanlar kontrol edilecek",
         "info": "olcubrm 0 olanlar kontrol edilecek",
-        "x": 330,
-        "y": 670,
+        "x": 360,
+        "y": 660,
         "wires": []
     },
     {
@@ -12312,8 +12465,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 930,
+        "x": 600,
+        "y": 920,
         "wires": [
             [
                 "c08a4b7860d81ea4"
@@ -12327,8 +12480,8 @@
         "g": "8f53555fb01c63d0",
         "name": "GetAllSFORINGetWarehouseLocations",
         "info": "",
-        "x": 300,
-        "y": 870,
+        "x": 310,
+        "y": 860,
         "wires": []
     },
     {
@@ -12341,8 +12494,8 @@
         "links": [
             "6b1db2938b49fc97"
         ],
-        "x": 625,
-        "y": 650,
+        "x": 825,
+        "y": 630,
         "wires": []
     },
     {
@@ -12354,8 +12507,8 @@
         "links": [
             "58392219b3f9c2aa"
         ],
-        "x": 215,
-        "y": 930,
+        "x": 225,
+        "y": 920,
         "wires": [
             [
                 "0fd6fe89414c30de"
@@ -12372,8 +12525,8 @@
         "links": [
             "f1ac5c0632527d2c"
         ],
-        "x": 785,
-        "y": 930,
+        "x": 795,
+        "y": 920,
         "wires": []
     },
     {
@@ -12385,8 +12538,8 @@
         "links": [
             "c08a4b7860d81ea4"
         ],
-        "x": 565,
-        "y": 750,
+        "x": 595,
+        "y": 740,
         "wires": [
             [
                 "42f01e2ec49a4485"
@@ -12427,8 +12580,8 @@
                 "type": "str"
             }
         ],
-        "x": 370,
-        "y": 930,
+        "x": 380,
+        "y": 920,
         "wires": [
             [
                 "fe7f1fd6938b9b86"
@@ -12448,10 +12601,12 @@
                 "type": "str"
             }
         ],
-        "x": 980,
-        "y": 700,
+        "x": 1010,
+        "y": 690,
         "wires": [
-            []
+            [
+                "5804e26ca526fd52"
+            ]
         ]
     },
     {
@@ -12489,14 +12644,68 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 265,
-        "y": 920,
+        "x": 275,
+        "y": 910,
         "wires": [
             [
                 "c2d2d091215c03b5"
             ]
         ],
         "l": false
+    },
+    {
+        "id": "b3b56432cbf56f15",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 145",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 610,
+        "wires": []
+    },
+    {
+        "id": "3edcdf401fd21da5",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 146",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "5804e26ca526fd52",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 147",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 610,
+        "wires": []
     },
     {
         "id": "d64bb0ce43f56b78",
@@ -13020,6 +13229,405 @@
         "l": false
     },
     {
+        "id": "1683e5b00b9f78c7",
+        "type": "switch",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "6636f8ddabc35017"
+            ]
+        ]
+    },
+    {
+        "id": "332f919cfbe2f708",
+        "type": "function",
+        "z": "e02241cc3f021318",
+        "name": "Set Cron",
+        "func": "let cronProp = msg.payload;\n\nmsg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": cronProp.cron,\n    \"payloadType\": \"json\",\n    \"payload\":cronProp \n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "931eb47cb2bcdff3"
+            ]
+        ]
+    },
+    {
+        "id": "931eb47cb2bcdff3",
+        "type": "cronplus",
+        "z": "e02241cc3f021318",
+        "name": "Cron Scheduler",
+        "outputField": "",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 620,
+        "y": 120,
+        "wires": [
+            [
+                "fe821b81415692d1"
+            ]
+        ]
+    },
+    {
+        "id": "fe821b81415692d1",
+        "type": "function",
+        "z": "e02241cc3f021318",
+        "name": "function 74",
+        "func": "let propIntegration = msg.payload;\n\n\n\nlet listAllIntegrationParameters = global.get('allIntegrationParameters');\n\n\nmsg.propIntegration = listAllIntegrationParameters.find(x => x.code === propIntegration.code);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 795,
+        "y": 120,
+        "wires": [
+            [
+                "d1c73b224be28541"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "d1c73b224be28541",
+        "type": "switch",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "property": "propIntegration.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 865,
+        "y": 120,
+        "wires": [
+            [
+                "a251018a9bf04d29"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "a251018a9bf04d29",
+        "type": "subflow:bb656f77f61addff",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1050,
+        "y": 140,
+        "wires": [
+            [
+                "204757e674c5d45b"
+            ]
+        ]
+    },
+    {
+        "id": "204757e674c5d45b",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1120,
+        "y": 200,
+        "wires": [
+            [
+                "41480df05cd9157f",
+                "34d313c96921b312"
+            ]
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "431c758cd3a51905",
+        "type": "subflow:bb656f77f61addff",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1130,
+        "y": 340,
+        "wires": [
+            [
+                "b7498c4725ccf723"
+            ]
+        ]
+    },
+    {
+        "id": "b7498c4725ccf723",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 900,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "6636f8ddabc35017",
+        "type": "switch",
+        "z": "e02241cc3f021318",
+        "name": "trigger_type_Manuel",
+        "property": "manuel",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 190,
+        "wires": [
+            [
+                "332f919cfbe2f708"
+            ],
+            [
+                "85753004c7e2efa7"
+            ]
+        ]
+    },
+    {
+        "id": "85753004c7e2efa7",
+        "type": "function",
+        "z": "e02241cc3f021318",
+        "name": "Set Cron",
+        "func": "let cronProp = global.get('allIntegrationParameters').find(x => x.flowEndPoint == msg.msg.integrationParameter_FlowName);\n \n \n\nmsg.payload =cronProp;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41480df05cd9157f",
+        "type": "subflow:e00c065eb7c30613",
+        "z": "e02241cc3f021318",
+        "name": "",
+        "x": 1140,
+        "y": 270,
+        "wires": [
+            [
+                "431c758cd3a51905"
+            ]
+        ]
+    },
+    {
+        "id": "34d313c96921b312",
+        "type": "debug",
+        "z": "e02241cc3f021318",
+        "name": "debug 156",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "d68543ab51e43e79",
+        "type": "function",
+        "z": "e00c065eb7c30613",
+        "name": "Get Sforin Category",
+        "func": " msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nlet baseUrl = global.get(\"SFORIN_URL\");\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.dataPayload = \"?Interval=\" + env.get(\"Interval\");\nlet url = baseUrl + env.get(\"Url\");\nlet queryString = msg.dataPayload;\n\nmsg.url = url + queryString\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "3afaae6869304943"
+            ]
+        ]
+    },
+    {
+        "id": "31e3c3cf1fdbb6de",
+        "type": "subflow:7cdf28f23984a61d",
+        "z": "e00c065eb7c30613",
+        "d": true,
+        "name": "",
+        "env": [
+            {
+                "name": "sourceModule/Flow",
+                "value": "{{{flowName}}}",
+                "type": "env"
+            },
+            {
+                "name": "sourceSystem",
+                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "type": "str"
+            },
+            {
+                "name": "status",
+                "value": "error",
+                "type": "str"
+            },
+            {
+                "name": "SourceSystem",
+                "value": "Netsis",
+                "type": "str"
+            },
+            {
+                "name": "SourceModule/Flow",
+                "value": "Netsis  To SFORIN Stock Card(REST)",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem",
+                "value": "SFORIN",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem\":",
+                "value": "NETSIS",
+                "type": "str"
+            },
+            {
+                "name": "logData",
+                "value": "{{{msg.payload}}}",
+                "type": "str"
+            }
+        ],
+        "x": 610,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1865a2db723d4ff7",
+        "type": "function",
+        "z": "e00c065eb7c30613",
+        "d": true,
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif (Array.isArray(result?.data) && result.data.length > 0 && isDubug) {\n    responsePayload = result.data[0];\n}\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"Log Kayıtları Silme İşlemi\", // Extra info ,\n    flowName: \"DelIntLog \",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "31e3c3cf1fdbb6de"
+            ]
+        ]
+    },
+    {
+        "id": "3afaae6869304943",
+        "type": "http request",
+        "z": "e00c065eb7c30613",
+        "name": "GET CleanLog",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "http://example.com/CleanLog?Interval=10",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 610,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "cce8f946aa3f45d9",
         "type": "http response",
         "z": "97e7314f695bb652",
@@ -13132,7 +13740,7 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "function 51",
-        "func": "// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0',msg.res)\nmsg.integrationParameter_FlowName=msg.req.url;\nlet url = msg.req.url;\n\n \nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n} \nelse \n{\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n} \nreturn msg;",
+        "func": "// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0',msg.res)\nmsg.integrationParameter_FlowName=msg.req.url;\nlet url = msg?.req?.url;\n\n \nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n} \nelse \n{\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n} \nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13149,154 +13757,6 @@
         "l": false
     },
     {
-        "id": "4f184f848d4cf740",
-        "type": "http in",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "",
-        "url": "NTSC000V1",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 150,
-        "y": 320,
-        "wires": [
-            [
-                "b2ad742b7f3c7e3e"
-            ]
-        ],
-        "info": "Netsis2SFORIN_Customers_MSSQL_v1.0"
-    },
-    {
-        "id": "dd81d2e8b3a0179d",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1130,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "4e36532310976efb",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 300,
-        "wires": [
-            [
-                "dd81d2e8b3a0179d"
-            ]
-        ]
-    },
-    {
-        "id": "bf9de75c1d34fac8",
-        "type": "comment",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "Netsis2SFORIN_Customers_MSSQL_v1.0",
-        "info": "",
-        "x": 270,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "f3f8ebe822bf26c4",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "",
-        "x": 495,
-        "y": 320,
-        "wires": [
-            [
-                "e09ad973954473b9"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "0995b23b70969aaf",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n \nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 340,
-        "wires": [
-            [
-                "dd81d2e8b3a0179d"
-            ]
-        ]
-    },
-    {
-        "id": "84924e6e0470a11f",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "function 52",
-        "func": " \n// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 385,
-        "y": 320,
-        "wires": [
-            [
-                "f3f8ebe822bf26c4"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "e09ad973954473b9",
-        "type": "subflow:a464cb4f18f8f1f5",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "",
-        "env": [
-            {
-                "name": "manuel",
-                "value": "true",
-                "type": "bool"
-            }
-        ],
-        "x": 605,
-        "y": 320,
-        "wires": [
-            [
-                "4e36532310976efb"
-            ],
-            [
-                "0995b23b70969aaf"
-            ]
-        ],
-        "l": false
-    },
-    {
         "id": "f93ef21edcdbfe77",
         "type": "http in",
         "z": "97e7314f695bb652",
@@ -13306,8 +13766,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
-        "y": 480,
+        "x": 150,
+        "y": 590,
         "wires": [
             [
                 "cd7c7b47e6c79aac"
@@ -13325,8 +13785,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1220,
-        "y": 540,
+        "x": 1210,
+        "y": 650,
         "wires": []
     },
     {
@@ -13335,19 +13795,18 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0') }]",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1') }]",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 520,
+        "x": 930,
+        "y": 630,
         "wires": [
             [
-                "9114887d0e7b9eb5",
-                "fe04c86380256fe1"
+                "9114887d0e7b9eb5"
             ]
         ]
     },
@@ -13358,8 +13817,8 @@
         "g": "24904440bd5e033d",
         "name": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
         "info": "",
-        "x": 320,
-        "y": 440,
+        "x": 310,
+        "y": 550,
         "wires": []
     },
     {
@@ -13368,8 +13827,8 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "",
-        "x": 545,
-        "y": 480,
+        "x": 535,
+        "y": 590,
         "wires": [
             [
                 "583958b872d4e043"
@@ -13383,19 +13842,18 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0')}]",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1')}]",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 560,
+        "x": 930,
+        "y": 670,
         "wires": [
             [
-                "9114887d0e7b9eb5",
-                "b4ed7f0c34af5f24"
+                "9114887d0e7b9eb5"
             ]
         ]
     },
@@ -13405,15 +13863,15 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "function 53",
-        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}",
+        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 415,
-        "y": 480,
+        "x": 405,
+        "y": 590,
         "wires": [
             [
                 "ea8abe837b06040d"
@@ -13434,8 +13892,8 @@
                 "type": "bool"
             }
         ],
-        "x": 665,
-        "y": 490,
+        "x": 655,
+        "y": 600,
         "wires": [
             [
                 "5699609978be02fc"
@@ -13445,40 +13903,6 @@
             ]
         ],
         "l": false
-    },
-    {
-        "id": "b4ed7f0c34af5f24",
-        "type": "debug",
-        "z": "97e7314f695bb652",
-        "g": "24904440bd5e033d",
-        "name": "debug 93",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1230,
-        "y": 650,
-        "wires": []
-    },
-    {
-        "id": "fe04c86380256fe1",
-        "type": "debug",
-        "z": "97e7314f695bb652",
-        "g": "24904440bd5e033d",
-        "name": "debug 94",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1130,
-        "y": 480,
-        "wires": []
     },
     {
         "id": "0d0ad8239df80579",
@@ -13514,28 +13938,6 @@
         "l": false
     },
     {
-        "id": "b2ad742b7f3c7e3e",
-        "type": "function",
-        "z": "97e7314f695bb652",
-        "g": "c7a67d413d6b7731",
-        "name": "function 68",
-        "func": "let customerCode = msg.req?.query?.CustomerCode;\n\nif (customerCode) {\n    global.set('NTSC000V1reqCustomerCode', customerCode)\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 285,
-        "y": 320,
-        "wires": [
-            [
-                "84924e6e0470a11f"
-            ]
-        ],
-        "l": false
-    },
-    {
         "id": "1826ee9bcabfc964",
         "type": "http in",
         "z": "97e7314f695bb652",
@@ -13560,7 +13962,59 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "function 69",
-        "func": "let orderNumber = msg.req?.query?.OrderNumber;\n\nif (orderNumber) {\n    global.set('NTSBSO000V1reqOrderNumber', orderNumber)\n}\n\nreturn msg;",
+        "func": "let orderNumber = msg.req?.query?.OrderNumber;\n\nif (orderNumber) {\n    node.warn(orderNumber);\n    global.set('NTSBSO000V1reqOrderNumber', orderNumber)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 325,
+        "y": 590,
+        "wires": [
+            [
+                "ebf9b753c0db2888"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "d5a070459c17282b",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 490,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8afa6b7e3ad6423f",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "function 71",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"NTSP000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13568,13 +14022,689 @@
         "finalize": "",
         "libs": [],
         "x": 335,
-        "y": 480,
+        "y": 220,
         "wires": [
             [
-                "ebf9b753c0db2888"
+                "d5a070459c17282b"
             ]
         ],
         "l": false
+    },
+    {
+        "id": "d74caaec6d92d640",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "",
+        "x": 265,
+        "y": 220,
+        "wires": [
+            [
+                "8afa6b7e3ad6423f"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "9b0d5a4ffef20246",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "d74caaec6d92d640"
+            ]
+        ]
+    },
+    {
+        "id": "7e0182e4bfdda21d",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "function 73",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"NTSBSO000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 650,
+        "wires": [
+            [
+                "3c7137841de56924"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "42c544e9b157280e",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "",
+        "x": 265,
+        "y": 650,
+        "wires": [
+            [
+                "7e0182e4bfdda21d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "3c7137841de56924",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 490,
+        "y": 650,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7394d56848f5e93",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 650,
+        "wires": [
+            [
+                "42c544e9b157280e"
+            ]
+        ]
+    },
+    {
+        "id": "4f184f848d4cf740",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "url": "NTSC000V1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 370,
+        "wires": [
+            [
+                "b2ad742b7f3c7e3e"
+            ]
+        ],
+        "info": "Netsis2SFORIN_Customers_MSSQL_v1.0"
+    },
+    {
+        "id": "dd81d2e8b3a0179d",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1130,
+        "y": 370,
+        "wires": []
+    },
+    {
+        "id": "4e36532310976efb",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 350,
+        "wires": [
+            [
+                "dd81d2e8b3a0179d"
+            ]
+        ]
+    },
+    {
+        "id": "bf9de75c1d34fac8",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "Netsis2SFORIN_Customers_MSSQL_v1.0",
+        "info": "",
+        "x": 270,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "f3f8ebe822bf26c4",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "x": 495,
+        "y": 370,
+        "wires": [
+            [
+                "e09ad973954473b9"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "0995b23b70969aaf",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n \nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 390,
+        "wires": [
+            [
+                "dd81d2e8b3a0179d"
+            ]
+        ]
+    },
+    {
+        "id": "84924e6e0470a11f",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "function 52",
+        "func": " \n// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 385,
+        "y": 370,
+        "wires": [
+            [
+                "f3f8ebe822bf26c4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e09ad973954473b9",
+        "type": "subflow:a464cb4f18f8f1f5",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "env": [
+            {
+                "name": "manuel",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 605,
+        "y": 370,
+        "wires": [
+            [
+                "4e36532310976efb"
+            ],
+            [
+                "0995b23b70969aaf"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b2ad742b7f3c7e3e",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "function 68",
+        "func": "let customerCode = msg.req?.query?.CustomerCode;\n\nif (customerCode) {\n    global.set('NTSC000V1reqCustomerCode', customerCode)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 285,
+        "y": 370,
+        "wires": [
+            [
+                "84924e6e0470a11f"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a971d69137c421cb",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "function 72",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"NTSC000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 430,
+        "wires": [
+            [
+                "c8522c19b9137229"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1953c0e70b2aba3b",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "x": 265,
+        "y": 430,
+        "wires": [
+            [
+                "a971d69137c421cb"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "c8522c19b9137229",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 490,
+        "y": 430,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4cb9dda0b66fa19",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 430,
+        "wires": [
+            [
+                "1953c0e70b2aba3b"
+            ]
+        ]
+    },
+    {
+        "id": "9742d94b378f408a",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "url": "DelIntLogO000V1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 820,
+        "wires": [
+            [
+                "3441e14e765a31c9"
+            ]
+        ],
+        "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0"
+    },
+    {
+        "id": "0e749228f66d19be",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1210,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "bcc8ae3226885dad",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"DeleteIntegrationLogv1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_DeleteIntegrationLogv1') }]",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 860,
+        "wires": [
+            [
+                "0e749228f66d19be"
+            ]
+        ]
+    },
+    {
+        "id": "5e5579a90a0eec10",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "Delete Integration Log",
+        "info": "",
+        "x": 190,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "117d1b3c16173e4c",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "x": 535,
+        "y": 820,
+        "wires": [
+            [
+                "cdf435c368eaa9a9"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a1bd186d52d5cacc",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"DeleteIntegrationLogv1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_DeleteIntegrationLogv1')}]",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 900,
+        "wires": [
+            [
+                "0e749228f66d19be"
+            ]
+        ]
+    },
+    {
+        "id": "1b8dd17010af6ca6",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "function 75",
+        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_DeleteIntegrationLogv1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 405,
+        "y": 820,
+        "wires": [
+            [
+                "117d1b3c16173e4c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "cdf435c368eaa9a9",
+        "type": "subflow:f62922f2ea3dfbe6",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "env": [
+            {
+                "name": "manuel",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 655,
+        "y": 830,
+        "wires": [
+            [
+                "bcc8ae3226885dad"
+            ],
+            [
+                "a1bd186d52d5cacc"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "3441e14e765a31c9",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "function 76",
+        "func": "let interval = msg.req?.query?.Interval;\n\nif (interval) {\n    \n    global.set('/DelIntLogO000V1reqInterval', interval)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 325,
+        "y": 820,
+        "wires": [
+            [
+                "1b8dd17010af6ca6"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "367a664259a1e4ce",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "function 77",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"DelIntLogO000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 880,
+        "wires": [
+            [
+                "bd183366d7e0c8f1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e50bac451dbfc007",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "x": 265,
+        "y": 880,
+        "wires": [
+            [
+                "367a664259a1e4ce"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bd183366d7e0c8f1",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 490,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be3a674f2b228bc0",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "e50bac451dbfc007"
+            ]
+        ]
     },
     {
         "id": "1",
@@ -14023,44 +15153,6 @@
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
     },
     {
-        "id": "cbe1f65aa60ebc37",
-        "type": "subflow:d296b4008b6072d8",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "query",
-                "value": " SELECT DISTINCT dbo.TRK(KOD_2) GRUP_KOD,dbo.TRK(ISNULL(KOD2.GRUP_ISIM,'')) GRUP_ISIM     FROM TBLSTSABIT ST     LEFT JOIN TBLSTOKKOD2 KOD2 ON KOD2.GRUP_KOD=ST.KOD_2   WHERE KOD_2 IS NOT NULL",
-                "type": "str"
-            }
-        ],
-        "x": 540,
-        "y": 260,
-        "wires": [
-            [
-                "bae83a6a5e398948"
-            ]
-        ]
-    },
-    {
-        "id": "bae83a6a5e398948",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Get Netsis Group Code Result",
-        "func": "let items = msg.payload;\nif (!items || !Array.isArray(items)) {\n    node.error(\"Invalid payload data\", msg);\n    return null;\n}\n\n\nflow.set(\"netsisGroupCode\", items);\n\n \n \nreturn msg;\n\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 860,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "03b6b738408e04ce",
         "type": "inject",
         "z": "6ef8732eb0726477",
@@ -14085,157 +15177,164 @@
         "y": 180,
         "wires": [
             [
-                "5504f86046658b66"
+                "37f0b10a7a704980"
             ]
         ]
     },
     {
-        "id": "aecea0803342880a",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 485,
-        "y": 160,
-        "wires": [
-            [
-                "cbe1f65aa60ebc37"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "1c8debf69109b143",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 117",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 470,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "5504f86046658b66",
+        "id": "37f0b10a7a704980",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "name": "function 56",
-        "func": "msg.dataPayload=\"asdasdasdsadsads\"\nreturn msg;",
+        "name": "Get Sforin Category",
+        "func": "let baseUrl = global.get(\"SFORIN_URL\");\n msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.dataPayload =\"Interval=\"+env.get(\"Interval\");\nlet url=baseUrl+env.get(\"Url\");\nlet queryString=msg.dataPayload;\n\nmsg.url = url + queryString\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 310,
+        "x": 470,
+        "y": 200,
         "wires": [
             [
-                "773f0bb26e2f54fd"
+                "16ce4a4456ae2d63"
             ]
         ]
     },
     {
-        "id": "a6551751b95dce1b",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 390,
-        "y": 630,
-        "wires": [
-            [
-                "fd410caa85749ad4"
-            ]
-        ]
-    },
-    {
-        "id": "a055653e7b719889",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 125",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "b9ad35c36a7aafde",
-        "type": "subflow:fa51d0694c73d14f",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 545,
-        "y": 610,
-        "wires": [
-            [
-                "a055653e7b719889"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "773f0bb26e2f54fd",
-        "type": "subflow:fa51d0694c73d14f",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 255,
-        "y": 380,
-        "wires": [
-            [
-                "1c8debf69109b143"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "c286add1271f12a9",
-        "type": "subflow:e35d14410b661a09",
+        "id": "05a88c2977276a08",
+        "type": "subflow:7cdf28f23984a61d",
         "z": "6ef8732eb0726477",
         "name": "",
         "env": [
             {
-                "name": "Url",
-                "value": "wmsmaster/api/WmsMaster/GetAllProductCategory",
+                "name": "sourceModule/Flow",
+                "value": "{{{flowName}}}",
+                "type": "env"
+            },
+            {
+                "name": "sourceSystem",
+                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "type": "str"
+            },
+            {
+                "name": "status",
+                "value": "error",
+                "type": "str"
+            },
+            {
+                "name": "SourceSystem",
+                "value": "Netsis",
+                "type": "str"
+            },
+            {
+                "name": "SourceModule/Flow",
+                "value": "Netsis  To SFORIN Stock Card(REST)",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem",
+                "value": "SFORIN",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem\":",
+                "value": "NETSIS",
+                "type": "str"
+            },
+            {
+                "name": "logData",
+                "value": "{{{msg.payload}}}",
                 "type": "str"
             }
         ],
-        "x": 940,
+        "x": 1060,
         "y": 420,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d67f4b08e6992de0",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif (Array.isArray(result?.data) && result.data.length > 0 && isDubug) {\n    responsePayload = result.data[0];\n}\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"Log Kayıtları Silme İşlemi\", // Extra info ,\n    flowName: \"DelIntLog \",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 440,
+        "wires": [
             [
-                "2f258b044186c826"
+                "05a88c2977276a08"
             ]
         ]
     },
     {
-        "id": "43a97bfc0545031d",
+        "id": "16ce4a4456ae2d63",
+        "type": "http request",
+        "z": "6ef8732eb0726477",
+        "name": "GET CleanLog",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 720,
+        "y": 190,
+        "wires": [
+            [
+                "3c1dc346d0aff094"
+            ]
+        ]
+    },
+    {
+        "id": "3c1dc346d0aff094",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 151",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 190,
+        "wires": []
+    },
+    {
+        "id": "effb9d3c7deb83ec",
+        "type": "subflow:e00c065eb7c30613",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 400,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbe89489b437be15",
         "type": "inject",
         "z": "6ef8732eb0726477",
         "name": "",
@@ -14255,61 +15354,13 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 760,
-        "y": 480,
+        "x": 200,
+        "y": 350,
         "wires": [
             [
-                "c286add1271f12a9"
+                "effb9d3c7deb83ec"
             ]
         ]
-    },
-    {
-        "id": "2f258b044186c826",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 132",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1030,
-        "y": 470,
-        "wires": []
-    },
-    {
-        "id": "fd410caa85749ad4",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 685,
-        "y": 740,
-        "wires": [
-            [
-                "cd1fdacad31ee357"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "cd1fdacad31ee357",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 143",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 740,
-        "wires": []
     },
     {
         "id": "f4973aa11bd2c838",
@@ -14345,12 +15396,17 @@
                 "vt": "str"
             },
             {
+                "t": "eq",
+                "v": "DelIntLogO000V1.0",
+                "vt": "str"
+            },
+            {
                 "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 4,
+        "outputs": 5,
         "x": 645,
         "y": 200,
         "wires": [
@@ -14361,8 +15417,10 @@
                 "a83e1f4b90df6f2f"
             ],
             [
-                "7bd7f234ee5da2ee",
-                "b4084fe097352c66"
+                "7bd7f234ee5da2ee"
+            ],
+            [
+                "a2ea21ad28271f74"
             ],
             [
                 "dda4347789d8592e"
@@ -14381,6 +15439,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
+        "property": "payload",
         "x": 585,
         "y": 200,
         "wires": [
@@ -14404,7 +15463,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 990,
-        "y": 300,
+        "y": 340,
         "wires": []
     },
     {
@@ -14579,8 +15638,19 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 380,
+        "x": 790,
+        "y": 510,
         "wires": []
+    },
+    {
+        "id": "a2ea21ad28271f74",
+        "type": "subflow:e02241cc3f021318",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 300,
+        "wires": [
+            []
+        ]
     }
 ]
