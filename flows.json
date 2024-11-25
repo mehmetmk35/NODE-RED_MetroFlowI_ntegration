@@ -1104,6 +1104,16 @@
                         "port": 0
                     }
                 ]
+            },
+            {
+                "x": 720,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "a62f912397ac8718",
+                        "port": 0
+                    }
+                ]
             }
         ],
         "env": [
@@ -1118,6 +1128,88 @@
                 "value": "CleanLog"
             }
         ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "1053798a29903688",
+        "type": "subflow",
+        "name": "GINTSYNC000V1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 110,
+                "y": 110,
+                "wires": [
+                    {
+                        "id": "3e93a71dc459266c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1100,
+                "y": 460,
+                "wires": [
+                    {
+                        "id": "aa7e289d6f686621",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 880,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "8748e1435351d013",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "manuel",
+                "type": "bool",
+                "value": "false"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "706eaf0decd289cd",
+        "type": "subflow",
+        "name": "INTSYNC000V1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 240,
+                "y": 230,
+                "wires": [
+                    {
+                        "id": "bb045e6b97a279c8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 590,
+                "y": 190,
+                "wires": [
+                    {
+                        "id": "bb045e6b97a279c8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
         "meta": {},
         "color": "#DDAA99"
     },
@@ -1792,8 +1884,7 @@
             "8d8bacc664ddc537",
             "ad60f36acc269401",
             "222965ddb0e09195",
-            "2f847f3ed271a069",
-            "0b419ab2e89ab4fa"
+            "2f847f3ed271a069"
         ],
         "x": 44,
         "y": 229,
@@ -2073,8 +2164,7 @@
             "7e0182e4bfdda21d",
             "42c544e9b157280e",
             "3c7137841de56924",
-            "d7394d56848f5e93",
-            "4679c16b758c538d"
+            "d7394d56848f5e93"
         ],
         "x": 4,
         "y": 509,
@@ -2226,17 +2316,50 @@
             "117d1b3c16173e4c",
             "a1bd186d52d5cacc",
             "1b8dd17010af6ca6",
-            "cdf435c368eaa9a9",
             "3441e14e765a31c9",
             "367a664259a1e4ce",
             "e50bac451dbfc007",
             "bd183366d7e0c8f1",
-            "be3a674f2b228bc0"
+            "be3a674f2b228bc0",
+            "5eb1fbf2a53ee55b"
         ],
         "x": 24,
         "y": 739,
         "w": 1272,
         "h": 202
+    },
+    {
+        "id": "58b0549190818c1b",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "ccc41aa1d5389d96",
+            "10aaa3d6553b3e2c",
+            "2a6619051dde8322",
+            "fc29ac2694918cc2",
+            "a929dd4877a854c6",
+            "158a3e9de0180018",
+            "9159f1a71b9a15b9",
+            "b6423a72fb5054ac",
+            "fd7be0bc412501bc",
+            "e396f198e6579e3d",
+            "70393404e17b9443",
+            "5647e814423e8bd3",
+            "d7acf2ceaf30b571"
+        ],
+        "x": 24,
+        "y": 989,
+        "w": 1272,
+        "h": 182
     },
     {
         "id": "873c9acca903bcab",
@@ -10742,8 +10865,7 @@
         "y": 330,
         "wires": [
             [
-                "84f6b5a28bab6643",
-                "0b419ab2e89ab4fa"
+                "84f6b5a28bab6643"
             ]
         ]
     },
@@ -10753,7 +10875,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n    node.warn(paramsStockCode);\n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsStockCode);\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n    node.warn(query);\n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11013,24 +11135,6 @@
         "l": false
     },
     {
-        "id": "0b419ab2e89ab4fa",
-        "type": "debug",
-        "z": "17803f695ab8af0d",
-        "g": "167f4d272f155624",
-        "name": "debug 158",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "607330f60d089b54",
         "type": "function",
         "z": "e93f97e999fe62ab",
@@ -11253,7 +11357,7 @@
         "z": "3179678ca8b98244",
         "g": "87d43c6fb5912917",
         "name": "Netsis Customer json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.getAllSforinCustomer = msg.getAllSforinCustomer || []\n// Create the query dynamically\nlet query = `\n   SELECT  \n    CS.CARI_KOD,\n    dbo.TRK(CARI_ISIM) AS CARI_ISIM,\n    dbo.TRK(CARI_ADRES) AS CARI_ADRES,\n    dbo.TRK(CARI_IL) AS CARI_IL,\n    dbo.TRK(CARI_ILCE) AS CARI_ILCE,\n    dbo.TRK(ULKE_KODU) AS ULKE_KODU,\n    CARI_TIP,\n    COALESCE(VERGI_NUMARASI, CSEK.TCKIMLIKNO) AS VKN_TC,\n    dbo.TRK(VERGI_DAIRESI) AS VERGI_DAIRESI,\n    ISNULL(CS.KAYITTARIHI, FORMAT(GETDATE(), 'yyyy.MM.dd')) AS KAYITTARIHI,\n    CS.CARI_TEL,\n    CASE CS.CARI_TIP\n        WHEN 'S' THEN 'VENDOR'\n        WHEN 'A' THEN 'CUSTOMER'\n    END AS CARI_TIPI\nFROM \n    TBLCASABIT CS\nLEFT JOIN \n    TBLCASABITEK CSEK ON CSEK.CARI_KOD = CS.CARI_KOD\nWHERE  \n    CS.CARI_TIP IN ('S', 'A')  \n    AND ISNULL(CS.C_YEDEK1, 'A') = 'A'\n\tAND CS.SUBE_KODU  IN ('-1', '${branchCode}')       \n`;\n\nlet paramsCustomerCode = global.get('NTSC000V1reqCustomerCode')\nif (paramsCustomerCode) {\n    query += `AND CS.CARI_KOD='${paramsCustomerCode}'`\n}\n// msg.payload'a sorguyu ekle\nmsg.query=query;\n msg.flowName = msg.inregrationFlowData.flowName || \"NTSC000V1.0\";\nif (global.get('NTSC000V1reqCustomerCode'))\n    {\n        \n         global.set('NTSC000V1reqCustomerCode', null)\n    }\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.getAllSforinCustomer = msg.getAllSforinCustomer || []\n// Create the query dynamically\nlet query = `\n   SELECT  \n    CS.CARI_KOD,\n    dbo.TRK(CARI_ISIM) AS CARI_ISIM,\n    dbo.TRK(CARI_ADRES) AS CARI_ADRES,\n    dbo.TRK(CARI_IL) AS CARI_IL,\n    dbo.TRK(CARI_ILCE) AS CARI_ILCE,\n    dbo.TRK(ULKE_KODU) AS ULKE_KODU,\n    CARI_TIP,\n    COALESCE(VERGI_NUMARASI, CSEK.TCKIMLIKNO) AS VKN_TC,\n    dbo.TRK(VERGI_DAIRESI) AS VERGI_DAIRESI,\n    ISNULL(CS.KAYITTARIHI, FORMAT(GETDATE(), 'yyyy.MM.dd')) AS KAYITTARIHI,\n    CS.CARI_TEL,\n    CASE CS.CARI_TIP\n        WHEN 'S' THEN 'VENDOR'\n        WHEN 'A' THEN 'CUSTOMER'\n    END AS CARI_TIPI\nFROM \n    TBLCASABIT CS\nLEFT JOIN \n    TBLCASABITEK CSEK ON CSEK.CARI_KOD = CS.CARI_KOD\nWHERE  \n    CS.CARI_TIP IN ('S', 'A')  \n    AND ISNULL(CS.C_YEDEK1, 'A') = 'A'\n\tAND CS.SUBE_KODU  IN ('-1', '${branchCode}')       \n`;\n\nlet paramsCustomerCode = global.get('NTSC000V1reqCustomerCode')\n\nif (paramsCustomerCode !== undefined && paramsCustomerCode !== null && paramsCustomerCode !== '') {\n  \n    query += `AND CS.CARI_KOD='${paramsCustomerCode}'`\n}\n// msg.payload'a sorguyu ekle\nmsg.query=query;\n msg.flowName = msg.inregrationFlowData.flowName || \"NTSC000V1.0\";\nif (global.get('NTSC000V1reqCustomerCode'))\n    {\n        \n         global.set('NTSC000V1reqCustomerCode', null)\n    }\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -12281,7 +12385,7 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "BuyerAndSellerOrder",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\nif (paramsOrderNumber) {\n  node.warn(\"hayyy\");\n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsOrderNumber);\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsOrderNumber);\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -13446,7 +13550,8 @@
         "wires": [
             [
                 "431c758cd3a51905"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -13586,6 +13691,303 @@
         ],
         "x": 610,
         "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a62f912397ac8718",
+        "type": "catch",
+        "z": "e00c065eb7c30613",
+        "name": "",
+        "scope": [
+            "3afaae6869304943"
+        ],
+        "uncaught": false,
+        "x": 470,
+        "y": 250,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e93a71dc459266c",
+        "type": "switch",
+        "z": "1053798a29903688",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 260,
+        "y": 130,
+        "wires": [
+            [
+                "15cf023ad5fdf863"
+            ]
+        ]
+    },
+    {
+        "id": "c5013e840fe8736a",
+        "type": "function",
+        "z": "1053798a29903688",
+        "name": "Set Cron",
+        "func": "let cronProp = msg.payload;\n\nmsg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": cronProp.cron,\n    \"payloadType\": \"json\",\n    \"payload\":cronProp \n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 210,
+        "wires": [
+            [
+                "59b9a08cf4fd2214"
+            ]
+        ]
+    },
+    {
+        "id": "59b9a08cf4fd2214",
+        "type": "cronplus",
+        "z": "1053798a29903688",
+        "name": "Cron Scheduler",
+        "outputField": "",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 600,
+        "y": 150,
+        "wires": [
+            [
+                "3b4496d53ed8ee44"
+            ]
+        ]
+    },
+    {
+        "id": "3b4496d53ed8ee44",
+        "type": "function",
+        "z": "1053798a29903688",
+        "name": "function 78",
+        "func": "let propIntegration = msg.payload;\n\n\n\nlet listAllIntegrationParameters = global.get('allIntegrationParameters');\n\n\nmsg.propIntegration = listAllIntegrationParameters.find(x => x.code === propIntegration.code);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 775,
+        "y": 150,
+        "wires": [
+            [
+                "8748e1435351d013"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "8748e1435351d013",
+        "type": "switch",
+        "z": "1053798a29903688",
+        "name": "",
+        "property": "propIntegration.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 845,
+        "y": 150,
+        "wires": [
+            [
+                "58e3d564dcef7f6d"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "58e3d564dcef7f6d",
+        "type": "subflow:bb656f77f61addff",
+        "z": "1053798a29903688",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1030,
+        "y": 170,
+        "wires": [
+            [
+                "c7a86d2f436b97a0"
+            ]
+        ]
+    },
+    {
+        "id": "c7a86d2f436b97a0",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "1053798a29903688",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1100,
+        "y": 230,
+        "wires": [
+            [
+                "2ab39d7b91f2c795"
+            ]
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "c744ad95b5eaf199",
+        "type": "subflow:bb656f77f61addff",
+        "z": "1053798a29903688",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1110,
+        "y": 370,
+        "wires": [
+            [
+                "aa7e289d6f686621"
+            ]
+        ]
+    },
+    {
+        "id": "aa7e289d6f686621",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "1053798a29903688",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 870,
+        "y": 450,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "15cf023ad5fdf863",
+        "type": "switch",
+        "z": "1053798a29903688",
+        "name": "trigger_type_Manuel",
+        "property": "manuel",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "c5013e840fe8736a"
+            ],
+            [
+                "cca5250c40e57333"
+            ]
+        ]
+    },
+    {
+        "id": "cca5250c40e57333",
+        "type": "function",
+        "z": "1053798a29903688",
+        "name": "Set Cron",
+        "func": "let cronProp = global.get('allIntegrationParameters').find(x => x.flowEndPoint == msg.msg.integrationParameter_FlowName);\n \n \n\nmsg.payload =cronProp;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 270,
+        "wires": [
+            [
+                "3b4496d53ed8ee44"
+            ]
+        ]
+    },
+    {
+        "id": "2ab39d7b91f2c795",
+        "type": "subflow:706eaf0decd289cd",
+        "z": "1053798a29903688",
+        "name": "",
+        "x": 1100,
+        "y": 300,
+        "wires": [
+            [
+                "c744ad95b5eaf199"
+            ]
+        ]
+    },
+    {
+        "id": "bb045e6b97a279c8",
+        "type": "delay",
+        "z": "706eaf0decd289cd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 210,
         "wires": [
             []
         ]
@@ -13733,7 +14135,6 @@
         "y": 590,
         "wires": [
             [
-                "4679c16b758c538d",
                 "cd7c7b47e6c79aac"
             ]
         ],
@@ -14463,7 +14864,7 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "Delete Integration Log",
-        "info": "",
+        "info": "Delete Integration Log",
         "x": 190,
         "y": 780,
         "wires": []
@@ -14478,7 +14879,7 @@
         "y": 820,
         "wires": [
             [
-                "cdf435c368eaa9a9"
+                "5eb1fbf2a53ee55b"
             ]
         ],
         "l": false
@@ -14522,31 +14923,6 @@
         "wires": [
             [
                 "117d1b3c16173e4c"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "cdf435c368eaa9a9",
-        "type": "subflow:f62922f2ea3dfbe6",
-        "z": "97e7314f695bb652",
-        "g": "2d127e1eaf3e467e",
-        "name": "",
-        "env": [
-            {
-                "name": "manuel",
-                "value": "true",
-                "type": "bool"
-            }
-        ],
-        "x": 655,
-        "y": 830,
-        "wires": [
-            [
-                "bcc8ae3226885dad"
-            ],
-            [
-                "a1bd186d52d5cacc"
             ]
         ],
         "l": false
@@ -14671,21 +15047,288 @@
         ]
     },
     {
-        "id": "4679c16b758c538d",
-        "type": "debug",
+        "id": "ccc41aa1d5389d96",
+        "type": "http in",
         "z": "97e7314f695bb652",
-        "g": "24904440bd5e033d",
-        "name": "debug 157",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 550,
+        "g": "58b0549190818c1b",
+        "name": "",
+        "url": "INTSYNC000V1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 1070,
+        "wires": [
+            [
+                "b6423a72fb5054ac"
+            ]
+        ],
+        "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0"
+    },
+    {
+        "id": "10aaa3d6553b3e2c",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1210,
+        "y": 1130,
         "wires": []
+    },
+    {
+        "id": "2a6619051dde8322",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"res_INTSYNC000V1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_INTSYNC000V1') }]",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1050,
+        "wires": [
+            [
+                "10aaa3d6553b3e2c"
+            ]
+        ]
+    },
+    {
+        "id": "fc29ac2694918cc2",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "N2SIntegrationSync",
+        "info": "",
+        "x": 180,
+        "y": 1030,
+        "wires": []
+    },
+    {
+        "id": "a929dd4877a854c6",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "x": 535,
+        "y": 1070,
+        "wires": [
+            [
+                "d7acf2ceaf30b571"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "158a3e9de0180018",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"INTSYNC000V1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_INTSYNC000V1')}]",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1100,
+        "wires": [
+            [
+                "10aaa3d6553b3e2c"
+            ]
+        ]
+    },
+    {
+        "id": "9159f1a71b9a15b9",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "function 79",
+        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_INTSYNC000V1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 405,
+        "y": 1070,
+        "wires": [
+            [
+                "a929dd4877a854c6"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b6423a72fb5054ac",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "function 80",
+        "func": "// let interval = msg.req?.query?.Interval;\n\n// if (interval) {\n    \n//     global.set('/DelIntLogO000V1reqInterval', interval)\n// }\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 325,
+        "y": 1070,
+        "wires": [
+            [
+                "9159f1a71b9a15b9"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "fd7be0bc412501bc",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "function 81",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"INTSYNC000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 1130,
+        "wires": [
+            [
+                "70393404e17b9443"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e396f198e6579e3d",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "x": 265,
+        "y": 1130,
+        "wires": [
+            [
+                "fd7be0bc412501bc"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "70393404e17b9443",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 490,
+        "y": 1130,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5647e814423e8bd3",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1130,
+        "wires": [
+            [
+                "e396f198e6579e3d"
+            ]
+        ]
+    },
+    {
+        "id": "5eb1fbf2a53ee55b",
+        "type": "subflow:e00c065eb7c30613",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "x": 625,
+        "y": 820,
+        "wires": [
+            [
+                "bcc8ae3226885dad"
+            ],
+            [
+                "a1bd186d52d5cacc"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "d7acf2ceaf30b571",
+        "type": "subflow:1053798a29903688",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "env": [
+            {
+                "name": "manuel",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 680,
+        "y": 1070,
+        "wires": [
+            [
+                "2a6619051dde8322"
+            ],
+            [
+                "158a3e9de0180018"
+            ]
+        ]
     },
     {
         "id": "1",
@@ -15311,6 +15954,7 @@
         "x": 400,
         "y": 360,
         "wires": [
+            [],
             []
         ]
     },
@@ -15382,12 +16026,17 @@
                 "vt": "str"
             },
             {
+                "t": "eq",
+                "v": "INTSYNC000V1.0",
+                "vt": "str"
+            },
+            {
                 "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 5,
+        "outputs": 6,
         "x": 645,
         "y": 200,
         "wires": [
@@ -15402,6 +16051,9 @@
             ],
             [
                 "a2ea21ad28271f74"
+            ],
+            [
+                "2cb8b6d49a195dc0"
             ],
             [
                 "dda4347789d8592e"
@@ -15443,8 +16095,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 990,
-        "y": 340,
+        "x": 980,
+        "y": 520,
         "wires": []
     },
     {
@@ -15619,8 +16271,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 470,
+        "x": 820,
+        "y": 570,
         "wires": []
     },
     {
@@ -15631,6 +16283,18 @@
         "x": 1000,
         "y": 300,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2cb8b6d49a195dc0",
+        "type": "subflow:1053798a29903688",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1010,
+        "y": 350,
+        "wires": [
+            [],
             []
         ]
     }
