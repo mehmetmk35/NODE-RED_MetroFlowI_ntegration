@@ -1192,18 +1192,18 @@
                 "y": 230,
                 "wires": [
                     {
-                        "id": "bb045e6b97a279c8"
+                        "id": "7b33eea33a809a6f"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 590,
-                "y": 190,
+                "x": 1030,
+                "y": 170,
                 "wires": [
                     {
-                        "id": "bb045e6b97a279c8",
+                        "id": "f60fd7c6d80646cb",
                         "port": 0
                     }
                 ]
@@ -13970,26 +13970,72 @@
         ]
     },
     {
-        "id": "bb045e6b97a279c8",
-        "type": "delay",
+        "id": "7b33eea33a809a6f",
+        "type": "function",
+        "z": "706eaf0decd289cd",
+        "name": "function 82",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"INTSYNC000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `  select * from S4IN_INTEGRATION_SYNC`;\n\n\n\n\n\n\nmsg.query = query;\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "456d4127618fd2eb"
+            ]
+        ]
+    },
+    {
+        "id": "456d4127618fd2eb",
+        "type": "subflow:d296b4008b6072d8",
         "z": "706eaf0decd289cd",
         "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 410,
-        "y": 210,
+        "x": 580,
+        "y": 190,
         "wires": [
-            []
+            [
+                "f60fd7c6d80646cb"
+            ]
+        ]
+    },
+    {
+        "id": "2267ee3e40bd91d9",
+        "type": "debug",
+        "z": "706eaf0decd289cd",
+        "name": "debug 157",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 250,
+        "wires": []
+    },
+    {
+        "id": "f60fd7c6d80646cb",
+        "type": "function",
+        "z": "706eaf0decd289cd",
+        "name": "function 83",
+        "func": "// Gelen JSON\nlet data = msg.payload;\n\n// Varsayılan değer (isteğe göre dinamik hale getirilebilir)\nconst defaultValue = {\n    Id: \"\",\n    DataKey: \"\",\n    DataTypeId: \"\",\n    SyncTime: null,\n    ProcedureId: \"\",\n    ErrorInfo: \"\"\n};\n\n// `data` bir array mi kontrol edelim\nif (!Array.isArray(data)) {\n    node.warn(\"Gelen data bir array değil, işlem yapılmadı.\");\n    msg.payload = []; // Boş bir dizi döndürülüyor\n    return msg;\n}\n\n// Map işlemi ile yeni yapı oluşturuluyor\nconst payloadData = data.map(x => ({\n    ID: x.ID || defaultValue.Id,\n    DataKey: x.DataKey || defaultValue.DataKey,\n    DataTypeID: x.DataTypeID || defaultValue.DataTypeId,\n    SyncTime: x.SyncTime || defaultValue.SyncTime,\n    ProcedureID: x.ProcedureID || defaultValue.ProcedureId,\n    ErrorInfo: x.ErrorInfo || defaultValue.ErrorInfo\n}));\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "2267ee3e40bd91d9"
+            ]
         ]
     },
     {
