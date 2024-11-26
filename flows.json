@@ -2354,12 +2354,14 @@
             "e396f198e6579e3d",
             "70393404e17b9443",
             "5647e814423e8bd3",
-            "d7acf2ceaf30b571"
+            "d7acf2ceaf30b571",
+            "187cc24b8dbebcd2",
+            "d5056f661ba36333"
         ],
         "x": 24,
         "y": 989,
         "w": 1272,
-        "h": 182
+        "h": 222
     },
     {
         "id": "873c9acca903bcab",
@@ -13974,7 +13976,7 @@
         "type": "function",
         "z": "706eaf0decd289cd",
         "name": "function 82",
-        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"INTSYNC000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `  select * from S4IN_INTEGRATION_SYNC`;\n\n\n\n\n\n\nmsg.query = query;\nreturn msg",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"INTSYNC000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = ` select ID,Datakey,DataTypeId,SyncTime,ProcedureId,ErrorInfo from S4IN_INTEGRATION_SYNC WHERE ProcedureID IN (1,2)`;\n\n\n\n\n\n\nmsg.query = query;\nreturn msg",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13998,7 +14000,8 @@
         "y": 190,
         "wires": [
             [
-                "f60fd7c6d80646cb"
+                "f60fd7c6d80646cb",
+                "11c30d3f8c6fc84c"
             ]
         ]
     },
@@ -14037,6 +14040,23 @@
                 "2267ee3e40bd91d9"
             ]
         ]
+    },
+    {
+        "id": "11c30d3f8c6fc84c",
+        "type": "debug",
+        "z": "706eaf0decd289cd",
+        "name": "debug 159",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 150,
+        "wires": []
     },
     {
         "id": "cce8f946aa3f45d9",
@@ -15254,7 +15274,8 @@
         "y": 1130,
         "wires": [
             [
-                "70393404e17b9443"
+                "70393404e17b9443",
+                "d5056f661ba36333"
             ]
         ],
         "l": false
@@ -15301,7 +15322,9 @@
         "x": 490,
         "y": 1130,
         "wires": [
-            []
+            [
+                "187cc24b8dbebcd2"
+            ]
         ]
     },
     {
@@ -15375,6 +15398,40 @@
                 "158a3e9de0180018"
             ]
         ]
+    },
+    {
+        "id": "187cc24b8dbebcd2",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "debug 158",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1130,
+        "wires": []
+    },
+    {
+        "id": "d5056f661ba36333",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "debug 161",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 1170,
+        "wires": []
     },
     {
         "id": "1",
@@ -16025,13 +16082,73 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 190,
         "y": 350,
         "wires": [
             [
                 "effb9d3c7deb83ec"
             ]
         ]
+    },
+    {
+        "id": "87f126f5c0d87591",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 445,
+        "y": 490,
+        "wires": [
+            [
+                "f067cb7bd3a52d89"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "55e51976d99da91c",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "87f126f5c0d87591"
+            ]
+        ]
+    },
+    {
+        "id": "f067cb7bd3a52d89",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 162",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "f4973aa11bd2c838",
