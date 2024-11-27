@@ -1199,14 +1199,9 @@
         ],
         "out": [
             {
-                "x": 1030,
-                "y": 170,
-                "wires": [
-                    {
-                        "id": "f60fd7c6d80646cb",
-                        "port": 0
-                    }
-                ]
+                "x": 1290,
+                "y": 540,
+                "wires": []
             }
         ],
         "env": [],
@@ -1884,7 +1879,8 @@
             "8d8bacc664ddc537",
             "ad60f36acc269401",
             "222965ddb0e09195",
-            "2f847f3ed271a069"
+            "2f847f3ed271a069",
+            "3d2e68d156a9e130"
         ],
         "x": 44,
         "y": 229,
@@ -1936,11 +1932,12 @@
             "4dda1622c9781aad",
             "cb3c99cb363b481e",
             "9fa0ab1867412ac8",
-            "83b889e0e475c165"
+            "83b889e0e475c165",
+            "430d7b898b695ce5"
         ],
         "x": 44,
         "y": 789,
-        "w": 912,
+        "w": 972,
         "h": 182
     },
     {
@@ -2164,11 +2161,12 @@
             "7e0182e4bfdda21d",
             "42c544e9b157280e",
             "3c7137841de56924",
-            "d7394d56848f5e93"
+            "d7394d56848f5e93",
+            "c73e20343dadb802"
         ],
-        "x": 4,
-        "y": 509,
-        "w": 1292,
+        "x": 44,
+        "y": 729,
+        "w": 1302,
         "h": 202
     },
     {
@@ -2255,10 +2253,11 @@
             "d5a070459c17282b",
             "8afa6b7e3ad6423f",
             "d74caaec6d92d640",
-            "9b0d5a4ffef20246"
+            "9b0d5a4ffef20246",
+            "7bfe053cda25a1df"
         ],
-        "x": 24,
-        "y": 79,
+        "x": 34,
+        "y": 39,
         "w": 1192,
         "h": 182
     },
@@ -2288,11 +2287,12 @@
             "a971d69137c421cb",
             "1953c0e70b2aba3b",
             "c8522c19b9137229",
-            "c4cb9dda0b66fa19"
+            "c4cb9dda0b66fa19",
+            "b30693a96214840f"
         ],
-        "x": 24,
-        "y": 289,
-        "w": 1192,
+        "x": 44,
+        "y": 509,
+        "w": 1202,
         "h": 182
     },
     {
@@ -2321,10 +2321,11 @@
             "e50bac451dbfc007",
             "bd183366d7e0c8f1",
             "be3a674f2b228bc0",
-            "5eb1fbf2a53ee55b"
+            "5eb1fbf2a53ee55b",
+            "a0da0d36311e3c37"
         ],
-        "x": 24,
-        "y": 739,
+        "x": 44,
+        "y": 939,
         "w": 1272,
         "h": 202
     },
@@ -2343,7 +2344,6 @@
         },
         "nodes": [
             "ccc41aa1d5389d96",
-            "10aaa3d6553b3e2c",
             "2a6619051dde8322",
             "fc29ac2694918cc2",
             "a929dd4877a854c6",
@@ -2356,12 +2356,13 @@
             "5647e814423e8bd3",
             "d7acf2ceaf30b571",
             "187cc24b8dbebcd2",
-            "d5056f661ba36333"
+            "6891f57e5aae2321",
+            "3499bad52a1448be"
         ],
-        "x": 24,
-        "y": 989,
+        "x": 44,
+        "y": 1159,
         "w": 1272,
-        "h": 222
+        "h": 182
     },
     {
         "id": "873c9acca903bcab",
@@ -2452,6 +2453,21 @@
             {
                 "name": "logUrlPath",
                 "value": "wmsmaster/api/WmsMaster/CreateIntegrationLog",
+                "type": "str"
+            },
+            {
+                "name": "INT_TBLSTSABIT",
+                "value": "TBLSTSABIT",
+                "type": "str"
+            },
+            {
+                "name": "INT_TBLCASABIT",
+                "value": "TBLCASABIT",
+                "type": "str"
+            },
+            {
+                "name": "INT_TBLSIPAMAS",
+                "value": "TBLSIPAMAS",
                 "type": "str"
             }
         ]
@@ -8692,7 +8708,7 @@
             ],
             [
                 "2e8d889d55adcab8",
-                "b0b213731fcb0f2e"
+                "cff7fa2771cdc1c1"
             ]
         ],
         "info": "global.get('mssql');\r\n  için   setting.js dosyalarına functionGlobalContext: {\r\n    mssql: require('mssql')  // MSSQL modülünü global context'e ekleyin\r\n}\r\n tanımlıyoruz "
@@ -8766,19 +8782,20 @@
         ]
     },
     {
-        "id": "b0b213731fcb0f2e",
+        "id": "cff7fa2771cdc1c1",
         "type": "debug",
         "z": "d296b4008b6072d8",
-        "name": "debug 144",
+        "name": "debug 165",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 310,
+        "x": 620,
+        "y": 350,
         "wires": []
     },
     {
@@ -10867,7 +10884,8 @@
         "y": 330,
         "wires": [
             [
-                "84f6b5a28bab6643"
+                "84f6b5a28bab6643",
+                "3d2e68d156a9e130"
             ]
         ]
     },
@@ -10877,7 +10895,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n    node.warn(query);\n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -10955,7 +10973,8 @@
         "y": 930,
         "wires": [
             [
-                "4dda1622c9781aad"
+                "4dda1622c9781aad",
+                "430d7b898b695ce5"
             ]
         ]
     },
@@ -11135,6 +11154,41 @@
             ]
         ],
         "l": false
+    },
+    {
+        "id": "430d7b898b695ce5",
+        "type": "debug",
+        "z": "17803f695ab8af0d",
+        "g": "fbf5966f1914eea8",
+        "name": "debug 170",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "3d2e68d156a9e130",
+        "type": "debug",
+        "z": "17803f695ab8af0d",
+        "g": "167f4d272f155624",
+        "name": "debug 171",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 290,
+        "wires": []
     },
     {
         "id": "607330f60d089b54",
@@ -12387,7 +12441,7 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "BuyerAndSellerOrder",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsOrderNumber);\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -13857,7 +13911,7 @@
         "env": [
             {
                 "name": "status",
-                "value": "RUNNING",
+                "value": "RUNNING111",
                 "type": "str"
             }
         ],
@@ -13976,7 +14030,7 @@
         "type": "function",
         "z": "706eaf0decd289cd",
         "name": "function 82",
-        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"INTSYNC000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = ` select ID,Datakey,DataTypeId,SyncTime,ProcedureId,ErrorInfo from S4IN_INTEGRATION_SYNC WHERE ProcedureID IN (1,2)`;\n\n\n\n\n\n\nmsg.query = query;\nreturn msg",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"INTSYNC000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `select I.ID,Datakey,T.Name AS DataTypeId,SyncTime,P.Name AS ProcedureId,ErrorInfo  from S4IN_INTEGRATION_SYNC I\n            left JOIN S4IN_ProcedureType  P On  I.ProcedureID=P.ID\n            LEFT JOIN S4IN_SyncTableType T ON T.ID=I.DataTypeID\n            WHERE ProcedureID IN (1,2) and Synctime is null;\n            `;\nmsg.query = query;\nreturn msg",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13997,55 +14051,188 @@
         "z": "706eaf0decd289cd",
         "name": "",
         "x": 580,
-        "y": 190,
+        "y": 220,
         "wires": [
             [
-                "f60fd7c6d80646cb",
-                "11c30d3f8c6fc84c"
+                "f60fd7c6d80646cb"
             ]
         ]
-    },
-    {
-        "id": "2267ee3e40bd91d9",
-        "type": "debug",
-        "z": "706eaf0decd289cd",
-        "name": "debug 157",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1090,
-        "y": 250,
-        "wires": []
     },
     {
         "id": "f60fd7c6d80646cb",
         "type": "function",
         "z": "706eaf0decd289cd",
-        "name": "function 83",
-        "func": "// Gelen JSON\nlet data = msg.payload;\n\n// Varsayılan değer (isteğe göre dinamik hale getirilebilir)\nconst defaultValue = {\n    Id: \"\",\n    DataKey: \"\",\n    DataTypeId: \"\",\n    SyncTime: null,\n    ProcedureId: \"\",\n    ErrorInfo: \"\"\n};\n\n// `data` bir array mi kontrol edelim\nif (!Array.isArray(data)) {\n    node.warn(\"Gelen data bir array değil, işlem yapılmadı.\");\n    msg.payload = []; // Boş bir dizi döndürülüyor\n    return msg;\n}\n\n// Map işlemi ile yeni yapı oluşturuluyor\nconst payloadData = data.map(x => ({\n    ID: x.ID || defaultValue.Id,\n    DataKey: x.DataKey || defaultValue.DataKey,\n    DataTypeID: x.DataTypeID || defaultValue.DataTypeId,\n    SyncTime: x.SyncTime || defaultValue.SyncTime,\n    ProcedureID: x.ProcedureID || defaultValue.ProcedureId,\n    ErrorInfo: x.ErrorInfo || defaultValue.ErrorInfo\n}));\n\n\nreturn msg;\n",
+        "name": "S4IN_INTEGRATION_SYNC",
+        "func": "// Gelen JSON\nlet data = msg.payload;\n\n// Varsayılan değer (isteğe göre dinamik hale getirilebilir)\nconst defaultValue = {\n    Id: null,\n    DataKey: null,\n    DataTypeID: null,\n    SyncTime: null,\n    ProcedureId: null,\n    ErrorInfo: null\n};\n\n// `data` bir array mi kontrol edelim\nif (!Array.isArray(data)) {\n    node.warn(\"Gelen data bir array değil, işlem yapılmadı.\");\n    msg.payload = []; // Boş bir dizi döndürülüyor\n    return msg;\n}\n\n// Map işlemi ile yeni yapı oluşturuluyor\nconst payloadData = data.map(x => ({\n    ID: x.ID || defaultValue.Id,\n    DataKey: x.Datakey || defaultValue.DataKey,\n    DataTypeId: x.DataTypeId || defaultValue.DataTypeID,  \n    SyncTime: x.SyncTime || defaultValue.SyncTime,\n    ProcedureID: x.ProcedureId || defaultValue.ProcedureId,\n    ErrorInfo: x.ErrorInfo || defaultValue.ErrorInfo\n}));\n\n\n\n \n// DataTypeId'ye göre gruplama yapılıyor\nlet groupedData = payloadData.reduce((acc, item) => {\n    let key = item.DataTypeId;\n    if (!acc[key]) {\n        acc[key] = []; // Eğer key yoksa, yeni bir array başlat\n    }\n    acc[key].push(item); // Veriyi gruba ekle\n    return acc;\n}, {});\n\nmsg.S4IN_INTEGRATION_SYNC = groupedData;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 830,
         "y": 220,
         "wires": [
             [
-                "2267ee3e40bd91d9"
+                "function-node"
             ]
         ]
     },
     {
-        "id": "11c30d3f8c6fc84c",
+        "id": "a1e9532f294cc4f9",
         "type": "debug",
         "z": "706eaf0decd289cd",
-        "name": "debug 159",
+        "name": "debug 166",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "S4IN_INTEGRATION_SYNC",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "function-node",
+        "type": "function",
+        "z": "706eaf0decd289cd",
+        "name": "Process and Split Data",
+        "func": "// tblstsabit\nlet tblStsabit = env.get('INT_TBLSTSABIT')\n// TBLCASABIT\nlet tblCasbit = env.get('INT_TBLCASABIT')\n// TBLSIPAMAS\nlet tbLsipamas = env.get('INT_TBLSIPAMAS')\n\nlet categories = [tblStsabit, tblCasbit, tbLsipamas];\n// 1.cıkış tblstsabit\n// 2.cıkış casabit\n// 3.cıkış sıpamas\n\nlet outputs = [[], [], []]; // Her kategori için bir çıkış\nlet payload = msg.S4IN_INTEGRATION_SYNC;\ncategories.forEach((category, index) => {\n   if (payload[category]) {\n            outputs[index].push({\n                ...msg,\n                dataPayload: payload[category] // Çıkışa gönderilecek obje\n            });\n         \n    }\n});\n\nreturn outputs;",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 500,
+        "wires": [
+            [
+                "284fc551ab4f8072"
+            ],
+            [
+                "d8ecafd997e76927"
+            ],
+            [
+                "dea918aedd53b5a2"
+            ]
+        ]
+    },
+    {
+        "id": "cc1d6c8ac9aa14b7",
+        "type": "debug",
+        "z": "706eaf0decd289cd",
+        "name": "debug 167",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "S4IN_INTEGRATION_SYNC",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 210,
+        "wires": []
+    },
+    {
+        "id": "d8ecafd997e76927",
+        "type": "split",
+        "z": "706eaf0decd289cd",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "dataPayload",
+        "x": 970,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dea918aedd53b5a2",
+        "type": "split",
+        "z": "706eaf0decd289cd",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "dataPayload",
+        "x": 990,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba958dd2f060e48f",
+        "type": "http request",
+        "z": "706eaf0decd289cd",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 1320,
+        "y": 440,
+        "wires": [
+            [
+                "94099cd14a6e3b0f",
+                "170d48d49d8f888a"
+            ]
+        ]
+    },
+    {
+        "id": "284fc551ab4f8072",
+        "type": "function",
+        "z": "706eaf0decd289cd",
+        "name": "function 84",
+        "func": " \nlet items = msg.dataPayload;\nlet index = msg.index||0;\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    msg.index++;\n    // Construct the URL dynamically using dataKey\n    let dataKey = msg.dataPayload[index]?.DataKey;\n\n    msg.url = \"http://localhost:1880/NTSP000V1\" + \"?StockCode=\" + dataKey;\n\n\n    return [msg, null];\n\n}\n\n\n \n \n\nreturn [msg,null ];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1005,
+        "y": 440,
+        "wires": [
+            [
+                "cc385179a1eee026"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "94099cd14a6e3b0f",
+        "type": "debug",
+        "z": "706eaf0decd289cd",
+        "name": "debug 169",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -14054,8 +14241,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 770,
-        "y": 150,
+        "x": 1540,
+        "y": 430,
+        "wires": []
+    },
+    {
+        "id": "170d48d49d8f888a",
+        "type": "function",
+        "z": "706eaf0decd289cd",
+        "name": "function 85",
+        "func": "msg.index++\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1510,
+        "y": 350,
+        "wires": [
+            [
+                "284fc551ab4f8072"
+            ]
+        ]
+    },
+    {
+        "id": "cc385179a1eee026",
+        "type": "debug",
+        "z": "706eaf0decd289cd",
+        "name": "debug 172",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 360,
         "wires": []
     },
     {
@@ -14068,8 +14292,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1130,
-        "y": 160,
+        "x": 1140,
+        "y": 100,
         "wires": []
     },
     {
@@ -14085,8 +14309,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 140,
+        "x": 930,
+        "y": 100,
         "wires": [
             [
                 "cce8f946aa3f45d9"
@@ -14100,8 +14324,8 @@
         "g": "0ade6e9b8e25f5a2",
         "name": "Netsis2SFORIN_InsertStock_MSSQL_v1.0",
         "info": "",
-        "x": 220,
-        "y": 120,
+        "x": 230,
+        "y": 80,
         "wires": []
     },
     {
@@ -14117,8 +14341,8 @@
                 "type": "bool"
             }
         ],
-        "x": 645,
-        "y": 160,
+        "x": 655,
+        "y": 120,
         "wires": [
             [
                 "6d3ab5afe316e058"
@@ -14135,8 +14359,8 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "",
-        "x": 525,
-        "y": 160,
+        "x": 535,
+        "y": 120,
         "wires": [
             [
                 "2cccaae036a25b9b"
@@ -14157,11 +14381,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 180,
+        "x": 930,
+        "y": 140,
         "wires": [
             [
-                "cce8f946aa3f45d9"
+                "7bfe053cda25a1df"
             ]
         ]
     },
@@ -14178,8 +14402,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 455,
-        "y": 160,
+        "x": 465,
+        "y": 120,
         "wires": [
             [
                 "c68136d45539bedd"
@@ -14197,8 +14421,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
-        "y": 590,
+        "x": 170,
+        "y": 810,
         "wires": [
             [
                 "cd7c7b47e6c79aac"
@@ -14216,8 +14440,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1210,
-        "y": 650,
+        "x": 1260,
+        "y": 830,
         "wires": []
     },
     {
@@ -14233,8 +14457,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 630,
+        "x": 970,
+        "y": 850,
         "wires": [
             [
                 "9114887d0e7b9eb5"
@@ -14248,8 +14472,8 @@
         "g": "24904440bd5e033d",
         "name": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0",
         "info": "",
-        "x": 310,
-        "y": 550,
+        "x": 350,
+        "y": 770,
         "wires": []
     },
     {
@@ -14258,8 +14482,8 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "",
-        "x": 535,
-        "y": 590,
+        "x": 575,
+        "y": 810,
         "wires": [
             [
                 "583958b872d4e043"
@@ -14280,11 +14504,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 670,
+        "x": 970,
+        "y": 890,
         "wires": [
             [
-                "9114887d0e7b9eb5"
+                "c73e20343dadb802"
             ]
         ]
     },
@@ -14301,8 +14525,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 405,
-        "y": 590,
+        "x": 445,
+        "y": 810,
         "wires": [
             [
                 "ea8abe837b06040d"
@@ -14323,8 +14547,8 @@
                 "type": "bool"
             }
         ],
-        "x": 655,
-        "y": 600,
+        "x": 695,
+        "y": 820,
         "wires": [
             [
                 "5699609978be02fc"
@@ -14342,8 +14566,8 @@
         "g": "0ade6e9b8e25f5a2",
         "name": "Params=>StockCode",
         "info": "",
-        "x": 500,
-        "y": 120,
+        "x": 510,
+        "y": 80,
         "wires": []
     },
     {
@@ -14359,8 +14583,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 375,
-        "y": 160,
+        "x": 385,
+        "y": 120,
         "wires": [
             [
                 "e47f8c49f8f6c022"
@@ -14378,8 +14602,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 150,
-        "y": 160,
+        "x": 160,
+        "y": 120,
         "wires": [
             [
                 "cc8d5118bd29b498"
@@ -14400,8 +14624,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 600,
+        "x": 375,
+        "y": 820,
         "wires": [
             [
                 "ebf9b753c0db2888"
@@ -14433,8 +14657,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 490,
-        "y": 220,
+        "x": 500,
+        "y": 180,
         "wires": [
             []
         ]
@@ -14452,8 +14676,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 220,
+        "x": 345,
+        "y": 180,
         "wires": [
             [
                 "d5a070459c17282b"
@@ -14467,8 +14691,8 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "",
-        "x": 265,
-        "y": 220,
+        "x": 275,
+        "y": 180,
         "wires": [
             [
                 "8afa6b7e3ad6423f"
@@ -14498,8 +14722,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 220,
+        "x": 140,
+        "y": 180,
         "wires": [
             [
                 "d74caaec6d92d640"
@@ -14519,8 +14743,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 650,
+        "x": 375,
+        "y": 870,
         "wires": [
             [
                 "3c7137841de56924"
@@ -14534,8 +14758,8 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "",
-        "x": 265,
-        "y": 650,
+        "x": 305,
+        "y": 870,
         "wires": [
             [
                 "7e0182e4bfdda21d"
@@ -14567,8 +14791,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 490,
-        "y": 650,
+        "x": 530,
+        "y": 870,
         "wires": [
             []
         ]
@@ -14595,8 +14819,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 650,
+        "x": 170,
+        "y": 870,
         "wires": [
             [
                 "42c544e9b157280e"
@@ -14613,8 +14837,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 150,
-        "y": 370,
+        "x": 170,
+        "y": 590,
         "wires": [
             [
                 "b2ad742b7f3c7e3e"
@@ -14632,8 +14856,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1130,
-        "y": 370,
+        "x": 1160,
+        "y": 570,
         "wires": []
     },
     {
@@ -14649,8 +14873,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 350,
+        "x": 940,
+        "y": 570,
         "wires": [
             [
                 "dd81d2e8b3a0179d"
@@ -14664,8 +14888,8 @@
         "g": "c7a67d413d6b7731",
         "name": "Netsis2SFORIN_Customers_MSSQL_v1.0",
         "info": "",
-        "x": 270,
-        "y": 330,
+        "x": 290,
+        "y": 550,
         "wires": []
     },
     {
@@ -14674,8 +14898,8 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "",
-        "x": 495,
-        "y": 370,
+        "x": 515,
+        "y": 590,
         "wires": [
             [
                 "e09ad973954473b9"
@@ -14696,11 +14920,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 390,
+        "x": 940,
+        "y": 610,
         "wires": [
             [
-                "dd81d2e8b3a0179d"
+                "b30693a96214840f"
             ]
         ]
     },
@@ -14717,8 +14941,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 385,
-        "y": 370,
+        "x": 405,
+        "y": 590,
         "wires": [
             [
                 "f3f8ebe822bf26c4"
@@ -14739,8 +14963,8 @@
                 "type": "bool"
             }
         ],
-        "x": 605,
-        "y": 370,
+        "x": 625,
+        "y": 590,
         "wires": [
             [
                 "4e36532310976efb"
@@ -14764,8 +14988,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 285,
-        "y": 370,
+        "x": 305,
+        "y": 590,
         "wires": [
             [
                 "84924e6e0470a11f"
@@ -14786,8 +15010,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 430,
+        "x": 355,
+        "y": 650,
         "wires": [
             [
                 "c8522c19b9137229"
@@ -14801,8 +15025,8 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "",
-        "x": 265,
-        "y": 430,
+        "x": 285,
+        "y": 650,
         "wires": [
             [
                 "a971d69137c421cb"
@@ -14834,8 +15058,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 490,
-        "y": 430,
+        "x": 510,
+        "y": 650,
         "wires": [
             []
         ]
@@ -14862,8 +15086,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 430,
+        "x": 150,
+        "y": 650,
         "wires": [
             [
                 "1953c0e70b2aba3b"
@@ -14880,8 +15104,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
-        "y": 820,
+        "x": 180,
+        "y": 1020,
         "wires": [
             [
                 "3441e14e765a31c9"
@@ -14899,8 +15123,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1210,
-        "y": 880,
+        "x": 1230,
+        "y": 1040,
         "wires": []
     },
     {
@@ -14916,8 +15140,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 860,
+        "x": 950,
+        "y": 1060,
         "wires": [
             [
                 "0e749228f66d19be"
@@ -14931,8 +15155,8 @@
         "g": "2d127e1eaf3e467e",
         "name": "Delete Integration Log",
         "info": "Delete Integration Log",
-        "x": 190,
-        "y": 780,
+        "x": 210,
+        "y": 980,
         "wires": []
     },
     {
@@ -14941,8 +15165,8 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "",
-        "x": 535,
-        "y": 820,
+        "x": 555,
+        "y": 1020,
         "wires": [
             [
                 "5eb1fbf2a53ee55b"
@@ -14963,11 +15187,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 900,
+        "x": 950,
+        "y": 1100,
         "wires": [
             [
-                "0e749228f66d19be"
+                "a0da0d36311e3c37"
             ]
         ]
     },
@@ -14984,8 +15208,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 405,
-        "y": 820,
+        "x": 425,
+        "y": 1020,
         "wires": [
             [
                 "117d1b3c16173e4c"
@@ -15006,8 +15230,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 325,
-        "y": 820,
+        "x": 345,
+        "y": 1020,
         "wires": [
             [
                 "1b8dd17010af6ca6"
@@ -15028,8 +15252,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 880,
+        "x": 355,
+        "y": 1080,
         "wires": [
             [
                 "bd183366d7e0c8f1"
@@ -15043,8 +15267,8 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "",
-        "x": 265,
-        "y": 880,
+        "x": 285,
+        "y": 1080,
         "wires": [
             [
                 "367a664259a1e4ce"
@@ -15076,8 +15300,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 490,
-        "y": 880,
+        "x": 510,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -15104,8 +15328,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 880,
+        "x": 150,
+        "y": 1080,
         "wires": [
             [
                 "e50bac451dbfc007"
@@ -15122,28 +15346,14 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 150,
-        "y": 1070,
+        "x": 170,
+        "y": 1240,
         "wires": [
             [
                 "b6423a72fb5054ac"
             ]
         ],
         "info": "Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0"
-    },
-    {
-        "id": "10aaa3d6553b3e2c",
-        "type": "http response",
-        "z": "97e7314f695bb652",
-        "g": "58b0549190818c1b",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1210,
-        "y": 1130,
-        "wires": []
     },
     {
         "id": "2a6619051dde8322",
@@ -15158,11 +15368,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 1050,
+        "x": 970,
+        "y": 1220,
         "wires": [
             [
-                "10aaa3d6553b3e2c"
+                "6891f57e5aae2321"
             ]
         ]
     },
@@ -15173,8 +15383,8 @@
         "g": "58b0549190818c1b",
         "name": "N2SIntegrationSync",
         "info": "",
-        "x": 180,
-        "y": 1030,
+        "x": 200,
+        "y": 1200,
         "wires": []
     },
     {
@@ -15183,8 +15393,8 @@
         "z": "97e7314f695bb652",
         "g": "58b0549190818c1b",
         "name": "",
-        "x": 535,
-        "y": 1070,
+        "x": 555,
+        "y": 1240,
         "wires": [
             [
                 "d7acf2ceaf30b571"
@@ -15205,11 +15415,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 1100,
+        "x": 980,
+        "y": 1270,
         "wires": [
             [
-                "10aaa3d6553b3e2c"
+                "3499bad52a1448be"
             ]
         ]
     },
@@ -15226,8 +15436,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 405,
-        "y": 1070,
+        "x": 425,
+        "y": 1240,
         "wires": [
             [
                 "a929dd4877a854c6"
@@ -15248,8 +15458,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 325,
-        "y": 1070,
+        "x": 345,
+        "y": 1240,
         "wires": [
             [
                 "9159f1a71b9a15b9"
@@ -15270,12 +15480,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 335,
-        "y": 1130,
+        "x": 355,
+        "y": 1300,
         "wires": [
             [
-                "70393404e17b9443",
-                "d5056f661ba36333"
+                "70393404e17b9443"
             ]
         ],
         "l": false
@@ -15286,8 +15495,8 @@
         "z": "97e7314f695bb652",
         "g": "58b0549190818c1b",
         "name": "",
-        "x": 265,
-        "y": 1130,
+        "x": 285,
+        "y": 1300,
         "wires": [
             [
                 "fd7be0bc412501bc"
@@ -15319,8 +15528,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 490,
-        "y": 1130,
+        "x": 510,
+        "y": 1300,
         "wires": [
             [
                 "187cc24b8dbebcd2"
@@ -15349,8 +15558,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 1130,
+        "x": 150,
+        "y": 1300,
         "wires": [
             [
                 "e396f198e6579e3d"
@@ -15363,8 +15572,8 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "",
-        "x": 625,
-        "y": 820,
+        "x": 645,
+        "y": 1020,
         "wires": [
             [
                 "bcc8ae3226885dad"
@@ -15388,8 +15597,8 @@
                 "type": "bool"
             }
         ],
-        "x": 680,
-        "y": 1070,
+        "x": 700,
+        "y": 1240,
         "wires": [
             [
                 "2a6619051dde8322"
@@ -15409,28 +15618,96 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
-        "y": 1130,
+        "x": 740,
+        "y": 1300,
         "wires": []
     },
     {
-        "id": "d5056f661ba36333",
-        "type": "debug",
+        "id": "7bfe053cda25a1df",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1140,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b30693a96214840f",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1140,
+        "y": 610,
+        "wires": []
+    },
+    {
+        "id": "c73e20343dadb802",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1240,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "a0da0d36311e3c37",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1220,
+        "y": 1090,
+        "wires": []
+    },
+    {
+        "id": "6891f57e5aae2321",
+        "type": "http response",
         "z": "97e7314f695bb652",
         "g": "58b0549190818c1b",
-        "name": "debug 161",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 1170,
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1230,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "3499bad52a1448be",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "58b0549190818c1b",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1220,
+        "y": 1270,
         "wires": []
     },
     {
@@ -16148,6 +16425,139 @@
         "statusType": "auto",
         "x": 570,
         "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8f1e949e3f243c51",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "Send Array",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[1,2]",
+        "payloadType": "json",
+        "x": 400,
+        "y": 710,
+        "wires": [
+            [
+                "c7232387edea063d"
+            ]
+        ]
+    },
+    {
+        "id": "1553d9a0a6925b49",
+        "type": "split",
+        "z": "6ef8732eb0726477",
+        "name": "Split Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 760,
+        "y": 710,
+        "wires": [
+            [
+                "bf29bc2305207624"
+            ]
+        ]
+    },
+    {
+        "id": "bf29bc2305207624",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Process Each Item",
+        "func": "// Eleman işleme\nmsg.payload = `Processed: ${msg.payload}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 710,
+        "wires": [
+            [
+                "8668b6287b170082"
+            ]
+        ]
+    },
+    {
+        "id": "c7232387edea063d",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 83",
+        "func": "// Başlangıç array'ini alın\nlet array = msg.payload;\n\n// 500 eleman ekle\nfor (let i = 3; i <= 9999; i++) {\n    array.push(i);\n}\n\n// Sonucu döndür\nmsg.payload = array;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "1553d9a0a6925b49"
+            ]
+        ]
+    },
+    {
+        "id": "8668b6287b170082",
+        "type": "link out",
+        "z": "6ef8732eb0726477",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "65bbf1f47bdea740"
+        ],
+        "x": 1105,
+        "y": 690,
+        "wires": []
+    },
+    {
+        "id": "65bbf1f47bdea740",
+        "type": "link in",
+        "z": "6ef8732eb0726477",
+        "name": "link in 10",
+        "links": [
+            "8668b6287b170082"
+        ],
+        "x": 1215,
+        "y": 660,
+        "wires": [
+            [
+                "e24b601bab93ddbd"
+            ]
+        ],
+        "outputLabels": [
+            "ppp"
+        ]
+    },
+    {
+        "id": "e24b601bab93ddbd",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 168",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 670,
         "wires": []
     },
     {
