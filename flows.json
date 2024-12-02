@@ -701,8 +701,8 @@
                         "port": 1
                     },
                     {
-                        "id": "02661279d9e35e94",
-                        "port": 1
+                        "id": "1aaad88f0896c456",
+                        "port": 0
                     }
                 ]
             }
@@ -1217,7 +1217,11 @@
                 "y": 300,
                 "wires": [
                     {
-                        "id": "join",
+                        "id": "f60fd7c6d80646cb",
+                        "port": 1
+                    },
+                    {
+                        "id": "cac14d83f4649482",
                         "port": 0
                     }
                 ]
@@ -1416,8 +1420,8 @@
                 ]
             },
             {
-                "x": 710,
-                "y": 290,
+                "x": 730,
+                "y": 280,
                 "wires": [
                     {
                         "id": "4118875c7f82f83b",
@@ -2138,8 +2142,7 @@
             "8d8bacc664ddc537",
             "ad60f36acc269401",
             "222965ddb0e09195",
-            "2f847f3ed271a069",
-            "3d2e68d156a9e130"
+            "2f847f3ed271a069"
         ],
         "x": 44,
         "y": 229,
@@ -2192,11 +2195,14 @@
             "cb3c99cb363b481e",
             "9fa0ab1867412ac8",
             "83b889e0e475c165",
-            "430d7b898b695ce5"
+            "7c742ff9435814d7",
+            "b0fc70906e1e758d",
+            "b0ae507329500bc1",
+            "e545fad3eafd4bb2"
         ],
         "x": 44,
         "y": 789,
-        "w": 972,
+        "w": 1522,
         "h": 182
     },
     {
@@ -2333,15 +2339,12 @@
             "3049a7107f25c59d",
             "58392219b3f9c2aa",
             "f1ac5c0632527d2c",
-            "f28bc80528e3b4c5",
-            "b3b56432cbf56f15",
-            "3edcdf401fd21da5",
-            "5804e26ca526fd52"
+            "f28bc80528e3b4c5"
         ],
         "x": 134,
-        "y": 569,
-        "w": 1222,
-        "h": 212
+        "y": 589,
+        "w": 972,
+        "h": 192
     },
     {
         "id": "68643bb6b5be193f",
@@ -2470,20 +2473,20 @@
         "nodes": [
             "4532ac7f0859e986",
             "c75e104d9b1606e8",
-            "02661279d9e35e94",
-            "b0ae507329500bc1",
             "c6600975483aa103",
             "5ac2beb0bfc134c6",
             "6268b9dbdf76f010",
             "6742c93f2b2198d3",
             "8da1e5726ef27a97",
             "dd46605ec969997f",
-            "1aaad88f0896c456"
+            "1aaad88f0896c456",
+            "be655e8be15c8af3",
+            "aac7d06117efeb1d"
         ],
         "x": 44,
-        "y": 379,
-        "w": 1272,
-        "h": 202
+        "y": 399,
+        "w": 1292,
+        "h": 182
     },
     {
         "id": "0ade6e9b8e25f5a2",
@@ -2621,7 +2624,7 @@
         "x": 34,
         "y": 879,
         "w": 1272,
-        "h": 192
+        "h": 202
     },
     {
         "id": "5ea72d766d893c6d",
@@ -2811,9 +2814,9 @@
             "23327e292123f24b"
         ],
         "x": 84,
-        "y": 229,
+        "y": 219,
         "w": 972,
-        "h": 192
+        "h": 202
     },
     {
         "id": "04be4bbb805f6483",
@@ -10262,7 +10265,7 @@
         "z": "5b2ae23bfd497a94",
         "g": "5b75673458d774a7",
         "name": "ConvertJson",
-        "func": "let items = msg.matchingItems;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\n\nmsg.missingCategoryCodes = items.map(item => {  \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"SFORIN\",\n        \"data\": [\n            {\n                \"_id\": \"\",\n                \"categoryCode\": item[0],\n                \"definition_lang\": item[1],\n                \"parentCategory\": null,\n                \"netsisDataField\":true\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n});\n\nmsg.index = 0;\nreturn msg;",
+        "func": "let items = msg.matchingItems;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\n\nmsg.missingCategoryCodes = items.map(item => {  \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"SFORIN\",\n        \"data\": [\n            {\n                // \"_id\": \"\",\n                \"categoryCode\": item[0],\n                \"definition_lang\": item[1],\n                \"parentCategory\": null,\n                \"netsisDataField\":true\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n});\n\nmsg.index = 0;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -10518,7 +10521,7 @@
         "z": "5b2ae23bfd497a94",
         "g": "92d86d0b5bb6ae36",
         "name": "ConvertJson",
-        "func": "let items = msg.matchingItems;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\n\nmsg.missingCategoryCodes = items.map(item => {  \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"SFORIN\",\n        \"data\": [\n            {\n                \"_id\": \"\",\n                \"categoryCode\": item[2],\n                \"definition_lang\": item[3],\n                \"parentCategory\": item[0],\n                \"netsisDataField\":true\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n});\n\nmsg.index = 0;\nreturn msg;",
+        "func": "let items = msg.matchingItems;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\n\nmsg.missingCategoryCodes = items.map(item => {  \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"SFORIN\",\n        \"data\": [\n            {\n                // \"_id\": \"\",\n                \"categoryCode\": item[2],\n                \"definition_lang\": item[3],\n                \"parentCategory\": item[0],\n                \"netsisDataField\":true\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n});\n\nmsg.index = 0;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -10827,7 +10830,7 @@
         "env": [
             {
                 "name": "Url",
-                "value": "wmsmaster/api/WmsMaster/InsertProductCategory",
+                "value": "wmsmaster/api/WmsMaster/SyncProductCategories",
                 "type": "str"
             }
         ],
@@ -10859,7 +10862,9 @@
             [
                 "1ddc986150f81f61"
             ],
-            []
+            [
+                "1ddc986150f81f61"
+            ]
         ]
     },
     {
@@ -10871,7 +10876,7 @@
         "env": [
             {
                 "name": "Url",
-                "value": "wmsmaster/api/WmsMaster/InsertProductCategory",
+                "value": "wmsmaster/api/WmsMaster/SyncProductCategories",
                 "type": "str"
             }
         ],
@@ -11143,7 +11148,7 @@
         "z": "17803f695ab8af0d",
         "g": "69a8c850b940485b",
         "name": "ConvertJsonSforinProduct",
-        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"Node-RED-SFORIN\",\n        \"data\": [\n            {\n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
+        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return { \n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n             \n         \n       \n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11164,7 +11169,7 @@
         "z": "17803f695ab8af0d",
         "g": "69a8c850b940485b",
         "name": "Index",
-        "func": "\nlet items = msg.sforinproduct;\n \nlet index = msg.index;\nif (index >= items.length) {\n    return [null, msg]; \n}\n\nlet item = items[index];\nmsg.index = index;\nmsg.item = item;\nmsg.payload = item;\n\n\n//msg.flowName = msg.propIntegration?.code ||\"NTSP000V1_0\";\n \n\nreturn [msg, null];;",
+        "func": "\nlet items = msg.sforinproduct;\n// msg.itemsArrayPayload kontrol et, değilse yeni bir dizi oluştur\nmsg.itemsArrayPayload = msg.itemsArrayPayload|| [];\n   \n\nlet index = msg.index;\nif (index >= items.length || items.length===0) {\n    return [null, msg]; \n}\n\nlet item = items[index];\nmsg.index = index;\nmsg.item = item;\nmsg.payload = item;\n\n\n//msg.flowName = msg.propIntegration?.code ||\"NTSP000V1_0\";\n \n\nreturn [msg, null];;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -11181,39 +11186,17 @@
         ]
     },
     {
-        "id": "02661279d9e35e94",
-        "type": "function",
-        "z": "17803f695ab8af0d",
-        "g": "69a8c850b940485b",
-        "name": "Response",
-        "func": "let items = msg.sforinproduct;\nlet index = msg.index;\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    msg.index++;\n    return [msg,null ];\n}\n\n    \n    \n\n\n\n",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 490,
-        "wires": [
-            [
-                "b0ae507329500bc1"
-            ],
-            []
-        ]
-    },
-    {
         "id": "b0ae507329500bc1",
         "type": "link out",
         "z": "17803f695ab8af0d",
-        "g": "69a8c850b940485b",
+        "g": "fbf5966f1914eea8",
         "name": "MetropolUnNetsisToSFORINStockCard(MMSQL)ResponseOut",
         "mode": "link",
         "links": [
             "6268b9dbdf76f010"
         ],
         "x": 1275,
-        "y": 420,
+        "y": 870,
         "wires": []
     },
     {
@@ -11295,8 +11278,8 @@
         "links": [
             "4dda1622c9781aad"
         ],
-        "x": 825,
-        "y": 420,
+        "x": 845,
+        "y": 440,
         "wires": [
             [
                 "1aaad88f0896c456"
@@ -11366,7 +11349,7 @@
         "z": "17803f695ab8af0d",
         "g": "c80683f7b8cf0f73",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet stockCode = msg.payload.data[0].code\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    WITH A1 AS ( \n SELECT\n ROW_NUMBER() OVER(partition BY KOD ORDER BY INCKEYNO ASC )+3 SIRA,\n OLCUBIRIMI, KOD  \n FROM TBLSTBIRIM  WHERE KOD='${stockCode}'\n )\n \n SELECT \n    A.STOK_KODU,\n    A.BARKOD,\n    CASE \n        WHEN I_YEDEK1 = 1 THEN B.OLCU_BR1 \n        WHEN I_YEDEK1 = 2 THEN B.OLCU_BR2\n        WHEN I_YEDEK1 = 3 THEN B.OLCU_BR3\n\t\tWHEN I_YEDEK1 = 4 THEN A1.OLCUBIRIMI\n\t\tWHEN I_YEDEK1 = 5 THEN A1.OLCUBIRIMI\t\t\n        ELSE NULL\n    END AS OLCU_BIRIMI\nFROM \n    TBLSTOKBAR A\nLEFT JOIN \n    TBLSTSABIT B ON A.STOK_KODU = B.STOK_KODU\n LEFT JOIN A1 ON A1.KOD=B.STOK_KODU AND I_YEDEK1=A1.SIRA\nWHERE \n    A.STOK_KODU = '${stockCode}';\n\n`;\n\n// msg.payload'a sorguyu ekle\nmsg.query = query;\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet stockCode = msg.payload.code\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    WITH A1 AS ( \n SELECT\n ROW_NUMBER() OVER(partition BY KOD ORDER BY INCKEYNO ASC )+3 SIRA,\n OLCUBIRIMI, KOD  \n FROM TBLSTBIRIM  WHERE KOD='${stockCode}'\n )\n \n SELECT \n    A.STOK_KODU,\n    A.BARKOD,\n    CASE \n        WHEN I_YEDEK1 = 1 THEN B.OLCU_BR1 \n        WHEN I_YEDEK1 = 2 THEN B.OLCU_BR2\n        WHEN I_YEDEK1 = 3 THEN B.OLCU_BR3\n\t\tWHEN I_YEDEK1 = 4 THEN A1.OLCUBIRIMI\n\t\tWHEN I_YEDEK1 = 5 THEN A1.OLCUBIRIMI\t\t\n        ELSE NULL\n    END AS OLCU_BIRIMI\nFROM \n    TBLSTOKBAR A\nLEFT JOIN \n    TBLSTSABIT B ON A.STOK_KODU = B.STOK_KODU\n LEFT JOIN A1 ON A1.KOD=B.STOK_KODU AND I_YEDEK1=A1.SIRA\nWHERE \n    A.STOK_KODU = '${stockCode}';\n\n`;\n\n// msg.payload'a sorguyu ekle\nmsg.query = query;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11404,7 +11387,7 @@
         "z": "17803f695ab8af0d",
         "g": "c80683f7b8cf0f73",
         "name": "function 41",
-        "func": "msg.payload.forEach(item=>\n{\nmsg.item.data[0].barcodes.push({\n    unitCode: item.OLCU_BIRIMI,\n    barcode: item.BARKOD\n})\n});\nmsg.payload=msg.item;\n\nreturn msg;\n\n\n\n \n ",
+        "func": "msg.payload.forEach(item=>\n{\nmsg.item.barcodes.push({\n    unitCode: item.OLCU_BIRIMI,\n    barcode: item.BARKOD\n})\n});\nmsg.payload=msg.item;\n\nreturn msg;\n\n\n\n \n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11429,8 +11412,7 @@
         "y": 330,
         "wires": [
             [
-                "84f6b5a28bab6643",
-                "3d2e68d156a9e130"
+                "84f6b5a28bab6643"
             ]
         ]
     },
@@ -11440,7 +11422,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')     \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\nnode.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')   \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n//node.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11472,7 +11454,7 @@
         "z": "17803f695ab8af0d",
         "g": "fbf5966f1914eea8",
         "name": "Netsis TBLSTBIRIM  json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet stockCode = msg.payload.data[0].code\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT \n        OLCUBIRIMI,\n        KOD,\n        PAY,\n        PAYDA,\n        CONVERT(DECIMAL(18,2),NETAGIRLIK) NETAGIRLIK\n        ,CONVERT(DECIMAL(18,2),BRUTAGIRLIK) BRUTAGIRLIK,\n        CONVERT(DECIMAL(18,2),EN) EN,\n        CONVERT(DECIMAL(18,2),BOY) BOY,\n        CONVERT(DECIMAL(18,2),YUKSEKLIK) YUKSEKLIK\n    FROM TBLSTBIRIM  \n            WHERE \n                 KOD= '${stockCode}';\n\n`;\n\n// msg.payload'a sorguyu ekle\nmsg.query = query;\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet stockCode = msg.payload.code\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT \n        OLCUBIRIMI,\n        KOD,\n        PAY,\n        PAYDA,\n        CONVERT(DECIMAL(18,2),NETAGIRLIK) NETAGIRLIK\n        ,CONVERT(DECIMAL(18,2),BRUTAGIRLIK) BRUTAGIRLIK,\n        CONVERT(DECIMAL(18,2),EN) EN,\n        CONVERT(DECIMAL(18,2),BOY) BOY,\n        CONVERT(DECIMAL(18,2),YUKSEKLIK) YUKSEKLIK\n    FROM TBLSTBIRIM  \n            WHERE \n                 KOD= '${stockCode}';\n\n`;\n\n// msg.payload'a sorguyu ekle\nmsg.query = query;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11497,8 +11479,8 @@
         "links": [
             "dd46605ec969997f"
         ],
-        "x": 915,
-        "y": 930,
+        "x": 1525,
+        "y": 890,
         "wires": []
     },
     {
@@ -11507,7 +11489,7 @@
         "z": "17803f695ab8af0d",
         "g": "fbf5966f1914eea8",
         "name": "function 42",
-        "func": "msg.payload.forEach(item=>\n{\n    msg.item.data[0].units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            {\n                \"labelCode\": \"\",\n                \"designFilePath\": \"\",\n                \"customerCode\": \"\",\n                \"packType\": \"\"\n            }\n        ]\n    })\n});\nmsg.dataPayload=msg.item;\nmsg.flowName = msg.inregrationFlowData.code || \"NTSP000V1.0\";\nreturn msg;\n\n\n\n \n ",
+        "func": "msg.payload.forEach(item=>\n{\n    msg.item.units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            {\n                \"labelCode\": \"\",\n                \"designFilePath\": \"\",\n                \"customerCode\": \"\",\n                \"packType\": \"\"\n            }\n        ]\n    })\n});\n\nreturn msg;\n\n\n\n \n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11518,8 +11500,7 @@
         "y": 930,
         "wires": [
             [
-                "4dda1622c9781aad",
-                "430d7b898b695ce5"
+                "7c742ff9435814d7"
             ]
         ]
     },
@@ -11675,9 +11656,11 @@
         "y": 450,
         "wires": [
             [
-                "02661279d9e35e94"
+                "be655e8be15c8af3"
             ],
-            []
+            [
+                "aac7d06117efeb1d"
+            ]
         ]
     },
     {
@@ -11703,29 +11686,95 @@
         "l": false
     },
     {
-        "id": "430d7b898b695ce5",
-        "type": "debug",
+        "id": "7c742ff9435814d7",
+        "type": "function",
         "z": "17803f695ab8af0d",
         "g": "fbf5966f1914eea8",
-        "name": "debug 170",
+        "name": "function 101",
+        "func": " \n\n// msg.item değerini diziye ekle\nif (msg.item !== undefined) {\n    msg.itemsArrayPayload.push(msg.item);\n}\n\n\n\nmsg.flowName = msg.inregrationFlowData.code || \"NTSP000V1.0\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 930,
+        "wires": [
+            [
+                "b0fc70906e1e758d"
+            ]
+        ]
+    },
+    {
+        "id": "b0fc70906e1e758d",
+        "type": "function",
+        "z": "17803f695ab8af0d",
+        "g": "fbf5966f1914eea8",
+        "name": "Response",
+        "func": "let items = msg.sforinproduct;\nmsg.index++;\nlet index = msg.index;\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    // msg.index++;\n    return [msg,null ];\n}\n\n    \n    \n\n\n\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 930,
+        "wires": [
+            [
+                "b0ae507329500bc1"
+            ],
+            [
+                "e545fad3eafd4bb2"
+            ]
+        ]
+    },
+    {
+        "id": "e545fad3eafd4bb2",
+        "type": "function",
+        "z": "17803f695ab8af0d",
+        "g": "fbf5966f1914eea8",
+        "name": "setJsonPayload",
+        "func": "const result = {\n    requestId: \"\",\n    sender: \"node-red\",\n    data: msg.itemsArrayPayload,\n    current: [\n        {\n            key: \"\",\n            value: \"\"\n        }\n    ]\n};\n\nmsg.dataPayload = result;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 900,
+        "wires": [
+            [
+                "4dda1622c9781aad"
+            ]
+        ]
+    },
+    {
+        "id": "be655e8be15c8af3",
+        "type": "debug",
+        "z": "17803f695ab8af0d",
+        "g": "69a8c850b940485b",
+        "name": "debug 189",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "dataPayload",
+        "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 860,
+        "x": 1200,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "3d2e68d156a9e130",
+        "id": "aac7d06117efeb1d",
         "type": "debug",
         "z": "17803f695ab8af0d",
-        "g": "167f4d272f155624",
-        "name": "debug 171",
+        "g": "69a8c850b940485b",
+        "name": "debug 190",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -11733,8 +11782,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 290,
+        "x": 1220,
+        "y": 530,
         "wires": []
     },
     {
@@ -12998,8 +13047,7 @@
         "y": 700,
         "wires": [
             [
-                "9578b0d362f0bc8b",
-                "b3b56432cbf56f15"
+                "9578b0d362f0bc8b"
             ]
         ]
     },
@@ -13063,8 +13111,7 @@
         "y": 700,
         "wires": [
             [
-                "4958f6ff314c62cc",
-                "3edcdf401fd21da5"
+                "4958f6ff314c62cc"
             ]
         ]
     },
@@ -13297,9 +13344,7 @@
         "x": 1010,
         "y": 690,
         "wires": [
-            [
-                "5804e26ca526fd52"
-            ],
+            [],
             []
         ]
     },
@@ -13346,60 +13391,6 @@
             ]
         ],
         "l": false
-    },
-    {
-        "id": "b3b56432cbf56f15",
-        "type": "debug",
-        "z": "bf7e6ed2256e3a44",
-        "g": "4370a35114295e81",
-        "name": "debug 145",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 610,
-        "wires": []
-    },
-    {
-        "id": "3edcdf401fd21da5",
-        "type": "debug",
-        "z": "bf7e6ed2256e3a44",
-        "g": "4370a35114295e81",
-        "name": "debug 146",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "5804e26ca526fd52",
-        "type": "debug",
-        "z": "bf7e6ed2256e3a44",
-        "g": "4370a35114295e81",
-        "name": "debug 147",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1240,
-        "y": 610,
-        "wires": []
     },
     {
         "id": "d64bb0ce43f56b78",
@@ -13688,7 +13679,7 @@
         "id": "6512429d8162770c",
         "type": "http request",
         "z": "e35d14410b661a09",
-        "name": "Sforin Category",
+        "name": "Sforin",
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -13707,7 +13698,7 @@
                 "valueValue": ""
             }
         ],
-        "x": 660,
+        "x": 630,
         "y": 90,
         "wires": [
             []
@@ -13782,7 +13773,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
+        "x": 580,
         "y": 300,
         "wires": [
             [
@@ -13855,8 +13846,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 190,
+        "x": 710,
+        "y": 200,
         "wires": [
             [
                 "3902efa95b9ee105"
@@ -14485,7 +14476,7 @@
         "env": [
             {
                 "name": "status",
-                "value": "RUNNING111",
+                "value": "RUNNING",
                 "type": "str"
             }
         ],
@@ -14637,19 +14628,20 @@
         "type": "function",
         "z": "706eaf0decd289cd",
         "name": "S4IN_INTEGRATION_SYNC",
-        "func": "// Gelen JSON\nlet data = msg.payload;\n\n// Varsayılan değer (isteğe göre dinamik hale getirilebilir)\nconst defaultValue = {\n    Id: null,\n    DataKey: null,\n    DataTypeID: null,\n    SyncTime: null,\n    ProcedureId: null,\n    ErrorInfo: null\n};\n\n// `data` bir array mi kontrol edelim\nif (!Array.isArray(data)) {\n    node.warn(\"Gelen data bir array değil, işlem yapılmadı.\");\n    msg.payload = []; // Boş bir dizi döndürülüyor\n    return msg;\n}\n\n// Map işlemi ile yeni yapı oluşturuluyor\nconst payloadData = data.map(x => ({\n    ID: x.ID || defaultValue.Id,\n    DataKey: x.Datakey || defaultValue.DataKey,\n    DataTypeId: x.DataTypeId || defaultValue.DataTypeID,  \n    SyncTime: x.SyncTime || defaultValue.SyncTime,\n    ProcedureID: x.ProcedureId || defaultValue.ProcedureId,\n    ErrorInfo: x.ErrorInfo || defaultValue.ErrorInfo\n}));\n\n\n\n \n// DataTypeId'ye göre gruplama yapılıyor\nlet groupedData = payloadData.reduce((acc, item) => {\n    let key = item.DataTypeId;\n    if (!acc[key]) {\n        acc[key] = []; // Eğer key yoksa, yeni bir array başlat\n    }\n    acc[key].push(item); // Veriyi gruba ekle\n    return acc;\n}, {});\n\nmsg.S4IN_INTEGRATION_SYNC = groupedData;\nreturn msg;\n",
-        "outputs": 1,
+        "func": "// Gelen JSON\nlet data = msg.payload;\nif (!Array.isArray(data) || data.length === 0) {\n   // node.error(\"Data is either not an array or it is empty\");\n    return [null, msg];\n}\n\n \n// Varsayılan değer (isteğe göre dinamik hale getirilebilir)\nconst defaultValue = {\n    Id: null,\n    DataKey: null,\n    DataTypeID: null,\n    SyncTime: null,\n    ProcedureId: null,\n    ErrorInfo: null\n};\n\n// `data` bir array mi kontrol edelim\nif (!Array.isArray(data)) {\n    node.warn(\"Gelen data bir array değil, işlem yapılmadı.\");\n    msg.payload = []; // Boş bir dizi döndürülüyor\n    return msg;\n}\n\n// Map işlemi ile yeni yapı oluşturuluyor\nconst payloadData = data.map(x => ({\n    ID: x.ID || defaultValue.Id,\n    DataKey: x.Datakey || defaultValue.DataKey,\n    DataTypeId: x.DataTypeId || defaultValue.DataTypeID,  \n    SyncTime: x.SyncTime || defaultValue.SyncTime,\n    ProcedureID: x.ProcedureId || defaultValue.ProcedureId,\n    ErrorInfo: x.ErrorInfo || defaultValue.ErrorInfo\n}));\n\n\n\n \n// DataTypeId'ye göre gruplama yapılıyor\nlet groupedData = payloadData.reduce((acc, item) => {\n    let key = item.DataTypeId;\n    if (!acc[key]) {\n        acc[key] = []; // Eğer key yoksa, yeni bir array başlat\n    }\n    acc[key].push(item); // Veriyi gruba ekle\n    return acc;\n}, {});\n\nmsg.S4IN_INTEGRATION_SYNC = groupedData;\nreturn [msg,null];\n",
+        "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
+        "x": 880,
         "y": 220,
         "wires": [
             [
                 "function-node"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -14657,7 +14649,7 @@
         "type": "function",
         "z": "706eaf0decd289cd",
         "name": "Process and Split Data",
-        "func": "// tblstsabit\nlet tblStsabit = env.get('INT_TBLSTSABIT')\n// TBLCASABIT\nlet tblCasbit = env.get('INT_TBLCASABIT')\n// TBLSIPAMAS\nlet tbLsipamas = env.get('INT_TBLSIPAMAS')\n\nlet categories = [tblStsabit, tblCasbit, tbLsipamas];\n// 1.cıkış tblstsabit\n// 2.cıkış casabit\n// 3.cıkış sıpamas\n\nlet outputs = [[], [], []]; // Her kategori için bir çıkış\nlet payload = msg.S4IN_INTEGRATION_SYNC;\ncategories.forEach((category, index) => {\n   if (payload[category]) {\n            outputs[index].push({\n                ...msg,\n                dataPayloadSync: payload[category] // Çıkışa gönderilecek obje\n            });\n         \n    }\n});\n\nreturn outputs;",
+        "func": "// tblstsabit\nlet tblStsabit = env.get('INT_TBLSTSABIT')\n// TBLCASABIT\nlet tblCasbit = env.get('INT_TBLCASABIT')\n// TBLSIPAMAS\nlet tbLsipamas = env.get('INT_TBLSIPAMAS')\n\nlet categories = [tblStsabit, tblCasbit, tbLsipamas];\n// 1.cıkış tblstsabit\n// 2.cıkış casabit\n// 3.cıkış sıpamas\n\nlet outputs = [[], [], []]; // Her kategori için bir çıkış\nlet payload = msg.S4IN_INTEGRATION_SYNC;\ncategories.forEach((category, index) => {\n  if (payload[category]) {\n            outputs[index].push({\n                ...msg,\n                dataPayloadSync: payload[category] // Çıkışa gönderilecek obje\n            });\n         \n    }\n    else {\n      outputs[index].push({\n          ...msg,\n          dataPayloadSync:null // Çıkışa gönderilecek obje\n      });\n    }\n});\n\nreturn outputs;",
         "outputs": 3,
         "timeout": "",
         "noerr": 0,
@@ -14734,7 +14726,7 @@
         "y": 470,
         "wires": [
             [
-                "join"
+                "cac14d83f4649482"
             ]
         ]
     },
@@ -14751,10 +14743,10 @@
         "finalize": "",
         "libs": [],
         "x": 980,
-        "y": 510,
+        "y": 520,
         "wires": [
             [
-                "join"
+                "cac14d83f4649482"
             ]
         ]
     },
@@ -14774,53 +14766,36 @@
         "y": 560,
         "wires": [
             [
-                "join"
+                "cac14d83f4649482"
             ]
         ]
     },
     {
-        "id": "join",
+        "id": "cac14d83f4649482",
         "type": "join",
         "z": "706eaf0decd289cd",
         "name": "Birleştir",
-        "mode": "manual",
+        "mode": "custom",
         "build": "object",
         "property": "payload",
         "propertyType": "msg",
         "key": "topic",
         "joiner": "\\n",
         "joinerType": "str",
-        "useparts": true,
+        "useparts": false,
         "accumulate": false,
-        "timeout": "",
+        "timeout": "10",
         "count": 3,
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1140,
-        "y": 510,
+        "x": 1230,
+        "y": 450,
         "wires": [
-            [
-                "final"
-            ]
+            []
         ]
-    },
-    {
-        "id": "final",
-        "type": "debug",
-        "z": "706eaf0decd289cd",
-        "name": "Tamamlandı",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "complete": "true",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1130,
-        "y": 390,
-        "wires": []
     },
     {
         "id": "04e72e5f4ec91246",
@@ -15506,7 +15481,7 @@
         "type": "function",
         "z": "a0444666d3c69ec9",
         "name": "function 95",
-        "func": "msg.indexSync = msg.indexSync||0\nlet items = msg.dataPayloadSyncTblStsabit; \nlet index = msg.indexSync;\n\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n\n   \n    // Construct the URL dynamically using dataKey\n    msg.stockCode_DataKey =items[index]?.DataKey;\n    msg.stockCode_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
+        "func": "msg.indexSync = msg.indexSync||0\nlet items = msg.dataPayloadSyncTblStsabit; \nlet index = msg.indexSync;\n\nif (!Array.isArray(items)) {\n   // node.error(\"items is not an array\");\n    return [null, msg];\n}\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n\n   \n    // Construct the URL dynamically using dataKey\n    msg.stockCode_DataKey =items[index]?.DataKey;\n    msg.stockCode_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -15618,7 +15593,7 @@
         "type": "function",
         "z": "5608c41bb386c85b",
         "name": "function 93",
-        "func": "msg.indexSyncTblcasabit = msg.indexSyncTblcasabit ||0\nlet items = msg.dataPayloadSyncTblCasabit; \nlet index = msg.indexSyncTblcasabit;\n\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n\n   \n    // Construct the URL dynamically using dataKey\n    msg.cutomer_DataKey =items[index]?.DataKey;\n    msg.cutomer_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
+        "func": "msg.indexSyncTblcasabit = msg.indexSyncTblcasabit ||0\nlet items = msg.dataPayloadSyncTblCasabit; \nlet index = msg.indexSyncTblcasabit;\n\nif (!Array.isArray(items)) {\n    //node.error(\"items is not an array dataPayloadSyncTblCasabit\");\n    return [null, msg];\n}\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n\n   \n    // Construct the URL dynamically using dataKey\n    msg.cutomer_DataKey =items[index]?.DataKey;\n    msg.cutomer_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -15807,8 +15782,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 655,
-        "y": 270,
+        "x": 615,
+        "y": 260,
         "wires": [
             [
                 "18ef2cd7a375fa85"
@@ -15880,7 +15855,6 @@
         "g": "4ffcfc17d9807587",
         "name": "MetropolUnNetsisToSFORINStock Card(MMSQL)IN",
         "links": [
-            "6286114ec4075e14",
             "9f49cd0452209994"
         ],
         "x": 125,
@@ -15969,7 +15943,7 @@
             }
         ],
         "x": 960,
-        "y": 330,
+        "y": 350,
         "wires": [
             [],
             []
@@ -16108,7 +16082,7 @@
         "type": "function",
         "z": "e83dd01867d6527c",
         "name": "function 97",
-        "func": "msg.indexSyncTblSipmas = msg.indexSyncTblSipmas ||0\nlet items = msg.dataPayloadSyncTblSipmas; \nlet index = msg.indexSyncTblSipmas;\n\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n \n   \n    // Construct the URL dynamically using dataKey\n    msg.sipmas_DataKey =items[index]?.DataKey;\n    msg.sipmas_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
+        "func": "msg.indexSyncTblSipmas = msg.indexSyncTblSipmas ||0\nlet items = msg.dataPayloadSyncTblSipmas; \nlet index = msg.indexSyncTblSipmas;\n\nif (!Array.isArray(items)) {\n   // node.error(\"items is not an array indexSyncTblSipmas\");\n    return [null, msg];\n}\nif (index >= items.length) {\n    return [null, msg];\n}\nelse {\n    \n \n   \n    // Construct the URL dynamically using dataKey\n    msg.sipmas_DataKey =items[index]?.DataKey;\n    msg.sipmas_Id = items[index]?.ID;\n   \n    return [msg, null];\n\n}\n\n\n \n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -17535,7 +17509,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 740,
-        "y": 1030,
+        "y": 1040,
         "wires": []
     },
     {
@@ -18533,6 +18507,326 @@
         ]
     },
     {
+        "id": "4cdec196da627d74",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 1 İşlem",
+        "func": "msg.payload = { kol: 1, status: 'done' };\nmsg.topic = 'kol1';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 950,
+        "wires": [
+            [
+                "1c45ad613ff0d8a9"
+            ]
+        ]
+    },
+    {
+        "id": "ea44050cb4e36866",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 2 İşlem",
+        "func": "msg.payload = { kol: 2, status: 'done' };\nmsg.topic = 'kol2';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1000,
+        "wires": [
+            [
+                "1c45ad613ff0d8a9"
+            ]
+        ]
+    },
+    {
+        "id": "d8cba48d8aee1ce6",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 3 İşlem",
+        "func": "msg.payload = { kol: 3, status: 'done' };\nmsg.topic = 'kol3';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1050,
+        "wires": [
+            [
+                "1c45ad613ff0d8a9"
+            ]
+        ]
+    },
+    {
+        "id": "1c45ad613ff0d8a9",
+        "type": "join",
+        "z": "6ef8732eb0726477",
+        "name": "Birleştir",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "10",
+        "count": 3,
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 720,
+        "y": 990,
+        "wires": [
+            [
+                "3b6b085c93d734c2"
+            ]
+        ]
+    },
+    {
+        "id": "3b6b085c93d734c2",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "Birleşim Sonucu",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 990,
+        "wires": []
+    },
+    {
+        "id": "2cda0a1d656d6466",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 970,
+        "wires": [
+            [
+                "4cdec196da627d74",
+                "ea44050cb4e36866",
+                "d8cba48d8aee1ce6"
+            ]
+        ]
+    },
+    {
+        "id": "62822a58642a3ded",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 1 İşlem",
+        "func": "msg.payload = { kol: 1, status: 'done' };\nmsg.topic = 'kol1';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1200,
+        "wires": [
+            [
+                "0baee1f9de13f97a",
+                "0ae6a3c30e2404c9"
+            ]
+        ]
+    },
+    {
+        "id": "4a3839053bf6cd07",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 2 İşlem",
+        "func": "msg.payload = { kol: 2, status: 'done' };\nmsg.topic = 'kol2';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1250,
+        "wires": [
+            [
+                "0baee1f9de13f97a",
+                "4c98075f5cd9cf30"
+            ]
+        ]
+    },
+    {
+        "id": "e2cd1bd39d29bb84",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 3 İşlem",
+        "func": "msg.payload = { kol: 3, status: 'done' };\nmsg.topic = 'kol3';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1300,
+        "wires": [
+            [
+                "0baee1f9de13f97a",
+                "0e7586e929edfe72"
+            ]
+        ]
+    },
+    {
+        "id": "0baee1f9de13f97a",
+        "type": "join",
+        "z": "6ef8732eb0726477",
+        "name": "Birleştir",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "10",
+        "count": 3,
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 690,
+        "y": 1350,
+        "wires": [
+            [
+                "94424a9d38f555f0"
+            ]
+        ]
+    },
+    {
+        "id": "0ae6a3c30e2404c9",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 1 Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 570,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "4c98075f5cd9cf30",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 2 Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 570,
+        "y": 1210,
+        "wires": []
+    },
+    {
+        "id": "0e7586e929edfe72",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "Kol 3 Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 570,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "94424a9d38f555f0",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "Birleşim Sonucu",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 820,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "d336ec3bcbc62115",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1190,
+        "wires": [
+            [
+                "62822a58642a3ded",
+                "4a3839053bf6cd07",
+                "e2cd1bd39d29bb84"
+            ]
+        ]
+    },
+    {
         "id": "f4973aa11bd2c838",
         "type": "comment",
         "z": "68459bb5ee15fc71",
@@ -18640,8 +18934,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 520,
+        "x": 1060,
+        "y": 490,
         "wires": []
     },
     {
