@@ -31,6 +31,14 @@
         "env": []
     },
     {
+        "id": "809ca1e71934314f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "fa51d0694c73d14f",
         "type": "subflow",
         "name": "Get Token SFORINAPI",
@@ -915,8 +923,8 @@
         "category": "",
         "in": [
             {
-                "x": 200,
-                "y": 520,
+                "x": 120,
+                "y": 90,
                 "wires": [
                     {
                         "id": "019be7c744de779e"
@@ -926,8 +934,8 @@
         ],
         "out": [
             {
-                "x": 1250,
-                "y": 660,
+                "x": 1170,
+                "y": 230,
                 "wires": [
                     {
                         "id": "f28bc80528e3b4c5",
@@ -936,8 +944,8 @@
                 ]
             },
             {
-                "x": 1190,
-                "y": 760,
+                "x": 1110,
+                "y": 330,
                 "wires": [
                     {
                         "id": "4958f6ff314c62cc",
@@ -1420,8 +1428,8 @@
                 ]
             },
             {
-                "x": 730,
-                "y": 280,
+                "x": 950,
+                "y": 250,
                 "wires": [
                     {
                         "id": "4118875c7f82f83b",
@@ -1463,6 +1471,39 @@
                     {
                         "id": "d314a1e44e24c82b",
                         "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "2edf95049d03fe02",
+        "type": "subflow",
+        "name": "NTSF000V1.1",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "89547ef5d2693443"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 780,
+                "y": 650,
+                "wires": [
+                    {
+                        "id": "2f17c1d0853dcd5f",
+                        "port": 0
                     }
                 ]
             }
@@ -2049,7 +2090,7 @@
             "7856ed62352954d2",
             "69afe7af16898732"
         ],
-        "x": 114,
+        "x": 204,
         "y": 109,
         "w": 402,
         "h": 82
@@ -2070,7 +2111,6 @@
             "6c9a90593a3d872f",
             "756712d785c49001",
             "660b73c8caa85f7d",
-            "0d109ce5201c7170",
             "5790442c0ce9fe2b",
             "8ee71b06f782ddeb",
             "a9151f608e0cb721",
@@ -2081,7 +2121,8 @@
             "16d1f410e64887fb",
             "3ad7633f50f04d77",
             "e14d384df9717c5e",
-            "4a2250cf6b38dbd5"
+            "4a2250cf6b38dbd5",
+            "0d109ce5201c7170"
         ],
         "x": 4,
         "y": 239,
@@ -2198,12 +2239,13 @@
             "7c742ff9435814d7",
             "b0fc70906e1e758d",
             "b0ae507329500bc1",
-            "e545fad3eafd4bb2"
+            "e545fad3eafd4bb2",
+            "31372cff5d057000"
         ],
         "x": 44,
-        "y": 789,
-        "w": 1522,
-        "h": 182
+        "y": 779,
+        "w": 1572,
+        "h": 192
     },
     {
         "id": "5e45d235ed7ac2ab",
@@ -2260,38 +2302,6 @@
         "h": 152
     },
     {
-        "id": "1242987d19abfe4b",
-        "type": "group",
-        "z": "bf7e6ed2256e3a44",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "30772c7a218b9544",
-            "d675a9b6680e6bef",
-            "a5e2e91b845d2064",
-            "4d04ba72d55fd3c3",
-            "bd7d0b9d21df7ed5",
-            "d4fbe12ee7adc6f3",
-            "eee6f7bd51d4dd1d",
-            "140b08892f9d7d47",
-            "bef47be5ebc9683b",
-            "0a0b1710a50ca970",
-            "bb19590bab6bf786",
-            "bd7d0e62813ab7df"
-        ],
-        "x": 134,
-        "y": 39,
-        "w": 1092,
-        "h": 362
-    },
-    {
         "id": "a5e0ee44f2fb8456",
         "type": "group",
         "z": "bf7e6ed2256e3a44",
@@ -2311,8 +2321,8 @@
             "3906d1cee2d6724b",
             "019be7c744de779e"
         ],
-        "x": 134,
-        "y": 439,
+        "x": 54,
+        "y": 9,
         "w": 772,
         "h": 122
     },
@@ -2339,10 +2349,11 @@
             "3049a7107f25c59d",
             "58392219b3f9c2aa",
             "f1ac5c0632527d2c",
-            "f28bc80528e3b4c5"
+            "f28bc80528e3b4c5",
+            "bcb1fb3328bdd6fa"
         ],
-        "x": 134,
-        "y": 589,
+        "x": 54,
+        "y": 159,
         "w": 972,
         "h": 192
     },
@@ -2392,8 +2403,8 @@
             "c2d2d091215c03b5",
             "0fd6fe89414c30de"
         ],
-        "x": 134,
-        "y": 819,
+        "x": 54,
+        "y": 389,
         "w": 702,
         "h": 142
     },
@@ -2424,12 +2435,13 @@
             "42c544e9b157280e",
             "3c7137841de56924",
             "d7394d56848f5e93",
-            "c73e20343dadb802"
+            "c73e20343dadb802",
+            "7a9085cd8800c099"
         ],
         "x": 34,
         "y": 439,
         "w": 1302,
-        "h": 202
+        "h": 222
     },
     {
         "id": "f1b021d67d3aeb12",
@@ -2485,7 +2497,7 @@
         ],
         "x": 44,
         "y": 399,
-        "w": 1292,
+        "w": 1302,
         "h": 182
     },
     {
@@ -2811,7 +2823,8 @@
             "b071bb445e7d186c",
             "18ef2cd7a375fa85",
             "87743355ad736859",
-            "23327e292123f24b"
+            "23327e292123f24b",
+            "bffd3db1cb70eaeb"
         ],
         "x": 84,
         "y": 219,
@@ -2841,8 +2854,82 @@
         ],
         "x": 84,
         "y": 459,
-        "w": 702,
+        "w": 692,
         "h": 142
+    },
+    {
+        "id": "88e40feae09cb4d7",
+        "type": "group",
+        "z": "2edf95049d03fe02",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c8c9d4575946d7d9",
+            "c8f5e470ee1a4ab9",
+            "dd57b90e298b4119",
+            "68472188d30b4e5e",
+            "4fe26556de5f8fc1",
+            "2a70d2ce7afd5fb7",
+            "1b10eb3ceb06f325",
+            "8226c7a9619f82f3",
+            "89547ef5d2693443"
+        ],
+        "x": 74,
+        "y": 179,
+        "w": 1752,
+        "h": 192
+    },
+    {
+        "id": "f3713ffc90b82f1b",
+        "type": "group",
+        "z": "2edf95049d03fe02",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bd5863f279d8acbe",
+            "d4916d0c55f34b57",
+            "78a520e94ecac894",
+            "ade37fd3d6884a0d",
+            "4500df576b032b37",
+            "96c8a7c233cc7b29",
+            "931f640414d07621",
+            "d3ae7c1a110ecf05",
+            "e6ef8bb4aeec3bf0",
+            "742e24344cd1cbad"
+        ],
+        "x": 24,
+        "y": 399,
+        "w": 1782,
+        "h": 142
+    },
+    {
+        "id": "7819cc31128657b2",
+        "type": "group",
+        "z": "2edf95049d03fe02",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "01cf3ea9ee41d1a8",
+            "7897ab6d6c5e4f57",
+            "2f17c1d0853dcd5f",
+            "9e550fb64304ba19",
+            "7a1a8ddb1e6d9651"
+        ],
+        "x": 34,
+        "y": 569,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "873c9acca903bcab",
@@ -10179,7 +10266,7 @@
         "links": [
             "0d109ce5201c7170"
         ],
-        "x": 475,
+        "x": 565,
         "y": 150,
         "wires": []
     },
@@ -10856,7 +10943,7 @@
                 "type": "str"
             }
         ],
-        "x": 300,
+        "x": 390,
         "y": 150,
         "wires": [
             [
@@ -10924,7 +11011,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 155,
+        "x": 245,
         "y": 150,
         "wires": [
             [
@@ -11103,8 +11190,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1420,
-        "y": 310,
+        "x": 1430,
+        "y": 300,
         "wires": [
             [
                 "8d8bacc664ddc537"
@@ -11148,7 +11235,7 @@
         "z": "17803f695ab8af0d",
         "g": "69a8c850b940485b",
         "name": "ConvertJsonSforinProduct",
-        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return { \n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n             \n         \n       \n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
+        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return { \n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": null,\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n             \n         \n       \n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11422,7 +11509,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')   \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n//node.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN (N'MAMUL',N'YARIMML',N'HAMMADDE',N'AMBALAJ',N'DİĞER')    \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n//node.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11747,7 +11834,8 @@
         "y": 900,
         "wires": [
             [
-                "4dda1622c9781aad"
+                "4dda1622c9781aad",
+                "31372cff5d057000"
             ]
         ]
     },
@@ -11765,8 +11853,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1200,
-        "y": 440,
+        "x": 1210,
+        "y": 450,
         "wires": []
     },
     {
@@ -11779,11 +11867,30 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 530,
+        "x": 1230,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "31372cff5d057000",
+        "type": "debug",
+        "z": "17803f695ab8af0d",
+        "g": "fbf5966f1914eea8",
+        "name": "debug 193",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 820,
         "wires": []
     },
     {
@@ -12179,9 +12286,7 @@
         "x": 840,
         "y": 430,
         "wires": [
-            [
-                "fce32da71ca36cd3"
-            ],
+            [],
             []
         ]
     },
@@ -12205,23 +12310,6 @@
                 "2fb08d96857c7418"
             ]
         ]
-    },
-    {
-        "id": "fce32da71ca36cd3",
-        "type": "debug",
-        "z": "3179678ca8b98244",
-        "name": "debug 186",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1070,
-        "y": 430,
-        "wires": []
     },
     {
         "id": "f123bd878033b75f",
@@ -12621,7 +12709,7 @@
         "y": 160,
         "wires": [
             [
-                "7ae8e30ff01d6a80"
+                "b5292c961f291b88"
             ]
         ],
         "icon": "node-red/bridge.svg"
@@ -12664,19 +12752,6 @@
             []
         ],
         "icon": "node-red/bridge.svg"
-    },
-    {
-        "id": "7ae8e30ff01d6a80",
-        "type": "subflow:5b2ae23bfd497a94",
-        "z": "b9701e9ae1caaffd",
-        "name": "",
-        "x": 820,
-        "y": 220,
-        "wires": [
-            [
-                "25d5711acb4bcc84"
-            ]
-        ]
     },
     {
         "id": "25d5711acb4bcc84",
@@ -12769,249 +12844,15 @@
         "l": false
     },
     {
-        "id": "30772c7a218b9544",
-        "type": "http request",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "Get BuyerAndSellerOrder",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "{{{SFORIN_URL}}}wmsmaster/api/WmsMaster/GetAllDocuments",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "Content-Type",
-                "keyValue": "",
-                "valueType": "application/json",
-                "valueValue": ""
-            }
-        ],
-        "x": 1090,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d675a9b6680e6bef",
-        "type": "complete",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
+        "id": "b5292c961f291b88",
+        "type": "subflow:2edf95049d03fe02",
+        "z": "b9701e9ae1caaffd",
         "name": "",
-        "scope": [
-            "30772c7a218b9544"
-        ],
-        "uncaught": false,
-        "x": 230,
-        "y": 320,
+        "x": 1060,
+        "y": 220,
         "wires": [
             [
-                "140b08892f9d7d47"
-            ]
-        ]
-    },
-    {
-        "id": "a5e2e91b845d2064",
-        "type": "catch",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "catch errors",
-        "scope": [
-            "30772c7a218b9544"
-        ],
-        "uncaught": false,
-        "x": 230,
-        "y": 240,
-        "wires": [
-            [
-                "bd7d0b9d21df7ed5"
-            ]
-        ]
-    },
-    {
-        "id": "4d04ba72d55fd3c3",
-        "type": "function",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "params",
-        "func": "if (msg.retries === undefined) {\n    msg.retries = 0;\n}\n \nmsg.SFORIN_URL = env.get(\"SFORIN_URL\");\n  \nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 820,
-        "y": 140,
-        "wires": [
-            [
-                "30772c7a218b9544"
-            ]
-        ]
-    },
-    {
-        "id": "bd7d0b9d21df7ed5",
-        "type": "function",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "retry logic",
-        "func": "msg.retries || 0\nmsg.errorMesaj=\"\";\nmsg.retries++;\n\nif (msg.retries <= 3) {\n    return [msg,null];\n} else {\n    \n    return [null, msg];\n}",
-        "outputs": 2,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 240,
-        "wires": [
-            [
-                "bd7d0e62813ab7df"
-            ],
-            [
-                "d4fbe12ee7adc6f3"
-            ]
-        ]
-    },
-    {
-        "id": "d4fbe12ee7adc6f3",
-        "type": "debug",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "eee6f7bd51d4dd1d",
-        "type": "function",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "BuyerAndSellerOrder",
-        "func": "// Get the JSON data\nvar buyerAndSellerOrderPayload = msg.payload.data;\n\nvar buyerAndSellerOrderDocNumber = [];\n\n// Loop through each item and push 'docNum' into buyerAndSellerOrderDocNumber array\nbuyerAndSellerOrderPayload.forEach(x => {\n        buyerAndSellerOrderDocNumber.push(x.docNum); // Collect all order numbers to compare with Netsis\n});\n\n// Assign the array to a new property in msg\nmsg.buyerAndSellerOrderDocNumber = buyerAndSellerOrderDocNumber;\nmsg.buyerAndSellerOrderPayload = buyerAndSellerOrderPayload;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 300,
-        "wires": [
-            [
-                "bb19590bab6bf786"
-            ]
-        ]
-    },
-    {
-        "id": "140b08892f9d7d47",
-        "type": "switch",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "",
-        "property": "statusCode",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "401",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "200",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 370,
-        "y": 320,
-        "wires": [
-            [
-                "bd7d0e62813ab7df"
-            ],
-            [
-                "eee6f7bd51d4dd1d"
-            ],
-            [
-                "bef47be5ebc9683b"
-            ]
-        ]
-    },
-    {
-        "id": "bef47be5ebc9683b",
-        "type": "debug",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 510,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "0a0b1710a50ca970",
-        "type": "comment",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "GetAllSFORINOrderInvoice",
-        "info": "",
-        "x": 280,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "bb19590bab6bf786",
-        "type": "link out",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "MetropolUnNetsisToSFORINStock Card(MMSQL)OUT",
-        "mode": "link",
-        "links": [
-            "b8d8a2600d07733f"
-        ],
-        "x": 765,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "bd7d0e62813ab7df",
-        "type": "subflow:fa51d0694c73d14f",
-        "z": "bf7e6ed2256e3a44",
-        "g": "1242987d19abfe4b",
-        "name": "",
-        "x": 500,
-        "y": 140,
-        "wires": [
-            [
-                "4d04ba72d55fd3c3"
+                "25d5711acb4bcc84"
             ]
         ]
     },
@@ -13028,8 +12869,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 705,
-        "y": 630,
+        "x": 625,
+        "y": 200,
         "wires": [
             [
                 "58392219b3f9c2aa"
@@ -13043,8 +12884,8 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "",
-        "x": 500,
-        "y": 700,
+        "x": 420,
+        "y": 270,
         "wires": [
             [
                 "9578b0d362f0bc8b"
@@ -13064,8 +12905,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 700,
+        "x": 190,
+        "y": 270,
         "wires": [
             [
                 "a209aa097313b145"
@@ -13085,8 +12926,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 700,
+        "x": 760,
+        "y": 270,
         "wires": [
             [
                 "f28bc80528e3b4c5"
@@ -13100,18 +12941,19 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "JSON",
-        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: \"\",\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom: [],\n                PutawayTo: [],\n                IsObligatory: true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      \n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(null, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.customerCode, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(null, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(null, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(null, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                documentStorageLocations: {\n                    PickFrom: getValueOrDefault(null, documentData.items[0].documentStorageLocations.PickFrom),\n                    PutawayTo: msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)?._id\n                        ? [msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)._id]\n                        : [],\n                    IsObligatory: getValueOrDefault(null, documentData.items[0].documentStorageLocations.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData,\n        current: [\n            {\n                key: \"\",\n                value: \"\"\n            }\n        ]\n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
+        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: \"\",\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom: [],\n                PutawayTo: [],\n                IsObligatory: true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      \n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(null, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.customerCode, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(null, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(null, documentData.items[0].BaseQuantity),//ana birim cinsinde doludurlacak \n                BaseUnit: getValueOrDefault(null, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                documentStorageLocations: {\n                    PickFrom: getValueOrDefault(null, documentData.items[0].documentStorageLocations.PickFrom),\n                    PutawayTo: msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)?._id\n                        ? [msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)._id]\n                        : [],\n                    IsObligatory: getValueOrDefault(null, documentData.items[0].documentStorageLocations.IsObligatory)\n                },\n                notes: getValueOrDefault([], documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData,\n        current: [\n            {\n                key: \"\",\n                value: \"\"\n            }\n        ]\n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 700,
+        "x": 620,
+        "y": 270,
         "wires": [
             [
-                "4958f6ff314c62cc"
+                "4958f6ff314c62cc",
+                "bcb1fb3328bdd6fa"
             ]
         ]
     },
@@ -13122,11 +12964,10 @@
         "g": "4370a35114295e81",
         "name": "MetropolUnNetsisToSFORINStock Card(MMSQL)IN",
         "links": [
-            "bb19590bab6bf786",
             "326b7025dfe0b336"
         ],
-        "x": 175,
-        "y": 640,
+        "x": 95,
+        "y": 210,
         "wires": [
             [
                 "6f00d978c94db6cf"
@@ -13146,8 +12987,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 520,
+        "x": 570,
+        "y": 90,
         "wires": [
             [
                 "326b7025dfe0b336"
@@ -13161,8 +13002,8 @@
         "g": "a5e0ee44f2fb8456",
         "name": "GetAllSFORINGetAllDocumentTypes",
         "info": "",
-        "x": 300,
-        "y": 480,
+        "x": 220,
+        "y": 50,
         "wires": []
     },
     {
@@ -13175,8 +13016,8 @@
         "links": [
             "b8d8a2600d07733f"
         ],
-        "x": 865,
-        "y": 520,
+        "x": 785,
+        "y": 90,
         "wires": []
     },
     {
@@ -13186,8 +13027,8 @@
         "g": "4370a35114295e81",
         "name": "olcubrm 0 olanlar kontrol edilecek",
         "info": "olcubrm 0 olanlar kontrol edilecek",
-        "x": 360,
-        "y": 660,
+        "x": 280,
+        "y": 230,
         "wires": []
     },
     {
@@ -13203,8 +13044,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 920,
+        "x": 520,
+        "y": 490,
         "wires": [
             [
                 "c08a4b7860d81ea4"
@@ -13218,8 +13059,8 @@
         "g": "8f53555fb01c63d0",
         "name": "GetAllSFORINGetWarehouseLocations",
         "info": "",
-        "x": 310,
-        "y": 860,
+        "x": 230,
+        "y": 430,
         "wires": []
     },
     {
@@ -13232,8 +13073,8 @@
         "links": [
             "6b1db2938b49fc97"
         ],
-        "x": 825,
-        "y": 630,
+        "x": 745,
+        "y": 200,
         "wires": []
     },
     {
@@ -13245,8 +13086,8 @@
         "links": [
             "58392219b3f9c2aa"
         ],
-        "x": 225,
-        "y": 920,
+        "x": 145,
+        "y": 490,
         "wires": [
             [
                 "0fd6fe89414c30de"
@@ -13263,8 +13104,8 @@
         "links": [
             "f1ac5c0632527d2c"
         ],
-        "x": 795,
-        "y": 920,
+        "x": 715,
+        "y": 490,
         "wires": []
     },
     {
@@ -13276,8 +13117,8 @@
         "links": [
             "c08a4b7860d81ea4"
         ],
-        "x": 595,
-        "y": 740,
+        "x": 515,
+        "y": 310,
         "wires": [
             [
                 "42f01e2ec49a4485"
@@ -13297,8 +13138,8 @@
                 "type": "str"
             }
         ],
-        "x": 410,
-        "y": 520,
+        "x": 330,
+        "y": 90,
         "wires": [
             [
                 "7924c40ccd5e027d"
@@ -13319,8 +13160,8 @@
                 "type": "str"
             }
         ],
-        "x": 380,
-        "y": 920,
+        "x": 300,
+        "y": 490,
         "wires": [
             [
                 "fe7f1fd6938b9b86"
@@ -13341,8 +13182,8 @@
                 "type": "str"
             }
         ],
-        "x": 1010,
-        "y": 690,
+        "x": 930,
+        "y": 260,
         "wires": [
             [],
             []
@@ -13361,8 +13202,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 255,
-        "y": 520,
+        "x": 175,
+        "y": 90,
         "wires": [
             [
                 "3906d1cee2d6724b"
@@ -13383,14 +13224,32 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 275,
-        "y": 910,
+        "x": 195,
+        "y": 480,
         "wires": [
             [
                 "c2d2d091215c03b5"
             ]
         ],
         "l": false
+    },
+    {
+        "id": "bcb1fb3328bdd6fa",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 192",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "netsis2s4inBuyerAndSellerOrder",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 220,
+        "wires": []
     },
     {
         "id": "d64bb0ce43f56b78",
@@ -13766,7 +13625,7 @@
         "type": "function",
         "z": "e35d14410b661a09",
         "name": "LogJson",
-        "func": "\n\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\")|| \"\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: msg.flowName || \"\",  \n    additionalData:\"No additional data\", // Extra info    \n    requestPayload: JSON.stringify(msg.datapayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.errorMesaj || {}) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "func": "\n\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: msg.flowName || \"\",  \n    additionalData:\"No additional data\", // Extra info    \n    requestPayload: JSON.stringify(msg.datapayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.errorMesaj || {}) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14069,8 +13928,7 @@
         "y": 200,
         "wires": [
             [
-                "41480df05cd9157f",
-                "34d313c96921b312"
+                "41480df05cd9157f"
             ]
         ],
         "icon": "node-red/bridge.svg"
@@ -14166,6 +14024,13 @@
         "type": "subflow:e00c065eb7c30613",
         "z": "e02241cc3f021318",
         "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "wmsmaster/api/WmsMaster/CleanLog",
+                "type": "str"
+            }
+        ],
         "x": 1140,
         "y": 270,
         "wires": [
@@ -14176,28 +14041,11 @@
         ]
     },
     {
-        "id": "34d313c96921b312",
-        "type": "debug",
-        "z": "e02241cc3f021318",
-        "name": "debug 156",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1390,
-        "y": 150,
-        "wires": []
-    },
-    {
         "id": "d68543ab51e43e79",
         "type": "function",
         "z": "e00c065eb7c30613",
         "name": "Get Sforin Category",
-        "func": " msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nlet baseUrl = global.get(\"SFORIN_URL\");\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.dataPayload = \"?Interval=\" + env.get(\"Interval\");\nlet url = baseUrl + env.get(\"Url\");\nlet queryString = msg.dataPayload;\n\nmsg.url = url + queryString\n\n\nreturn msg;",
+        "func": " msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nlet baseUrl = global.get(\"SFORIN_URL\");\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.dataPayload = \"?Interval=\" + env.get(\"Interval\");\nlet url = baseUrl + env.get(\"Url\");\nlet queryString = msg.dataPayload;\n\nmsg.url = url + queryString\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14295,7 +14143,7 @@
         "method": "GET",
         "ret": "obj",
         "paytoqs": "query",
-        "url": "http://example.com/CleanLog?Interval=10",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -14999,7 +14847,7 @@
         "z": "407e1a0c9ab51943",
         "g": "08eeb7ef81fd0b35",
         "name": "ConvertJsonSforinProduct",
-        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return {\n        \"requestId\": \"\",\n        \"sender\": \"Node-RED-SFORIN\",\n        \"data\": [\n            {\n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                 \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n              \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n               \"manufacturers\": [],\n               \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n            }\n        ],\n        \"current\": [\n            // {\n            //     \"key\": \"\",\n            //     \"value\": \"\"\n            // }\n        ]\n        \n    };\n    \n});\n\nmsg.item = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
+        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n    \n    \n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n    \n    return {\n    \n        \"requestId\": \"\",\n        \"sender\": \"Node-RED-SFORIN\",\n        \"data\": [\n            {\n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                 \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                   ...(s4inCatagoryGroupCode.categoryCode?[ \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    \n                   }]:[]),\n                   ...(s4inCatagoryParentCode.categoryCode?[\n                     {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                   ]:[])\n                  \n                   \n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n              \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n               \"manufacturers\": [],\n               \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n            }\n        ]\n        \n    };\n    \n});\n\nmsg.item = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -15199,8 +15047,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1470,
-        "y": 200,
+        "x": 1500,
+        "y": 190,
         "wires": [
             [
                 "e24717d7cd0dc85e"
@@ -15844,7 +15692,8 @@
         "y": 340,
         "wires": [
             [
-                "e0b5b2e8ae455ae7"
+                "e0b5b2e8ae455ae7",
+                "bffd3db1cb70eaeb"
             ]
         ]
     },
@@ -16008,7 +15857,7 @@
         "links": [
             "87743355ad736859"
         ],
-        "x": 745,
+        "x": 735,
         "y": 560,
         "wires": []
     },
@@ -16055,6 +15904,24 @@
             ]
         ],
         "l": false
+    },
+    {
+        "id": "bffd3db1cb70eaeb",
+        "type": "debug",
+        "z": "4a994836a6392703",
+        "g": "4ffcfc17d9807587",
+        "name": "debug 191",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "netsis2s4inBuyerAndSellerOrder",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "107498694ec2a151",
@@ -16167,6 +16034,472 @@
                 "77b8d55e52ead813"
             ]
         ]
+    },
+    {
+        "id": "08f5b7f2d9c2f1d5",
+        "type": "comment",
+        "z": "2edf95049d03fe02",
+        "name": "NetsistoSforinCategoriesIntegration",
+        "info": "S4INDE OLAN TUM GRUP KODLARINI(KOD_2) SILINIYOR",
+        "x": 210,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c8c9d4575946d7d9",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "Compare Category Codes",
+        "func": "\n// Extract the arrays from the message payload\nlet netsisGroupCode = msg.netsisGroupCode;\n\n\n\n// Map the incoming objects to Sets based on their respective codes\nmsg.listNetsisGroupCode = Array.from(new Set(netsisGroupCode.map(item => [item.GRUP_KOD, item.GRUP_ISIM])));\n\n \n\n\nmsg.status = true;\n   \nreturn  msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 270,
+        "wires": [
+            [
+                "c8f5e470ee1a4ab9"
+            ]
+        ]
+    },
+    {
+        "id": "c8f5e470ee1a4ab9",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "ConvertJson",
+        "func": "let items = msg.listNetsisGroupCode;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\nif (!Array.isArray(items)) {\n    node.warn(\"Items is not an array!\");\n}\n\n\nconst allData = items.map(item => ({\n    \"categoryCode\": item[0],\n    \"definition_lang\": item[1],\n    \"parentCategory\": null,\n    \"netsisDataField\": true\n}));\n\n\nconst result = {\n    \"requestId\": \"\",\n    \"sender\": \"SFORIN\",\n    \"data\": allData\n    \n};\n\nmsg.dataPayload=result;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 270,
+        "wires": [
+            [
+                "dd57b90e298b4119"
+            ]
+        ]
+    },
+    {
+        "id": "dd57b90e298b4119",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "matchingItemsIndex",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSF000V1.1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 260,
+        "wires": [
+            [
+                "8226c7a9619f82f3"
+            ]
+        ]
+    },
+    {
+        "id": "68472188d30b4e5e",
+        "type": "comment",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "Create Netsis To Sforin Product Category",
+        "info": "KOD2 LERI MANUEL ACILMA IHTIMALINE KARSI KONTROLLU BIR AKTARIM SAGLANDI",
+        "x": 260,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4fe26556de5f8fc1",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "",
+        "env": [
+            {
+                "name": "query",
+                "value": " SELECT DISTINCT dbo.TRK(KOD_2) GRUP_KOD,dbo.TRK(ISNULL(KOD2.GRUP_ISIM,'')) GRUP_ISIM     FROM TBLSTSABIT ST     LEFT JOIN TBLSTOKKOD2 KOD2 ON KOD2.GRUP_KOD=ST.KOD_2   WHERE KOD_2 IS NOT NULL",
+                "type": "str"
+            }
+        ],
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "2a70d2ce7afd5fb7"
+            ]
+        ]
+    },
+    {
+        "id": "2a70d2ce7afd5fb7",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "Get Netsis Group Code Result",
+        "func": "let items = msg.payload;\nif (!items || !Array.isArray(items)) {\n    node.error(\"Invalid payload data\", msg);\n    return null;\n}\n\n \nmsg.netsisGroupCode=items;\n \n \nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "c8c9d4575946d7d9"
+            ]
+        ]
+    },
+    {
+        "id": "1b10eb3ceb06f325",
+        "type": "link out",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "MetropolUnNetsisToSforinFieldIntegrationCompareCategoryCodesOut4",
+        "mode": "link",
+        "links": [
+            "931f640414d07621"
+        ],
+        "x": 1785,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "8226c7a9619f82f3",
+        "type": "subflow:e35d14410b661a09",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "wmsmaster/api/WmsMaster/SyncProductCategories",
+                "type": "str"
+            }
+        ],
+        "x": 1680,
+        "y": 260,
+        "wires": [
+            [
+                "1b10eb3ceb06f325"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "89547ef5d2693443",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "88e40feae09cb4d7",
+        "name": "function 103",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSF000V1.1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 135,
+        "y": 280,
+        "wires": [
+            [
+                "4fe26556de5f8fc1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bd5863f279d8acbe",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "Compare Category Codes",
+        "func": "\n// Extract the arrays from the message payload\nlet netsisGroupCode = msg.netsisGroupCode;\n\n// Map the incoming objects to Sets based on their respective codes\nmsg.listNetsisGroupCode = Array.from(new Set(netsisGroupCode.map(item => [item.GRUP_KOD, item.GRUP_ISIM, item.ALT_GRUP_KOD, item.ALT_GRUP_ISIM])));\n \n\n   \nreturn  msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 500,
+        "wires": [
+            [
+                "d4916d0c55f34b57"
+            ]
+        ]
+    },
+    {
+        "id": "d4916d0c55f34b57",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "ConvertJson",
+        "func": "let items = msg.listNetsisGroupCode;\n// 0=> GRUP_KOD\n// 1=> GRUP_ISIM\n\nconst allData = items.map(item => ({\n    \"categoryCode\": item[2],\n    \"definition_lang\": item[3],\n    \"parentCategory\": item[0],\n    \"netsisDataField\": true\n}));\n\n\nconst result = {\n    \"requestId\": \"\",\n    \"sender\": \"node-red\",\n    \"data\": allData\n    \n};\nmsg.dataPayload=result;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 490,
+        "wires": [
+            [
+                "78a520e94ecac894"
+            ]
+        ]
+    },
+    {
+        "id": "78a520e94ecac894",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "matchingItemsIndex",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSF000V1.1\";\n\nreturn msg;;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 490,
+        "wires": [
+            [
+                "e6ef8bb4aeec3bf0"
+            ]
+        ]
+    },
+    {
+        "id": "ade37fd3d6884a0d",
+        "type": "comment",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "Create Netsis To Sforin Product Category",
+        "info": "KOD2 LERI MANUEL ACILMA IHTIMALINE KARSI KONTROLLU BIR AKTARIM SAGLANDI",
+        "x": 260,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "4500df576b032b37",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "",
+        "env": [
+            {
+                "name": "query",
+                "value": " SELECT DISTINCT dbo.TRK(KOD_2) GRUP_KOD,                 dbo.TRK(ISNULL(KOD2.GRUP_ISIM, '')) GRUP_ISIM,                 dbo.TRK(KOD_3) ALT_GRUP_KOD,                 dbo.TRK(ISNULL(KOD3.GRUP_ISIM, '')) ALT_GRUP_ISIM FROM TBLSTSABIT ST LEFT JOIN TBLSTOKKOD2 KOD2 ON KOD2.GRUP_KOD=ST.KOD_2 LEFT JOIN TBLSTOKKOD3 KOD3 ON KOD3.GRUP_KOD=ST.KOD_3 WHERE KOD_2 IS NOT NULL   AND KOD_3 IS NOT NULL",
+                "type": "str"
+            }
+        ],
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "96c8a7c233cc7b29"
+            ]
+        ]
+    },
+    {
+        "id": "96c8a7c233cc7b29",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "Get Netsis Group Code Result",
+        "func": "let items = msg.payload;\nif (!items || !Array.isArray(items)) {\n    node.error(\"Invalid payload data\", msg);\n    return null;\n}\n\n\nmsg.netsisGroupCode=items;\n\n \n \nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "bd5863f279d8acbe"
+            ]
+        ]
+    },
+    {
+        "id": "931f640414d07621",
+        "type": "link in",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "MetropolUnNetsisToSforinFieldIntegrationCompareCategoryCodesIn",
+        "links": [
+            "1b10eb3ceb06f325"
+        ],
+        "x": 65,
+        "y": 500,
+        "wires": [
+            [
+                "742e24344cd1cbad"
+            ]
+        ]
+    },
+    {
+        "id": "d3ae7c1a110ecf05",
+        "type": "link out",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "GetAllProductCataOut",
+        "mode": "link",
+        "links": [
+            "7897ab6d6c5e4f57"
+        ],
+        "x": 1765,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "e6ef8bb4aeec3bf0",
+        "type": "subflow:e35d14410b661a09",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "wmsmaster/api/WmsMaster/SyncProductCategories",
+                "type": "str"
+            }
+        ],
+        "x": 1620,
+        "y": 490,
+        "wires": [
+            [
+                "d3ae7c1a110ecf05"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "742e24344cd1cbad",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "f3713ffc90b82f1b",
+        "name": "function 104",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSF000V1.0\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 115,
+        "y": 500,
+        "wires": [
+            [
+                "4500df576b032b37"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "01cf3ea9ee41d1a8",
+        "type": "comment",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "GET ALL msg.netsisCatagoryType",
+        "info": "",
+        "x": 200,
+        "y": 610,
+        "wires": []
+    },
+    {
+        "id": "7897ab6d6c5e4f57",
+        "type": "link in",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "GetAllProductCataIn",
+        "links": [
+            "d3ae7c1a110ecf05"
+        ],
+        "x": 125,
+        "y": 650,
+        "wires": [
+            [
+                "7a1a8ddb1e6d9651"
+            ]
+        ]
+    },
+    {
+        "id": "2f17c1d0853dcd5f",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "function 105",
+        "func": "msg.getAllNetsisProductTypes=msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 650,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e550fb64304ba19",
+        "type": "subflow:e35d14410b661a09",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "wmsmaster/api/WmsMaster/GetAllProductCategory",
+                "type": "str"
+            }
+        ],
+        "x": 290,
+        "y": 650,
+        "wires": [
+            [
+                "2f17c1d0853dcd5f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7a1a8ddb1e6d9651",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "function 106",
+        "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSF000V1.1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 185,
+        "y": 650,
+        "wires": [
+            [
+                "9e550fb64304ba19"
+            ]
+        ],
+        "l": false
     },
     {
         "id": "cce8f946aa3f45d9",
@@ -16327,7 +16660,7 @@
             "content-type": "application/json"
         },
         "x": 1250,
-        "y": 540,
+        "y": 530,
         "wires": []
     },
     {
@@ -16633,7 +16966,8 @@
         "y": 580,
         "wires": [
             [
-                "3c7137841de56924"
+                "3c7137841de56924",
+                "7a9085cd8800c099"
             ]
         ],
         "l": false
@@ -17537,7 +17871,7 @@
             "content-type": "application/json"
         },
         "x": 1130,
-        "y": 340,
+        "y": 350,
         "wires": []
     },
     {
@@ -17594,6 +17928,23 @@
         },
         "x": 1210,
         "y": 990,
+        "wires": []
+    },
+    {
+        "id": "7a9085cd8800c099",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "debug 196",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 620,
         "wires": []
     },
     {
@@ -18156,8 +18507,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 440,
+        "x": 720,
+        "y": 420,
         "wires": [
             [
                 "05a88c2977276a08"
@@ -18827,6 +19178,137 @@
         ]
     },
     {
+        "id": "329d14cf90ce5f7b",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "query",
+                "value": " SELECT DISTINCT dbo.TRK(KOD_2) GRUP_KOD,dbo.TRK(ISNULL(KOD2.GRUP_ISIM,'')) GRUP_ISIM     FROM TBLSTSABIT ST     LEFT JOIN TBLSTOKKOD2 KOD2 ON KOD2.GRUP_KOD=ST.KOD_2   WHERE KOD_2 IS NOT NULL",
+                "type": "str"
+            }
+        ],
+        "x": 1290,
+        "y": 220,
+        "wires": [
+            [
+                "7b8c99c995293e78"
+            ]
+        ]
+    },
+    {
+        "id": "2e9ab05e35689dad",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1090,
+        "y": 290,
+        "wires": [
+            [
+                "329d14cf90ce5f7b"
+            ]
+        ]
+    },
+    {
+        "id": "7b8c99c995293e78",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 194",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "beb497b7b5b87336",
+        "type": "subflow:e35d14410b661a09",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "wmsmaster/api/WmsMaster/GetWarehouseLocations",
+                "type": "str"
+            }
+        ],
+        "x": 660,
+        "y": 1520,
+        "wires": [
+            [
+                "a922b3d5cdbaa8c7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "87dd487ed72e2953",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 1550,
+        "wires": [
+            [
+                "beb497b7b5b87336"
+            ]
+        ]
+    },
+    {
+        "id": "a922b3d5cdbaa8c7",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 195",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1490,
+        "wires": []
+    },
+    {
         "id": "f4973aa11bd2c838",
         "type": "comment",
         "z": "68459bb5ee15fc71",
@@ -18934,8 +19416,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 490,
+        "x": 1100,
+        "y": 460,
         "wires": []
     },
     {
