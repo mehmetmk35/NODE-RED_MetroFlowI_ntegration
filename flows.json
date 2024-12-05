@@ -950,6 +950,10 @@
                     {
                         "id": "4958f6ff314c62cc",
                         "port": 1
+                    },
+                    {
+                        "id": "f28bc80528e3b4c5",
+                        "port": 1
                     }
                 ]
             }
@@ -2350,12 +2354,14 @@
             "58392219b3f9c2aa",
             "f1ac5c0632527d2c",
             "f28bc80528e3b4c5",
-            "bcb1fb3328bdd6fa"
+            "61719c8c4b7642fb",
+            "79d95601c5a9ac7d",
+            "eb92eaeca91e5768"
         ],
         "x": 54,
         "y": 159,
-        "w": 972,
-        "h": 192
+        "w": 1202,
+        "h": 202
     },
     {
         "id": "68643bb6b5be193f",
@@ -2436,12 +2442,12 @@
             "3c7137841de56924",
             "d7394d56848f5e93",
             "c73e20343dadb802",
-            "7a9085cd8800c099"
+            "d974a20cfb396a46"
         ],
         "x": 34,
         "y": 439,
         "w": 1302,
-        "h": 222
+        "h": 202
     },
     {
         "id": "f1b021d67d3aeb12",
@@ -2493,46 +2499,12 @@
             "dd46605ec969997f",
             "1aaad88f0896c456",
             "be655e8be15c8af3",
-            "aac7d06117efeb1d"
+            "aac7d06117efeb1d",
+            "c7610deb9c793f2b"
         ],
         "x": 44,
         "y": 399,
         "w": 1302,
-        "h": 182
-    },
-    {
-        "id": "0ade6e9b8e25f5a2",
-        "type": "group",
-        "z": "97e7314f695bb652",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "cce8f946aa3f45d9",
-            "6d3ab5afe316e058",
-            "659798a6d80fb00a",
-            "2cccaae036a25b9b",
-            "c68136d45539bedd",
-            "4f378fca2f4fd15c",
-            "e47f8c49f8f6c022",
-            "0d0ad8239df80579",
-            "cc8d5118bd29b498",
-            "1826ee9bcabfc964",
-            "d5a070459c17282b",
-            "8afa6b7e3ad6423f",
-            "d74caaec6d92d640",
-            "9b0d5a4ffef20246",
-            "7bfe053cda25a1df"
-        ],
-        "x": 34,
-        "y": 39,
-        "w": 1192,
         "h": 182
     },
     {
@@ -2562,7 +2534,8 @@
             "1953c0e70b2aba3b",
             "c8522c19b9137229",
             "c4cb9dda0b66fa19",
-            "b30693a96214840f"
+            "b30693a96214840f",
+            "1f2c60ebec88d9b4"
         ],
         "x": 34,
         "y": 239,
@@ -2596,7 +2569,8 @@
             "bd183366d7e0c8f1",
             "be3a674f2b228bc0",
             "5eb1fbf2a53ee55b",
-            "a0da0d36311e3c37"
+            "a0da0d36311e3c37",
+            "81ed5fa227580ffc"
         ],
         "x": 34,
         "y": 659,
@@ -2768,11 +2742,13 @@
             "f240d42321eb272f",
             "18c871d56049234c",
             "c2649c7d54b9c708",
-            "36be859ccfe3d4b5"
+            "36be859ccfe3d4b5",
+            "f3624569cb28b19d",
+            "a7724a8f9cbc0129"
         ],
         "x": 154,
         "y": 169,
-        "w": 1092,
+        "w": 1272,
         "h": 222
     },
     {
@@ -2821,15 +2797,12 @@
             "5cab40d488b8ed67",
             "e0b5b2e8ae455ae7",
             "b071bb445e7d186c",
-            "18ef2cd7a375fa85",
-            "87743355ad736859",
-            "23327e292123f24b",
-            "bffd3db1cb70eaeb"
+            "23327e292123f24b"
         ],
         "x": 84,
-        "y": 219,
+        "y": 229,
         "w": 972,
-        "h": 202
+        "h": 162
     },
     {
         "id": "04be4bbb805f6483",
@@ -2850,12 +2823,14 @@
             "694f397723177783",
             "de56bd29c6e3434b",
             "56622741fabbdf31",
-            "e771463ed8140dd9"
+            "e771463ed8140dd9",
+            "87743355ad736859",
+            "18ef2cd7a375fa85"
         ],
         "x": 84,
-        "y": 459,
+        "y": 439,
         "w": 692,
-        "h": 142
+        "h": 162
     },
     {
         "id": "88e40feae09cb4d7",
@@ -2924,12 +2899,49 @@
             "7897ab6d6c5e4f57",
             "2f17c1d0853dcd5f",
             "9e550fb64304ba19",
-            "7a1a8ddb1e6d9651"
+            "7a1a8ddb1e6d9651",
+            "3370eb434dc8c65e"
         ],
         "x": 34,
         "y": 569,
         "w": 542,
-        "h": 122
+        "h": 162
+    },
+    {
+        "id": "0ade6e9b8e25f5a2",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "cce8f946aa3f45d9",
+            "6d3ab5afe316e058",
+            "659798a6d80fb00a",
+            "2cccaae036a25b9b",
+            "c68136d45539bedd",
+            "4f378fca2f4fd15c",
+            "e47f8c49f8f6c022",
+            "0d0ad8239df80579",
+            "cc8d5118bd29b498",
+            "1826ee9bcabfc964",
+            "d5a070459c17282b",
+            "8afa6b7e3ad6423f",
+            "d74caaec6d92d640",
+            "9b0d5a4ffef20246",
+            "7bfe053cda25a1df",
+            "c08e5046461d6e3f"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1192,
+        "h": 182
     },
     {
         "id": "873c9acca903bcab",
@@ -3097,6 +3109,11 @@
             {
                 "name": "INT_TBLSIPAMAS",
                 "value": "TBLSIPAMAS",
+                "type": "str"
+            },
+            {
+                "name": "documentStorageLocations_Plant",
+                "value": "METROPOL",
                 "type": "str"
             }
         ]
@@ -8952,7 +8969,7 @@
         "type": "function",
         "z": "79ed7abbe7cc27ac",
         "name": "/GetAllIntegrationParametersMap",
-        "func": "var jsonPayload = msg.payload.data; // Gelen veriyi al\nvar allIntegrationParameters = []; // Tüm işlenmiş veriler burada tutulacak\n \n// Gelen veriyi dönüştür\nif (jsonPayload) {\n    jsonPayload.forEach(params => {\n        // Gelen her bir parametre için işlenmiş veri\n        var processedProduct = {\n            id: params._id || \"\", // _id'yi al\n            code: params.code || \"\", // code alanı\n            type: params.type || \"\", // type alanı\n            flowName: params.flowName || \"\", // flowName alanı\n            flowEndPoint: params.flowEndPoint || \"\", // flowEndPoint alanı\n            cron: params.cron || \"\", // cron ifadesi\n            lastRun: params.lastRun || null, // lastRun tarihi\n            status: params.status || \"\", // status alanı\n            direction: params.direction || \"\", // direction alanı\n            path: params.path || \"\", // path alanı\n            isDebugMode:params.isDebugMode||false,\n            parameters: params.parameters||[]\n        };\n\n        // İşlenmiş veriyi allIntegrationParameters dizisine ekle\n        allIntegrationParameters.push(processedProduct);\n    });\n}\n\n// msg.payload'u işlenmiş veri ile değiştir\nmsg.allIntegrationParameters = allIntegrationParameters;\n\nreturn msg;\n",
+        "func": "var jsonPayload = msg.payload.data; // Gelen veriyi al\nvar allIntegrationParameters = []; // Tüm işlenmiş veriler burada tutulacak\n \n// Gelen veriyi dönüştür\nif (jsonPayload) {\n    jsonPayload.forEach(params => {\n        // Gelen her bir parametre için işlenmiş veri\n        var processedProduct = {\n            id: params._id || \"\", // _id'yi al\n            description: params.description,\n            code: params.code || \"\", // code alanı\n            type: params.type || \"\", // type alanı\n            flowName: params.flowName || \"\", // flowName alanı\n            flowEndPoint: params.flowEndPoint || \"\", // flowEndPoint alanı\n            cron: params.cron || \"\", // cron ifadesi\n            lastRun: params.lastRun || null, // lastRun tarihi\n            status: params.status || \"\", // status alanı\n            direction: params.direction || \"\", // direction alanı\n            path: params.path || \"\", // path alanı\n            isDebugMode:params.isDebugMode||false,\n            parameters: params.parameters||[]\n        };\n\n        // İşlenmiş veriyi allIntegrationParameters dizisine ekle\n        allIntegrationParameters.push(processedProduct);\n    });\n}\n\n// msg.payload'u işlenmiş veri ile değiştir\nmsg.allIntegrationParameters = allIntegrationParameters;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -9432,7 +9449,7 @@
         "type": "function",
         "z": "0a4f4f9f59c2be20",
         "name": "Get Token Params",
-        "func": "\nlet inregrationFlowData=msg.inregrationFlowData;\n \n    msg.dataPayload = {\n        \"requestId\": \"\",\n        \"sender\": \"node-red\",\n        \"data\": [\n            {\n                \"_id\": inregrationFlowData.id,\n                \"code\": inregrationFlowData.code,\n                \"type\":inregrationFlowData.type,\n                \"flowName\": inregrationFlowData.flowName,\n                \"flowEndPoint\": inregrationFlowData.flowEndPoint,\n                \"cron\": inregrationFlowData.cron,\n                \"lastRun\": new Date().toISOString(),\n                \"status\": env.get('status'),\n                \"direction\": inregrationFlowData.direction,\n                \"path\": inregrationFlowData.path,\n                \"isDebugMode\":inregrationFlowData.isDebugMode,\n                \"parameters\":inregrationFlowData.parameters\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n\n     \nflow.set('UpdateStateIntegrationParams',msg.payload)\n \n\nreturn msg;\n",
+        "func": "\nlet inregrationFlowData=msg.inregrationFlowData;\n \n    msg.dataPayload = {\n        \"requestId\": \"\",\n        \"sender\": \"node-red\",\n        \"data\": [\n            {\n                \"_id\": inregrationFlowData.id,\n                \"code\": inregrationFlowData.code,\n                \"description\": inregrationFlowData.description,\n                \"type\":inregrationFlowData.type,\n                \"flowName\": inregrationFlowData.flowName,\n                \"flowEndPoint\": inregrationFlowData.flowEndPoint,\n                \"cron\": inregrationFlowData.cron,\n                \"lastRun\": new Date().toISOString(),\n                \"status\": env.get('status'),\n                \"direction\": inregrationFlowData.direction,\n                \"path\": inregrationFlowData.path,\n                \"isDebugMode\":inregrationFlowData.isDebugMode,\n                \"parameters\":inregrationFlowData.parameters\n            }\n        ],\n        \"current\": [\n            {\n                \"key\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    };\n\n     \n    \nflow.set('UpdateStateIntegrationParams',msg.payload)\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -9452,7 +9469,7 @@
         "type": "function",
         "z": "0a4f4f9f59c2be20",
         "name": "Set inregrationFlowData",
-        "func": "// payload içindeki veriyi ALIYORUZ \nlet payload = msg.propIntegration;\n \n\n\n// Örnek: payload'tan bazı veriler alıp diziye ekleyebiliriz\nlet inregrationFlowData=({\n    id: payload.id,\n    code: payload.code,\n    type: payload.type,\n    flowName: payload.flowName,\n    flowEndPoint: payload.flowEndPoint,\n    cron: payload.cron,\n    lastRun: payload.lastRun,\n    status: payload.status,\n    direction: payload.direction,\n    path: payload.path,\n    isDebugMode:payload.isDebugMode,\n    parameters:payload.parameters\n});\n\n// Diziyi yeni payload olarak ayarlıyoruz\nmsg.inregrationFlowData = inregrationFlowData;\n\n// Mesajı bir sonraki node'a gönderiyoruz\nreturn msg;\n\n ",
+        "func": "// payload içindeki veriyi ALIYORUZ \nlet payload = msg.propIntegration;\n \n\n\n// Örnek: payload'tan bazı veriler alıp diziye ekleyebiliriz\nlet inregrationFlowData=({\n    id: payload.id,\n    code: payload.code,\n    description:payload.description,\n    type: payload.type,\n    flowName: payload.flowName,\n    flowEndPoint: payload.flowEndPoint,\n    cron: payload.cron,\n    lastRun: payload.lastRun,\n    status: payload.status,\n    direction: payload.direction,\n    path: payload.path,\n    isDebugMode:payload.isDebugMode,\n    parameters:payload.parameters\n});\n\n// Diziyi yeni payload olarak ayarlıyoruz\nmsg.inregrationFlowData = inregrationFlowData;\n\n// Mesajı bir sonraki node'a gönderiyoruz\nreturn msg;\n\n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -9472,7 +9489,7 @@
         "type": "function",
         "z": "0a4f4f9f59c2be20",
         "name": "params",
-        "func": "if (msg.retries === undefined) {\n    msg.retries = 0;\n}\n\nmsg.flowName = msg.inregrationFlowData.code || \"Update State Integration Params\";\n\nreturn msg;",
+        "func": "if (msg.retries === undefined) {\n    msg.retries = 0;\n}\n\nmsg.flowName = msg.inregrationFlowData.flowName || \"Update State Integration Params\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -9499,8 +9516,8 @@
                 "type": "str"
             }
         ],
-        "x": 1190,
-        "y": 60,
+        "x": 1210,
+        "y": 50,
         "wires": [
             [],
             []
@@ -11190,8 +11207,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1430,
-        "y": 300,
+        "x": 1440,
+        "y": 290,
         "wires": [
             [
                 "8d8bacc664ddc537"
@@ -11746,7 +11763,8 @@
                 "be655e8be15c8af3"
             ],
             [
-                "aac7d06117efeb1d"
+                "aac7d06117efeb1d",
+                "c7610deb9c793f2b"
             ]
         ]
     },
@@ -11892,6 +11910,25 @@
         "x": 1500,
         "y": 820,
         "wires": []
+    },
+    {
+        "id": "c7610deb9c793f2b",
+        "type": "function",
+        "z": "17803f695ab8af0d",
+        "g": "69a8c850b940485b",
+        "name": "function 107",
+        "func": "\nglobal.set('NTSP000V1_payload_res', global.get('NTSP000V1_payload_res')+ ' '+msg.errorMesaj )\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 540,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "607330f60d089b54",
@@ -12862,18 +12899,18 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "function 47",
-        "func": "msg.netsisOrderPayload=msg.payload;\nlet data = msg.payload;\nlet result = {};\n// Initialize an empty array to store unique docNum values\nlet listnetsisOrderDocNum = [];\n\n// Use Set to filter unique docNum values\nlistnetsisOrderDocNum = [...new Set(msg.netsisOrderPayload.map(item => item.docNum))];\n\n// Output the unique docNum list\nmsg.listnetsisOrderDocNum = listnetsisOrderDocNum;\n\n\n// `docNum` ile gruplama yapıyoruz\ndata.forEach(item => {\n    let docNum = item.docNum;\n\n    // Eğer `docNum` zaten varsa, öğeyi mevcut objeye ekliyoruz\n    if (result[docNum]) {\n        result[docNum].items.push({\n            itemNo: item.itemNo,\n            productCode: item.productCode,\n            quantity: item.quantity,\n            unit: item.unit,\n            getWarehouseLocationCode: item.GetWarehouseLocation,\n            definitionLang: item.DefinitionLang\n        });\n    } else {\n        // Eğer yoksa, yeni bir obje oluşturup ekliyoruz\n        result[docNum] = {\n            docNum: docNum,\n            company: item.company,\n            documantTypeCode: item.documantTypeCode,\n            createdOn: item.createdOn,\n            deliveryDate: item.deliveryDate,\n            customerCode: item.CUSTOMERCODE,      \n            items: [{\n                itemNo: item.itemNo,\n                productCode: item.productCode,\n                quantity: item.quantity,\n                unit: item.unit,\n                getWarehouseLocationCode: item.GetWarehouseLocation,\n                definitionLang: item.DefinitionLang\n            }]\n        };\n    }\n});\n// Sonucu array formatına dönüştürüyoruz\nmsg.netsisOrderPayload_ = Object.values(result);\nreturn msg;\n ",
+        "func": "msg.netsisOrderPayload = msg.payload;\nlet data = msg.payload;\n\nif (!data && data.count === 0) {\n    msg.errorMesaj = msg.errorMesaj || \"Kayıt Bulunamadı\";\n    return [null, msg];\n}\nlet result = {};\n// Initialize an empty array to store unique docNum values\nlet listnetsisOrderDocNum = [];\n\n// Use Set to filter unique docNum values\nlistnetsisOrderDocNum = [...new Set(msg.netsisOrderPayload.map(item => item.docNum))];\n\n// Output the unique docNum list\nmsg.listnetsisOrderDocNum = listnetsisOrderDocNum;\n\n\n// `docNum` ile gruplama yapıyoruz\ndata.forEach(item => {\n    let docNum = item.docNum;\n\n    // Eğer `docNum` zaten varsa, öğeyi mevcut objeye ekliyoruz\n    if (result[docNum]) {\n        result[docNum].items.push({\n            itemNo: item.itemNo,\n            productCode: item.productCode,\n            quantity: item.quantity,\n            unit: item.unit,\n            baseUnit: item.baseUnit,\n            baseQuantity: item.baseQuantity,\n            pickFrom: item.pickFrom,\n            putawayTo: item.putAwayTo,\n            definitionLang: item.DefinitionLang\n        });\n    } else {\n        // Eğer yoksa, yeni bir obje oluşturup ekliyoruz\n        result[docNum] = {\n            docNum: docNum,\n            company: item.company,\n            boughtFrom: item.boughtFrom,\n            soldTo: item.soldTo,\n            shipTo: item.shipTo,\n            documantTypeCode: item.documantTypeCode,\n            createdOn: item.createdOn,\n            deliveryDate: item.deliveryDate,\n            customerCode: item.CUSTOMERCODE,\n            items: [{\n                itemNo: item.itemNo,\n                productCode: item.productCode,\n                quantity: item.quantity,\n                unit: item.unit,\n                baseUnit: item.baseUnit,\n                baseQuantity: item.baseQuantity,\n                pickFrom: item.pickFrom,\n                putawayTo: item.putAwayTo,\n                definitionLang: item.DefinitionLang\n            }]\n        };\n    }\n});\n// Sonucu array formatına dönüştürüyoruz\nmsg.netsisOrderPayload_ = Object.values(result);\nreturn [msg, null];\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 625,
-        "y": 200,
+        "x": 545,
+        "y": 230,
         "wires": [
             [
-                "58392219b3f9c2aa"
+                "42f01e2ec49a4485"
             ]
         ],
         "l": false
@@ -12898,7 +12935,7 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "BuyerAndSellerOrder",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n   CASE SPTRA.STHAR_FTIRSIP  WHEN  6\n THEN  SPMAS.CARI_KODU ELSE NULL END soldTo,\n \n CASE SPTRA.STHAR_FTIRSIP  WHEN  7\n THEN  SPMAS.CARI_KODU ELSE NULL END  boughtFrom,\n     CASE SPTRA.STHAR_FTIRSIP  WHEN  6\n THEN  SPTRA.DEPO_KODU  ELSE NULL END pickFrom, \n CASE SPTRA.STHAR_FTIRSIP  WHEN  7\n THEN  SPTRA.DEPO_KODU  ELSE NULL END  putAwayTo,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang,\n     SPTRA.STHAR_GCMIK AS baseQuantity,\n  ST.OLCU_BR1 AS baseUnit,\n  SPMAS.CARI_KOD2 AS shipTo\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber = global.get('NTSBSO000V1reqOrderNumber')\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\nif (global.get('NTSBSO000V1reqOrderNumber')) {\n  global.set('NTSBSO000V1reqOrderNumber', null)\n}\n\n\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -12930,7 +12967,8 @@
         "y": 270,
         "wires": [
             [
-                "f28bc80528e3b4c5"
+                "f28bc80528e3b4c5",
+                "79d95601c5a9ac7d"
             ],
             []
         ]
@@ -12941,7 +12979,7 @@
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
         "name": "JSON",
-        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: \"\",\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom: [],\n                PutawayTo: [],\n                IsObligatory: true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      \n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(null, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.customerCode, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(null, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(null, documentData.items[0].BaseQuantity),//ana birim cinsinde doludurlacak \n                BaseUnit: getValueOrDefault(null, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                documentStorageLocations: {\n                    PickFrom: getValueOrDefault(null, documentData.items[0].documentStorageLocations.PickFrom),\n                    PutawayTo: msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)?._id\n                        ? [msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)._id]\n                        : [],\n                    IsObligatory: getValueOrDefault(null, documentData.items[0].documentStorageLocations.IsObligatory)\n                },\n                notes: getValueOrDefault([], documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData,\n        current: [\n            {\n                key: \"\",\n                value: \"\"\n            }\n        ]\n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
+        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: null,\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom: \n                    {\n                         plant: env.get('documentStorageLocations_Plant'),\n                        warehouse: null,\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                PutawayTo:\n                    {\n                        plant:env.get('documentStorageLocations_Plant'),\n                        warehouse: null,\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                \"IsObligatory\": true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      node.warn(order);\n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(order.soldTo, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.boughtFrom, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(order.shipTo, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n               \n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(item.baseQuantity, documentData.items[0].BaseQuantity),//ana birim cinsinde doludurlacak \n                BaseUnit: getValueOrDefault(item.baseUnit, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n\n                \n               documentStorageLocations: {\n                 PickFrom: item.pickFrom ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), documentData.items[0]?.documentStorageLocations?.PickFrom?.plant),\n                    warehouse: getValueOrDefault(item.pickFrom?.toString(), documentData.items[0]?.documentStorageLocations?.PickFrom?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.shelf)\n                }]\n                : [],\n            \n                 PutawayTo: item.putawayTo ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'),documentData.items[0]?.documentStorageLocations?.PutawayTo?.plant),\n                    warehouse: getValueOrDefault(item.putawayTo?.toString(),documentData.items[0]?.documentStorageLocations?.PutawayTo?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.shelf)\n                }]\n                : [],\n    \n                IsObligatory: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.IsObligatory)\n                },\n                notes: getValueOrDefault([], documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData \n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -12949,11 +12987,10 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 270,
+        "y": 280,
         "wires": [
             [
-                "4958f6ff314c62cc",
-                "bcb1fb3328bdd6fa"
+                "4958f6ff314c62cc"
             ]
         ]
     },
@@ -13035,6 +13072,7 @@
         "id": "fe7f1fd6938b9b86",
         "type": "function",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "GetWarehouseLocations",
         "func": "// Get the JSON data\nmsg.getWarehouseLocationsPayload = msg.payload.data;\n\n\n\nreturn msg;\n\n\n \n \n",
@@ -13056,6 +13094,7 @@
         "id": "2e4ad7cfa8663c77",
         "type": "comment",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "GetAllSFORINGetWarehouseLocations",
         "info": "",
@@ -13067,6 +13106,7 @@
         "id": "58392219b3f9c2aa",
         "type": "link out",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "4370a35114295e81",
         "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0 Out_GetwareHouse",
         "mode": "link",
@@ -13081,6 +13121,7 @@
         "id": "6b1db2938b49fc97",
         "type": "link in",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0 In_GetwareHouse",
         "links": [
@@ -13098,6 +13139,7 @@
         "id": "c08a4b7860d81ea4",
         "type": "link out",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "ResultGetWarehouseLocationsOut",
         "mode": "link",
@@ -13112,17 +13154,16 @@
         "id": "f1ac5c0632527d2c",
         "type": "link in",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "4370a35114295e81",
         "name": "ResultGetWarehouseLocationsIn",
         "links": [
             "c08a4b7860d81ea4"
         ],
-        "x": 515,
-        "y": 310,
+        "x": 575,
+        "y": 320,
         "wires": [
-            [
-                "42f01e2ec49a4485"
-            ]
+            []
         ]
     },
     {
@@ -13151,6 +13192,7 @@
         "id": "c2d2d091215c03b5",
         "type": "subflow:e35d14410b661a09",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "",
         "env": [
@@ -13185,8 +13227,12 @@
         "x": 930,
         "y": 260,
         "wires": [
-            [],
-            []
+            [
+                "61719c8c4b7642fb"
+            ],
+            [
+                "eb92eaeca91e5768"
+            ]
         ]
     },
     {
@@ -13215,6 +13261,7 @@
         "id": "0fd6fe89414c30de",
         "type": "function",
         "z": "bf7e6ed2256e3a44",
+        "d": true,
         "g": "8f53555fb01c63d0",
         "name": "function 60",
         "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\nreturn msg;",
@@ -13234,21 +13281,55 @@
         "l": false
     },
     {
-        "id": "bcb1fb3328bdd6fa",
+        "id": "61719c8c4b7642fb",
         "type": "debug",
         "z": "bf7e6ed2256e3a44",
         "g": "4370a35114295e81",
-        "name": "debug 192",
+        "name": "debug 206",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "netsis2s4inBuyerAndSellerOrder",
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "79d95601c5a9ac7d",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 207",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 850,
+        "x": 880,
         "y": 220,
+        "wires": []
+    },
+    {
+        "id": "eb92eaeca91e5768",
+        "type": "debug",
+        "z": "bf7e6ed2256e3a44",
+        "g": "4370a35114295e81",
+        "name": "debug 208",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 280,
         "wires": []
     },
     {
@@ -13625,7 +13706,7 @@
         "type": "function",
         "z": "e35d14410b661a09",
         "name": "LogJson",
-        "func": "\n\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: msg.flowName || \"\",  \n    additionalData:\"No additional data\", // Extra info    \n    requestPayload: JSON.stringify(msg.datapayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.errorMesaj || {}) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "func": "// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: msg.flowName || \"\",  \n    additionalData:\"No additional data\", // Extra info    \n    requestPayload: JSON.stringify(msg.datapayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.errorMesaj || {}) // Serialized response payload\n}];\n\n// dönüş değper verilcek \nconst flowName=msg?.propIntegration?.flowName;\nif(global.get(flowName+'_payload_res_status'))\n{\n    global.set(flowName+'_payload_res')\n}\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13687,7 +13768,7 @@
                 "type": "str"
             }
         ],
-        "x": 930,
+        "x": 980,
         "y": 200,
         "wires": [
             []
@@ -15232,7 +15313,8 @@
         "y": 350,
         "wires": [
             [
-                "36be859ccfe3d4b5"
+                "36be859ccfe3d4b5",
+                "f3624569cb28b19d"
             ],
             []
         ]
@@ -15253,7 +15335,9 @@
         "x": 1150,
         "y": 340,
         "wires": [
-            [],
+            [
+                "a7724a8f9cbc0129"
+            ],
             []
         ]
     },
@@ -15302,6 +15386,41 @@
                 "a02c15375f73a691"
             ]
         ]
+    },
+    {
+        "id": "f3624569cb28b19d",
+        "type": "debug",
+        "z": "f80e2a714bd438bd",
+        "g": "a79837f72a1b5d49",
+        "name": "debug 200",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 250,
+        "wires": []
+    },
+    {
+        "id": "a7724a8f9cbc0129",
+        "type": "debug",
+        "z": "f80e2a714bd438bd",
+        "g": "a79837f72a1b5d49",
+        "name": "debug 201",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "8b42b50d0ee3af6a",
@@ -15623,18 +15742,18 @@
         "z": "4a994836a6392703",
         "g": "4ffcfc17d9807587",
         "name": "function 99",
-        "func": "msg.netsisOrderPayload=msg.payload;\nlet data = msg.payload;\n\nif(!data && data.count===0){\n    msg.errorMesaj = msg.errorMesaj||\"Kayıt Bulunamadı\";\n    return [null,msg ];\n}\nlet result = {};\n// Initialize an empty array to store unique docNum values\nlet listnetsisOrderDocNum = [];\n\n// Use Set to filter unique docNum values\nlistnetsisOrderDocNum = [...new Set(msg.netsisOrderPayload.map(item => item.docNum))];\n\n// Output the unique docNum list\nmsg.listnetsisOrderDocNum = listnetsisOrderDocNum;\n\n\n// `docNum` ile gruplama yapıyoruz\ndata.forEach(item => {\n    let docNum = item.docNum;\n\n    // Eğer `docNum` zaten varsa, öğeyi mevcut objeye ekliyoruz\n    if (result[docNum]) {\n        result[docNum].items.push({\n            itemNo: item.itemNo,\n            productCode: item.productCode,\n            quantity: item.quantity,\n            unit: item.unit,\n            getWarehouseLocationCode: item.GetWarehouseLocation,\n            definitionLang: item.DefinitionLang\n        });\n    } else {\n        // Eğer yoksa, yeni bir obje oluşturup ekliyoruz\n        result[docNum] = {\n            docNum: docNum,\n            company: item.company,\n            documantTypeCode: item.documantTypeCode,\n            createdOn: item.createdOn,\n            deliveryDate: item.deliveryDate,\n            customerCode: item.CUSTOMERCODE,      \n            items: [{\n                itemNo: item.itemNo,\n                productCode: item.productCode,\n                quantity: item.quantity,\n                unit: item.unit,\n                getWarehouseLocationCode: item.GetWarehouseLocation,\n                definitionLang: item.DefinitionLang\n            }]\n        };\n    }\n});\n// Sonucu array formatına dönüştürüyoruz\nmsg.netsisOrderPayload_ = Object.values(result);\nreturn [msg,null];\n ",
+        "func": "msg.netsisOrderPayload=msg.payload;\nlet data = msg.payload;\n\nif(!data && data.count===0){\n    msg.errorMesaj = msg.errorMesaj||\"Kayıt Bulunamadı\";\n    return [null,msg ];\n}\nlet result = {};\n// Initialize an empty array to store unique docNum values\nlet listnetsisOrderDocNum = [];\n\n// Use Set to filter unique docNum values\nlistnetsisOrderDocNum = [...new Set(msg.netsisOrderPayload.map(item => item.docNum))];\n\n// Output the unique docNum list\nmsg.listnetsisOrderDocNum = listnetsisOrderDocNum;\n\n\n// `docNum` ile gruplama yapıyoruz\ndata.forEach(item => {\n    let docNum = item.docNum;\n\n    // Eğer `docNum` zaten varsa, öğeyi mevcut objeye ekliyoruz\n    if (result[docNum]) {\n        result[docNum].items.push({\n            itemNo: item.itemNo,\n            productCode: item.productCode,\n            quantity: item.quantity,\n            unit: item.unit,\n            baseUnit:item.baseUnit,\n            baseQuantity:item.baseQuantity,\n            pickFrom: item.pickFrom,\n            putawayTo:item.putAwayTo,\n            definitionLang: item.DefinitionLang\n        });\n    } else {\n        // Eğer yoksa, yeni bir obje oluşturup ekliyoruz\n        result[docNum] = {\n            docNum: docNum,\n            company: item.company,\n            boughtFrom:item.boughtFrom,\n            soldTo:item.soldTo,\n            shipTo:item.shipTo,\n            documantTypeCode: item.documantTypeCode,\n            createdOn: item.createdOn,\n            deliveryDate: item.deliveryDate,\n            customerCode: item.CUSTOMERCODE,      \n            items: [{\n                itemNo: item.itemNo,\n            productCode: item.productCode,\n            quantity: item.quantity,\n            unit: item.unit,\n            baseUnit:item.baseUnit,\n            baseQuantity:item.baseQuantity,\n            pickFrom: item.pickFrom,\n            putawayTo:item.putAwayTo,\n            definitionLang: item.DefinitionLang\n            }]\n        };\n    }\n});\n// Sonucu array formatına dönüştürüyoruz\nmsg.netsisOrderPayload_ = Object.values(result);\nreturn [msg,null];\n ",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 615,
-        "y": 260,
+        "x": 565,
+        "y": 270,
         "wires": [
             [
-                "18ef2cd7a375fa85"
+                "d2599882a497a316"
             ],
             []
         ],
@@ -15660,7 +15779,7 @@
         "z": "4a994836a6392703",
         "g": "4ffcfc17d9807587",
         "name": "BuyerAndSellerOrder",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n  SPMAS.CARI_KODU AS CUSTOMERCODE,\n    SPTRA.DEPO_KODU as GetWarehouseLocation,  \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber =msg.sipmas_DataKey;\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\n\n\n\n \n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\n WITH STBIRIM AS\n  (SELECT ROW_NUMBER() OVER(PARTITION BY KOD\n                            ORDER BY INCKEYNO ASC)+3 SIRA,\n                       KOD,\n                       OLCUBIRIMI,\n                       PAY,\n                       PAYDA\n   FROM TBLSTBIRIM)\nSELECT FISNO AS docNum,\n       DB_NAME() AS company,\n       CASE SPMAS.FTIRSIP\n           WHEN 6 THEN 'MS'\n           WHEN 7 THEN 'SS'\n       END documantTypeCode,\n       SPMAS.TARIH createdOn,\n       SPMAS.SIPARIS_TEST deliveryDate,\n       SPTRA.SIRA itemNo,\n       dbo.TRK(SPTRA.STOK_KODU) productCode, --SPTRA.STHAR_GCMIK-FIRMA_DOVTUT AS quantity ,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN SPTRA.STHAR_GCMIK-FIRMA_DOVTUT\n     ELSE (STHAR_GCMIK-FIRMA_DOVTUT)*CEVRIM\n END AS quantity,\n CASE ISNULL(SPTRA.OLCUBR,1)\n     WHEN 1 THEN ST.OLCU_BR1\n     WHEN 2 THEN ST.OLCU_BR2\n     WHEN 3 THEN ST.OLCU_BR3\n     WHEN 4 THEN BRM.OLCUBIRIMI\n     WHEN 5 THEN BRM.OLCUBIRIMI\n END AS unit,\n    CASE SPTRA.STHAR_FTIRSIP  WHEN  6\n THEN  SPMAS.CARI_KODU ELSE NULL END soldTo,\n \n CASE SPTRA.STHAR_FTIRSIP  WHEN  7\n THEN  SPMAS.CARI_KODU ELSE NULL END  boughtFrom,\n     CASE SPTRA.STHAR_FTIRSIP  WHEN  6\n THEN  SPTRA.DEPO_KODU  ELSE NULL END pickFrom,\n \n CASE SPTRA.STHAR_FTIRSIP  WHEN  7\n THEN  SPTRA.DEPO_KODU  ELSE NULL END  putAwayTo,   \n    CASE SPTRA.EKALAN_NEDEN WHEN 1 THEN dbo.TRK(EKALAN)\n   ELSE dbo.TRK(ST.STOK_ADI) END  AS DefinitionLang,\n     SPTRA.STHAR_GCMIK AS baseQuantity,\n    ST.OLCU_BR1 AS baseUnit,\n    SPMAS.CARI_KOD2 AS shipTo\nFROM TBLSIPAMAS SPMAS\nLEFT JOIN TBLSIPATRA SPTRA ON SPMAS.FATIRS_NO = SPTRA.FISNO\nLEFT JOIN TBLSTSABIT ST ON ST.STOK_KODU=SPTRA.STOK_KODU\nLEFT JOIN STBIRIM BRM ON BRM.KOD=SPTRA.STOK_KODU\nAND ISNULL(SPTRA.OLCUBR,1)=BRM.SIRA\nWHERE SPMAS.KAPATILMIS <>'K'\n  AND SPTRA.STHAR_GCMIK-FIRMA_DOVTUT<>0\n  AND SPTRA.STHAR_HTUR<>'K'\n  AND SPMAS.SUBE_KODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsOrderNumber =msg.sipmas_DataKey;\n  \nif (paramsOrderNumber !== undefined && paramsOrderNumber !== null && paramsOrderNumber !== '') {\n   \n  query += `AND SPMAS.FATIRS_NO= '${paramsOrderNumber}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\n\n\n\n \n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -15681,7 +15800,7 @@
         "z": "4a994836a6392703",
         "g": "4ffcfc17d9807587",
         "name": "JSON",
-        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: \"\",\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom: [],\n                PutawayTo: [],\n                IsObligatory: true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      \n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(null, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.customerCode, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(null, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(null, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(null, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                documentStorageLocations: {\n                    PickFrom: getValueOrDefault(null, documentData.items[0].documentStorageLocations.PickFrom),\n                    PutawayTo: msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)?._id\n                        ? [msg.getWarehouseLocationsPayload.find(x => x.code == item.getWarehouseLocationCode)._id]\n                        : [],\n                    IsObligatory: getValueOrDefault(null, documentData.items[0].documentStorageLocations.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData,\n        current: [\n            {\n                key: \"\",\n                value: \"\"\n            }\n        ]\n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
+        "func": "const documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"WAI\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: null,\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: [],\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"WAI\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: [],\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n             documentStorageLocations: {\n                PickFrom: \n                    {\n                         plant: env.get('documentStorageLocations_Plant'),\n                        warehous: null,\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                PutawayTo:\n                    {\n                        plant:env.get('documentStorageLocations_Plant'),\n                        warehouse: \"\",\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                \"IsObligatory\": true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: null,\n    Id: \"\"\n};\n\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n      node.warn(order);\n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(null, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.deliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(order.soldTo, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.baseUnit, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(order.shipTo, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(null, documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(item.baseQuantity, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(item.baseUnit, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(null, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: getValueOrDefault(null, documentData.items[0].documentItemAttributes),\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                   documentStorageLocations: {\n                 PickFrom: item.pickFrom ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), documentData.items[0]?.documentStorageLocations?.PickFrom?.plant),\n                    warehouse: getValueOrDefault(item.pickFrom?.toString(), documentData.items[0]?.documentStorageLocations?.PickFrom?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.shelf)\n                }]\n                : [],\n            \n                 PutawayTo: item.putawayTo ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), \n                        documentData.items[0]?.documentStorageLocations?.PutawayTo?.plant),\n                    warehouse: getValueOrDefault(item.putawayTo?.toString(),documentData.items[0]?.documentStorageLocations?.PutawayTo?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.shelf)\n                }]\n                : [],\n    \n                IsObligatory: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n                \n            })) : [],\n            notes: getValueOrDefault(null, documentData.notes),\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData\n        \n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -15692,8 +15811,7 @@
         "y": 340,
         "wires": [
             [
-                "e0b5b2e8ae455ae7",
-                "bffd3db1cb70eaeb"
+                "e0b5b2e8ae455ae7"
             ]
         ]
     },
@@ -15751,31 +15869,31 @@
         "id": "18ef2cd7a375fa85",
         "type": "link out",
         "z": "4a994836a6392703",
-        "g": "4ffcfc17d9807587",
+        "d": true,
+        "g": "04be4bbb805f6483",
         "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0 Out_GetwareHouse",
         "mode": "link",
         "links": [
             "694f397723177783"
         ],
-        "x": 775,
-        "y": 270,
+        "x": 545,
+        "y": 480,
         "wires": []
     },
     {
         "id": "87743355ad736859",
         "type": "link in",
         "z": "4a994836a6392703",
-        "g": "4ffcfc17d9807587",
+        "d": true,
+        "g": "04be4bbb805f6483",
         "name": "ResultGetWarehouseLocationsIn",
         "links": [
             "de56bd29c6e3434b"
         ],
-        "x": 545,
-        "y": 380,
+        "x": 625,
+        "y": 480,
         "wires": [
-            [
-                "d2599882a497a316"
-            ]
+            []
         ]
     },
     {
@@ -15802,6 +15920,7 @@
         "id": "d3126e2db3130484",
         "type": "function",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "GetWarehouseLocations",
         "func": "// Get the JSON data\nmsg.getWarehouseLocationsPayload = msg.payload.data;\n\n\n\nreturn msg;\n\n\n \n \n",
@@ -15823,6 +15942,7 @@
         "id": "b525e6871c7e5d79",
         "type": "comment",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "GetAllSFORINGetWarehouseLocations",
         "info": "",
@@ -15834,6 +15954,7 @@
         "id": "694f397723177783",
         "type": "link in",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "MetropolUn_Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1.0 In_GetwareHouse",
         "links": [
@@ -15851,6 +15972,7 @@
         "id": "de56bd29c6e3434b",
         "type": "link out",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "ResultGetWarehouseLocationsOut",
         "mode": "link",
@@ -15865,6 +15987,7 @@
         "id": "56622741fabbdf31",
         "type": "subflow:e35d14410b661a09",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "",
         "env": [
@@ -15887,6 +16010,7 @@
         "id": "e771463ed8140dd9",
         "type": "function",
         "z": "4a994836a6392703",
+        "d": true,
         "g": "04be4bbb805f6483",
         "name": "function 100",
         "func": "msg.flowName = msg.inregrationFlowData.flowName || \"NTSBSO000V1.0\";\nreturn msg;",
@@ -15904,24 +16028,6 @@
             ]
         ],
         "l": false
-    },
-    {
-        "id": "bffd3db1cb70eaeb",
-        "type": "debug",
-        "z": "4a994836a6392703",
-        "g": "4ffcfc17d9807587",
-        "name": "debug 191",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "netsis2s4inBuyerAndSellerOrder",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "107498694ec2a151",
@@ -16476,7 +16582,9 @@
             [
                 "2f17c1d0853dcd5f"
             ],
-            []
+            [
+                "3370eb434dc8c65e"
+            ]
         ]
     },
     {
@@ -16502,6 +16610,25 @@
         "l": false
     },
     {
+        "id": "3370eb434dc8c65e",
+        "type": "function",
+        "z": "2edf95049d03fe02",
+        "g": "7819cc31128657b2",
+        "name": "errorMesajRes",
+        "func": "\nglobal.set('NTSP000V1_payload_res', msg.errorMesaj||\"Entegrasyon Sonucunda Hata alındı\" )\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 690,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "cce8f946aa3f45d9",
         "type": "http response",
         "z": "97e7314f695bb652",
@@ -16521,7 +16648,7 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0') }]\n",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0') }]\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -16593,7 +16720,7 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0')}]\n",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\nmsg.payload = {\n    status: \"Info\",\n    message: payload||\"The program is running.\",\n    programName: \"Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nglobal.set('NTSP000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0')}]\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -16716,7 +16843,7 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1')}]",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\nmsg.payload = {\n    status: \"Info\",\n    message: payload||\"The program is running.\",\n    programName: \"MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nglobal.set('NTSBSO000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('Netsis2SFORIN_BuyerAndSellerOrderTransfer_MSSQL_v1')}]",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -16795,7 +16922,7 @@
         "z": "97e7314f695bb652",
         "g": "0ade6e9b8e25f5a2",
         "name": "Params",
-        "func": "let stockCode=msg.req?.query?.StockCode;\n\nif(stockCode){\nglobal.set('NTSP000V1reqStockCode',stockCode)\n}\n \nreturn msg;",
+        "func": "let stockCode=msg.req?.query?.StockCode;\n\nif(stockCode){\nglobal.set('NTSP000V1reqStockCode',stockCode)\n}\n \nglobal.set('NTSP000V1.0_payload_res_status',true)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -16836,15 +16963,15 @@
         "z": "97e7314f695bb652",
         "g": "24904440bd5e033d",
         "name": "function 69",
-        "func": "let orderNumber = msg.req?.query?.OrderNumber;\n\nif (orderNumber) {\n    node.warn(orderNumber);\n    global.set('NTSBSO000V1reqOrderNumber', orderNumber)\n}\n\nreturn msg;",
+        "func": "let orderNumber = msg.req?.query?.OrderNumber;\n\nif (orderNumber) {\n    node.warn(orderNumber);\n    global.set('NTSBSO000V1reqOrderNumber', orderNumber)\n}\n\n//NTSBSO000V1\n\nglobal.set('NTSBSO000V1.0_payload_res_status',true)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 365,
-        "y": 530,
+        "x": 355,
+        "y": 520,
         "wires": [
             [
                 "ebf9b753c0db2888"
@@ -16879,7 +17006,9 @@
         "x": 500,
         "y": 180,
         "wires": [
-            []
+            [
+                "c08e5046461d6e3f"
+            ]
         ]
     },
     {
@@ -16966,8 +17095,7 @@
         "y": 580,
         "wires": [
             [
-                "3c7137841de56924",
-                "7a9085cd8800c099"
+                "3c7137841de56924"
             ]
         ],
         "l": false
@@ -17014,7 +17142,9 @@
         "x": 520,
         "y": 580,
         "wires": [
-            []
+            [
+                "d974a20cfb396a46"
+            ]
         ]
     },
     {
@@ -17133,7 +17263,7 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n \nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\n\nmsg.payload = {\n    status: \"Info\",\n    message: payload||\"The program is running.\",\n    programName: \"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n global.set('NTSC000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0') }];",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17154,7 +17284,7 @@
         "z": "97e7314f695bb652",
         "g": "c7a67d413d6b7731",
         "name": "function 52",
-        "func": " \n// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "func": " \n// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_MetropolUn_Netsis2SFORIN_Customers_MSSQL_v1.0\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\n\nglobal.set('NTSC000V1.0_payload_res_status',true)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17281,7 +17411,9 @@
         "x": 500,
         "y": 380,
         "wires": [
-            []
+            [
+                "1f2c60ebec88d9b4"
+            ]
         ]
     },
     {
@@ -17400,7 +17532,7 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"DeleteIntegrationLogv1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_DeleteIntegrationLogv1')}]",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\n\nmsg.payload = {\n    status: \"Info\",\n    message: payload||\"The program is running.\",\n    programName: \"DeleteIntegrationLogv1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nglobal.set('DelIntLogO000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('res_DeleteIntegrationLogv1')}]",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17421,7 +17553,7 @@
         "z": "97e7314f695bb652",
         "g": "2d127e1eaf3e467e",
         "name": "function 75",
-        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_DeleteIntegrationLogv1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_DeleteIntegrationLogv1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\n\nglobal.set('DelIntLogO000V1.0_payload_res_status',true)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17523,7 +17655,9 @@
         "x": 500,
         "y": 800,
         "wires": [
-            []
+            [
+                "81ed5fa227580ffc"
+            ]
         ]
     },
     {
@@ -17628,7 +17762,7 @@
         "z": "97e7314f695bb652",
         "g": "58b0549190818c1b",
         "name": "Response Message",
-        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"The program is running.\",\n    programName: \"INTSYNC000V1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_INTSYNC000V1')}]",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\nmsg.payload = {\n    status: \"Info\",\n    message:  payload||\"The program is running.\",\n    programName: \"INTSYNC000V1\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nglobal.set('INTSYNC000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('res_INTSYNC000V1')}]",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17649,7 +17783,7 @@
         "z": "97e7314f695bb652",
         "g": "58b0549190818c1b",
         "name": "function 79",
-        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_INTSYNC000V1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nreturn msg;",
+        "func": " // burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set(\"res_INTSYNC000V1\", msg.res);\n\nmsg.integrationParameter_FlowName = msg.req.url;\nlet url = msg.req.url;\n\n\nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n}\nelse {\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n}\nglobal.set('INTSYNC000V1.0_payload_res_status',true)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -17931,11 +18065,11 @@
         "wires": []
     },
     {
-        "id": "7a9085cd8800c099",
+        "id": "c08e5046461d6e3f",
         "type": "debug",
         "z": "97e7314f695bb652",
-        "g": "24904440bd5e033d",
-        "name": "debug 196",
+        "g": "0ade6e9b8e25f5a2",
+        "name": "debug 202",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -17943,8 +18077,59 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 620,
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1f2c60ebec88d9b4",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "c7a67d413d6b7731",
+        "name": "debug 203",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d974a20cfb396a46",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "24904440bd5e033d",
+        "name": "debug 204",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 590,
+        "wires": []
+    },
+    {
+        "id": "81ed5fa227580ffc",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "2d127e1eaf3e467e",
+        "name": "debug 205",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 800,
         "wires": []
     },
     {
@@ -18394,470 +18579,6 @@
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
     },
     {
-        "id": "03b6b738408e04ce",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 280,
-        "y": 180,
-        "wires": [
-            [
-                "37f0b10a7a704980"
-            ]
-        ]
-    },
-    {
-        "id": "37f0b10a7a704980",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Get Sforin Category",
-        "func": "let baseUrl = global.get(\"SFORIN_URL\");\n msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\nmsg.dataPayload =\"Interval=\"+env.get(\"Interval\");\nlet url=baseUrl+env.get(\"Url\");\nlet queryString=msg.dataPayload;\n\nmsg.url = url + queryString\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 200,
-        "wires": [
-            [
-                "16ce4a4456ae2d63"
-            ]
-        ]
-    },
-    {
-        "id": "05a88c2977276a08",
-        "type": "subflow:7cdf28f23984a61d",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "sourceModule/Flow",
-                "value": "{{{flowName}}}",
-                "type": "env"
-            },
-            {
-                "name": "sourceSystem",
-                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
-                "type": "str"
-            },
-            {
-                "name": "status",
-                "value": "error",
-                "type": "str"
-            },
-            {
-                "name": "SourceSystem",
-                "value": "Netsis",
-                "type": "str"
-            },
-            {
-                "name": "SourceModule/Flow",
-                "value": "Netsis  To SFORIN Stock Card(REST)",
-                "type": "str"
-            },
-            {
-                "name": "DestinationSystem",
-                "value": "SFORIN",
-                "type": "str"
-            },
-            {
-                "name": "DestinationSystem\":",
-                "value": "NETSIS",
-                "type": "str"
-            },
-            {
-                "name": "logData",
-                "value": "{{{msg.payload}}}",
-                "type": "str"
-            }
-        ],
-        "x": 1060,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d67f4b08e6992de0",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "LogJson",
-        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif (Array.isArray(result?.data) && result.data.length > 0 && isDubug) {\n    responsePayload = result.data[0];\n}\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"Log Kayıtları Silme İşlemi\", // Extra info ,\n    flowName: \"DelIntLog \",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 720,
-        "y": 420,
-        "wires": [
-            [
-                "05a88c2977276a08"
-            ]
-        ]
-    },
-    {
-        "id": "16ce4a4456ae2d63",
-        "type": "http request",
-        "z": "6ef8732eb0726477",
-        "name": "GET CleanLog",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "Content-Type",
-                "keyValue": "",
-                "valueType": "application/json",
-                "valueValue": ""
-            }
-        ],
-        "x": 720,
-        "y": 190,
-        "wires": [
-            [
-                "3c1dc346d0aff094"
-            ]
-        ]
-    },
-    {
-        "id": "3c1dc346d0aff094",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 151",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 190,
-        "wires": []
-    },
-    {
-        "id": "effb9d3c7deb83ec",
-        "type": "subflow:e00c065eb7c30613",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 400,
-        "y": 360,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "dbe89489b437be15",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 350,
-        "wires": [
-            [
-                "effb9d3c7deb83ec"
-            ]
-        ]
-    },
-    {
-        "id": "87f126f5c0d87591",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 445,
-        "y": 490,
-        "wires": [
-            [
-                "f067cb7bd3a52d89"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "55e51976d99da91c",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 500,
-        "wires": [
-            [
-                "87f126f5c0d87591"
-            ]
-        ]
-    },
-    {
-        "id": "f067cb7bd3a52d89",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 162",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "8f1e949e3f243c51",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "Send Array",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[1,2]",
-        "payloadType": "json",
-        "x": 400,
-        "y": 710,
-        "wires": [
-            [
-                "c7232387edea063d"
-            ]
-        ]
-    },
-    {
-        "id": "1553d9a0a6925b49",
-        "type": "split",
-        "z": "6ef8732eb0726477",
-        "name": "Split Array",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": "1",
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 760,
-        "y": 710,
-        "wires": [
-            [
-                "bf29bc2305207624"
-            ]
-        ]
-    },
-    {
-        "id": "bf29bc2305207624",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Process Each Item",
-        "func": "// Eleman işleme\nmsg.payload = `Processed: ${msg.payload}`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 960,
-        "y": 710,
-        "wires": [
-            [
-                "8668b6287b170082"
-            ]
-        ]
-    },
-    {
-        "id": "c7232387edea063d",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 83",
-        "func": "// Başlangıç array'ini alın\nlet array = msg.payload;\n\n\n\n// Sonucu döndür\nmsg.payload = array;\nreturn msg;\n",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 760,
-        "wires": [
-            [
-                "1553d9a0a6925b49"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8668b6287b170082",
-        "type": "link out",
-        "z": "6ef8732eb0726477",
-        "name": "link out 12",
-        "mode": "link",
-        "links": [
-            "65bbf1f47bdea740"
-        ],
-        "x": 1105,
-        "y": 690,
-        "wires": []
-    },
-    {
-        "id": "65bbf1f47bdea740",
-        "type": "link in",
-        "z": "6ef8732eb0726477",
-        "name": "link in 10",
-        "links": [
-            "8668b6287b170082"
-        ],
-        "x": 1215,
-        "y": 660,
-        "wires": [
-            [
-                "e24b601bab93ddbd"
-            ]
-        ],
-        "outputLabels": [
-            "ppp"
-        ]
-    },
-    {
-        "id": "e24b601bab93ddbd",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 168",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1380,
-        "y": 670,
-        "wires": []
-    },
-    {
-        "id": "52c650e7dbf6b75a",
-        "type": "subflow:fa51d0694c73d14f",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 590,
-        "y": 630,
-        "wires": [
-            [
-                "ce2df213171f1671"
-            ]
-        ]
-    },
-    {
-        "id": "ce2df213171f1671",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 179",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "f54fe6e7b775b885",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 410,
-        "y": 610,
-        "wires": [
-            [
-                "52c650e7dbf6b75a"
-            ]
-        ]
-    },
-    {
         "id": "4cdec196da627d74",
         "type": "function",
         "z": "6ef8732eb0726477",
@@ -19178,71 +18899,6 @@
         ]
     },
     {
-        "id": "329d14cf90ce5f7b",
-        "type": "subflow:d296b4008b6072d8",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "query",
-                "value": " SELECT DISTINCT dbo.TRK(KOD_2) GRUP_KOD,dbo.TRK(ISNULL(KOD2.GRUP_ISIM,'')) GRUP_ISIM     FROM TBLSTSABIT ST     LEFT JOIN TBLSTOKKOD2 KOD2 ON KOD2.GRUP_KOD=ST.KOD_2   WHERE KOD_2 IS NOT NULL",
-                "type": "str"
-            }
-        ],
-        "x": 1290,
-        "y": 220,
-        "wires": [
-            [
-                "7b8c99c995293e78"
-            ]
-        ]
-    },
-    {
-        "id": "2e9ab05e35689dad",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1090,
-        "y": 290,
-        "wires": [
-            [
-                "329d14cf90ce5f7b"
-            ]
-        ]
-    },
-    {
-        "id": "7b8c99c995293e78",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 194",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1480,
-        "y": 240,
-        "wires": []
-    },
-    {
         "id": "beb497b7b5b87336",
         "type": "subflow:e35d14410b661a09",
         "z": "6ef8732eb0726477",
@@ -19307,6 +18963,92 @@
         "x": 950,
         "y": 1490,
         "wires": []
+    },
+    {
+        "id": "2b71ca042dd1f39d",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 90,
+        "wires": [
+            [
+                "c46b585e66146f7a"
+            ]
+        ]
+    },
+    {
+        "id": "7c16b50b3a74a860",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 196",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c46b585e66146f7a",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 108",
+        "func": "msg.test=\"test1\";\n\nmsg.test2=\"test2\";\n\n\nglobal.set(msg.test + msg.test2,'deneme')\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 150,
+        "wires": [
+            [
+                "f19ca0c2229df29e"
+            ]
+        ]
+    },
+    {
+        "id": "f19ca0c2229df29e",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 109",
+        "func": "node.warn(global.get(msg.test + msg.test2));\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 160,
+        "wires": [
+            [
+                "7c16b50b3a74a860"
+            ]
+        ]
     },
     {
         "id": "f4973aa11bd2c838",
@@ -19416,8 +19158,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 460,
+        "x": 1110,
+        "y": 490,
         "wires": []
     },
     {
