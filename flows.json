@@ -96,8 +96,8 @@
         ],
         "out": [
             {
-                "x": 1160,
-                "y": 300,
+                "x": 1300,
+                "y": 270,
                 "wires": [
                     {
                         "id": "420f6597bca31418",
@@ -1517,6 +1517,100 @@
         "color": "#DDAA99"
     },
     {
+        "id": "fc936f675a46124b",
+        "type": "subflow",
+        "name": "NetsisApiV1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 150,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "7a44f711dd435c61"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 680,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "7a44f711dd435c61",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 730,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "bfd6c063ab26fd29",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "c823b85caa289042",
+        "type": "subflow",
+        "name": "GNTSPD000V1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 130,
+                "y": 150,
+                "wires": [
+                    {
+                        "id": "d1f0be44a0e8f7f8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1550,
+                "y": 430,
+                "wires": [
+                    {
+                        "id": "b30ad249dc203f0c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "8a27645487b5e36b",
+        "type": "subflow",
+        "name": "NTSPD000V1.0",
+        "info": "ProductionDoc",
+        "category": "",
+        "in": [
+            {
+                "x": 210,
+                "y": 140,
+                "wires": []
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "f95fc539736e93fc",
         "type": "group",
         "z": "f1a7c99c.1d3f48",
@@ -1626,7 +1720,6 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "530910680df15e9e",
             "6d82dee7e9c3eaa6",
             "64c8bf14f9283849",
             "b4a48818b854434e",
@@ -1645,7 +1738,8 @@
             "1d35d56abb2fe346",
             "5280b858ea5f0f27",
             "60ed029db915ba30",
-            "1003bee7386f0ee4"
+            "1003bee7386f0ee4",
+            "530910680df15e9e"
         ],
         "x": 214,
         "y": 519,
@@ -2851,7 +2945,7 @@
             "8226c7a9619f82f3",
             "89547ef5d2693443"
         ],
-        "x": 74,
+        "x": 34,
         "y": 179,
         "w": 1752,
         "h": 192
@@ -2940,7 +3034,7 @@
         ],
         "x": 34,
         "y": 39,
-        "w": 1192,
+        "w": 1222,
         "h": 182
     },
     {
@@ -3078,12 +3172,12 @@
             },
             {
                 "name": "NetsisUrl",
-                "value": "http://192.168.40.31:7071/",
+                "value": "http://192.168.25.10:7171/",
                 "type": "str"
             },
             {
                 "name": "Bady",
-                "value": "grant_type=password&branchcode=0&password=123&username=test&dbname=CAMKIRAN23&dbuser=TEMELSET&dbpassword=&dbtype=0",
+                "value": "grant_type=password&branchcode=0&password=SISBIM%&username=SISBIM&dbname=TESTMETROPOL&dbuser=TEMELSET&dbpassword=&dbtype=0",
                 "type": "str"
             },
             {
@@ -3392,8 +3486,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 1010,
-        "y": 260,
+        "x": 830,
+        "y": 230,
         "wires": [
             []
         ]
@@ -3403,7 +3497,7 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "Set URL",
-        "func": " \nmsg.NetsisUrl = env.get('NetsisUrl')\nmsg.payload =env.get('Bady')\nreturn msg;",
+        "func": " \nmsg.NetsisUrl = env.get('NetsisUrl')\nmsg.payload =env.get('Bady')\nmsg.dataPayload =env.get('Bady')\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -3448,7 +3542,7 @@
         "y": 360,
         "wires": [
             [
-                "41c8689c07184f8a"
+                "126ed9aef48ba81f"
             ]
         ]
     },
@@ -3457,15 +3551,15 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "Get Token func",
-        "func": "// Netsis Tokeni global olarak acıyoruz\nglobal.set(\"NetsisToken\", msg.payload.access_token)\nreturn msg;",
+        "func": "// .issued ve .expires değerlerini al\nlet issued = new Date(msg.payload[\".issued\"]);\nlet expires = new Date(msg.payload[\".expires\"]);\nlet now = new Date();\n\n// Türkiye saatine göre (UTC+3) ayarlama\nlet issuedTR = new Date(issued.getTime() + 3 * 60 * 60 * 1000);\nlet expiresTR = new Date(expires.getTime() + 3 * 60 * 60 * 1000);\n//let nowTR = new Date(now.getTime() + 3 * 60 * 60 * 1000);\n\n\n// Netsis Tokeni global olarak acıyoruz\nglobal.set(\"NetsisToken\", msg.payload.access_token)\nglobal.set(\"RefreshToken\", msg.payload.refresh_token)\nglobal.set(\"issuedDate\", issuedTR)\nglobal.set(\"expiresDate\", expiresTR)\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 300,
+        "x": 1120,
+        "y": 240,
         "wires": [
             []
         ]
@@ -3494,46 +3588,13 @@
         "y": 300,
         "wires": [
             [
-                "420f6597bca31418"
+                "420f6597bca31418",
+                "d2673a3c66472576"
             ],
             [
-                "125c977b88a1dad3"
+                "6d10eb37f8cf99b9"
             ]
         ]
-    },
-    {
-        "id": "41c8689c07184f8a",
-        "type": "debug",
-        "z": "317a0e3edab25639",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "125c977b88a1dad3",
-        "type": "debug",
-        "z": "317a0e3edab25639",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "b710834ee31ae2b4",
@@ -3635,29 +3696,11 @@
         "y": 680,
         "wires": [
             [
-                "9ec5cdc5900a1355"
+                "2e58e6d01aad3e72"
             ],
             [
-                "dafdcea6a5a3c8c4"
+                "2e58e6d01aad3e72"
             ]
-        ]
-    },
-    {
-        "id": "9ec5cdc5900a1355",
-        "type": "function",
-        "z": "317a0e3edab25639",
-        "name": "function 6",
-        "func": " \nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1040,
-        "y": 660,
-        "wires": [
-            []
         ]
     },
     {
@@ -3673,26 +3716,9 @@
         "y": 720,
         "wires": [
             [
-                "517a6abaa1291974"
+                "1aa6e5a599662d26"
             ]
         ]
-    },
-    {
-        "id": "517a6abaa1291974",
-        "type": "debug",
-        "z": "317a0e3edab25639",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 720,
-        "wires": []
     },
     {
         "id": "359bbc3396c63271",
@@ -3734,21 +3760,210 @@
         "wires": []
     },
     {
-        "id": "dafdcea6a5a3c8c4",
-        "type": "debug",
+        "id": "6d10eb37f8cf99b9",
+        "type": "function",
         "z": "317a0e3edab25639",
-        "name": "Error Handler",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1050,
-        "y": 720,
-        "wires": []
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: \"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 340,
+        "wires": [
+            [
+                "445f68b033b3be7b"
+            ]
+        ]
+    },
+    {
+        "id": "126ed9aef48ba81f",
+        "type": "function",
+        "z": "317a0e3edab25639",
+        "name": "LogJson",
+        "func": "// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: \"Netsis-Token\",\n    additionalData:\"\", // Extra info    \n    requestPayload: JSON.stringify(msg.payload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.error.message || {}) // Serialized response payload\n}];\n\n// dönüş değper verilcek \nconst flowName=msg?.propIntegration?.flowName;\nif(global.get(flowName+'_payload_res_status'))\n{\n    global.set(flowName+'_payload_res')\n}\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 380,
+        "wires": [
+            [
+                "445f68b033b3be7b"
+            ]
+        ]
+    },
+    {
+        "id": "445f68b033b3be7b",
+        "type": "subflow:7cdf28f23984a61d",
+        "z": "317a0e3edab25639",
+        "name": "",
+        "env": [
+            {
+                "name": "sourceModule/Flow",
+                "value": "Token Netsis",
+                "type": "env"
+            },
+            {
+                "name": "sourceSystem",
+                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "type": "str"
+            },
+            {
+                "name": "status",
+                "value": "error",
+                "type": "str"
+            },
+            {
+                "name": "SourceSystem",
+                "value": "Netsis",
+                "type": "str"
+            },
+            {
+                "name": "SourceModule/Flow",
+                "value": "Netsis  To SFORIN Stock Card(REST)",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem",
+                "value": "SFORIN",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem\":",
+                "value": "NETSIS",
+                "type": "str"
+            },
+            {
+                "name": "logData",
+                "value": "{{{msg.payload}}}",
+                "type": "str"
+            }
+        ],
+        "x": 1370,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2673a3c66472576",
+        "type": "function",
+        "z": "317a0e3edab25639",
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey:\"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: 0, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 280,
+        "wires": [
+            [
+                "445f68b033b3be7b"
+            ]
+        ]
+    },
+    {
+        "id": "2e58e6d01aad3e72",
+        "type": "function",
+        "z": "317a0e3edab25639",
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||true; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: \"Netsis-Token-Revoke\" , // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: 0, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token-Revoke\",   \n    requestPayload: null, // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 660,
+        "wires": [
+            [
+                "c0238aa6884fbc32"
+            ]
+        ]
+    },
+    {
+        "id": "1aa6e5a599662d26",
+        "type": "function",
+        "z": "317a0e3edab25639",
+        "name": "LogJson",
+        "func": "// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n     dataKey: \"Netsis-Token-Revoke\" , // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: \"Netsis-Token\",\n    additionalData:\"\", // Extra info    \n    requestPayload: JSON.stringify(msg.payload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.error.message || {}) // Serialized response payload\n}];\n\n// dönüş değper verilcek \nconst flowName=msg?.propIntegration?.flowName;\nif(global.get(flowName+'_payload_res_status'))\n{\n    global.set(flowName+'_payload_res')\n}\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 730,
+        "wires": [
+            [
+                "c0238aa6884fbc32"
+            ]
+        ]
+    },
+    {
+        "id": "c0238aa6884fbc32",
+        "type": "subflow:7cdf28f23984a61d",
+        "z": "317a0e3edab25639",
+        "name": "",
+        "env": [
+            {
+                "name": "sourceModule/Flow",
+                "value": "Token Netsis",
+                "type": "env"
+            },
+            {
+                "name": "sourceSystem",
+                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "type": "str"
+            },
+            {
+                "name": "status",
+                "value": "error",
+                "type": "str"
+            },
+            {
+                "name": "SourceSystem",
+                "value": "Netsis",
+                "type": "str"
+            },
+            {
+                "name": "SourceModule/Flow",
+                "value": "Netsis  To SFORIN Stock Card(REST)",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem",
+                "value": "SFORIN",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem\":",
+                "value": "NETSIS",
+                "type": "str"
+            },
+            {
+                "name": "logData",
+                "value": "{{{msg.payload}}}",
+                "type": "str"
+            }
+        ],
+        "x": 1290,
+        "y": 700,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "50d3c1690610e3fe",
@@ -3861,7 +4076,7 @@
         "type": "function",
         "z": "7cdf28f23984a61d",
         "name": "Async Full HTTP Request",
-        "func": "(async function () {\n    try {\n        const http = global.get('http');\n        const { parse } = global.get('url');\n\n        // Base URL ve endpoint\n        const baseUrl = env.get('SFORIN_URL')\n        \n        const urlPath = env.get('logUrlPath');\n        const fullUrl = `${baseUrl}${urlPath}`;\n\n        // Global değişkenlerden alınan token\n        const token = global.get(\"SforinToken\");\n\n        // Varsayılan şablon (Default değerler)\n        const defaultTemplate = {\n            dataKey: \"\",\n            dataType: 0,\n            date: new Date().toISOString(),\n            message: \"\",\n            jobResult: 0,\n            integrationName: \"\",\n            httpStatusCode: 200,\n            duration: null,\n            additionalData: \"\",\n            flowName: env.get('sourceModule/Flow'),\n            requestPayload: \"\",\n            responsePayload: \"\"\n        };\n\n        // Null, undefined ve boş değer kontrolü yapan yardımcı fonksiyon\n        function isValid(value) {\n            return value !== undefined && value !== null && value !== \"\";\n        }\n\n        // Gelen veriyi işleme\n        const incomingDataArray = msg.logData || [];\n\n        // Gelen nesneleri eşleştir\n        const mappedData = incomingDataArray.map(item => {\n            return {\n                dataKey: isValid(item.dataKey) ? item.dataKey : defaultTemplate.dataKey,\n                dataType: isValid(item.dataType) ? item.dataType : defaultTemplate.dataType,\n                date: isValid(item.date) ? item.date : defaultTemplate.date,\n                message: isValid(item.message) ? item.message : defaultTemplate.message,\n                jobResult: isValid(item.jobResult) ? item.jobResult : defaultTemplate.jobResult,\n                integrationName: isValid(item.integrationName) ? item.integrationName : defaultTemplate.integrationName,\n                httpStatusCode: isValid(item.httpStatusCode) ? item.httpStatusCode : defaultTemplate.httpStatusCode,\n                duration: isValid(item.duration) ? item.duration : defaultTemplate.duration,\n                additionalData: isValid(item.additionalData) ? item.additionalData : defaultTemplate.additionalData,\n                flowName: isValid(item.flowName) ? item.flowName : defaultTemplate.flowName,\n                requestPayload: isValid(item.requestPayload) ? item.requestPayload : defaultTemplate.requestPayload,\n                responsePayload: isValid(item.responsePayload) ? item.responsePayload : defaultTemplate.responsePayload\n            };\n        });\n\n        // Yeni payload oluştur\n        const payload = {\n            requestId: \"\",\n            sender: \"NODE-RED\",\n            data: mappedData,\n            current: [\n                {\n                    key: \"\",\n                    value: \"\"\n                }\n            ]\n        };\n\n        // HTTP isteği gönderme fonksiyonu\n        const sendHttpRequest = (url, method, headers, body) => {\n            return new Promise((resolve, reject) => {\n                const parsedUrl = parse(url); // URL'yi ayrıştırıyoruz.\n                const options = {\n                    hostname: parsedUrl.hostname,\n                    port: parsedUrl.port || 80, // HTTP için varsayılan port\n                    path: parsedUrl.path,\n                    method: method,\n                    headers: headers\n                };\n\n                const req = http.request(options, (res) => {\n                    let responseData = \"\";\n                    res.on(\"data\", (chunk) => {\n                        responseData += chunk;\n                    });\n                    res.on(\"end\", () => {\n                        resolve(responseData);\n                    });\n                });\n\n                req.on(\"error\", (e) => {\n                    reject(e);\n                });\n\n                if (body) {\n                    req.write(JSON.stringify(body));\n                }\n                req.end();\n            });\n        };\n\n        // HTTP isteğini yap\n        const response = await sendHttpRequest(\n            fullUrl,\n            \"POST\",\n            {\n                \"Authorization\": `Bearer ${token}`,\n                \"Content-Type\": \"application/json\"\n            },\n            payload\n        );\n\n        // Yanıtı işleme\n        msg.payload = JSON.parse(response);\n        return msg;\n\n    } catch (error) {\n        // Hata durumunda loglama ve mesaj döndürme\n        node.error(\"Bir hata oluştu: \" + error.message);\n        msg.error = error.message;\n        return msg;\n    }\n})();\n",
+        "func": "(async function () {\n    try {\n        const http = global.get('http');\n        const { parse } = global.get('url');\n\n        // Base URL ve endpoint\n        const baseUrl = env.get('SFORIN_URL')\n        \n        const urlPath = env.get('logUrlPath');\n        const fullUrl = `${baseUrl}${urlPath}`;\n\n        // Global değişkenlerden alınan token\n        const token = global.get(\"SforinToken\");\n\n        // Varsayılan şablon (Default değerler)\n        const defaultTemplate = {\n            dataKey: \"\",\n            dataType: 0,\n            date: new Date().toISOString(),\n            message: \"\",\n            jobResult: 0,\n            integrationName: \"\",\n            httpStatusCode: 200,\n            duration: null,\n            additionalData: \"\",\n            flowName: env.get('sourceModule/Flow'),\n            requestPayload: \"\",\n            responsePayload: \"\"\n        };\n\n        // Null, undefined ve boş değer kontrolü yapan yardımcı fonksiyon\n        function isValid(value) {\n            return value !== undefined && value !== null && value !== \"\";\n        }\n\n        // Gelen veriyi işleme\n        const incomingDataArray = msg.logData || [];\n\n        // Gelen nesneleri eşleştir\n        const mappedData = incomingDataArray.map(item => {\n            return {\n                dataKey: isValid(item?.dataKey) ? item.dataKey : defaultTemplate.dataKey,\n                dataType: isValid(item?.dataType) ? item.dataType : defaultTemplate.dataType,\n                date: isValid(item?.date) ? item.date : defaultTemplate.date,\n                message: isValid(item?.message) ? item.message : defaultTemplate.message,\n                jobResult: isValid(item?.jobResult) ? item.jobResult : defaultTemplate.jobResult,\n                integrationName: isValid(item?.integrationName) ? item.integrationName : defaultTemplate.integrationName,\n                httpStatusCode: isValid(item?.httpStatusCode) ? item.httpStatusCode : defaultTemplate.httpStatusCode,\n                duration: isValid(item?.duration) ? item.duration : defaultTemplate.duration,\n                additionalData: isValid(item?.additionalData) ? item.additionalData : defaultTemplate.additionalData,\n                flowName: isValid(item?.flowName) ? item.flowName : defaultTemplate.flowName,\n                requestPayload: isValid(item?.requestPayload) ? item.requestPayload : defaultTemplate.requestPayload,\n                responsePayload: isValid(item?.responsePayload) ? item.responsePayload : defaultTemplate.responsePayload\n            };\n        });\n\n        // Yeni payload oluştur\n        const payload = {\n            requestId: \"\",\n            sender: \"NODE-RED\",\n            data: mappedData,\n            current: [\n                {\n                    key: \"\",\n                    value: \"\"\n                }\n            ]\n        };\n\n        // HTTP isteği gönderme fonksiyonu\n        const sendHttpRequest = (url, method, headers, body) => {\n            return new Promise((resolve, reject) => {\n                const parsedUrl = parse(url); // URL'yi ayrıştırıyoruz.\n                const options = {\n                    hostname: parsedUrl.hostname,\n                    port: parsedUrl.port || 80, // HTTP için varsayılan port\n                    path: parsedUrl.path,\n                    method: method,\n                    headers: headers\n                };\n\n                const req = http.request(options, (res) => {\n                    let responseData = \"\";\n                    res.on(\"data\", (chunk) => {\n                        responseData += chunk;\n                    });\n                    res.on(\"end\", () => {\n                        resolve(responseData);\n                    });\n                });\n\n                req.on(\"error\", (e) => {\n                    reject(e);\n                });\n\n                if (body) {\n                    req.write(JSON.stringify(body));\n                }\n                req.end();\n            });\n        };\n\n        // HTTP isteğini yap\n        const response = await sendHttpRequest(\n            fullUrl,\n            \"POST\",\n            {\n                \"Authorization\": `Bearer ${token}`,\n                \"Content-Type\": \"application/json\"\n            },\n            payload\n        );\n\n        // Yanıtı işleme\n        msg.payload = JSON.parse(response);\n        return msg;\n\n    } catch (error) {\n        // Hata durumunda loglama ve mesaj döndürme\n        node.error(\"Bir hata oluştu: \" + error.message);\n        msg.error = error.message;\n        return msg;\n    }\n})();\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4785,31 +5000,6 @@
         ]
     },
     {
-        "id": "530910680df15e9e",
-        "type": "function",
-        "z": "73bcc0f49f21e3cf",
-        "g": "16d68ae37c966577",
-        "name": "Process Item",
-        "func": "let items = msg.items;\nlet index = msg.index;\nif (index >= items.length) {\n    return [null, msg];\n}\n\nlet item = items[index];\nmsg.index = index;\nmsg.payload = item;\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"NetsisToken\")\n};\n\nmsg.NetsisUrl = env.get('NetsisUrl')\n\nreturn [msg, null];;",
-        "outputs": 2,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 580,
-        "wires": [
-            [
-                "b4a48818b854434e"
-            ],
-            [
-                "45a16768398968b6",
-                "1003bee7386f0ee4"
-            ]
-        ]
-    },
-    {
         "id": "6d82dee7e9c3eaa6",
         "type": "link in",
         "z": "73bcc0f49f21e3cf",
@@ -4905,8 +5095,8 @@
         "y": 720,
         "wires": [
             [
-                "530910680df15e9e",
-                "60ed029db915ba30"
+                "60ed029db915ba30",
+                "530910680df15e9e"
             ],
             [
                 "30fe69813cca3656"
@@ -5259,6 +5449,31 @@
         "x": 1330,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "530910680df15e9e",
+        "type": "function",
+        "z": "73bcc0f49f21e3cf",
+        "g": "16d68ae37c966577",
+        "name": "Process Item",
+        "func": "let items = msg.items;\nlet index = msg.index;\nif (index >= items.length) {\n    return [null, msg];\n}\n\nlet item = items[index];\nmsg.index = index;\nmsg.payload = item;\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"NetsisToken\")\n};\n\nmsg.NetsisUrl = env.get('NetsisUrl')\n\nreturn [msg, null];;",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 580,
+        "wires": [
+            [
+                "b4a48818b854434e"
+            ],
+            [
+                "45a16768398968b6",
+                "1003bee7386f0ee4"
+            ]
+        ]
     },
     {
         "id": "c1545870c22d4104",
@@ -11252,7 +11467,7 @@
         "z": "17803f695ab8af0d",
         "g": "69a8c850b940485b",
         "name": "ConvertJsonSforinProduct",
-        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return { \n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": null,\n                        \"netsisDataField\": true\n                    },\n                    {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n             \n         \n       \n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
+        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n\n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n   \n    return { \n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                 \"categories\": [\n                   \n                   ...(s4inCatagoryGroupCode.categoryCode?[ \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    \n                   }]:[]),\n                   ...(s4inCatagoryParentCode.categoryCode?[\n                     {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                   ]:[])\n                  \n                   \n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            // {\n                            //     \"labelCode\": \"\",\n                            //     \"designFilePath\": \"\",\n                            //     \"customerCode\": \"\",\n                            //     \"packType\": \"\"\n                            // }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                            //  {\n                            //      \"labelCode\": \"\",\n                            //      \"designFilePath\": \"\",\n                            //      \"customerCode\": \"\",\n                            //      \"packType\": \"\"\n                            //  }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            // {\n                            //     \"labelCode\": \"\",\n                            //     \"designFilePath\": \"\",\n                            //     \"customerCode\": \"\",\n                            //     \"packType\": \"\"\n                            // }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    // {\n                    //     \"imagePath\": \"\",\n                    //     \"sequence\": 0\n                    // }\n                ],\n                \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    // {\n                    //     \"code\": \"\",\n                    //     \"path\": \"\",\n                    //     \"validUntil\": new Date().toISOString(),\n                    //     \"createdOn\": new Date().toISOString(),\n                    //     \"fileDescriptionLang\": \"en\"\n                    // }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n                \"manufacturers\": [],\n                \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n             \n         \n       \n        \n    };\n    \n});\n\nmsg.sforinproduct = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11526,7 +11741,7 @@
         "z": "17803f695ab8af0d",
         "g": "167f4d272f155624",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN (N'MAMUL',N'YARIMML',N'HAMMADDE',N'AMBALAJ',N'DİĞER')    \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n//node.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_1) AS GRUP_KODU,\n       dbo.TRK(KOD_2) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')    AND     DBO.TRK(UPPER(STOK_KODU)) NOT LIKE 'HIZ%' \n`;\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = global.get('NTSP000V1reqStockCode')\nif (paramsStockCode !== undefined && paramsStockCode !== null && paramsStockCode !== '') {\n   \n    query += `AND A.STOK_KODU= '${paramsStockCode}'`;\n}\n\n// msg.payload'a sorguyu ekle\n//node.warn(paramsStockCode+\"aaaa\");\nmsg.query=query;\nif(global.get('NTSP000V1reqStockCode'))\n{\n    global.set('NTSP000V1reqStockCode',null)\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -11593,7 +11808,7 @@
         "z": "17803f695ab8af0d",
         "g": "fbf5966f1914eea8",
         "name": "function 42",
-        "func": "msg.payload.forEach(item=>\n{\n    msg.item.units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            {\n                \"labelCode\": \"\",\n                \"designFilePath\": \"\",\n                \"customerCode\": \"\",\n                \"packType\": \"\"\n            }\n        ]\n    })\n});\n\nreturn msg;\n\n\n\n \n ",
+        "func": "msg.payload.forEach(item=>\n{\n    msg.item.units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            // {\n            //     \"labelCode\": \"\",\n            //     \"designFilePath\": \"\",\n            //     \"customerCode\": \"\",\n            //     \"packType\": \"\"\n            // }\n        ]\n    })\n});\n\nreturn msg;\n\n\n\n \n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -13779,15 +13994,15 @@
         "type": "function",
         "z": "e35d14410b661a09",
         "name": "LogJson",
-        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName: msg.flowName || \"\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\n\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (msg.statusCode === 200 || msg.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName: msg.flowName || \"\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 200,
+        "x": 730,
+        "y": 190,
         "wires": [
             [
                 "3902efa95b9ee105"
@@ -14778,7 +14993,7 @@
         "z": "407e1a0c9ab51943",
         "g": "5ea72d766d893c6d",
         "name": "function 86",
-        "func": "msg.payload?.forEach(item=>\n{\n    msg.item[0].data[0].units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            {\n                \"labelCode\": \"\",\n                \"designFilePath\": \"\",\n                \"customerCode\": \"\",\n                \"packType\": \"\"\n            }\n        ]\n    })\n});\nmsg.dataPayload=msg.item[0];\nmsg.flowName = msg.inregrationFlowData.code || \"INTSYNCSP000V1.0\";\nreturn msg;\n\n \n\n \n ",
+        "func": "msg.payload?.forEach(item=>\n{\n    msg.item[0].data[0].units.push({\n        \"unitCode\": item.OLCUBIRIMI,\n        \"isBaseUnit\": true,\n        \"factor\": item.PAY,\n        \"divisor\":item.PAYDA,\n        \"area\": 0.0,\n        \"widthM\": item.EN,\n        \"heightM\": item.YUKSEKLIK,\n        \"depthM\": 0.0,\n        \"weightKg\": item.NETAGIRLIK,\n        \"volumeM3\": 0.0,\n        \"labels\": [\n            // {\n            //     \"labelCode\": \"\",\n            //     \"designFilePath\": \"\",\n            //     \"customerCode\": \"\",\n            //     \"packType\": \"\"\n            // }\n        ]\n    })\n});\nmsg.dataPayload=msg.item[0];\nmsg.flowName = msg.inregrationFlowData.code || \"INTSYNCSP000V1.0\";\nreturn msg;\n\n \n\n \n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14928,7 +15143,7 @@
         "z": "407e1a0c9ab51943",
         "g": "08eeb7ef81fd0b35",
         "name": "ConvertJsonSforinProduct",
-        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n    \n    \n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n    \n    return {\n    \n        \"requestId\": \"\",\n        \"sender\": \"Node-RED-SFORIN\",\n        \"data\": [\n            {\n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                 \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                   ...(s4inCatagoryGroupCode.categoryCode?[ \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    \n                   }]:[]),\n                   ...(s4inCatagoryParentCode.categoryCode?[\n                     {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                   ]:[])\n                  \n                   \n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                             {\n                                 \"labelCode\": \"\",\n                                 \"designFilePath\": \"\",\n                                 \"customerCode\": \"\",\n                                 \"packType\": \"\"\n                             }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            {\n                                \"labelCode\": \"\",\n                                \"designFilePath\": \"\",\n                                \"customerCode\": \"\",\n                                \"packType\": \"\"\n                            }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    {\n                        \"imagePath\": \"\",\n                        \"sequence\": 0\n                    }\n                ],\n              \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    {\n                        \"code\": \"\",\n                        \"path\": \"\",\n                        \"validUntil\": new Date().toISOString(),\n                        \"createdOn\": new Date().toISOString(),\n                        \"fileDescriptionLang\": \"en\"\n                    }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n               \"manufacturers\": [],\n               \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n            }\n        ]\n        \n    };\n    \n});\n\nmsg.item = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
+        "func": "// Gelen veriyi al\nconst netsisProductTypes=msg.netsisProductTypes;\nconst getAllNetsisProductTypes=msg.getAllNetsisProductTypes?.data;\nvar data = msg.matchingItems;\n;\n\n// Map fonksiyonunu kullanarak yeni bir dizi oluştur\nvar Sforinproduct = data.map(item => {\n    let groupCode = item.GRUP_KODU !== \"\" ? item.GRUP_KODU : \"\";\n    let parentCode=item.ALT_GRUP_KODU !== \"\" ? item.ALT_GRUP_KODU : \"\"\n    let s4inCatagoryGroupCode = getAllNetsisProductTypes.find(\n        x => x.categoryCode === groupCode && (x.parentCategory === null || x.parentCategory === \"\")\n    ) || \"\";\n    \n    \n    let s4inCatagoryParentCode = getAllNetsisProductTypes.find(x => x.categoryCode == parentCode && x.parentCategory ==groupCode)||\"\"\n    \n    return {\n    \n        \"requestId\": \"\",\n        \"sender\": \"Node-RED-SFORIN\",\n        \"data\": [\n            {\n                \"code\": item.STOK_KODU,\n                \"company\": env.get(\"companyCode\"),\n                \"gtin\": \"\",\n                \"hasSubProducts\": false,\n                 \"customerCodes\": [],\n                 \"productType\": {\n                     \"typeCode\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCode) || \"\",                     \n                     \"definitionLang\": (netsisProductTypes.find(x => x.key == groupCode)?.productTypeCodeName) || \"\"\n                    \n                },\n                \"categories\": [\n                   \n                   ...(s4inCatagoryGroupCode.categoryCode?[ \n                    {\n                        \"_id\":s4inCatagoryGroupCode._id||\"\",\n                        \"categoryCode\": groupCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": \"\",\n                        \"netsisDataField\": true\n                    \n                   }]:[]),\n                   ...(s4inCatagoryParentCode.categoryCode?[\n                     {\n                        \"_id\":s4inCatagoryParentCode._id||\"\",\n                        \"categoryCode\": parentCode,\n                        \"definition_lang\": \"\",\n                        \"parentCategory\": groupCode,\n                        \"netsisDataField\": true\n                    }\n                   ]:[])\n                  \n                   \n                ],\n                \"units\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"isBaseUnit\": true,\n                        \"factor\": 1.0,\n                        \"divisor\": 1.0,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            // {\n                            //     \"labelCode\": \"\",\n                            //     \"designFilePath\": \"\",\n                            //     \"customerCode\": \"\",\n                            //     \"packType\": \"\"\n                            // }\n                        ]\n                    },\n                     ...(item.OLCU_BR2? [{\n                         \"unitCode\": item.OLCU_BR2,\n                         \"isBaseUnit\": true,\n                         \"factor\": item.PAY_1,\n                         \"divisor\": item.PAYDA_1,\n                         \"area\": 0.0,\n                         \"widthM\": 0.0,\n                         \"heightM\": 0.0,\n                         \"depthM\": 0.0,\n                         \"weightKg\": 0.0,\n                         \"volumeM3\": 0.0,\n                         \"labels\": [\n                            //  {\n                            //      \"labelCode\": \"\",\n                            //      \"designFilePath\": \"\",\n                            //      \"customerCode\": \"\",\n                            //      \"packType\": \"\"\n                            //  }\n                         ]\n\n                     }]:[]),\n                     ...(item.OLCU_BR3?[{\n                         \"unitCode\": item.OLCU_BR3,\n                        \"isBaseUnit\": true,\n                         \"factor\": item.PAY2,\n                         \"divisor\": item.PAYDA2,\n                        \"area\": 0.0,\n                        \"widthM\": 0.0,\n                        \"heightM\": 0.0,\n                        \"depthM\": 0.0,\n                        \"weightKg\": 0.0,\n                        \"volumeM3\": 0.0,\n                        \"labels\": [\n                            // {\n                            //     \"labelCode\": \"\",\n                            //     \"designFilePath\": \"\",\n                            //     \"customerCode\": \"\",\n                            //     \"packType\": \"\"\n                            // }\n                        ]\n                     }]:[])\n                ],\n                \"barcodes\": [\n                    {\n                        \"unitCode\": item.OLCU_BR1,\n                        \"barcode\": item.BARKOD1\n                    },\n                    ...(item.OLCU_BR2 ? [{\n                        \"unitCode\": item.OLCU_BR2,\n                        \"barcode\": item.BARKOD2\n                    }] : []),\n                    ...(item.OLCU_BR3 ? [{\n                        \"unitCode\": item.OLCU_BR3,\n                        \"barcode\": item.BARKOD3\n                    }] : [])\n                ],\n                \"images\": [\n                    // {\n                    //     \"imagePath\": \"\",\n                    //     \"sequence\": 0\n                    // }\n                ],\n              \"subProducts\": null,\n                \"packTypes\": [\n                    {\n                        \"packtypeCode\": \"\",\n                        \"definition_lang\": \"en\",\n                        \"requiredMaterials\": [],\n                        \"widthM\": null,\n                        \"heightM\": null,\n                        \"depthM\": null,\n                        \"weighthKg\": null,\n                        \"area\": null,\n                        \"wigthtLimitKG\": null,\n                        \"handlingInstructions_lang\": \"en\",\n                        \"instructions_lang\": \"en\"\n                    }\n                ],\n                \"files\": [\n                    // {\n                    //     \"code\": \"\",\n                    //     \"path\": \"\",\n                    //     \"validUntil\": new Date().toISOString(),\n                    //     \"createdOn\": new Date().toISOString(),\n                    //     \"fileDescriptionLang\": \"en\"\n                    // }\n                ],\n                \"attributeValues\": [],\n                \"stockLevels\": [],\n               \"manufacturers\": [],\n               \"vendors\": [],\n                \"productStates\": {\n                    \"isActive\": true,\n                    \"isSellable\": true,\n                    \"passiveFor\": [],\n                    \"isEditable\": true,\n                    \"isAllowedToSync\": true\n                },\n                \"descriptions\": [\n                    {\n                        \"productCode\": item.STOK_KODU,\n                        \"defaultDefinition\": item.STOK_ADI,\n                        \"shortenedDefinition\": \"\",\n                        \"longDefinition\": \"\",\n                        \"packagingDefinition\": \"\"\n                    }\n                ],\n                \"storageLocations\": [],\n                \"productDates\": {\n                    \"productCode\": item.STOK_KODU,\n                    \"createdOn\": new Date().toISOString(),\n                    \"updatedOn\": new Date().toISOString(),\n                    \"lastMovedOn\": null,\n                    \"lastReceiptOn\": null,\n                    \"lastDeliveryOn\": null\n                },\n                \"productUsers\": [],\n                \"notes\": []\n            }\n        ]\n        \n    };\n    \n});\n\nmsg.item = Sforinproduct;\n\nmsg.index = 0;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -15170,7 +15385,7 @@
         "z": "407e1a0c9ab51943",
         "g": "36baab9c434a7c9f",
         "name": "Netsis Stock json",
-        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = msg.stockCode_DataKey; // parametre ile gelen stok kodu var ise sorguya ekle \n \n   //node.warn(paramsStockCode);\n \n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT  TOP 1 A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_2) AS GRUP_KODU,\n       dbo.TRK(KOD_3) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')  /*AND A.KOD_3 IS NOT NULL  AND A.KOD_3 IS NOT NULL  AND    DBO.TRK(A.KOD_2) IN ('MAMUL','YARIMML','HAMMADDE','AMBALAJ','DİĞER')*/\n    AND A.STOK_KODU= '${paramsStockCode}'      \n`;\n\n\n// msg.payload'a sorguyu ekle\n\nmsg.query=query;\n\n\nreturn msg;\n",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.sforinStockCode = msg.sforinStockCode||[]\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsStockCode = msg.stockCode_DataKey; // parametre ile gelen stok kodu var ise sorguya ekle \n \n   //node.warn(paramsStockCode);\n \n\n// Sorguyu dinamik olarak oluştur\nlet query = `\n    SELECT  TOP 1 A.STOK_KODU,\n       dbo.TRK(STOK_ADI) AS STOK_ADI,\n       dbo.TRK(KOD_1) AS GRUP_KODU,\n       dbo.TRK(KOD_2) AS ALT_GRUP_KODU,\n       OLCU_BR1,\n       OLCU_BR2,\n       OLCU_BR3,\n       PAY_1,\n       PAYDA_1,\n       PAY2,\n       PAYDA2,\t  \n       CASE \n           WHEN BARKOD1 IS NOT NULL AND BARKOD1 <> '' THEN BARKOD1\n           WHEN OLCU_BR1 IS NOT NULL AND OLCU_BR1 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR1)\n           ELSE NULL\n       END AS BARKOD1,\n       CASE \n           WHEN BARKOD2 IS NOT NULL AND BARKOD2 <> '' THEN BARKOD2\n           WHEN OLCU_BR2 IS NOT NULL AND OLCU_BR2 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR2)\n           ELSE NULL\n       END AS BARKOD2,\n       CASE \n           WHEN BARKOD3 IS NOT NULL AND BARKOD3 <> '' THEN BARKOD3\n           WHEN OLCU_BR3 IS NOT NULL AND OLCU_BR3 <> '' THEN CONCAT(A.STOK_KODU, OLCU_BR3)\n           ELSE NULL\n       END AS BARKOD3,\n       B.TUR\nFROM TBLSTSABIT A\nLEFT JOIN TBLSTSABITEK B ON A.STOK_KODU = B.STOK_KODU\n    WHERE SUBE_KODU IN ('-1', '${branchCode}')   AND DBO.TRK(UPPER(STOK_KODU)) NOT LIKE 'HIZ%'   \n    AND A.STOK_KODU= '${paramsStockCode}'      \n`;\n\n\n// msg.payload'a sorguyu ekle\n\nmsg.query=query;\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -16164,7 +16379,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
+        "x": 910,
         "y": 270,
         "wires": [
             [
@@ -16185,7 +16400,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1250,
+        "x": 1210,
         "y": 270,
         "wires": [
             [
@@ -16206,7 +16421,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1470,
+        "x": 1430,
         "y": 260,
         "wires": [
             [
@@ -16221,7 +16436,7 @@
         "g": "88e40feae09cb4d7",
         "name": "Create Netsis To Sforin Product Category",
         "info": "KOD2 LERI MANUEL ACILMA IHTIMALINE KARSI KONTROLLU BIR AKTARIM SAGLANDI",
-        "x": 260,
+        "x": 220,
         "y": 220,
         "wires": []
     },
@@ -16238,7 +16453,7 @@
                 "type": "str"
             }
         ],
-        "x": 290,
+        "x": 250,
         "y": 280,
         "wires": [
             [
@@ -16259,7 +16474,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
+        "x": 570,
         "y": 280,
         "wires": [
             [
@@ -16277,7 +16492,7 @@
         "links": [
             "931f640414d07621"
         ],
-        "x": 1785,
+        "x": 1745,
         "y": 330,
         "wires": []
     },
@@ -16294,7 +16509,7 @@
                 "type": "str"
             }
         ],
-        "x": 1680,
+        "x": 1640,
         "y": 260,
         "wires": [
             [
@@ -16316,7 +16531,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 135,
+        "x": 95,
         "y": 280,
         "wires": [
             [
@@ -16627,6 +16842,327 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7a44f711dd435c61",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "function 110",
+        "func": "// Global değişkenlerden token bilgilerini al\nlet netsisToken = global.get(\"NetsisToken\");\nlet refreshToken = global.get(\"RefreshToken\");\nlet issuedDate = global.get(\"issuedDate\");\nlet expiresDate = global.get(\"expiresDate\");\n\n// Şu anki zamanın TR saatine göre alınması\nlet now = new Date();\nlet nowTR = new Date(now.getTime() + 3 * 60 * 60 * 1000);\n\n// Token bilgisi kontrolü\nif (netsisToken && refreshToken && issuedDate && expiresDate) {\n   // Şu anki zamanın token geçerlilik aralığında olup olmadığını kontrol et\n   if (nowTR.getTime() >= issuedDate.getTime() && nowTR.getTime() <= expiresDate.getTime()) {\n      // expiresDate ile nowTR arasındaki farkı hesapla (milisaniye olarak)\n      let timeDifference = expiresDate.getTime() - nowTR.getTime();\n\n      // Fark 5 dakikadan az ise\n      if (timeDifference > 0 && timeDifference <= 5 * 60 * 1000) {\n         // Token süresi 5 dakikadan az kaldı\n         return [null, null,msg];\n      }\n      // Token hala geçerli ve süresi 5 dakikadan fazla\n      return [msg, null,null];\n   } else {\n      // Token geçerlilik süresi dolmuş\n      return [null, msg,null];\n   }\n} else {\n   // Token bilgisi yoksa 2. çıkıştan çık\n   return [null, msg,null];\n}\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [],
+            [
+                "bfd6c063ab26fd29"
+            ],
+            [
+                "bfd6c063ab26fd29"
+            ]
+        ],
+        "outputLabels": [
+            "Validate Token",
+            "Get Token",
+            "Refresh_token"
+        ]
+    },
+    {
+        "id": "bfd6c063ab26fd29",
+        "type": "subflow:317a0e3edab25639",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1f0be44a0e8f7f8",
+        "type": "switch",
+        "z": "c823b85caa289042",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 170,
+        "wires": [
+            [
+                "89fc36eae7e36b02"
+            ]
+        ]
+    },
+    {
+        "id": "48f7569c4b46b9c8",
+        "type": "function",
+        "z": "c823b85caa289042",
+        "name": "Set Cron",
+        "func": "let cronProp = msg.payload;\n\nmsg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": cronProp.cron,\n    \"payloadType\": \"json\",\n    \"payload\":cronProp \n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 190,
+        "wires": [
+            [
+                "2a2f176dc584c355"
+            ]
+        ]
+    },
+    {
+        "id": "2a2f176dc584c355",
+        "type": "cronplus",
+        "z": "c823b85caa289042",
+        "name": "Cron Scheduler",
+        "outputField": "",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 730,
+        "y": 190,
+        "wires": [
+            [
+                "f9d7c26c6024dab8"
+            ]
+        ]
+    },
+    {
+        "id": "03096c4dc4f957d4",
+        "type": "switch",
+        "z": "c823b85caa289042",
+        "name": "",
+        "property": "propIntegration.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUNNING",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 975,
+        "y": 150,
+        "wires": [
+            [
+                "871fbb069a1d6d1c"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "871fbb069a1d6d1c",
+        "type": "subflow:bb656f77f61addff",
+        "z": "c823b85caa289042",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1160,
+        "y": 170,
+        "wires": [
+            [
+                "a7b09031e600d0d3"
+            ]
+        ]
+    },
+    {
+        "id": "a7b09031e600d0d3",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "c823b85caa289042",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "RUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1230,
+        "y": 230,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "447437eca4fd7982",
+        "type": "subflow:bb656f77f61addff",
+        "z": "c823b85caa289042",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1240,
+        "y": 370,
+        "wires": [
+            [
+                "b30ad249dc203f0c"
+            ]
+        ]
+    },
+    {
+        "id": "b30ad249dc203f0c",
+        "type": "subflow:0a4f4f9f59c2be20",
+        "z": "c823b85caa289042",
+        "name": "",
+        "env": [
+            {
+                "name": "status",
+                "value": "NOTRUNNING",
+                "type": "str"
+            }
+        ],
+        "x": 1270,
+        "y": 430,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "89fc36eae7e36b02",
+        "type": "switch",
+        "z": "c823b85caa289042",
+        "name": "trigger_type_Manuel",
+        "property": "manuel",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "48f7569c4b46b9c8"
+            ],
+            [
+                "3fbcf15129c6cfe4"
+            ]
+        ]
+    },
+    {
+        "id": "3fbcf15129c6cfe4",
+        "type": "function",
+        "z": "c823b85caa289042",
+        "name": "Set Cron",
+        "func": "let cronProp = global.get('allIntegrationParameters').find(x => x.flowEndPoint == msg.msg.integrationParameter_FlowName);\n \n \n\nmsg.payload =cronProp;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 250,
+        "wires": [
+            [
+                "f9d7c26c6024dab8"
+            ]
+        ]
+    },
+    {
+        "id": "f9d7c26c6024dab8",
+        "type": "function",
+        "z": "c823b85caa289042",
+        "name": "function 111",
+        "func": "let propIntegration = msg.payload;\n\n\n\nlet listAllIntegrationParameters = global.get('allIntegrationParameters');\n\n\nmsg.propIntegration = listAllIntegrationParameters.find(x => x.code === propIntegration.code);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 895,
+        "y": 190,
+        "wires": [
+            [
+                "03096c4dc4f957d4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a9e9f250b4d6f830",
+        "type": "function",
+        "z": "8a27645487b5e36b",
+        "name": "function 112",
+        "func": "const utcNow =new Date(new Date().getTime() + (3 * 60 * 60 * 1000))\n\n// Varsayılan JSON yapısı\nconst documentData = {   \n    Header: {     \n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"PAU\",\n        ProductionType: null,\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: null,\n        MaterialUnit: null,\n        TolerancePlusValue: null,\n        ToleranceMinusValue: null,\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: utcNow,\n        DocDate:  utcNow ,\n        ProductionDate:  utcNow ,\n        ValidityBeginDate: utcNow,\n        ValidityEndDate: utcNow ,\n        DatePg01: utcNow ,\n        DatePg02: utcNow ,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId:null,\n        RefProductCode:null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: [\n        {\n            \n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ],\n    TaskItems: [\n        {\n            \n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        }\n    ]\n};\n\n// Fonksiyondan çıkış yap\nmsg.test=documentData;\nreturn [msg];\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [
+                "3a99bfe50c826680"
+            ]
+        ]
+    },
+    {
+        "id": "3a99bfe50c826680",
+        "type": "debug",
+        "z": "8a27645487b5e36b",
+        "name": "debug 215",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "cce8f946aa3f45d9",
@@ -17270,8 +17806,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 340,
+        "x": 940,
+        "y": 360,
         "wires": [
             [
                 "b30693a96214840f"
@@ -17976,7 +18512,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 730,
         "y": 1040,
         "wires": []
     },
@@ -17990,8 +18526,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1140,
-        "y": 140,
+        "x": 1170,
+        "y": 180,
         "wires": []
     },
     {
@@ -18004,8 +18540,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1130,
-        "y": 350,
+        "x": 1140,
+        "y": 360,
         "wires": []
     },
     {
@@ -18579,392 +19115,6 @@
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
     },
     {
-        "id": "4cdec196da627d74",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 1 İşlem",
-        "func": "msg.payload = { kol: 1, status: 'done' };\nmsg.topic = 'kol1';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 950,
-        "wires": [
-            [
-                "1c45ad613ff0d8a9"
-            ]
-        ]
-    },
-    {
-        "id": "ea44050cb4e36866",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 2 İşlem",
-        "func": "msg.payload = { kol: 2, status: 'done' };\nmsg.topic = 'kol2';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 1000,
-        "wires": [
-            [
-                "1c45ad613ff0d8a9"
-            ]
-        ]
-    },
-    {
-        "id": "d8cba48d8aee1ce6",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 3 İşlem",
-        "func": "msg.payload = { kol: 3, status: 'done' };\nmsg.topic = 'kol3';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 1050,
-        "wires": [
-            [
-                "1c45ad613ff0d8a9"
-            ]
-        ]
-    },
-    {
-        "id": "1c45ad613ff0d8a9",
-        "type": "join",
-        "z": "6ef8732eb0726477",
-        "name": "Birleştir",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": false,
-        "timeout": "10",
-        "count": 3,
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 720,
-        "y": 990,
-        "wires": [
-            [
-                "3b6b085c93d734c2"
-            ]
-        ]
-    },
-    {
-        "id": "3b6b085c93d734c2",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "Birleşim Sonucu",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 990,
-        "wires": []
-    },
-    {
-        "id": "2cda0a1d656d6466",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 230,
-        "y": 970,
-        "wires": [
-            [
-                "4cdec196da627d74",
-                "ea44050cb4e36866",
-                "d8cba48d8aee1ce6"
-            ]
-        ]
-    },
-    {
-        "id": "62822a58642a3ded",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 1 İşlem",
-        "func": "msg.payload = { kol: 1, status: 'done' };\nmsg.topic = 'kol1';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1200,
-        "wires": [
-            [
-                "0baee1f9de13f97a",
-                "0ae6a3c30e2404c9"
-            ]
-        ]
-    },
-    {
-        "id": "4a3839053bf6cd07",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 2 İşlem",
-        "func": "msg.payload = { kol: 2, status: 'done' };\nmsg.topic = 'kol2';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1250,
-        "wires": [
-            [
-                "0baee1f9de13f97a",
-                "4c98075f5cd9cf30"
-            ]
-        ]
-    },
-    {
-        "id": "e2cd1bd39d29bb84",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 3 İşlem",
-        "func": "msg.payload = { kol: 3, status: 'done' };\nmsg.topic = 'kol3';\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1300,
-        "wires": [
-            [
-                "0baee1f9de13f97a",
-                "0e7586e929edfe72"
-            ]
-        ]
-    },
-    {
-        "id": "0baee1f9de13f97a",
-        "type": "join",
-        "z": "6ef8732eb0726477",
-        "name": "Birleştir",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": false,
-        "timeout": "10",
-        "count": 3,
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 690,
-        "y": 1350,
-        "wires": [
-            [
-                "94424a9d38f555f0"
-            ]
-        ]
-    },
-    {
-        "id": "0ae6a3c30e2404c9",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 1 Debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 570,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "4c98075f5cd9cf30",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 2 Debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 570,
-        "y": 1210,
-        "wires": []
-    },
-    {
-        "id": "0e7586e929edfe72",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "Kol 3 Debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 570,
-        "y": 1260,
-        "wires": []
-    },
-    {
-        "id": "94424a9d38f555f0",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "Birleşim Sonucu",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 820,
-        "y": 1240,
-        "wires": []
-    },
-    {
-        "id": "d336ec3bcbc62115",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 1190,
-        "wires": [
-            [
-                "62822a58642a3ded",
-                "4a3839053bf6cd07",
-                "e2cd1bd39d29bb84"
-            ]
-        ]
-    },
-    {
-        "id": "beb497b7b5b87336",
-        "type": "subflow:e35d14410b661a09",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "Url",
-                "value": "wmsmaster/api/WmsMaster/GetWarehouseLocations",
-                "type": "str"
-            }
-        ],
-        "x": 660,
-        "y": 1520,
-        "wires": [
-            [
-                "a922b3d5cdbaa8c7"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "87dd487ed72e2953",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 450,
-        "y": 1550,
-        "wires": [
-            [
-                "beb497b7b5b87336"
-            ]
-        ]
-    },
-    {
-        "id": "a922b3d5cdbaa8c7",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 195",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
-        "y": 1490,
-        "wires": []
-    },
-    {
         "id": "2b71ca042dd1f39d",
         "type": "inject",
         "z": "6ef8732eb0726477",
@@ -19006,8 +19156,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 950,
-        "y": 100,
+        "x": 960,
+        "y": 110,
         "wires": []
     },
     {
@@ -19049,6 +19199,171 @@
                 "7c16b50b3a74a860"
             ]
         ]
+    },
+    {
+        "id": "91c783d5a74f93df",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 209",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "80f542fb56936e8b",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "19ac9e2271c75646"
+            ]
+        ]
+    },
+    {
+        "id": "419e12032b12fc50",
+        "type": "subflow:fc936f675a46124b",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 410,
+        "y": 430,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6d949c66abc93a2c",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "419e12032b12fc50"
+            ]
+        ]
+    },
+    {
+        "id": "19ac9e2271c75646",
+        "type": "subflow:317a0e3edab25639",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "91c783d5a74f93df"
+            ]
+        ]
+    },
+    {
+        "id": "1a2fd6b4c51322b9",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 510,
+        "y": 640,
+        "wires": [
+            [
+                "fe392a65c1571971"
+            ]
+        ]
+    },
+    {
+        "id": "fe392a65c1571971",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 113",
+        "func": "msg.a=new Date(new Date().getTime() + (3 * 60 * 60 * 1000)) ;\n\nglobal.set(\"NetsisToken\",null);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 650,
+        "wires": [
+            [
+                "6064981dae72872d"
+            ]
+        ]
+    },
+    {
+        "id": "6064981dae72872d",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 216",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "a",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 650,
+        "wires": []
     },
     {
         "id": "f4973aa11bd2c838",
