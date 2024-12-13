@@ -1,5 +1,13 @@
 [
     {
+        "id": "6ef8732eb0726477",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "97e7314f695bb652",
         "type": "tab",
         "label": "UrlCollection",
@@ -13,14 +21,6 @@
         "label": "Excel to JSON Flow",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "6ef8732eb0726477",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
     },
     {
         "id": "68459bb5ee15fc71",
@@ -96,12 +96,22 @@
         ],
         "out": [
             {
-                "x": 1300,
-                "y": 270,
+                "x": 1450,
+                "y": 200,
                 "wires": [
                     {
                         "id": "420f6597bca31418",
                         "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1170,
+                "y": 440,
+                "wires": [
+                    {
+                        "id": "3252a64b6291f4e5",
+                        "port": 1
                     }
                 ]
             }
@@ -184,8 +194,8 @@
         ],
         "out": [
             {
-                "x": 1050,
-                "y": 130,
+                "x": 880,
+                "y": 190,
                 "wires": [
                     {
                         "id": "659af4d22c3253a7",
@@ -1535,27 +1545,37 @@
         ],
         "out": [
             {
-                "x": 680,
-                "y": 120,
+                "x": 1140,
+                "y": 300,
                 "wires": [
                     {
-                        "id": "7a44f711dd435c61",
+                        "id": "fc61d6f37ada0914",
                         "port": 0
                     }
                 ]
             },
             {
-                "x": 730,
-                "y": 200,
+                "x": 1480,
+                "y": 170,
                 "wires": [
                     {
-                        "id": "bfd6c063ab26fd29",
+                        "id": "51cd88a319665df6",
+                        "port": 0
+                    },
+                    {
+                        "id": "3cae524a04864887",
                         "port": 0
                     }
                 ]
             }
         ],
-        "env": [],
+        "env": [
+            {
+                "name": "RestUrl",
+                "type": "str",
+                "value": ""
+            }
+        ],
         "meta": {},
         "color": "#DDAA99"
     },
@@ -1602,6 +1622,24 @@
             {
                 "x": 210,
                 "y": 140,
+                "wires": []
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "49d27287d53b1fe5",
+        "type": "subflow",
+        "name": "STNPRODV1.0",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 330,
+                "y": 180,
                 "wires": []
             }
         ],
@@ -3038,6 +3076,133 @@
         "h": 182
     },
     {
+        "id": "91867ef68fefe36a",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "ebadf244691291aa",
+            "d3d3039acd447b46",
+            "396c5733cee43746",
+            "dd540177e64e1969",
+            "7d84a31d05ab32e3",
+            "06ad587ca3b0193e",
+            "2986fdfd86e71cab",
+            "033613958bb528e5",
+            "ce6eeb8aee204181",
+            "72194ee77ad36fa9",
+            "b1ddb513ac3c6e7c"
+        ],
+        "x": 24,
+        "y": 1119,
+        "w": 1562,
+        "h": 202
+    },
+    {
+        "id": "1b0ba4f7e2361e6c",
+        "type": "group",
+        "z": "6ef8732eb0726477",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "7807e8f98cd6f630",
+            "559e4ee976f9d343",
+            "18db56f1c849e7f3",
+            "567c79d6b0c53b04",
+            "7afd481b9d48fcd1",
+            "dcee01621bfab79c",
+            "e7ee5385f8de97fd",
+            "d57ff27416a49126",
+            "27207b995aeb64f2",
+            "1bcd5e4157520214",
+            "da0f70f519dcd91d",
+            "108d9b74615d318f"
+        ],
+        "x": 114,
+        "y": 689,
+        "w": 1632,
+        "h": 182
+    },
+    {
+        "id": "77f838d56c52c163",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "0858b95ba622a39f",
+            "11222bacfdc2a479",
+            "358d0fba9413ea32",
+            "4bc00aa89bca27d9",
+            "f79acd577971e17f",
+            "1b2e19233dee6333",
+            "6f12fc909f7caff0",
+            "767988619f5f7e96",
+            "a566ae05f813c64e",
+            "fa7a75c7734fa67c",
+            "2b1d22185f323dd2",
+            "6558f8be059daed9"
+        ],
+        "x": 24,
+        "y": 1359,
+        "w": 1652,
+        "h": 192
+    },
+    {
+        "id": "76c96694b19fedf6",
+        "type": "group",
+        "z": "6ef8732eb0726477",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "013efbbba054d98c",
+            "8ae4765a8c923539",
+            "622a25d6c2eb4419",
+            "9ac01bd32ff7edcd",
+            "18f417bd7132171d",
+            "c166e897452ea0a2",
+            "fa471c42192040e0",
+            "2a0c3264649da094",
+            "c3768f8361071b0c",
+            "1dfb5c135fbec4e2",
+            "9b2c68f26c2623e0",
+            "6098f1c733ca027f"
+        ],
+        "x": 74,
+        "y": 949,
+        "w": 1632,
+        "h": 182
+    },
+    {
         "id": "873c9acca903bcab",
         "type": "junction",
         "z": "01bb3059fc08565d",
@@ -3497,7 +3662,7 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "Set URL",
-        "func": " \nmsg.NetsisUrl = env.get('NetsisUrl')\nmsg.payload =env.get('Bady')\nmsg.dataPayload =env.get('Bady')\n\nreturn msg;",
+        "func": " \nmsg.NetsisUrl = env.get('NetsisUrl')\nmsg.payload =env.get('Bady')\nmsg.dataPayload_ =env.get('Bady')\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -3558,8 +3723,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
-        "y": 240,
+        "x": 1130,
+        "y": 220,
         "wires": [
             []
         ]
@@ -3764,18 +3929,18 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "LogJson",
-        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: \"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (result?.statusCode === 200 || result?.statusCode === 400) ? 0 : 2;\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: \"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload_ || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
-        "y": 340,
+        "x": 1030,
+        "y": 330,
         "wires": [
             [
-                "445f68b033b3be7b"
+                "3252a64b6291f4e5"
             ]
         ]
     },
@@ -3784,18 +3949,18 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "LogJson",
-        "func": "// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: \"Netsis-Token\",\n    additionalData:\"\", // Extra info    \n    requestPayload: JSON.stringify(msg.payload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.error.message || {}) // Serialized response payload\n}];\n\n// dönüş değper verilcek \nconst flowName=msg?.propIntegration?.flowName;\nif(global.get(flowName+'_payload_res_status'))\n{\n    global.set(flowName+'_payload_res')\n}\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "func": "// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\n\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"Url\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"No message provided\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: \"Netsis-Token\",\n    additionalData:\"\", // Extra info    \n    requestPayload: JSON.stringify(msg.dataPayload_ || {}), // Serialized request payload\n    responsePayload: JSON.stringify(msg.error.message || {}) // Serialized response payload\n}];\n\n// dönüş değper verilcek \nconst flowName=msg?.propIntegration?.flowName;\nif(global.get(flowName+'_payload_res_status'))\n{\n    global.set(flowName+'_payload_res')\n}\n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 810,
         "y": 380,
         "wires": [
             [
-                "445f68b033b3be7b"
+                "3252a64b6291f4e5"
             ]
         ]
     },
@@ -3857,14 +4022,14 @@
         "type": "function",
         "z": "317a0e3edab25639",
         "name": "LogJson",
-        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey:\"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: 0, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n \n\n// Populate the data object dynamically\nconst data = [{\n    dataKey:\"Netsis-Token\", // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: 0, // Job result from payload or default\n    integrationName: \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName:  \"Netsis-Token\",   \n    requestPayload: JSON.stringify(msg.dataPayload_ || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1090,
+        "x": 1070,
         "y": 280,
         "wires": [
             [
@@ -3962,6 +4127,28 @@
         "x": 1290,
         "y": 700,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3252a64b6291f4e5",
+        "type": "function",
+        "z": "317a0e3edab25639",
+        "name": "retry logic",
+        "func": "msg.retrie || 0\n \nmsg.retries++;\n\nif (msg.retries <= 3) {\n    return [msg, null];\n} else {\n\n    return [null, msg];\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 420,
+        "wires": [
+            [
+                "445f68b033b3be7b",
+                "5bdc9f1ff86ee825"
+            ],
             []
         ]
     },
@@ -5161,6 +5348,7 @@
         "x": 1330,
         "y": 620,
         "wires": [
+            [],
             []
         ]
     },
@@ -5301,12 +5489,13 @@
         "z": "73bcc0f49f21e3cf",
         "g": "16d68ae37c966577",
         "name": "",
-        "x": 850,
+        "x": 800,
         "y": 580,
         "wires": [
             [
                 "530910680df15e9e"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -6225,6 +6414,7 @@
         "x": 270,
         "y": 420,
         "wires": [
+            [],
             []
         ]
     },
@@ -6391,7 +6581,8 @@
         "wires": [
             [
                 "c2da631ae4d47e52"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -6521,6 +6712,7 @@
         "x": 1290,
         "y": 240,
         "wires": [
+            [],
             []
         ]
     },
@@ -13822,8 +14014,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 100,
+        "x": 350,
+        "y": 70,
         "wires": [
             [
                 "6512429d8162770c"
@@ -14039,8 +14231,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 4,
-        "x": 350,
-        "y": 200,
+        "x": 370,
+        "y": 170,
         "wires": [
             [
                 "6e48d8ebdfe61927"
@@ -16858,9 +17050,12 @@
         "x": 360,
         "y": 160,
         "wires": [
-            [],
             [
-                "bfd6c063ab26fd29"
+                "ee20b864850c1e82"
+            ],
+            [
+                "bfd6c063ab26fd29",
+                "55b45fc86edb4291"
             ],
             [
                 "bfd6c063ab26fd29"
@@ -16877,11 +17072,409 @@
         "type": "subflow:317a0e3edab25639",
         "z": "fc936f675a46124b",
         "name": "",
-        "x": 570,
-        "y": 200,
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "ee20b864850c1e82"
+            ],
+            [
+                "74ddf016e413da47"
+            ]
+        ]
+    },
+    {
+        "id": "74ddf016e413da47",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "ReturnNetsisErrorMes",
+        "func": "msg.netsisTokenError=msg.logData;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 170,
+        "wires": [
+            [
+                "51cd88a319665df6"
+            ]
+        ]
+    },
+    {
+        "id": "ee20b864850c1e82",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "Get Sforin Category",
+        "func": "const baseUrl = env.get(\"NetsisUrl\");\n msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"NetsisToken\")\n};\n\nmsg.url=baseUrl+env.get(\"RestUrl\");\nmsg.payload=msg.dataPayload;\n\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 70,
+        "wires": [
+            [
+                "2930f83f2d8cf707"
+            ]
+        ]
+    },
+    {
+        "id": "2930f83f2d8cf707",
+        "type": "http request",
+        "z": "fc936f675a46124b",
+        "name": "RestAPI",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 1080,
+        "y": 70,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "dec59997da606257",
+        "type": "complete",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "scope": [
+            "2930f83f2d8cf707"
+        ],
+        "uncaught": false,
+        "x": 250,
+        "y": 310,
+        "wires": [
+            [
+                "c57baf050f082941",
+                "431d1312dde0c11d"
+            ]
+        ]
+    },
+    {
+        "id": "620f6c1199da5f7f",
+        "type": "catch",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "scope": [
+            "2930f83f2d8cf707"
+        ],
+        "uncaught": false,
+        "x": 200,
+        "y": 480,
+        "wires": [
+            [
+                "edabd08802b7f914"
+            ]
+        ]
+    },
+    {
+        "id": "c57baf050f082941",
+        "type": "switch",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "401",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "400",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 375,
+        "y": 310,
+        "wires": [
+            [],
+            [
+                "1632a53b514c67c0"
+            ],
+            [],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "55b45fc86edb4291",
+        "type": "debug",
+        "z": "fc936f675a46124b",
+        "name": "debug 221",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "edabd08802b7f914",
+        "type": "debug",
+        "z": "fc936f675a46124b",
+        "name": "debug 228",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 470,
+        "wires": []
+    },
+    {
+        "id": "431d1312dde0c11d",
+        "type": "debug",
+        "z": "fc936f675a46124b",
+        "name": "debug 229",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1632a53b514c67c0",
+        "type": "switch",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "property": "payload.IsSuccessful",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "572bd69e3d03b079",
+                "fc61d6f37ada0914"
+            ],
+            [
+                "a56e7094a71790e5",
+                "3cae524a04864887"
+            ]
+        ]
+    },
+    {
+        "id": "572bd69e3d03b079",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||true; //default false\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\n\nlet statusCode = msg.statusCode || 200; // Default to 200 if not provided\n// Handle potential issues with undefined or invalid result.data\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n//node.warn(msg.payload);\n\n\n// input.statusCode kontrol ediyoruz\nlet jobResult_ = (msg.statusCode === 200 || msg.statusCode === 400) ? 0 : 2;\n\n\n// Populate the data object dynamically\nconst data = [{\n    dataKey: env.get(\"RestUrl\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: result?.definitionLang || \"\", // Fallback message\n    jobResult: jobResult_, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    additionalData: \"\", // Extra info ,\n    flowName: msg.flowName || \"NetsisApiV1\",   \n    requestPayload: JSON.stringify(msg.dataPayload || {}), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload) // Serialized response payload\n}];\n\n// Attach the data object to msg for further use\nmsg.logData = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 360,
+        "wires": [
+            [
+                "8154aeb9ef0351ac",
+                "eb48abbd0712a0fd"
+            ]
+        ]
+    },
+    {
+        "id": "a56e7094a71790e5",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "LogJson",
+        "func": "const isDubug = msg?.propIntegration?.isDebugMode ||true; //default false\n\n// Access the incoming payload and status code\nlet result = msg.payload || {}; // Ensure payload is an object\nlet statusCode = msg.statusCode || null; // Default to 200 if not provided\nlet responsePayload;\n \nif ( isDubug) {\n    responsePayload = result;\n}\n// Populate the data object dynamically\nconst data = [{\n   \n    dataKey: env.get(\"RestUrl\") || msg.url, // Use payload dataKey if available\n    dataType: result?.dataType || 0, // Use payload dataType if available\n    date: new Date().toISOString(), // Current timestamp\n    message: msg.errorMesaj?.namestring || \"\", // Fallback message\n    jobResult: 2|| 2, // Job result from payload or default\n    integrationName: \"\" || \"\", // Integration name\n    httpStatusCode: statusCode, // Status code from msg\n    duration: null, // Duration object\n    flowName: msg.flowName || \"NetsisApiV1\",  \n    additionalData:\"\", // Extra info    \n    requestPayload: JSON.stringify(msg.dataPayload || null), // Serialized request payload\n    responsePayload: JSON.stringify(responsePayload || null) // Serialized response payload\n}];\n\n \n\n// Attach the data object to msg for further use\nmsg.logData = data;\n\n// Return the modified msg object\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "8154aeb9ef0351ac"
+            ]
+        ]
+    },
+    {
+        "id": "8154aeb9ef0351ac",
+        "type": "subflow:7cdf28f23984a61d",
+        "z": "fc936f675a46124b",
+        "name": "",
+        "env": [
+            {
+                "name": "sourceModule/Flow",
+                "value": "{{{flowName}}}",
+                "type": "env"
+            },
+            {
+                "name": "sourceSystem",
+                "value": "Netsis2SFORIN_FieldIntegration_MMSQL_v1.0",
+                "type": "str"
+            },
+            {
+                "name": "status",
+                "value": "error",
+                "type": "str"
+            },
+            {
+                "name": "SourceSystem",
+                "value": "Netsis",
+                "type": "str"
+            },
+            {
+                "name": "SourceModule/Flow",
+                "value": "Netsis  To SFORIN Stock Card(REST)",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem",
+                "value": "SFORIN",
+                "type": "str"
+            },
+            {
+                "name": "DestinationSystem\":",
+                "value": "NETSIS",
+                "type": "str"
+            },
+            {
+                "name": "logData",
+                "value": "{{{msg.payload}}}",
+                "type": "str"
+            }
+        ],
+        "x": 1170,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51cd88a319665df6",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "netsisTokenErrorMessage",
+        "func": "msg.netsisTokenErrorMessage=\"Token alma işlemi sirasinda hata\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1085,
+        "y": 170,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "3cae524a04864887",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "netsisTokenErrorMessage",
+        "func": "\n\nmsg.netsisTokenErrorMessage = msg.payload.ErrorDesc ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1135,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "fc61d6f37ada0914",
+        "type": "function",
+        "z": "fc936f675a46124b",
+        "name": "Return ReceivingNo",
+        "func": "msg.receivingNumber=msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode = msg.payload.Data.FatUst.CariKod;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb48abbd0712a0fd",
+        "type": "debug",
+        "z": "fc936f675a46124b",
+        "name": "debug 234",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "logData",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 340,
+        "wires": []
     },
     {
         "id": "d1f0be44a0e8f7f8",
@@ -17162,6 +17755,567 @@
         "statusType": "auto",
         "x": 1170,
         "y": 320,
+        "wires": []
+    },
+    {
+        "id": "933a49604ea4616e",
+        "type": "function",
+        "z": "49d27287d53b1fe5",
+        "name": "function 114",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000))\n\nconst defaultvalue = {\n  FatUst: {\n    Sube_Kodu: null,\n    CariKod: null,\n    FATIRS_NO: null,\n    Tarih: utcNow,\n    Tip: 0,\n    KOD1: null,\n    KOD2: null,\n    TIPI: 0,\n    Aciklama: null,\n    SIPARIS_NUMARASI: null,\n    ENTEGRE_TRH: null,\n    KDV_DAHILMI: true,\n    PLA_KODU: null,\n    Proje_Kodu: null,\n    EKACK1: null,\n    EKACK2: null,\n    EKACK3: null,\n    EKACK4: null,\n    EKACK5: null,\n    EKACK6: null,\n    EKACK7: null,\n    EKACK8: null,\n    EKACK9: null,\n    EKACK10: null,\n    EKACK11: null,\n    EKACK12: null,\n    EKACK13: null,\n    EKACK14: null,\n    EKACK15: null,\n    EKACK16: null,\n    FiiliTarih: utcNow,\n    EfaturaCarisiMi: true,\n    EIrsaliye: true,\n  },\n  EIrsEkBilgi: {\n    PLAKA: null,\n    TASIYICIVKN: null,\n    TASIYICIADI: null,\n    TASIYICIILCE: null,\n    TASIYICIIL: null,\n    TASIYICIULKE: null,\n    TASIYICIPOSTAKODU: null,\n    SOFOR1ADI: null,\n    SOFOR1SOYADI: null,\n    SOFOR1ACIKLAMA: null,\n    SOFOR1TCKN: null,\n    SOFOR2ADI: null,\n    SOFOR2SOYADI: null,\n    SOFOR2ACIKLAMA: null,\n    SOFOR2TCKN: null,\n    SOFOR3ADI: null,\n    SOFOR3SOYADI: null,\n    SOFOR3ACIKLAMA: null,\n    SOFOR3TCKN: null,\n    SEVKTAR: null,\n    DORSEPLAKA1: null,\n    DORSEPLAKA2: null,\n    DORSEPLAKA3: null,\n    MATBUKULLANILSIN: false,\n  },\n  KalemAdedi: 1,\n  FaturaTip: 0,\n  SonNumaraYazilsin: true,\n  StokKartinaGoreHesapla: true,\n  OtoVadeGunGetir: true,\n  OtomatikCevrimYapilsin: true,\n  Kalems: [\n    {\n      StokKodu: null,\n      Sira: 1,\n      STra_FATIRSNO: null,\n      STra_GCMIK: 0,\n      STra_TAR: utcNow,\n      STra_NF: 0,\n      STra_BF: 0,\n      STra_KDV: 0,\n      STra_HTUR: null,\n      STra_SIPNUM: null,\n      STra_SIP_TURU: null,\n      Plasiyer_Kodu: null,\n      Ekalanneden: null,\n      Ekalan: null,\n      Ekalan1: null,\n      Irsaliyeno: null,\n      Irsaliyetar: utcNow,\n      STra_testar: utcNow,\n      Olcubr: 0,\n      ProjeKodu: null,\n      STra_FTIRSIP: null,\n      STra_CARI_KOD: null,\n      STra_GC: null,\n      DEPO_KODU: 0,\n      STra_ACIK: null,\n      TesMik: 0,\n      Stra_FiiliTar: utcNow,\n      D_YEDEK10: utcNow,\n      SatirBaziAciks: [\"\"],\n    },\n  ],\n};\n\n\n\nmsg.a = defaultvalue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 170,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d949c66abc93a2c",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 550,
+        "wires": [
+            [
+                "4474593626eb37d9"
+            ]
+        ]
+    },
+    {
+        "id": "4474593626eb37d9",
+        "type": "subflow:317a0e3edab25639",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bee8652b16dedc0c",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 620,
+        "wires": [
+            [
+                "ccd02a3a4f24eb99"
+            ]
+        ]
+    },
+    {
+        "id": "ccd02a3a4f24eb99",
+        "type": "subflow:fa51d0694c73d14f",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 440,
+        "y": 580,
+        "wires": [
+            [
+                "37eaebf9949d62d9"
+            ]
+        ]
+    },
+    {
+        "id": "37eaebf9949d62d9",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 233",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 570,
+        "wires": []
+    },
+    {
+        "id": "7807e8f98cd6f630",
+        "type": "subflow:fc936f675a46124b",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 1080,
+        "y": 780,
+        "wires": [
+            [
+                "dcee01621bfab79c"
+            ],
+            [
+                "e7ee5385f8de97fd"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "559e4ee976f9d343",
+        "type": "json",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 300,
+        "y": 820,
+        "wires": [
+            [
+                "567c79d6b0c53b04"
+            ]
+        ]
+    },
+    {
+        "id": "18db56f1c849e7f3",
+        "type": "http in",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "url": "STNWENT000V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 260,
+        "y": 780,
+        "wires": [
+            [
+                "559e4ee976f9d343"
+            ]
+        ]
+    },
+    {
+        "id": "567c79d6b0c53b04",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 820,
+        "wires": [
+            [
+                "da0f70f519dcd91d"
+            ],
+            [
+                "7afd481b9d48fcd1"
+            ]
+        ],
+        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
+    },
+    {
+        "id": "7afd481b9d48fcd1",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 780,
+        "y": 830,
+        "wires": []
+    },
+    {
+        "id": "dcee01621bfab79c",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 740,
+        "wires": [
+            [
+                "d57ff27416a49126"
+            ]
+        ]
+    },
+    {
+        "id": "e7ee5385f8de97fd",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 780,
+        "wires": [
+            [
+                "27207b995aeb64f2"
+            ]
+        ]
+    },
+    {
+        "id": "d57ff27416a49126",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1580,
+        "y": 730,
+        "wires": []
+    },
+    {
+        "id": "27207b995aeb64f2",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1660,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1bcd5e4157520214",
+        "type": "comment",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "S2N Warehouse Entry ",
+        "info": "ambar giriş",
+        "x": 240,
+        "y": 730,
+        "wires": []
+    },
+    {
+        "id": "da0f70f519dcd91d",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "function 120",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 8,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        AMBHARTUR: 2,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 8,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 780,
+        "wires": [
+            [
+                "7807e8f98cd6f630",
+                "108d9b74615d318f"
+            ]
+        ]
+    },
+    {
+        "id": "108d9b74615d318f",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "debug 235",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 730,
+        "wires": []
+    },
+    {
+        "id": "013efbbba054d98c",
+        "type": "subflow:fc936f675a46124b",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 1040,
+        "y": 1040,
+        "wires": [
+            [
+                "c166e897452ea0a2"
+            ],
+            [
+                "fa471c42192040e0"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "8ae4765a8c923539",
+        "type": "json",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 260,
+        "y": 1080,
+        "wires": [
+            [
+                "9ac01bd32ff7edcd"
+            ]
+        ]
+    },
+    {
+        "id": "622a25d6c2eb4419",
+        "type": "http in",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "url": "STNWTRF001V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 1040,
+        "wires": [
+            [
+                "8ae4765a8c923539"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n        \"STra_testar\": \"2024-11-13 00:00:00\"\r\n          \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "9ac01bd32ff7edcd",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n    { path: \"Gir_Depo_Kodu\", message: \"Kalems içindeki (value)  Gir_Depo_Kodu zorunlu.\" },\n\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1080,
+        "wires": [
+            [
+                "9b2c68f26c2623e0"
+            ],
+            [
+                "18f417bd7132171d"
+            ]
+        ],
+        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
+    },
+    {
+        "id": "18f417bd7132171d",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 740,
+        "y": 1090,
+        "wires": []
+    },
+    {
+        "id": "c166e897452ea0a2",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 1000,
+        "wires": [
+            [
+                "2a0c3264649da094"
+            ]
+        ]
+    },
+    {
+        "id": "fa471c42192040e0",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 1040,
+        "wires": [
+            [
+                "c3768f8361071b0c"
+            ]
+        ]
+    },
+    {
+        "id": "2a0c3264649da094",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1540,
+        "y": 990,
+        "wires": []
+    },
+    {
+        "id": "c3768f8361071b0c",
+        "type": "http response",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1620,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "1dfb5c135fbec4e2",
+        "type": "comment",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "S2N Warehouse Entry ",
+        "info": "Depolar arasi transfer ",
+        "x": 200,
+        "y": 990,
+        "wires": []
+    },
+    {
+        "id": "9b2c68f26c2623e0",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "function 122",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 5,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            Gir_Depo_Kodu:1\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 4,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1040,
+        "wires": [
+            [
+                "013efbbba054d98c",
+                "6098f1c733ca027f"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n     \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n       \"STra_testar\": \"2024-11-13 00:00:00\"\r\n       \"D_YEDEK10\": \"2024-11-11 00:00:00\"  //teslim Tarih\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "6098f1c733ca027f",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "g": "76c96694b19fedf6",
+        "name": "debug 237",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 990,
         "wires": []
     },
     {
@@ -18669,6 +19823,428 @@
         "wires": []
     },
     {
+        "id": "ebadf244691291aa",
+        "type": "subflow:fc936f675a46124b",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 920,
+        "y": 1220,
+        "wires": [
+            [
+                "7d84a31d05ab32e3"
+            ],
+            [
+                "06ad587ca3b0193e"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "d3d3039acd447b46",
+        "type": "json",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 210,
+        "y": 1260,
+        "wires": [
+            [
+                "396c5733cee43746"
+            ]
+        ]
+    },
+    {
+        "id": "396c5733cee43746",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n    { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n    { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1260,
+        "wires": [
+            [
+                "72194ee77ad36fa9"
+            ],
+            [
+                "dd540177e64e1969"
+            ]
+        ]
+    },
+    {
+        "id": "dd540177e64e1969",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 740,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7d84a31d05ab32e3",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNSREC0001.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 1180,
+        "wires": [
+            [
+                "2986fdfd86e71cab"
+            ]
+        ]
+    },
+    {
+        "id": "06ad587ca3b0193e",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNSREC0001.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 1220,
+        "wires": [
+            [
+                "033613958bb528e5"
+            ]
+        ]
+    },
+    {
+        "id": "2986fdfd86e71cab",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1420,
+        "y": 1170,
+        "wires": []
+    },
+    {
+        "id": "033613958bb528e5",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1500,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "ce6eeb8aee204181",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "S2N SALES WAYBILL",
+        "info": "SATIŞ IRSALIYESI",
+        "x": 150,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "72194ee77ad36fa9",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "function 119",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"Node-Red\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: true,\n        PLA_KODU: 14,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n    },\n    EIrsEkBilgi: {\n        PLAKA: null,\n        TASIYICIVKN: null,\n        TASIYICIADI: null,\n        TASIYICIILCE: null,\n        TASIYICIIL: null,\n        TASIYICIULKE: null,\n        TASIYICIPOSTAKODU: null,\n        SOFOR1ADI: null,\n        SOFOR1SOYADI: null,\n        SOFOR1ACIKLAMA: null,\n        SOFOR1TCKN: null,\n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: null,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n   \n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: 14,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 2,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1230,
+        "wires": [
+            [
+                "ebadf244691291aa"
+            ]
+        ]
+    },
+    {
+        "id": "b1ddb513ac3c6e7c",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "91867ef68fefe36a",
+        "name": "",
+        "url": "S2NSWAY000V1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 1220,
+        "wires": [
+            [
+                "d3d3039acd447b46"
+            ]
+        ]
+    },
+    {
+        "id": "0858b95ba622a39f",
+        "type": "subflow:fc936f675a46124b",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 1010,
+        "y": 1450,
+        "wires": [
+            [
+                "1b2e19233dee6333"
+            ],
+            [
+                "6f12fc909f7caff0"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "11222bacfdc2a479",
+        "type": "json",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 350,
+        "y": 1490,
+        "wires": [
+            [
+                "4bc00aa89bca27d9"
+            ]
+        ]
+    },
+    {
+        "id": "358d0fba9413ea32",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "url": "STNBWAY000V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 1490,
+        "wires": [
+            [
+                "11222bacfdc2a479"
+            ]
+        ]
+    },
+    {
+        "id": "4bc00aa89bca27d9",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n    { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1490,
+        "wires": [
+            [
+                "2b1d22185f323dd2"
+            ],
+            [
+                "f79acd577971e17f"
+            ]
+        ]
+    },
+    {
+        "id": "f79acd577971e17f",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 830,
+        "y": 1510,
+        "wires": []
+    },
+    {
+        "id": "1b2e19233dee6333",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNSREC0001.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 1410,
+        "wires": [
+            [
+                "767988619f5f7e96"
+            ]
+        ]
+    },
+    {
+        "id": "6f12fc909f7caff0",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNSREC0001.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 1450,
+        "wires": [
+            [
+                "a566ae05f813c64e"
+            ]
+        ]
+    },
+    {
+        "id": "767988619f5f7e96",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1510,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "a566ae05f813c64e",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1590,
+        "y": 1450,
+        "wires": []
+    },
+    {
+        "id": "fa7a75c7734fa67c",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "S2N Purchase Waybill",
+        "info": "ALIŞ IRSALIYESI",
+        "x": 170,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "2b1d22185f323dd2",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "function 121",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 3,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: true,\n        PLA_KODU: 14,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        KS_KODU: \"100\",\n    },\n    EIrsEkBilgi: {\n        PLAKA: null,\n        TASIYICIVKN: null,\n        TASIYICIADI: null,\n        TASIYICIILCE: null,\n        TASIYICIIL: null,\n        TASIYICIULKE: null,\n        TASIYICIPOSTAKODU: null,\n        SOFOR1ADI: null,\n        SOFOR1SOYADI: null,\n        SOFOR1ACIKLAMA: null,\n        SOFOR1TCKN: null,\n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: null,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n   \n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: 14,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 2,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNBWAY000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1460,
+        "wires": [
+            [
+                "0858b95ba622a39f",
+                "6558f8be059daed9"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n        \"STra_testar\": \"2024-11-13 00:00:00\"\r\n          \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "6558f8be059daed9",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "77f838d56c52c163",
+        "name": "debug 236",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 1400,
+        "wires": []
+    },
+    {
         "id": "1",
         "type": "inject",
         "z": "f1a7c99c.1d3f48",
@@ -19113,257 +20689,6 @@
             ]
         ],
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
-    },
-    {
-        "id": "2b71ca042dd1f39d",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 400,
-        "y": 90,
-        "wires": [
-            [
-                "c46b585e66146f7a"
-            ]
-        ]
-    },
-    {
-        "id": "7c16b50b3a74a860",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 196",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 110,
-        "wires": []
-    },
-    {
-        "id": "c46b585e66146f7a",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 108",
-        "func": "msg.test=\"test1\";\n\nmsg.test2=\"test2\";\n\n\nglobal.set(msg.test + msg.test2,'deneme')\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 150,
-        "wires": [
-            [
-                "f19ca0c2229df29e"
-            ]
-        ]
-    },
-    {
-        "id": "f19ca0c2229df29e",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 109",
-        "func": "node.warn(global.get(msg.test + msg.test2));\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 160,
-        "wires": [
-            [
-                "7c16b50b3a74a860"
-            ]
-        ]
-    },
-    {
-        "id": "91c783d5a74f93df",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 209",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 290,
-        "wires": []
-    },
-    {
-        "id": "80f542fb56936e8b",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 300,
-        "wires": [
-            [
-                "19ac9e2271c75646"
-            ]
-        ]
-    },
-    {
-        "id": "419e12032b12fc50",
-        "type": "subflow:fc936f675a46124b",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 410,
-        "y": 430,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "6d949c66abc93a2c",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 440,
-        "wires": [
-            [
-                "419e12032b12fc50"
-            ]
-        ]
-    },
-    {
-        "id": "19ac9e2271c75646",
-        "type": "subflow:317a0e3edab25639",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "x": 380,
-        "y": 280,
-        "wires": [
-            [
-                "91c783d5a74f93df"
-            ]
-        ]
-    },
-    {
-        "id": "1a2fd6b4c51322b9",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 510,
-        "y": 640,
-        "wires": [
-            [
-                "fe392a65c1571971"
-            ]
-        ]
-    },
-    {
-        "id": "fe392a65c1571971",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 113",
-        "func": "msg.a=new Date(new Date().getTime() + (3 * 60 * 60 * 1000)) ;\n\nglobal.set(\"NetsisToken\",null);\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 670,
-        "y": 650,
-        "wires": [
-            [
-                "6064981dae72872d"
-            ]
-        ]
-    },
-    {
-        "id": "6064981dae72872d",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 216",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "a",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 650,
-        "wires": []
     },
     {
         "id": "f4973aa11bd2c838",
