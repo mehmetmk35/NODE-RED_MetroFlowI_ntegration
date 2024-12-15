@@ -194,8 +194,8 @@
         ],
         "out": [
             {
-                "x": 880,
-                "y": 190,
+                "x": 1270,
+                "y": 200,
                 "wires": [
                     {
                         "id": "659af4d22c3253a7",
@@ -1606,6 +1606,16 @@
                         "port": 0
                     }
                 ]
+            },
+            {
+                "x": 990,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "03096c4dc4f957d4",
+                        "port": 1
+                    }
+                ]
             }
         ],
         "env": [],
@@ -1622,28 +1632,39 @@
             {
                 "x": 210,
                 "y": 140,
-                "wires": []
+                "wires": [
+                    {
+                        "id": "5fb7317ccb04afb0"
+                    }
+                ]
             }
         ],
-        "out": [],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
-    },
-    {
-        "id": "49d27287d53b1fe5",
-        "type": "subflow",
-        "name": "STNPRODV1.0",
-        "info": "",
-        "category": "",
-        "in": [
+        "out": [
             {
-                "x": 330,
-                "y": 180,
-                "wires": []
+                "x": 1770,
+                "y": 170,
+                "wires": [
+                    {
+                        "id": "91d4d062b703a331",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1700,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "91d4d062b703a331",
+                        "port": 1
+                    },
+                    {
+                        "id": "20827dae192116ca",
+                        "port": 1
+                    }
+                ]
             }
         ],
-        "out": [],
         "env": [],
         "meta": {},
         "color": "#DDAA99"
@@ -3107,38 +3128,6 @@
         "h": 202
     },
     {
-        "id": "1b0ba4f7e2361e6c",
-        "type": "group",
-        "z": "6ef8732eb0726477",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "7807e8f98cd6f630",
-            "559e4ee976f9d343",
-            "18db56f1c849e7f3",
-            "567c79d6b0c53b04",
-            "7afd481b9d48fcd1",
-            "dcee01621bfab79c",
-            "e7ee5385f8de97fd",
-            "d57ff27416a49126",
-            "27207b995aeb64f2",
-            "1bcd5e4157520214",
-            "da0f70f519dcd91d",
-            "108d9b74615d318f"
-        ],
-        "x": 114,
-        "y": 689,
-        "w": 1632,
-        "h": 182
-    },
-    {
         "id": "77f838d56c52c163",
         "type": "group",
         "z": "97e7314f695bb652",
@@ -3173,7 +3162,7 @@
     {
         "id": "76c96694b19fedf6",
         "type": "group",
-        "z": "6ef8732eb0726477",
+        "z": "97e7314f695bb652",
         "style": {
             "stroke": "#999999",
             "stroke-opacity": "1",
@@ -3197,9 +3186,141 @@
             "9b2c68f26c2623e0",
             "6098f1c733ca027f"
         ],
-        "x": 74,
-        "y": 949,
+        "x": 24,
+        "y": 1569,
         "w": 1632,
+        "h": 182
+    },
+    {
+        "id": "1b0ba4f7e2361e6c",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "7807e8f98cd6f630",
+            "559e4ee976f9d343",
+            "18db56f1c849e7f3",
+            "567c79d6b0c53b04",
+            "7afd481b9d48fcd1",
+            "dcee01621bfab79c",
+            "e7ee5385f8de97fd",
+            "d57ff27416a49126",
+            "27207b995aeb64f2",
+            "1bcd5e4157520214",
+            "da0f70f519dcd91d",
+            "108d9b74615d318f"
+        ],
+        "x": 24,
+        "y": 1799,
+        "w": 1632,
+        "h": 182
+    },
+    {
+        "id": "4e76d7a24738b00a",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "f54c264a9d99416a",
+            "94608eb23ce1fc19",
+            "c937a0e91548200a",
+            "2343dcde078c0de1",
+            "263393d0dfbf5305",
+            "402d0d012bdfafb2",
+            "820212a268fdfe83",
+            "ab0ff447a64f012c",
+            "c9ddde8853d8daca",
+            "1d23ef183e2aa3ca",
+            "75c8c70a80585425",
+            "dee9a999c0a00e11"
+        ],
+        "x": 34,
+        "y": 2059,
+        "w": 1632,
+        "h": 182
+    },
+    {
+        "id": "78ecc2843a37aed0",
+        "type": "group",
+        "z": "6ef8732eb0726477",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "0c111866cedf437f",
+            "e2c41f405270e1cf",
+            "06188f4d04df993c",
+            "067a123a5e498823",
+            "0bd4de9e60b3a7fa",
+            "56ad52c322888624",
+            "9876b6acc4be4e85",
+            "9afd0c7a939d7409",
+            "88adb760d65356ad",
+            "d53603cc58737a8c",
+            "0e2ad1e1cbc85d84",
+            "2b111a9a10aa618a"
+        ],
+        "x": 84,
+        "y": 1019,
+        "w": 1632,
+        "h": 182
+    },
+    {
+        "id": "c61dc7b72c1cb6c1",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "e5707922a5aba9e7",
+            "67a746b11685e2a7",
+            "62bb6c30d098a456",
+            "7aed8d10b28ca4b8",
+            "bb0a944e914f3093",
+            "bc7aa20cdf0da3ef",
+            "bcf8421640cf49c5",
+            "feef0e255128d3d6",
+            "8e7bc49537739b2e",
+            "f862e3da37008126",
+            "8075d22e253b4e13",
+            "0b7bab7758d0f053",
+            "719ddd38f8a4efc3",
+            "5876f658b7bd127b",
+            "32d473cb825d6220",
+            "7dc18f431e0de57e"
+        ],
+        "x": 34,
+        "y": 2259,
+        "w": 1222,
         "h": 182
     },
     {
@@ -3393,7 +3514,8 @@
         "y": 80,
         "wires": [
             [
-                "8f9f0d729ee14091"
+                "8f9f0d729ee14091",
+                "7e60e40fa739f3b8"
             ]
         ]
     },
@@ -3497,7 +3619,8 @@
         "y": 520,
         "wires": [
             [
-                "e1f5827474c83c23"
+                "e1f5827474c83c23",
+                "f68056c02a4a5f15"
             ]
         ]
     },
@@ -3617,6 +3740,39 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "f68056c02a4a5f15",
+        "type": "debug",
+        "z": "fa51d0694c73d14f",
+        "name": "debug 244",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 650,
+        "wires": []
+    },
+    {
+        "id": "7e60e40fa739f3b8",
+        "type": "debug",
+        "z": "fa51d0694c73d14f",
+        "name": "debug 247",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 40,
+        "wires": []
     },
     {
         "id": "a476b4f9b05e3658",
@@ -4270,11 +4426,21 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 660,
         "y": 170,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7b892d360698aa12",
+        "type": "comment",
+        "z": "7cdf28f23984a61d",
+        "name": "",
+        "info": "SFORIN  token geçerli değil ise token iseği yapılcak \n \n return 2. cıkış ver ve   get token a yönlendir\n 3 kere retries kontolet",
+        "x": 640,
+        "y": 220,
+        "wires": []
     },
     {
         "id": "2bfef7a835ff1b51",
@@ -9746,7 +9912,7 @@
         "type": "function",
         "z": "d296b4008b6072d8",
         "name": "MSSQL Business",
-        "func": "let mssqlData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\n \n// debug params  true ise query ve result alıyoruz\nconst isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\nmsg.isDubug=isDubug;\nlet path=msg?.propIntegration?.path||\"\";\nif (allIntegrationCode) {\n    // Veriyi başarıyla aldınız, işlem yapabilirsiniz\n    //ÜSTE OLAN YORUM SATIRI ACILACAK ALT TARAF KAPANICAK CANLIDA\n    mssqlData = allIntegrationCode.find(item => item.path === path);\n    //mssqlData = allIntegrationCode.find(item => item.path == \"MSSQLv_1.0\");\n    \n     // node.warn(mssqlData);\n}\n\nif (mssqlData === null) {\n    node.error(\"MSSQL configuration not found.\");\n    return;\n}\n\n\n\nconst sql = global.get('mssql');\nconst query = (msg.query && msg.query !== \"\") ? msg.query : env.get('query')  ;\n\n if(isDubug){\n    msg.reqQuery=query;\n }\n\n//node.warn(msg.query);\n \n//node.warn(\"msg.propIntegration.path:  \"+msg.propIntegration.path);\n\nif (!sql) {\n    node.error('MSSQL module not found in global context.');\n    return;\n}\n\n\nconst user = mssqlData.user;\nconst password = mssqlData.pass;\nconst server = mssqlData.ip;\nconst database = mssqlData.database; // Make sure this is correctly mapped to the database name\nconst config = {\n    user: user,\n    password: password,\n    server: server,\n    database: database,\n    options: {\n        encrypt: false,  // Set to true for Azure or encrypted connections\n        enableArithAbort: true  // To handle certain arithmetic operations more safely\n    }\n};\n// Log the found config\n// node.warn(config);\n(async () => {\n    // MSSQL configuration\n  \n    let pool;\n\n    try {\n        // Establishing connection to the MSSQL server\n        pool = await sql.connect(config);\n        // Execute the query and retrieve results\n        const result = await pool.request().query(query);\n\n        // Return the result to the first output\n        msg.payload = result;\n        node.send([msg, null]);\n\n    } catch (err) {\n        // Log connection or query errors and send to second output\n        msg = { ...msg,\n            error: 'MSSQL connection/query error: ' + err.message\n        };\n        msg.errorDescription = msg.error;\n        node.send([null, msg]);\n\n    } finally {\n        // Ensure connection is closed to avoid potential memory leaks\n        if (pool) {\n            try {\n                await pool.close();\n                // node.warn('MSSQL connection closed.');\n            } catch (closeErr) {\n                // node.error('Error closing MSSQL connection: ' + closeErr.message);\n                msg = {\n                    error: 'Error closing MSSQL connection: ' + closeErr.message\n                };\n                msg.errorDescription = msg.error;\n                node.send([null, msg]);\n            }\n        }\n    }\n})();\n",
+        "func": "let mssqlData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\n \n// debug params  true ise query ve result alıyoruz\nconst isDubug = msg?.propIntegration?.isDebugMode ||false; //default false\nmsg.isDubug=isDubug;\nlet path=msg?.propIntegration?.path||\"\";\nif (allIntegrationCode) {\n    // Veriyi başarıyla aldınız, işlem yapabilirsiniz\n    //ÜSTE OLAN YORUM SATIRI ACILACAK ALT TARAF KAPANICAK CANLIDA\n    //mssqlData = allIntegrationCode.find(item => item.path === path);\n    mssqlData = allIntegrationCode.find(item => item.path == \"MSSQLv_1.0\");\n    \n     // node.warn(mssqlData);\n}\n\nif (mssqlData === null) {\n    node.error(\"MSSQL configuration not found.\");\n    return;\n}\n\n\n\nconst sql = global.get('mssql');\nconst query = (msg.query && msg.query !== \"\") ? msg.query : env.get('query')  ;\n\n if(isDubug){\n    msg.reqQuery=query;\n }\n\n//node.warn(msg.query);\n \n//node.warn(\"msg.propIntegration.path:  \"+msg.propIntegration.path);\n\nif (!sql) {\n    node.error('MSSQL module not found in global context.');\n    return;\n}\n\n\nconst user = mssqlData.user;\nconst password = mssqlData.pass;\nconst server = mssqlData.ip;\nconst database = mssqlData.database; // Make sure this is correctly mapped to the database name\nconst config = {\n    user: user,\n    password: password,\n    server: server,\n    database: database,\n    options: {\n        encrypt: false,  // Set to true for Azure or encrypted connections\n        enableArithAbort: true  // To handle certain arithmetic operations more safely\n    }\n};\n// Log the found config\n// node.warn(config);\n(async () => {\n    // MSSQL configuration\n  \n    let pool;\n\n    try {\n        // Establishing connection to the MSSQL server\n        pool = await sql.connect(config);\n        // Execute the query and retrieve results\n        const result = await pool.request().query(query);\n\n        // Return the result to the first output\n        msg.payload = result;\n        node.send([msg, null]);\n\n    } catch (err) {\n        // Log connection or query errors and send to second output\n        msg = { ...msg,\n            error: 'MSSQL connection/query error: ' + err.message\n        };\n        msg.errorDescription = msg.error;\n        node.send([null, msg]);\n\n    } finally {\n        // Ensure connection is closed to avoid potential memory leaks\n        if (pool) {\n            try {\n                await pool.close();\n                // node.warn('MSSQL connection closed.');\n            } catch (closeErr) {\n                // node.error('Error closing MSSQL connection: ' + closeErr.message);\n                msg = {\n                    error: 'Error closing MSSQL connection: ' + closeErr.message\n                };\n                msg.errorDescription = msg.error;\n                node.send([null, msg]);\n            }\n        }\n    }\n})();\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -17220,7 +17386,9 @@
         "x": 375,
         "y": 310,
         "wires": [
-            [],
+            [
+                "bfd6c063ab26fd29"
+            ],
             [
                 "1632a53b514c67c0"
             ],
@@ -17607,7 +17775,9 @@
         "x": 1230,
         "y": 230,
         "wires": [
-            []
+            [
+                "3759357c5e2ce90d"
+            ]
         ],
         "icon": "node-red/bridge.svg"
     },
@@ -17721,59 +17891,131 @@
         "l": false
     },
     {
-        "id": "a9e9f250b4d6f830",
-        "type": "function",
-        "z": "8a27645487b5e36b",
-        "name": "function 112",
-        "func": "const utcNow =new Date(new Date().getTime() + (3 * 60 * 60 * 1000))\n\n// Varsayılan JSON yapısı\nconst documentData = {   \n    Header: {     \n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"PAU\",\n        ProductionType: null,\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: null,\n        MaterialUnit: null,\n        TolerancePlusValue: null,\n        ToleranceMinusValue: null,\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: utcNow,\n        DocDate:  utcNow ,\n        ProductionDate:  utcNow ,\n        ValidityBeginDate: utcNow,\n        ValidityEndDate: utcNow ,\n        DatePg01: utcNow ,\n        DatePg02: utcNow ,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId:null,\n        RefProductCode:null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: [\n        {\n            \n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ],\n    TaskItems: [\n        {\n            \n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        }\n    ]\n};\n\n// Fonksiyondan çıkış yap\nmsg.test=documentData;\nreturn [msg];\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 340,
+        "id": "3759357c5e2ce90d",
+        "type": "subflow:8a27645487b5e36b",
+        "z": "c823b85caa289042",
+        "name": "",
+        "x": 1230,
+        "y": 300,
         "wires": [
             [
-                "3a99bfe50c826680"
+                "447437eca4fd7982"
+            ],
+            [
+                "447437eca4fd7982"
             ]
         ]
     },
     {
-        "id": "3a99bfe50c826680",
-        "type": "debug",
-        "z": "8a27645487b5e36b",
-        "name": "debug 215",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1170,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "933a49604ea4616e",
+        "id": "a9e9f250b4d6f830",
         "type": "function",
-        "z": "49d27287d53b1fe5",
-        "name": "function 114",
-        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000))\n\nconst defaultvalue = {\n  FatUst: {\n    Sube_Kodu: null,\n    CariKod: null,\n    FATIRS_NO: null,\n    Tarih: utcNow,\n    Tip: 0,\n    KOD1: null,\n    KOD2: null,\n    TIPI: 0,\n    Aciklama: null,\n    SIPARIS_NUMARASI: null,\n    ENTEGRE_TRH: null,\n    KDV_DAHILMI: true,\n    PLA_KODU: null,\n    Proje_Kodu: null,\n    EKACK1: null,\n    EKACK2: null,\n    EKACK3: null,\n    EKACK4: null,\n    EKACK5: null,\n    EKACK6: null,\n    EKACK7: null,\n    EKACK8: null,\n    EKACK9: null,\n    EKACK10: null,\n    EKACK11: null,\n    EKACK12: null,\n    EKACK13: null,\n    EKACK14: null,\n    EKACK15: null,\n    EKACK16: null,\n    FiiliTarih: utcNow,\n    EfaturaCarisiMi: true,\n    EIrsaliye: true,\n  },\n  EIrsEkBilgi: {\n    PLAKA: null,\n    TASIYICIVKN: null,\n    TASIYICIADI: null,\n    TASIYICIILCE: null,\n    TASIYICIIL: null,\n    TASIYICIULKE: null,\n    TASIYICIPOSTAKODU: null,\n    SOFOR1ADI: null,\n    SOFOR1SOYADI: null,\n    SOFOR1ACIKLAMA: null,\n    SOFOR1TCKN: null,\n    SOFOR2ADI: null,\n    SOFOR2SOYADI: null,\n    SOFOR2ACIKLAMA: null,\n    SOFOR2TCKN: null,\n    SOFOR3ADI: null,\n    SOFOR3SOYADI: null,\n    SOFOR3ACIKLAMA: null,\n    SOFOR3TCKN: null,\n    SEVKTAR: null,\n    DORSEPLAKA1: null,\n    DORSEPLAKA2: null,\n    DORSEPLAKA3: null,\n    MATBUKULLANILSIN: false,\n  },\n  KalemAdedi: 1,\n  FaturaTip: 0,\n  SonNumaraYazilsin: true,\n  StokKartinaGoreHesapla: true,\n  OtoVadeGunGetir: true,\n  OtomatikCevrimYapilsin: true,\n  Kalems: [\n    {\n      StokKodu: null,\n      Sira: 1,\n      STra_FATIRSNO: null,\n      STra_GCMIK: 0,\n      STra_TAR: utcNow,\n      STra_NF: 0,\n      STra_BF: 0,\n      STra_KDV: 0,\n      STra_HTUR: null,\n      STra_SIPNUM: null,\n      STra_SIP_TURU: null,\n      Plasiyer_Kodu: null,\n      Ekalanneden: null,\n      Ekalan: null,\n      Ekalan1: null,\n      Irsaliyeno: null,\n      Irsaliyetar: utcNow,\n      STra_testar: utcNow,\n      Olcubr: 0,\n      ProjeKodu: null,\n      STra_FTIRSIP: null,\n      STra_CARI_KOD: null,\n      STra_GC: null,\n      DEPO_KODU: 0,\n      STra_ACIK: null,\n      TesMik: 0,\n      Stra_FiiliTar: utcNow,\n      D_YEDEK10: utcNow,\n      SatirBaziAciks: [\"\"],\n    },\n  ],\n};\n\n\n\nmsg.a = defaultvalue;\nreturn msg;",
+        "z": "8a27645487b5e36b",
+        "name": "function 112",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\n// Get All Production\nlet data = msg.payload;\n\n// Varsayılan JSON yapısı\nconst documentData = {\n    Header: {\n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"PAU\",\n        ProductionType: null,\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: \"0\",\n        MaterialUnit: null,\n        TolerancePlusValue: \"0\",\n        ToleranceMinusValue: \"0\",\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: null,\n        DocDate: utcNow,\n        ProductionDate: utcNow,\n        ValidityBeginDate: null,\n        ValidityEndDate: null,\n        DatePg01: utcNow,\n        DatePg02: utcNow,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId: 0,\n        RefProductCode: null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: \n        {\n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ,\n    TaskItems: \n        {\n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        },\n    attributes: \n            {\n                attributeCode: null,\n                strValue: null,\n                dateValue: utcNow,\n                numValue: 0,\n                listedValue: null,\n                boolValue: true,\n                remoteName: null\n            }\n        \n    \n};\n\n// Helper function for null or undefined check\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Üretim verilerini dönüştür\nconst productionDataPayload = data.map(prod => ({\n    Header: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Header.PrdDocNo),\n        StateObject: getValueOrDefault(null, documentData.Header.StateObject),\n        DocState: getValueOrDefault(null, documentData.Header.DocState),\n        ProductionType: getValueOrDefault(null, documentData.Header.ProductionType),\n        Machine: getValueOrDefault(null, documentData.Header.Machine),\n        Shift: getValueOrDefault(null, documentData.Header.Shift),\n        ProductCode: getValueOrDefault(prod.STOK_KODU, documentData.Header.ProductCode),\n        Version: getValueOrDefault(null, documentData.Header.Version),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Header.TargetOperationQty),\n        OperationUnit: getValueOrDefault(null, documentData.Header.OperationUnit),\n        TargetMaterialQty: getValueOrDefault(null, documentData.Header.TargetMaterialQty),\n        MaterialQty: getValueOrDefault(null, documentData.Header.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Header.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Header.TolerancePlusValue),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Header.ToleranceMinusValue),\n        PostingDate: getValueOrDefault(null, documentData.Header.PostingDate), \n        NewDate: getValueOrDefault(prod.TARIH, documentData.Header.NewDate), \n        UpdDate: getValueOrDefault(null, documentData.Header.UpdDate), \n        DocDate: getValueOrDefault(prod.TARIH, documentData.Header.DocDate), \n        ProductionDate: getValueOrDefault(prod.TARIH, documentData.Header.ProductionDate), \n        ValidityBeginDate: getValueOrDefault(null, documentData.Header.ValidityBeginDate), \n        ValidityEndDate: getValueOrDefault(null, documentData.Header.ValidityEndDate),\n    },\n    Items: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Items.PrdDocNo),\n        PrdItemNo: getValueOrDefault(prod.STOK_KODU, documentData.Items.PrdItemNo),\n        StateObject: getValueOrDefault(null, documentData.Items.StateObject),\n        DocState: getValueOrDefault(null, documentData.Items.DocState),\n        ComponentId: getValueOrDefault(null, documentData.Items.ComponentId),\n        Machine: getValueOrDefault(null, documentData.Items.Machine),\n        MachineGroup: getValueOrDefault(null, documentData.Items.Machine),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        OperationUnit: getValueOrDefault(\"1\", documentData.Items.Machine),\n        TargetMaterialQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        MaterialQty: getValueOrDefault(null, documentData.Items.MaterialQty),\n        MaterialUnit: getValueOrDefault(\"1\", documentData.Items.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Items.TolerancePlusValue ),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Items.ToleranceMinusValue),\n        SubstitutionProductCode: getValueOrDefault(null, documentData.Items.SubstitutionProductCode),\n        AlternativeProductCode: getValueOrDefault(null, documentData.Items.AlternativeProductCode),\n        PDisassemblyWaste: getValueOrDefault(null, documentData.Items.PDisassemblyWaste),\n        NewUser: getValueOrDefault(null, documentData.Items.NewUser),\n        UpdUser: getValueOrDefault(null, documentData.Items.UpdUser),\n    },\n       TaskItems: [] ,\n    //     PrdDocNo: getValueOrDefault(null, documentData.TaskItems.PrdDocNo),\n    //     Task: getValueOrDefault(null, documentData.TaskItems.Task),\n    //     ComponentId: getValueOrDefault(null, documentData.TaskItems.ComponentId),\n    //     TaskItemNo: getValueOrDefault(null, documentData.TaskItems.TaskItemNo),\n    //     MaterialQuantity: getValueOrDefault(null, documentData.TaskItems.MaterialQuantity),\n    //     MaterialUnit: getValueOrDefault(null, documentData.TaskItems.MaterialUnit),\n    //     PAutoConsumption: getValueOrDefault(null, documentData.TaskItems.PAutoConsumption),\n    //     Location: getValueOrDefault(null, documentData.TaskItems.Location),\n    // } ,\n     attributes:[]\n}));\n\n\n\nconst result = {\n    requestId: \"\",\n    sender: \"node-red\",\n    data: productionDataPayload\n    \n};\nmsg.productionDataPayload=result;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 1050,
+        "y": 160,
+        "wires": [
+            [
+                "20827dae192116ca"
+            ]
+        ]
+    },
+    {
+        "id": "08ee9b2e410b9128",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "8a27645487b5e36b",
+        "name": "",
+        "x": 790,
         "y": 170,
         "wires": [
+            [
+                "a9e9f250b4d6f830"
+            ]
+        ]
+    },
+    {
+        "id": "5fb7317ccb04afb0",
+        "type": "function",
+        "z": "8a27645487b5e36b",
+        "name": "GET PRODUCTIONDOC",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSPD000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\nSELECT \nISEMRINO,\nTARIH,\ndbo.trk(STOK_KODU) STOK_KODU,\nMIKTAR,\ndbo.TRK(ACIKLAMA)ACIKLAMA,\nTESLIM_TARIHI,\nDEPO_KODU,\nCIKIS_DEPO_KODU,\nSIPARIS_NO,\nSUBEKODU\n\n\nFROM  TBLISEMRI  WHERE \n  AND SUBEKODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsProductionDocNum = global.get('NTSPD000V1reqProductionDocNum')\n  \nif (paramsProductionDocNum !== undefined && paramsProductionDocNum !== null && paramsProductionDocNum !== '') {\n   \n  query += `AND ISEMRINO= '${paramsProductionDocNum}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\nif (global.get('NTSPD000V1reqProductionDocNum')) {\n  global.set('NTSPD000V1reqProductionDocNum', null)\n}\n\n\n \n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "08ee9b2e410b9128"
+            ]
+        ]
+    },
+    {
+        "id": "91d4d062b703a331",
+        "type": "subflow:e35d14410b661a09",
+        "z": "8a27645487b5e36b",
+        "name": "InsertProductionDoc",
+        "env": [
+            {
+                "name": "Url",
+                "value": "production/api/v1/Production/ProductionDoc/InsertProductionDoc",
+                "type": "str"
+            }
+        ],
+        "x": 1510,
+        "y": 170,
+        "wires": [
+            [
+                "624170124c975c8e"
+            ],
             []
         ]
+    },
+    {
+        "id": "20827dae192116ca",
+        "type": "function",
+        "z": "8a27645487b5e36b",
+        "name": "Check",
+        "func": "\n\n// Assign msg.dataPayload to msg.sforinPartner\nmsg.dataPayload = msg.productionDataPayload;\nmsg.flowName = msg.inregrationFlowData.flowName || \"NTSPD000V1.0\";\n// Check if msg.payload is an array and if it's empty or has zero elements\nif (Array.isArray(msg.dataPayload) && msg.dataPayload.length === 0) {\n    // Send msg to the second output if the array is empty\n    return [null, msg];\n} else {\n    \n    return [msg, null];\n};\n\n\n\n\n\n\n\n\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 160,
+        "wires": [
+            [
+                "91d4d062b703a331"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "624170124c975c8e",
+        "type": "debug",
+        "z": "8a27645487b5e36b",
+        "name": "debug 249",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1690,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "6d949c66abc93a2c",
@@ -17812,8 +18054,12 @@
         "x": 410,
         "y": 440,
         "wires": [
-            [],
-            []
+            [
+                "ec18e9c0659bf73f"
+            ],
+            [
+                "8dcc6e174b6af3b4"
+            ]
         ]
     },
     {
@@ -17837,7 +18083,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 180,
         "y": 620,
         "wires": [
             [
@@ -17850,7 +18096,7 @@
         "type": "subflow:fa51d0694c73d14f",
         "z": "6ef8732eb0726477",
         "name": "",
-        "x": 440,
+        "x": 450,
         "y": 580,
         "wires": [
             [
@@ -17875,10 +18121,42 @@
         "wires": []
     },
     {
-        "id": "7807e8f98cd6f630",
+        "id": "ec18e9c0659bf73f",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 238",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 410,
+        "wires": []
+    },
+    {
+        "id": "8dcc6e174b6af3b4",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 239",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 450,
+        "wires": []
+    },
+    {
+        "id": "0c111866cedf437f",
         "type": "subflow:fc936f675a46124b",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
         "env": [
             {
@@ -17887,14 +18165,14 @@
                 "type": "str"
             }
         ],
-        "x": 1080,
-        "y": 780,
+        "x": 1050,
+        "y": 1110,
         "wires": [
             [
-                "dcee01621bfab79c"
+                "56ad52c322888624"
             ],
             [
-                "e7ee5385f8de97fd"
+                "9876b6acc4be4e85"
             ]
         ],
         "outputLabels": [
@@ -17903,45 +18181,45 @@
         ]
     },
     {
-        "id": "559e4ee976f9d343",
+        "id": "e2c41f405270e1cf",
         "type": "json",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 300,
-        "y": 820,
+        "x": 270,
+        "y": 1150,
         "wires": [
             [
-                "567c79d6b0c53b04"
+                "067a123a5e498823"
             ]
         ]
     },
     {
-        "id": "18db56f1c849e7f3",
+        "id": "06188f4d04df993c",
         "type": "http in",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
-        "url": "STNWENT000V1_0",
+        "url": "XXX",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 260,
-        "y": 780,
+        "x": 180,
+        "y": 1110,
         "wires": [
             [
-                "559e4ee976f9d343"
+                "e2c41f405270e1cf"
             ]
         ]
     },
     {
-        "id": "567c79d6b0c53b04",
+        "id": "067a123a5e498823",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "Zorunlu Alan Kontrolü",
         "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
         "outputs": 2,
@@ -17950,35 +18228,35 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 820,
+        "x": 480,
+        "y": 1150,
         "wires": [
             [
-                "da0f70f519dcd91d"
+                "0e2ad1e1cbc85d84"
             ],
             [
-                "7afd481b9d48fcd1"
+                "0bd4de9e60b3a7fa"
             ]
         ],
         "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
     },
     {
-        "id": "7afd481b9d48fcd1",
+        "id": "0bd4de9e60b3a7fa",
         "type": "http response",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 780,
-        "y": 830,
+        "x": 750,
+        "y": 1160,
         "wires": []
     },
     {
-        "id": "dcee01621bfab79c",
+        "id": "56ad52c322888624",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "Response Message",
         "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
         "outputs": 1,
@@ -17987,19 +18265,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1330,
-        "y": 740,
+        "x": 1300,
+        "y": 1070,
         "wires": [
             [
-                "d57ff27416a49126"
+                "9afd0c7a939d7409"
             ]
         ]
     },
     {
-        "id": "e7ee5385f8de97fd",
+        "id": "9876b6acc4be4e85",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "Response Message",
         "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
         "outputs": 1,
@@ -18008,81 +18286,81 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1360,
-        "y": 780,
+        "x": 1330,
+        "y": 1110,
         "wires": [
             [
-                "27207b995aeb64f2"
+                "88adb760d65356ad"
             ]
         ]
     },
     {
-        "id": "d57ff27416a49126",
+        "id": "9afd0c7a939d7409",
         "type": "http response",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
         "statusCode": "200",
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1580,
-        "y": 730,
+        "x": 1550,
+        "y": 1060,
         "wires": []
     },
     {
-        "id": "27207b995aeb64f2",
+        "id": "88adb760d65356ad",
         "type": "http response",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
+        "g": "78ecc2843a37aed0",
         "name": "",
         "statusCode": "404",
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1660,
-        "y": 780,
+        "x": 1630,
+        "y": 1110,
         "wires": []
     },
     {
-        "id": "1bcd5e4157520214",
+        "id": "d53603cc58737a8c",
         "type": "comment",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
-        "name": "S2N Warehouse Entry ",
-        "info": "ambar giriş",
-        "x": 240,
-        "y": 730,
+        "g": "78ecc2843a37aed0",
+        "name": "XXX",
+        "info": "ambar cikiş",
+        "x": 160,
+        "y": 1060,
         "wires": []
     },
     {
-        "id": "da0f70f519dcd91d",
+        "id": "0e2ad1e1cbc85d84",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
-        "name": "function 120",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 8,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        AMBHARTUR: 2,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 8,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "g": "78ecc2843a37aed0",
+        "name": "function 124",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: 0,\n        CariKod: \"1\",\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 9,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        AMBHARTUR: 2,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        KS_KODU: \"100\",\n        CikisYeri:0\n        \n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 9,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 780,
+        "x": 720,
+        "y": 1110,
         "wires": [
             [
-                "7807e8f98cd6f630",
-                "108d9b74615d318f"
+                "0c111866cedf437f",
+                "2b111a9a10aa618a"
             ]
         ]
     },
     {
-        "id": "108d9b74615d318f",
+        "id": "2b111a9a10aa618a",
         "type": "debug",
         "z": "6ef8732eb0726477",
-        "g": "1b0ba4f7e2361e6c",
-        "name": "debug 235",
+        "g": "78ecc2843a37aed0",
+        "name": "debug 241",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -18091,231 +18369,235 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 730,
+        "x": 950,
+        "y": 1060,
         "wires": []
     },
     {
-        "id": "013efbbba054d98c",
-        "type": "subflow:fc936f675a46124b",
+        "id": "b48b031a0e80c4ef",
+        "type": "subflow:8a27645487b5e36b",
         "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
         "name": "",
-        "env": [
-            {
-                "name": "RestUrl",
-                "value": "api/v2/ItemSlips",
-                "type": "str"
-            }
-        ],
-        "x": 1040,
-        "y": 1040,
+        "x": 500,
+        "y": 750,
         "wires": [
-            [
-                "c166e897452ea0a2"
-            ],
-            [
-                "fa471c42192040e0"
-            ]
-        ],
-        "outputLabels": [
-            "",
-            "ErrorMessage"
+            [],
+            []
         ]
     },
     {
-        "id": "8ae4765a8c923539",
-        "type": "json",
+        "id": "37bf5267402cf64b",
+        "type": "subflow:c823b85caa289042",
         "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
         "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 260,
-        "y": 1080,
+        "x": 510,
+        "y": 700,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "09c1b5a2e85203a7",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 1730,
+        "y": 710,
         "wires": [
             [
-                "9ac01bd32ff7edcd"
+                "8dfc238f4302c82f"
             ]
         ]
     },
     {
-        "id": "622a25d6c2eb4419",
-        "type": "http in",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "",
-        "url": "STNWTRF001V1_0",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 220,
-        "y": 1040,
-        "wires": [
-            [
-                "8ae4765a8c923539"
-            ]
-        ],
-        "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n        \"STra_testar\": \"2024-11-13 00:00:00\"\r\n          \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
-    },
-    {
-        "id": "9ac01bd32ff7edcd",
+        "id": "87e40bbfeb982109",
         "type": "function",
         "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "Zorunlu Alan Kontrolü",
-        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n    { path: \"Gir_Depo_Kodu\", message: \"Kalems içindeki (value)  Gir_Depo_Kodu zorunlu.\" },\n\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
-        "outputs": 2,
+        "name": "GET PRODUCTIONDOC",
+        "func": "// Environment variable'dan branchCode değerini al\nlet branchCode = env.get(\"BranchCode\");\nmsg.flowName = msg?.inregrationFlowData?.flowName || \"NTSPD000V1.0\";\n// Sorguyu dinamik olarak oluştur\nlet query = `\nSELECT \nISEMRINO,\nTARIH,\nSTOK_KODU,\nMIKTAR,\nACIKLAMA,\nTESLIM_TARIHI,\nDEPO_KODU,\nCIKIS_DEPO_KODU,\nSIPARIS_NO\n\n\nFROM  TBLISEMRI \n  AND SUBEKODU IN  ('-1', '${branchCode}')     \n`;\n\n \n\n\n// url'den gelen verilerde kısıt var ise sorguya ekleniyor\nlet paramsProductionDocNum = global.get('NTSPD000V1reqProductionDocNum')\n  \nif (paramsProductionDocNum !== undefined && paramsProductionDocNum !== null && paramsProductionDocNum !== '') {\n   \n  query += `AND ISEMRINO= '${paramsProductionDocNum}'`\n}\n\n// msg.payload'a sorguyu ekle\n\nmsg.query = query;\nif (global.get('NTSPD000V1reqProductionDocNum')) {\n  global.set('NTSPD000V1reqProductionDocNum', null)\n}\n\n\n \n\nreturn msg;\n",
+        "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 1080,
+        "x": 1480,
+        "y": 660,
         "wires": [
             [
-                "9b2c68f26c2623e0"
-            ],
-            [
-                "18f417bd7132171d"
-            ]
-        ],
-        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
-    },
-    {
-        "id": "18f417bd7132171d",
-        "type": "http response",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 740,
-        "y": 1090,
-        "wires": []
-    },
-    {
-        "id": "c166e897452ea0a2",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "Response Message",
-        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1000,
-        "wires": [
-            [
-                "2a0c3264649da094"
+                "09c1b5a2e85203a7"
             ]
         ]
     },
     {
-        "id": "fa471c42192040e0",
-        "type": "function",
+        "id": "c8d2209a76020da9",
+        "type": "inject",
         "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "Response Message",
-        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1320,
-        "y": 1040,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1170,
+        "y": 670,
         "wires": [
             [
-                "c3768f8361071b0c"
+                "87e40bbfeb982109"
             ]
         ]
     },
     {
-        "id": "2a0c3264649da094",
-        "type": "http response",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1540,
-        "y": 990,
-        "wires": []
-    },
-    {
-        "id": "c3768f8361071b0c",
-        "type": "http response",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "",
-        "statusCode": "404",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1620,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "1dfb5c135fbec4e2",
-        "type": "comment",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "S2N Warehouse Entry ",
-        "info": "Depolar arasi transfer ",
-        "x": 200,
-        "y": 990,
-        "wires": []
-    },
-    {
-        "id": "9b2c68f26c2623e0",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "function 122",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 5,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            Gir_Depo_Kodu:1\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 4,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 1040,
-        "wires": [
-            [
-                "013efbbba054d98c",
-                "6098f1c733ca027f"
-            ]
-        ],
-        "info": "{\r\n  \"FatUst\": {\r\n     \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n       \"STra_testar\": \"2024-11-13 00:00:00\"\r\n       \"D_YEDEK10\": \"2024-11-11 00:00:00\"  //teslim Tarih\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
-    },
-    {
-        "id": "6098f1c733ca027f",
+        "id": "8dfc238f4302c82f",
         "type": "debug",
         "z": "6ef8732eb0726477",
-        "g": "76c96694b19fedf6",
-        "name": "debug 237",
+        "name": "debug 245",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "dataPayload",
-        "targetType": "msg",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 990,
+        "x": 1940,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9c3e2ded65a4983e",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 885,
+        "y": 720,
+        "wires": [
+            [
+                "2a6010112da98d85"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b5ff486587f93f42",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 790,
+        "y": 750,
+        "wires": [
+            [
+                "9c3e2ded65a4983e"
+            ]
+        ]
+    },
+    {
+        "id": "2a6010112da98d85",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 246",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2cfdbbeb06f50d8c",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 990,
+        "y": 890,
+        "wires": [
+            [
+                "bc376c998a6d68d4"
+            ]
+        ]
+    },
+    {
+        "id": "bc376c998a6d68d4",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 125",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\n// Get All Production\nlet data = msg.payload;\n\n// Varsayılan JSON yapısı\nconst documentData = {\n    Header: {\n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"PAU\",\n        ProductionType: null,\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: \"0\",\n        MaterialUnit: null,\n        TolerancePlusValue: \"0\",\n        ToleranceMinusValue: \"0\",\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: null,\n        DocDate: utcNow,\n        ProductionDate: utcNow,\n        ValidityBeginDate: null,\n        ValidityEndDate: null,\n        DatePg01: utcNow,\n        DatePg02: utcNow,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId: 0,\n        RefProductCode: null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: \n        {\n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ,\n    TaskItems: \n        {\n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        },\n    attributes: \n            {\n                attributeCode: null,\n                strValue: null,\n                dateValue: utcNow,\n                numValue: 0,\n                listedValue: null,\n                boolValue: true,\n                remoteName: null\n            }\n        \n    \n};\n\n// Helper function for null or undefined check\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Üretim verilerini dönüştür\nconst productionDataPayload = data.map(prod => ({\n    Header: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Header.PrdDocNo),\n        StateObject: getValueOrDefault(null, documentData.Header.StateObject),\n        DocState: getValueOrDefault(null, documentData.Header.DocState),\n        ProductionType: getValueOrDefault(null, documentData.Header.ProductionType),\n        Machine: getValueOrDefault(null, documentData.Header.Machine),\n        Shift: getValueOrDefault(null, documentData.Header.Shift),\n        ProductCode: getValueOrDefault(prod.STOK_KODU, documentData.Header.ProductCode),\n        Version: getValueOrDefault(null, documentData.Header.Version),\n        TargetOperationQty: getValueOrDefault(null, documentData.Header.TargetOperationQty),\n        OperationUnit: getValueOrDefault(null, documentData.Header.OperationUnit),\n        TargetMaterialQty: getValueOrDefault(null, documentData.Header.TargetMaterialQty),\n        MaterialQty: getValueOrDefault(null, documentData.Header.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Header.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Header.TolerancePlusValue),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Header.ToleranceMinusValue),\n        PostingDate: getValueOrDefault(null, documentData.Header.PostingDate), \n        NewDate: getValueOrDefault(prod.TARIH, documentData.Header.NewDate), \n        UpdDate: getValueOrDefault(null, documentData.Header.UpdDate), \n        DocDate: getValueOrDefault(prod.TARIH, documentData.Header.DocDate), \n        ProductionDate: getValueOrDefault(prod.TARIH, documentData.Header.ProductionDate), \n        ValidityBeginDate: getValueOrDefault(null, documentData.Header.ValidityBeginDate), \n        ValidityEndDate: getValueOrDefault(null, documentData.Header.ValidityEndDate),\n    },\n    Items: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Items.PrdDocNo),\n        PrdItemNo: getValueOrDefault(prod.STOK_KODU, documentData.Items.PrdItemNo),\n        StateObject: getValueOrDefault(null, documentData.Items.StateObject),\n        DocState: getValueOrDefault(null, documentData.Items.DocState),\n        ComponentId: getValueOrDefault(null, documentData.Items.ComponentId),\n        Machine: getValueOrDefault(null, documentData.Items.Machine),\n        MachineGroup: getValueOrDefault(null, documentData.Items.Machine),\n        TargetOperationQty: getValueOrDefault(null, documentData.Items.Machine),\n        OperationUnit: getValueOrDefault(null, documentData.Items.Machine),\n        TargetMaterialQty: getValueOrDefault(null, documentData.Items.Machine),\n        MaterialQty: getValueOrDefault(null, documentData.Items.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Items.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Items.TolerancePlusValue ),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Items.ToleranceMinusValue),\n        SubstitutionProductCode: getValueOrDefault(null, documentData.Items.SubstitutionProductCode),\n        AlternativeProductCode: getValueOrDefault(null, documentData.Items.AlternativeProductCode),\n        PDisassemblyWaste: getValueOrDefault(null, documentData.Items.PDisassemblyWaste),\n        NewUser: getValueOrDefault(null, documentData.Items.NewUser),\n        UpdUser: getValueOrDefault(null, documentData.Items.UpdUser),\n    },\n    TaskItems:  {\n        PrdDocNo: getValueOrDefault(null, documentData.TaskItems.PrdDocNo),\n        Task: getValueOrDefault(null, documentData.TaskItems.Task),\n        ComponentId: getValueOrDefault(null, documentData.TaskItems.ComponentId),\n        TaskItemNo: getValueOrDefault(null, documentData.TaskItems.TaskItemNo),\n        MaterialQuantity: getValueOrDefault(null, documentData.TaskItems.MaterialQuantity),\n        MaterialUnit: getValueOrDefault(null, documentData.TaskItems.MaterialUnit),\n        PAutoConsumption: getValueOrDefault(null, documentData.TaskItems.PAutoConsumption),\n        Location: getValueOrDefault(null, documentData.TaskItems.Location),\n    } ,\n     attributes:[]\n}));\n\n// Mesaj çıktısı\nmsg.payload = productionDataPayload;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 890,
+        "wires": [
+            [
+                "86928bc3effffe60"
+            ]
+        ]
+    },
+    {
+        "id": "86928bc3effffe60",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 248",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 890,
         "wires": []
     },
     {
@@ -20245,6 +20527,976 @@
         "wires": []
     },
     {
+        "id": "013efbbba054d98c",
+        "type": "subflow:fc936f675a46124b",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 990,
+        "y": 1660,
+        "wires": [
+            [
+                "c166e897452ea0a2"
+            ],
+            [
+                "fa471c42192040e0"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "8ae4765a8c923539",
+        "type": "json",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 210,
+        "y": 1700,
+        "wires": [
+            [
+                "9ac01bd32ff7edcd"
+            ]
+        ]
+    },
+    {
+        "id": "622a25d6c2eb4419",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "url": "STNWTRF001V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1660,
+        "wires": [
+            [
+                "8ae4765a8c923539"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n        \"STra_testar\": \"2024-11-13 00:00:00\"\r\n          \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "9ac01bd32ff7edcd",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n    { path: \"Gir_Depo_Kodu\", message: \"Kalems içindeki (value)  Gir_Depo_Kodu zorunlu.\" },\n\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1700,
+        "wires": [
+            [
+                "9b2c68f26c2623e0"
+            ],
+            [
+                "18f417bd7132171d"
+            ]
+        ],
+        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
+    },
+    {
+        "id": "18f417bd7132171d",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 1710,
+        "wires": []
+    },
+    {
+        "id": "c166e897452ea0a2",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1620,
+        "wires": [
+            [
+                "2a0c3264649da094"
+            ]
+        ]
+    },
+    {
+        "id": "fa471c42192040e0",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWTRF001V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 1660,
+        "wires": [
+            [
+                "c3768f8361071b0c"
+            ]
+        ]
+    },
+    {
+        "id": "2a0c3264649da094",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1490,
+        "y": 1610,
+        "wires": []
+    },
+    {
+        "id": "c3768f8361071b0c",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1570,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "1dfb5c135fbec4e2",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "S2N Warehouse Entry ",
+        "info": "Depolar arasi transfer ",
+        "x": 150,
+        "y": 1610,
+        "wires": []
+    },
+    {
+        "id": "9b2c68f26c2623e0",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "function 122",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: null,\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 5,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            Gir_Depo_Kodu:1\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 4,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1660,
+        "wires": [
+            [
+                "013efbbba054d98c",
+                "6098f1c733ca027f"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n     \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n       \"STra_testar\": \"2024-11-13 00:00:00\"\r\n       \"D_YEDEK10\": \"2024-11-11 00:00:00\"  //teslim Tarih\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "6098f1c733ca027f",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "76c96694b19fedf6",
+        "name": "debug 237",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 1610,
+        "wires": []
+    },
+    {
+        "id": "7807e8f98cd6f630",
+        "type": "subflow:fc936f675a46124b",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 990,
+        "y": 1890,
+        "wires": [
+            [
+                "dcee01621bfab79c"
+            ],
+            [
+                "e7ee5385f8de97fd"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "559e4ee976f9d343",
+        "type": "json",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 210,
+        "y": 1930,
+        "wires": [
+            [
+                "567c79d6b0c53b04"
+            ]
+        ]
+    },
+    {
+        "id": "18db56f1c849e7f3",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "url": "STNWENT000V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1890,
+        "wires": [
+            [
+                "559e4ee976f9d343"
+            ]
+        ],
+        "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n    \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n    \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n   \r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n      \"STra_testar\": \"2024-11-13 00:00:00\",\r\n      \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
+    },
+    {
+        "id": "567c79d6b0c53b04",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1930,
+        "wires": [
+            [
+                "da0f70f519dcd91d"
+            ],
+            [
+                "7afd481b9d48fcd1"
+            ]
+        ],
+        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
+    },
+    {
+        "id": "7afd481b9d48fcd1",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "dcee01621bfab79c",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1850,
+        "wires": [
+            [
+                "d57ff27416a49126"
+            ]
+        ]
+    },
+    {
+        "id": "e7ee5385f8de97fd",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 1890,
+        "wires": [
+            [
+                "27207b995aeb64f2"
+            ]
+        ]
+    },
+    {
+        "id": "d57ff27416a49126",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1490,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "27207b995aeb64f2",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1570,
+        "y": 1890,
+        "wires": []
+    },
+    {
+        "id": "1bcd5e4157520214",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "S2N Warehouse Entry ",
+        "info": "ambar giriş",
+        "x": 150,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "da0f70f519dcd91d",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "function 120",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: 0,\n        CariKod: \"1\",\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 8,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        AMBHARTUR: 2,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        KS_KODU: \"100\",\n        CikisYeri:0\n        \n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"G\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 8,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1890,
+        "wires": [
+            [
+                "7807e8f98cd6f630",
+                "108d9b74615d318f"
+            ]
+        ]
+    },
+    {
+        "id": "108d9b74615d318f",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "1b0ba4f7e2361e6c",
+        "name": "debug 235",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "f54c264a9d99416a",
+        "type": "subflow:fc936f675a46124b",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips",
+                "type": "str"
+            }
+        ],
+        "x": 1000,
+        "y": 2150,
+        "wires": [
+            [
+                "402d0d012bdfafb2"
+            ],
+            [
+                "820212a268fdfe83"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "94608eb23ce1fc19",
+        "type": "json",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 220,
+        "y": 2190,
+        "wires": [
+            [
+                "2343dcde078c0de1"
+            ]
+        ]
+    },
+    {
+        "id": "c937a0e91548200a",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "url": "STNWEX000V1_0",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 2150,
+        "wires": [
+            [
+                "94608eb23ce1fc19"
+            ]
+        ]
+    },
+    {
+        "id": "2343dcde078c0de1",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "Zorunlu Alan Kontrolü",
+        "func": "// Zorunlu alanları tanımlayın\nconst requiredFieldsFatUst = [\n  //  { path: \"FatUst.Sube_Kodu\", message: \"Sube_Kodu zorunlu.\" },\n   // { path: \"FatUst.CariKod\", message: \"CariKod zorunlu.\" },\n  //  { path: \"FatUst.FATIRS_NO\", message: \"FATIRS_NO zorunlu.\" },\n    { path: \"KalemAdedi\", message: \"KalemAdedi zorunlu.\" }\n];\nconst requiredFieldsFatItem = [\n    { path: \"StokKodu\", message: \"Kalem  sirasi (value) olan   StokKodu zorunlu.\" },\n    { path: \"STra_GCMIK\", message: \"Kalems içindeki (value)  STra_GCMIK zorunlu.\" },\n    { path: \"Sira\", message: \"Kalems içindeki (value)  Sira zorunlu.\" },\n    { path: \"Olcubr\", message: \"Kalems içindeki (value)  Olcubr zorunlu.\" },    \n    { path: \"DEPO_KODU\", message: \"Kalems içindeki (value)  DEPO_KODU zorunlu.\" },\n];\n\n// Hataları toplamak için liste\nlet errors = [];\n\n// JSON içinde bir alanı bulmak için yardımcı fonksiyon\nfunction getValue(obj, path) {\n  \n    return path.split('.').reduce((o, key) => o && o[key], obj);\n}\n\n// Alanları kontrol edin\nrequiredFieldsFatUst.forEach(field => {\n    const value = getValue(msg.payload, field.path);\n\n    if (value === null || value === undefined || value === \"\") {\n        errors.push(field.message);\n    }\n});\n\n\n\nmsg.payload.Kalems.forEach(item => {\n   \n    var hasStockCode=true; // stok kodu giilmeyen kalemlerde sıra numarasına göre dönüş değere verilecek\n    requiredFieldsFatItem.forEach(filedItem => {\n        var message;\n        const value = getValue(item, filedItem.path);\n        if (value === null || value === undefined || value === \"\") {\n             \n            if (filedItem.path === \"StokKodu\") {\n                message =  filedItem.message.replace(\"(value)\", item?.Sira)\n                hasStockCode=false;\n            }\n            else {\n                message = filedItem.message.replace(\"(value)\", hasStockCode ? \"Stok Kodu:\"+item?.StokKodu: \"Sıra No:\"+item.Sira)\n            }\n            errors.push(message)\n        }\n    })\n});\n\n// Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\nif (errors.length > 0) {\n    msg.payload = { success: false, errors: errors };\n    msg.statusCode = 400;\n    return [null,msg];\n}\n\n// Her şey tamamsa, başarılı sonucu döndürün\nmsg.payload = { success: true, data: msg.payload };\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 2190,
+        "wires": [
+            [
+                "75c8c70a80585425"
+            ],
+            [
+                "263393d0dfbf5305"
+            ]
+        ],
+        "info": "{\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\":1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1\r\n    },\r\n\t {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1\r\n    }\r\n  ]\r\n}"
+    },
+    {
+        "id": "263393d0dfbf5305",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 700,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "402d0d012bdfafb2",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "Response Message",
+        "func": "msg.receivingNumber = msg.payload.Data.FatUst.FATIRS_NO;\nmsg.customerCode\nconst returnMessage={\n    customerCode: msg?.customerCode,\n    receivingNumber: msg.receivingNumber\n    \n};\nmsg.payload = {\n    status: \"Info\",\n    message: JSON.stringify(returnMessage) ||\"Transfer successfully completed\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 2110,
+        "wires": [
+            [
+                "ab0ff447a64f012c"
+            ]
+        ]
+    },
+    {
+        "id": "820212a268fdfe83",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "Response Message",
+        "func": " \nmsg.payload = {\n    status: \"Error\",\n    message: msg.netsisTokenErrorMessage ||\"Bir Hata Meydana Geldi Lütfen Log Dosyasina Bakiniz\",\n    programName: \"STNWENT000V1_0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\n\nreturn msg;\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 2150,
+        "wires": [
+            [
+                "c9ddde8853d8daca"
+            ]
+        ]
+    },
+    {
+        "id": "ab0ff447a64f012c",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1500,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "c9ddde8853d8daca",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1580,
+        "y": 2150,
+        "wires": []
+    },
+    {
+        "id": "1d23ef183e2aa3ca",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "S2N Warehouse Exit",
+        "info": "ambar cikiş",
+        "x": 150,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "75c8c70a80585425",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "function 123",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: 0,\n        CariKod: \"1\",\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 9,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"Node-Red\",\n        AMBHARTUR: 2,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        KS_KODU: \"100\",\n        CikisYeri:0\n        \n        \n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            STra_HTUR: \"C\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 9,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 1,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: incomingData.KalemAdedi,\n    FaturaTip: 9,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// EIrsEkBilgi alanlarını doldur\nconst eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\nfor (const key in defaultValue.EIrsEkBilgi) {\n    result.EIrsEkBilgi[key] = getValueOrDefault(\n        eIrsEkBilgiData[key],\n        defaultValue.EIrsEkBilgi[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nmsg.flowName =\"STNWENT000V1_0\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 2150,
+        "wires": [
+            [
+                "f54c264a9d99416a",
+                "dee9a999c0a00e11"
+            ]
+        ]
+    },
+    {
+        "id": "dee9a999c0a00e11",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "4e76d7a24738b00a",
+        "name": "debug 240",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "e5707922a5aba9e7",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1140,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "67a746b11685e2a7",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    status: \"Info\",\n    message: \"Transfer successfully completed\",\n    programName: \"Netsis2SFORIN_Netsis2SFORIN_ProductionDoc\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nreturn [{ ...msg, res: flow.get('res_Netsis2SFORIN_PrdDoc_MSSQL_v1.0') }]\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 2320,
+        "wires": [
+            [
+                "e5707922a5aba9e7"
+            ]
+        ]
+    },
+    {
+        "id": "62bb6c30d098a456",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "Netsis2SFORIN_ProductionDoc",
+        "info": "",
+        "x": 200,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "7aed8d10b28ca4b8",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "x": 535,
+        "y": 2340,
+        "wires": [
+            [
+                "7dc18f431e0de57e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bb0a944e914f3093",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "Response Message",
+        "func": "//If an error occurs on the endpoint side, we catch it with the payload\nconst flowName=msg?.propIntegration?.flowName;\nconst payload=global.get(flowName+'_payload_res')\nmsg.payload = {\n    status: \"Info\",\n    message: payload||\"The program is running.\",\n    programName: \"Netsis2SFORIN_ProdDoc_MSSQL_v1.0\",   \n    timestamp: new Date().toISOString() // Yerel tarih ve saat\n};\nglobal.set('NTSP000V1.0_payload_res_status',false)\nreturn [{ ...msg, res: flow.get('res_Netsis2SFORIN_PrdDoc_MSSQL_v1.0')}]\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 2360,
+        "wires": [
+            [
+                "5876f658b7bd127b"
+            ]
+        ]
+    },
+    {
+        "id": "bc7aa20cdf0da3ef",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "function 126",
+        "func": "// burada atılan istek doğrultusunda flow nameini alıyorum ahngi akış tetiklenecek ise ona göre işleme alıyorum\nflow.set('res_Netsis2SFORIN_PrdDoc_MSSQL_v1.0',msg.res)\nmsg.integrationParameter_FlowName=msg.req.url;\nlet url = msg?.req?.url;\n\n \nif (url.includes(\"?\")) {\n    // \"?\" karakterinden önceki kısmı al\n    msg.integrationParameter_FlowName = msg.req.url = url.split(\"?\")[0];\n} \nelse \n{\n    // Eğer \"?\" yoksa, stringin tamamını al\n    msg.integrationParameter_FlowName = url;\n} \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 465,
+        "y": 2340,
+        "wires": [
+            [
+                "7aed8d10b28ca4b8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bcf8421640cf49c5",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "Params=>PrdDocNo",
+        "info": "",
+        "x": 500,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "feef0e255128d3d6",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "Params",
+        "func": "let prdDocNo = msg.req?.query?.PrdDocNo;\n\nif(prdDocNo){\n    global.set('NTSPD000V1reqProductionDocNum',prdDocNo)\n}\n \nglobal.set('NTSPD000V1.0_payload_res_status',true)\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 385,
+        "y": 2340,
+        "wires": [
+            [
+                "bc7aa20cdf0da3ef"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "8e7bc49537739b2e",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "url": "NTSPD000V1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 2340,
+        "wires": [
+            [
+                "feef0e255128d3d6"
+            ]
+        ],
+        "info": "MetropolUn_Netsis2SFORIN_InsertStock_MSSQL_v1.0"
+    },
+    {
+        "id": "f862e3da37008126",
+        "type": "http request",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 500,
+        "y": 2400,
+        "wires": [
+            [
+                "32d473cb825d6220"
+            ]
+        ]
+    },
+    {
+        "id": "8075d22e253b4e13",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "function 127",
+        "func": "\nlet flowEndPoint = msg.msg.allIntegrationParameters.find(x => x.flowName === \"NTSP000V1.0\").flowEndPoint;\n\n// params eklenecek ise   query string ile ekle \nmsg.url = \"http://localhost:1880\" + flowEndPoint;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 345,
+        "y": 2400,
+        "wires": [
+            [
+                "f862e3da37008126"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "0b7bab7758d0f053",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "x": 275,
+        "y": 2400,
+        "wires": [
+            [
+                "8075d22e253b4e13"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "719ddd38f8a4efc3",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2400,
+        "wires": [
+            [
+                "0b7bab7758d0f053"
+            ]
+        ]
+    },
+    {
+        "id": "5876f658b7bd127b",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "statusCode": "404",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1170,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "32d473cb825d6220",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "debug 250",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "7dc18f431e0de57e",
+        "type": "subflow:c823b85caa289042",
+        "z": "97e7314f695bb652",
+        "g": "c61dc7b72c1cb6c1",
+        "name": "",
+        "x": 655,
+        "y": 2340,
+        "wires": [
+            [
+                "67a746b11685e2a7"
+            ],
+            [
+                "bb0a944e914f3093"
+            ]
+        ],
+        "l": false
+    },
+    {
         "id": "1",
         "type": "inject",
         "z": "f1a7c99c.1d3f48",
@@ -20734,12 +21986,17 @@
                 "vt": "str"
             },
             {
+                "t": "eq",
+                "v": "NTSPD000V1.0",
+                "vt": "str"
+            },
+            {
                 "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 6,
+        "outputs": 7,
         "x": 645,
         "y": 200,
         "wires": [
@@ -20757,6 +22014,9 @@
             ],
             [
                 "2cb8b6d49a195dc0"
+            ],
+            [
+                "3dba327d631822fb"
             ],
             [
                 "dda4347789d8592e"
@@ -20798,8 +22058,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1110,
-        "y": 490,
+        "x": 860,
+        "y": 510,
         "wires": []
     },
     {
@@ -20996,6 +22256,18 @@
         "name": "",
         "x": 1010,
         "y": 350,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3dba327d631822fb",
+        "type": "subflow:c823b85caa289042",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 410,
         "wires": [
             [],
             []
