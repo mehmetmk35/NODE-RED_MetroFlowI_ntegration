@@ -4186,6 +4186,11 @@
                 "name": "INT_TBLISEMRI",
                 "value": "TBLISEMRI",
                 "type": "str"
+            },
+            {
+                "name": "MongoDbName",
+                "value": "MongoDbV_1.0",
+                "type": "str"
             }
         ]
     },
@@ -25759,6 +25764,138 @@
         "statusType": "auto",
         "x": 860,
         "y": 570,
+        "wires": []
+    },
+    {
+        "id": "2494b05ea1a234d5",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "Type",
+                "value": "Purchase_Waybill",
+                "type": "str"
+            }
+        ],
+        "x": 565,
+        "y": 740,
+        "wires": [
+            [
+                "1d062c05a3b18856"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "40e36972d3062e6a",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 420,
+        "y": 740,
+        "wires": [
+            [
+                "2494b05ea1a234d5"
+            ]
+        ]
+    },
+    {
+        "id": "1d062c05a3b18856",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 333",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "aa2854049700eaf3",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 950,
+        "wires": [
+            [
+                "67e2f88fa8d25a8f"
+            ]
+        ]
+    },
+    {
+        "id": "67e2f88fa8d25a8f",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "function 150",
+        "func": "let mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\nnode.warn(allIntegrationCode);\n\n// Debug parametresi\nconst isDebug = msg?.propIntegration?.isDebugMode || false;\nmsg.isDebug = isDebug;\nlet path = msg?.propIntegration?.path || \"\";\n\nif (allIntegrationCode) {\n    mongoData = allIntegrationCode.find(item => item.path === env.get('MongoDbName'));\n}\n\nif (mongoData === null) {\n    node.error(\"MongoDB configuration not found.\");\n    return;\n}\n\nconst mongodb = global.get('mongodb'); // MongoDB modülü global olarak ayarlanmalı\nconst aggregatePipeline = (msg.query ) ? msg.aggregate : env.get('query');\n\nif (isDebug) {\n    msg.reqQuery = aggregatePipeline;\n}\n\nif (!mongodb) {\n    node.error('MongoDB module not found in global context.');\n    return;\n}\n\n// MongoDB bağlantı bilgileri\nconst user = mongoData.user;\nconst password = mongoData.pass;\nconst host = mongoData.Server;\nconst database = mongoData.database;\nif (!msg.collection) {\n    node.error(' msg.collection not found');\n    return;\n}\nconst collectionName = msg.collection ;\n\n// MongoDB URI oluşturma\nconst uri = `mongodb://${user}:${password}@${host}/${database}?authSource=admin`;\n\nconst { MongoClient } = require('mongodb');\nconst client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });\n\n(async () => {\n    try {\n        // MongoDB'ye bağlan\n        await client.connect();\n        const db = client.db(database);\n        const collection = db.collection(collectionName);\n\n        // Aggregate sorgusunu çalıştır (msg.aggregate bir dizi olmalı)\n        const result = await collection.aggregate(aggregatePipeline).toArray();\n\n        // Sonucu gönder\n        msg.payload = result;\n        node.send([msg, null]);\n\n    } catch (err) {\n        // Hata durumunda ikinci çıkışı kullan\n        msg = {\n            ...msg,\n            error: 'MongoDB aggregate query error: ' + err.message\n        };\n        msg.errorDescription = msg.error;\n        node.send([null, msg]);\n\n    } finally {\n        // Bağlantıyı kapat\n        try {\n            await client.close();\n        } catch (closeErr) {\n            msg = {\n                error: 'Error closing MongoDB connection: ' + closeErr.message\n            };\n            msg.errorDescription = msg.error;\n            node.send([null, msg]);\n        }\n    }\n})();\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 950,
+        "wires": [
+            [
+                "a254c6bec305a1a3"
+            ]
+        ]
+    },
+    {
+        "id": "a254c6bec305a1a3",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 334",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 960,
         "wires": []
     }
 ]
