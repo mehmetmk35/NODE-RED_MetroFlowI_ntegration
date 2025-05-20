@@ -1610,8 +1610,8 @@
         ],
         "out": [
             {
-                "x": 160,
-                "y": 180,
+                "x": 320,
+                "y": 80,
                 "wires": [
                     {
                         "id": "a3dad7ab3fe1bc68",
@@ -2283,6 +2283,10 @@
                     {
                         "id": "e53607234fb31c5a",
                         "port": 0
+                    },
+                    {
+                        "id": "16406d8afb15ea70",
+                        "port": 0
                     }
                 ]
             }
@@ -2449,6 +2453,10 @@
                 "wires": [
                     {
                         "id": "af1e1d2d7e89fa74",
+                        "port": 0
+                    },
+                    {
+                        "id": "85729c6b5003de2d",
                         "port": 0
                     }
                 ]
@@ -4334,7 +4342,8 @@
             "d53603cc58737a8c",
             "84aa2bd75f6182c5",
             "acde09f1a34fecf2",
-            "b41c1dd8f734d83e"
+            "b41c1dd8f734d83e",
+            "7cc1fb2b36ec1359"
         ],
         "x": 24,
         "y": 2029,
@@ -4374,12 +4383,18 @@
             "c9ae78118c25c668",
             "6a9947be10b41dfa",
             "289a0bef95410df6",
-            "260e396473311b1b"
+            "260e396473311b1b",
+            "3fdde4abc487fc2e",
+            "b9761f83fc9e8ce6",
+            "5738e6743dd0dc6d",
+            "fe3a431b5793db6a",
+            "7575473c6d2c8a74",
+            "7ccf586cbdc8fab7"
         ],
         "x": 94,
         "y": 59,
-        "w": 1922,
-        "h": 462
+        "w": 2082,
+        "h": 482
     },
     {
         "id": "16904a16559010b8",
@@ -4405,7 +4420,8 @@
             "ddce7cc3bca0ba25",
             "20bcba265930f94d",
             "07716291db05c331",
-            "a4711bab3ea1879d"
+            "a4711bab3ea1879d",
+            "2e5c284295dbc5ac"
         ],
         "x": 184,
         "y": 39,
@@ -4446,12 +4462,13 @@
             "b54ee6c2f46dd4ea",
             "8b47b3b4858c86a6",
             "867c61b784b598db",
-            "e618837363f35d3a"
+            "e618837363f35d3a",
+            "c35a5e34d59bfb9f"
         ],
         "x": 154,
         "y": 299,
         "w": 1682,
-        "h": 332
+        "h": 342
     },
     {
         "id": "7f0d10fd6c405ddc",
@@ -4477,7 +4494,8 @@
             "fecffdc39a544257",
             "b2eb188d27c2a8a8",
             "4692d5c85e8e0950",
-            "af023af94181b884"
+            "af023af94181b884",
+            "55619b73c7a1b9f0"
         ],
         "x": 204,
         "y": 9,
@@ -4564,13 +4582,14 @@
             "dc9dd4f28bcfe149",
             "f7e622e545fa9b76",
             "55fbd934494ddc31",
-            "6e3b85241689506a",
-            "d4200f42526d143e"
+            "d4200f42526d143e",
+            "5d3951ed4a433cec",
+            "b1c74d2118042252"
         ],
         "x": 244,
         "y": 399,
         "w": 1292,
-        "h": 292
+        "h": 342
     },
     {
         "id": "873c9acca903bcab",
@@ -5144,8 +5163,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 220,
+        "x": 1140,
+        "y": 190,
         "wires": [
             []
         ]
@@ -11331,7 +11350,7 @@
         "type": "function",
         "z": "0a4f4f9f59c2be20",
         "name": "params",
-        "func": "if (msg.retries === undefined) {\n    msg.retries = 0;\n}\n\nmsg.flowName = msg.inregrationFlowData.flowName || \"Update State Integration Params\";\n\nreturn msg;",
+        "func": "if (msg.retries === undefined) {\n    msg.retries = 0;\n}\n\nmsg.flowName = msg.inregrationFlowData.flowName || \"Update State Integration Params\";\nnode.warn(\"22222222222222222222222222222222222\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11361,9 +11380,27 @@
         "x": 1210,
         "y": 50,
         "wires": [
-            [],
+            [
+                "590b207719bd2c27"
+            ],
             []
         ]
+    },
+    {
+        "id": "590b207719bd2c27",
+        "type": "debug",
+        "z": "0a4f4f9f59c2be20",
+        "name": "debug 419",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 280,
+        "wires": []
     },
     {
         "id": "66a945570b3218f8",
@@ -11895,6 +11932,26 @@
         "libs": [],
         "x": 530,
         "y": 240,
+        "wires": [
+            [
+                "4e09f7bc4cd42fa8"
+            ]
+        ]
+    },
+    {
+        "id": "4e09f7bc4cd42fa8",
+        "type": "function",
+        "z": "bb656f77f61addff",
+        "name": "function 164",
+        "func": "node.warn(\"-------------------------------\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 440,
         "wires": [
             []
         ]
@@ -14498,7 +14555,7 @@
         "outputs": 1,
         "options": [],
         "x": 620,
-        "y": 120,
+        "y": 60,
         "wires": [
             [
                 "a048476425b9b233"
@@ -16079,7 +16136,8 @@
         "y": 200,
         "wires": [
             [
-                "3afaae6869304943"
+                "3afaae6869304943",
+                "4007495fd6b2dc4e"
             ]
         ]
     },
@@ -16184,7 +16242,9 @@
         "x": 610,
         "y": 200,
         "wires": [
-            []
+            [
+                "d713c9e36be8b6d8"
+            ]
         ]
     },
     {
@@ -16201,6 +16261,39 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "d713c9e36be8b6d8",
+        "type": "debug",
+        "z": "e00c065eb7c30613",
+        "name": "debug 437",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 90,
+        "wires": []
+    },
+    {
+        "id": "4007495fd6b2dc4e",
+        "type": "debug",
+        "z": "e00c065eb7c30613",
+        "name": "debug 438",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
     },
     {
         "id": "3e93a71dc459266c",
@@ -16457,8 +16550,27 @@
         "y": 300,
         "wires": [
             [
-                "c744ad95b5eaf199"
+                "c744ad95b5eaf199",
+                "cb6ffe5b8dd1d991"
             ]
+        ]
+    },
+    {
+        "id": "cb6ffe5b8dd1d991",
+        "type": "function",
+        "z": "1053798a29903688",
+        "name": "function 165",
+        "func": "node.warn(\"tetiklendiiiiiiiiiiiiiiii\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 290,
+        "wires": [
+            []
         ]
     },
     {
@@ -16863,7 +16975,7 @@
         "z": "407e1a0c9ab51943",
         "g": "623651476803831e",
         "name": "function 87",
-        "func": "msg.payload.forEach(item=>\n{\nmsg.item.data[0].barcodes.push({\n    unitCode: item.OLCU_BIRIMI,\n    barcode: item.BARKOD\n})\n});\n\n\nreturn msg;\n\n\n\n \n ",
+        "func": "\n\nmsg.payload?.forEach(item=>\n{\n\nmsg.item[0]?.data[0]?.barcodes.push({\n    unitCode: item.OLCU_BIRIMI,\n    barcode: item.BARKOD\n})\n});\n\n\nreturn msg;\n\n\n\n \n ",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -19045,7 +19157,7 @@
         "type": "function",
         "z": "fc936f675a46124b",
         "name": "netsisTokenErrorMessage",
-        "func": "msg.netsisTokenErrorMessage=\"Token alma işlemi sirasinda hata\"\nreturn msg;",
+        "func": "msg.netsisTokenErrorMessage=\"Token alma işlemi sirasinda hata\"\nmsg.checkRepeatCount = 0;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -19064,15 +19176,15 @@
         "type": "function",
         "z": "fc936f675a46124b",
         "name": "netsisTokenErrorMessage",
-        "func": "\n\nmsg.netsisTokenErrorMessage = msg.payload.ErrorDesc ||\"An error has occurred. Please check the log file\"\nreturn msg;",
+        "func": "\nmsg.checkRepeatCount = 0;\nmsg.netsisTokenErrorMessage += msg.payload.ErrorDesc ||\"An error has occurred. Please check the log file\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1135,
-        "y": 220,
+        "x": 895,
+        "y": 260,
         "wires": [
             []
         ],
@@ -19180,7 +19292,7 @@
         "type": "function",
         "z": "fc936f675a46124b",
         "name": "function 163",
-        "func": "const repeatCount = env.get(\"repeatCount\");\nlet checkRepeatCount = msg.checkRepeatCount || 0;\n\n\n\n\n\nif(repeatCount >checkRepeatCount)\n{\n    msg.checkRepeatCount =checkRepeatCount+1;\n    node.warn(checkRepeatCount)\n    return[msg,null]\n}\nelse\n{\n    msg.checkRepeatCount=0;\n    return [null, msg]\n}\n",
+        "func": "const repeatCount = env.get(\"repeatCount\");\nlet checkRepeatCount = msg.checkRepeatCount || 0;\n\n\n\n\nmsg.checkRepeatCount = checkRepeatCount + 1;\n\n\n\nif(repeatCount >checkRepeatCount)\n{\n    \n    msg.checkRepeatCount =checkRepeatCount+1;\n    \n    return[msg,null]\n}\nelse\n{\n    msg.checkRepeatCount = 0;\n   \n   \n    return [null, msg]\n}\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -19564,7 +19676,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "productionDataPayload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 1190,
@@ -20044,10 +20157,12 @@
         "y": 200,
         "wires": [
             [
-                "c9ae78118c25c668"
+                "c9ae78118c25c668",
+                "b9761f83fc9e8ce6"
             ],
             [
-                "6a9947be10b41dfa"
+                "6a9947be10b41dfa",
+                "5738e6743dd0dc6d"
             ]
         ],
         "outputLabels": [
@@ -20085,7 +20200,7 @@
         "z": "9ef239d14888af27",
         "g": "a5d0bd7e0538715e",
         "name": "function 121",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\n\nconst defaultValue = {\n    FatUst: {\n        \n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 3,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: true,\n        PLA_KODU: 14,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        KS_KODU: \"100\",\n        FIYATTARIHI:null,\n        ODEMETARIHI:null,\n        KOSULTARIHI:null,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    // EIrsEkBilgi: {\n    //     PLAKA: null,\n    //     TASIYICIVKN: null,\n    //     TASIYICIADI: null,\n    //     TASIYICIILCE: null,\n    //     TASIYICIIL: null,\n    //     TASIYICIULKE: null,\n    //     TASIYICIPOSTAKODU: null,\n    //     SOFOR1ADI: null,\n    //     SOFOR1SOYADI: null,\n    //     SOFOR1ACIKLAMA: null,\n    //     SOFOR1TCKN: null,\n    //     SOFOR2ADI: null,\n    //     SOFOR2SOYADI: null,\n    //     SOFOR2ACIKLAMA: null,\n    //     SOFOR2TCKN: null,\n    //     SOFOR3ADI: null,\n    //     SOFOR3SOYADI: null,\n    //     SOFOR3ACIKLAMA: null,\n    //     SOFOR3TCKN: null,\n    //     SEVKTAR: null,\n    //     DORSEPLAKA1: null,\n    //     DORSEPLAKA2: null,\n    //     DORSEPLAKA3: null,\n    //     MATBUKULLANILSIN: false,\n    // },\n   \n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: null,\n            DOVTIP: null,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 7,\n            STra_CARI_KOD: null,\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: null,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,\n           \n            S_Yedek2:'SFORIN'\n\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n \nincomingData.FatUst.FATIRS_NO = incomingData.FatUst.FATIRS_NO_2;\n \n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n   \n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// // EIrsEkBilgi alanlarını doldur\n// const eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\n// for (const key in defaultValue.EIrsEkBilgi) {\n//     result.EIrsEkBilgi[key] = getValueOrDefault(\n//         eIrsEkBilgiData[key],\n//         defaultValue.EIrsEkBilgi[key]\n//     );\n// }\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nnode.warn(msg.dataPayload);\nmsg.flowName =\"STNBWAY000V1_0\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \nnode.warn(utcNow);\nnode.warn(\"my warning\");\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\n\nconst defaultValue = {\n    FatUst: {\n        \n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 3,\n        KOD1: null,\n        KOD2: null,\n        TIPI:2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: true,\n        PLA_KODU: 14,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        KS_KODU: \"100\",\n        FIYATTARIHI:null,\n        ODEMETARIHI:null,\n        KOSULTARIHI:null,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    // EIrsEkBilgi: {\n    //     PLAKA: null,\n    //     TASIYICIVKN: null,\n    //     TASIYICIADI: null,\n    //     TASIYICIILCE: null,\n    //     TASIYICIIL: null,\n    //     TASIYICIULKE: null,\n    //     TASIYICIPOSTAKODU: null,\n    //     SOFOR1ADI: null,\n    //     SOFOR1SOYADI: null,\n    //     SOFOR1ACIKLAMA: null,\n    //     SOFOR1TCKN: null,\n    //     SOFOR2ADI: null,\n    //     SOFOR2SOYADI: null,\n    //     SOFOR2ACIKLAMA: null,\n    //     SOFOR2TCKN: null,\n    //     SOFOR3ADI: null,\n    //     SOFOR3SOYADI: null,\n    //     SOFOR3ACIKLAMA: null,\n    //     SOFOR3TCKN: null,\n    //     SEVKTAR: null,\n    //     DORSEPLAKA1: null,\n    //     DORSEPLAKA2: null,\n    //     DORSEPLAKA3: null,\n    //     MATBUKULLANILSIN: false,\n    // },\n   \n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: null,\n            DOVTIP: null,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: 7,\n            STra_CARI_KOD: null,\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: null,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,\n           \n            S_Yedek2:'SFORIN'\n\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n \nincomingData.FatUst.FATIRS_NO = incomingData.FatUst.FATIRS_NO_2;\n \n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n   \n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// // EIrsEkBilgi alanlarını doldur\n// const eIrsEkBilgiData = incomingData.EIrsEkBilgi || {}; // Gelen EIrsEkBilgi yoksa boş nesne kullan\n// for (const key in defaultValue.EIrsEkBilgi) {\n//     result.EIrsEkBilgi[key] = getValueOrDefault(\n//         eIrsEkBilgiData[key],\n//         defaultValue.EIrsEkBilgi[key]\n//     );\n// }\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\nnode.warn(msg.dataPayload);\nmsg.flowName =\"STNBWAY000V1_0\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -20096,7 +20211,8 @@
         "y": 200,
         "wires": [
             [
-                "0858b95ba622a39f"
+                "0858b95ba622a39f",
+                "7ccf586cbdc8fab7"
             ]
         ],
         "info": "{\r\n  \"FatUst\": {\r\n    \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n        \"STra_testar\": \"2024-11-13 00:00:00\"\r\n          \"D_YEDEK10\": \"2024-11-11 00:00:00\"\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
@@ -20281,7 +20397,7 @@
         "z": "9ef239d14888af27",
         "g": "a5d0bd7e0538715e",
         "name": "SetFatKalem",
-        "func": "let data = msg.payload;\nlet netsisDataItemList = msg.netsisDataPayload?.Kalems;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nlet errorDec=[];\n// Veri kontrolü\nif (Array.isArray(data) && data.length > 0 && Array.isArray(netsisDataItemList)) {\n    //bize gelen post isteğinden alıacak veri netsisDataItemList alınacak \n    netsisDataItemList.forEach(netsisDataItem => {\n        //gelen veri kısıtı ile alıacak  netsis sipariş datası netsisData\n        let netsisData = data.find(x => \n            x?.STOK_KODU == netsisDataItem?.StokKodu && \n            x?.SIRA == netsisDataItem?.Sira\n        );\n       \n        if (netsisData)\n         {\n           \n          \n            let itemData = {\n                StokKodu: netsisData.STOK_KODU,\n                Sira: netsisData.SIRA,\n                STra_GCMIK: netsisDataItem.STra_GCMIK,\n                STra_TAR: netsisDataInvoice.Tarih,\n                ...(netsisData.kur >0 ? {\n                    STra_NF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    STra_BF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    DOVIZ_TURU: netsisData.STHAR_DOVTIP,\n                    DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVFIAT:netsisData.STHAR_DOVFIAT\n\n                }:{\n                    STra_NF: netsisData.STHAR_NF,\n                    STra_BF: netsisData.STHAR_BF\n                }),\n               \n                STra_SIPNUM: netsisData.FISNO,\n                ProjeKodu: netsisData.PROJE_KODU,\n                STra_SIPKONT:netsisData.STRA_SIPKONT,\n                Stra_IrsKont: netsisData.STRA_SIPKONT,\n                STra_HTUR: \"H\",\n                DEPO_KODU: netsisDataItem.DEPO_KODU,\n                //Firmadovtut: netsisDataItem.STra_GCMIK,\n                STra_SatIsk: netsisData.STHAR_SATISK,\n                STra_SatIsk2: netsisData.STHAR_SATISK2,\n                STra_SatIsk3: netsisData.STRA_SATISK3,\n                STra_SatIsk4: netsisData.STRA_SATISK4,\n                STra_SatIsk5: netsisData.STRA_SATISK5,\n                STra_SatIsk6: netsisData.STRA_SATISK6,\n                STra_ODEGUN: netsisDataInvoice.ODEMEGUNU,\n                //SatirBaziAciks: Array.from({ length: 10 }, (_, i) => netsisData[`ACIKLAMA1${i+1}`]) ,\n                Plasiyer_Kodu: netsisData.PLASIYER_KODU,\n                Ekalanneden: netsisData.EKALAN_NEDEN,\n                Ekalan: netsisData.EKALAN,\n                Ekalan1: netsisData.EKALAN1,\n                STra_testar: netsisData.STHAR_TESTAR,\n                Olcubr: 1,\n                STra_CARI_KOD: netsisData.STHAR_CARIKOD,\n                STra_GC: \"G\",\n                Stra_FiiliTar: netsisDataInvoice.Tarih,\n                D_YEDEK10: netsisDataInvoice.Tarih\n\n            }\n           \n            //Check if the item already exists in kalems\n            let existingItemIndex = msg.netsisDataPayload.Kalems.findIndex(\n                item => item.StokKodu == netsisData.STOK_KODU && item.Sira == netsisData.SIRA\n            );\n           \n            if (existingItemIndex !== -1) {\n                // Null kontrolü ekle\n                if (msg.netsisDataPayload.Kalems[existingItemIndex]) {\n                    msg.netsisDataPayload.Kalems[existingItemIndex] = {\n                        ...msg.netsisDataPayload.Kalems[existingItemIndex],\n                        ...itemData\n                    };\n                }\n            }\n\n         }\n         else {\n            errorDec.push(`No record was found in Netsis for this order (${netsisDataInvoice.FATIRS_NO}).Stock Code: ${netsisDataItem?.StokKodu }`)\n            \n         }\n          \n\n          \n    });\n    if (errorDec.length > 0){\n        msg.payload = {\n            success: false,\n             errors: {\n                message: errorDec\n\n            }\n        };\n        msg.statusCode = 400;\n\n        return [null, msg]; // Hata durumu\n    }\n    msg.payload = msg.netsisDataPayload;\n    return [msg,null ]\n}  \n   \n  else {\n    // Hata mesajını düzenle\n    msg.payload = { success: false, errors: {\n        message: \"Data is either empty or not an array\" \n      \n    }};\n    msg.statusCode = 400;\n\n    return [null, msg]; // Hata durumu\n}\n\n\n ",
+        "func": "let data = msg.payload;\nlet netsisDataItemList = msg.netsisDataPayload?.Kalems;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nlet errorDec=[];\n// Veri kontrolü\nif (Array.isArray(data) && data.length > 0 && Array.isArray(netsisDataItemList)) {\n    //bize gelen post isteğinden alıacak veri netsisDataItemList alınacak \n    netsisDataItemList.forEach(netsisDataItem => {\n        //gelen veri kısıtı ile alıacak  netsis sipariş datası netsisData\n        let netsisData = data.find(x => \n            x?.STOK_KODU == netsisDataItem?.StokKodu && \n            x?.SIRA == netsisDataItem?.Sira\n        );\n       \n        if (netsisData)\n         {\n           \n          \n            let itemData = {\n                StokKodu: netsisData.STOK_KODU,\n                Sira: netsisData.SIRA,\n                STra_GCMIK: netsisDataItem.STra_GCMIK,\n                STra_TAR: netsisDataInvoice.Tarih,\n                STra_KDV: netsisData.STHAR_KDV,\n                ...(netsisData.kur >0 ? {\n                    STra_NF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    STra_BF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    DOVIZ_TURU: netsisData.STHAR_DOVTIP,\n                    DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVFIAT:netsisData.STHAR_DOVFIAT\n\n                }:{\n                    STra_NF: netsisData.STHAR_NF,\n                    STra_BF: netsisData.STHAR_BF\n                }),\n               \n                STra_SIPNUM: netsisData.FISNO,\n                ProjeKodu: netsisData.PROJE_KODU,\n                STra_SIPKONT:netsisData.STRA_SIPKONT,\n                Stra_IrsKont: netsisData.STRA_SIPKONT,\n                STra_HTUR: \"H\",\n                DEPO_KODU: netsisDataItem.DEPO_KODU,\n                //Firmadovtut: netsisDataItem.STra_GCMIK,\n                STra_SatIsk: netsisData.STHAR_SATISK,\n                STra_SatIsk2: netsisData.STHAR_SATISK2,\n                STra_SatIsk3: netsisData.STRA_SATISK3,\n                STra_SatIsk4: netsisData.STRA_SATISK4,\n                STra_SatIsk5: netsisData.STRA_SATISK5,\n                STra_SatIsk6: netsisData.STRA_SATISK6,\n                STra_ODEGUN: netsisDataInvoice.ODEMEGUNU,\n                //SatirBaziAciks: Array.from({ length: 10 }, (_, i) => netsisData[`ACIKLAMA1${i+1}`]) ,\n                Plasiyer_Kodu: netsisData.PLASIYER_KODU,\n                Ekalanneden: netsisData.EKALAN_NEDEN,\n                Ekalan: netsisData.EKALAN,\n                Ekalan1: netsisData.EKALAN1,\n                STra_testar: netsisData.STHAR_TESTAR,\n                Olcubr: 1,\n                STra_CARI_KOD: netsisData.STHAR_CARIKOD,\n                STra_GC: \"G\",\n                Stra_FiiliTar: netsisDataInvoice.Tarih,\n                D_YEDEK10: netsisDataInvoice.Tarih\n\n            }\n           \n            //Check if the item already exists in kalems\n            let existingItemIndex = msg.netsisDataPayload.Kalems.findIndex(\n                item => item.StokKodu == netsisData.STOK_KODU && item.Sira == netsisData.SIRA\n            );\n           \n            if (existingItemIndex !== -1) {\n                // Null kontrolü ekle\n                if (msg.netsisDataPayload.Kalems[existingItemIndex]) {\n                    msg.netsisDataPayload.Kalems[existingItemIndex] = {\n                        ...msg.netsisDataPayload.Kalems[existingItemIndex],\n                        ...itemData\n                    };\n                }\n            }\n\n         }\n         else {\n            errorDec.push(`No record was found in Netsis for this order (${netsisDataInvoice.FATIRS_NO}).Stock Code: ${netsisDataItem?.StokKodu }`)\n            \n         }\n          \n\n          \n    });\n    if (errorDec.length > 0){\n        msg.payload = {\n            success: false,\n             errors: {\n                message: errorDec\n\n            }\n        };\n        msg.statusCode = 400;\n\n        return [null, msg]; // Hata durumu\n    }\n    msg.payload = msg.netsisDataPayload;\n    return [msg,null ]\n}  \n   \n  else {\n    // Hata mesajını düzenle\n    msg.payload = { success: false, errors: {\n        message: \"Data is either empty or not an array\" \n      \n    }};\n    msg.statusCode = 400;\n\n    return [null, msg]; // Hata durumu\n}\n\n\n ",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -20393,8 +20509,8 @@
         "g": "a5d0bd7e0538715e",
         "name": "",
         "info": "CREATE PROCEDURE SP_S4IN_UPDATE_FATUIRS\n    @FisNo NVARCHAR(20),   -- Fiş numarası parametresi\n    @CariKodu NVARCHAR(50) -- Cari kod parametresi\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n\t DECLARE @TotalAmount DECIMAL(18, 2);  -- Toplam Tutar  \n\tDECLARE @GrossAmount DECIMAL(18, 2);  -- Brüt Tutar  \n\tDECLARE @TotalVAT DECIMAL(18, 2);     -- Toplam KDV  \n\n    BEGIN TRY\n        -- 1. Toplam tutarı hesapla ve değişkene ata\n        SELECT \n            @TotalAmount = ISNULL(SUM((STHAR_NF * STHAR_GCMIK) * (1 + STHAR_KDV / 100.0)), 0),\n\t\t\t@GrossAmount = ISNULL(SUM(STHAR_BF * STHAR_GCMIK ), 0),\n\t\t\t@TotalVAT=ISNULL( SUM((STHAR_NF * STHAR_GCMIK)*(STHAR_KDV/100) ),0)\n        FROM TBLSTHAR WITH (NOLOCK)\n        WHERE FISNO = @FisNo\n        AND STHAR_ACIKLAMA = @CariKodu; \n        \n        BEGIN TRANSACTION;\n\n        -- 3. GENELTOPLAM ve brüt tutar  alanını güncelle\n        UPDATE TBLFATUIRS\n        SET GENELTOPLAM = @TotalAmount,\n\t\t BRUTTUTAR = @GrossAmount,\n\t\t KDV=@TotalVAT\n        WHERE FATIRS_NO = @FisNo\n        AND CARI_KODU = @CariKodu;       \n        COMMIT TRANSACTION;       \n\n    END TRY\n    BEGIN CATCH\n        \n        ROLLBACK TRANSACTION;\n\n        \n    END CATCH\nEND;\n",
-        "x": 1930,
-        "y": 330,
+        "x": 1600,
+        "y": 130,
         "wires": []
     },
     {
@@ -20403,15 +20519,15 @@
         "z": "9ef239d14888af27",
         "g": "a5d0bd7e0538715e",
         "name": "SetFatKalem(ItemTransactions)",
-        "func": "let netsisDataItemList = msg.netsisDataPayload?.Kalems;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nlet errorDec = [];\n \nconst defaultValue = {\n    TransactSupport: null,\n    MuhasebelesmisBelge: null,\n    Stok_Kodu: null,\n    Fisno: null,\n    Sthar_Gcmik: null,\n    Sthar_Gckod: null,\n    Sthar_Tarih: null,\n    DEPO_KODU: null,\n    Sthar_Aciklama: null,\n    Sthar_Htur: null,\n    Sthar_Sipnum: null,\n    Sthar_Carikod: null,\n    STra_SIPKONT: null,\n    Sira: null,\n    Irsaliye_No: null,\n    Irsaliye_Tarih: null,\n    Sthar_Testar: null,\n    Olcubr: null,\n    Vade_Tarihi: null,\n    D_YEDEK10: null,\n    DuzeltmeTarihi: null,\n    Sthar_Nf: null,\n    Sthar_Bf: null,\n    Sthar_Kdv: null,\n    Sthar_Ftirsip: null,\n    Sthar_Bgtip: null,\n    Plasiyer_Kodu: null,\n    S_Yedek2: null,\n    FIYATTARIHI: null,\n    ODEMETARIHI:null\n};\n\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\n// Veri kontrolü\nif (Array.isArray(netsisDataItemList) && netsisDataItemList.length > 0) {\n    // Bize gelen post isteğinden alınacak veri netsisDataItemList\n    netsisDataItemList.forEach(netsisDataItem => {\n      \n        let itemData = {\n            TransactSupport: true,\n            MuhasebelesmisBelge: true, \n            Stok_Kodu: getValueOrDefault(netsisDataItem.StokKodu, defaultValue.Stok_Kodu),\n            Fisno: getValueOrDefault(netsisDataInvoice.FATIRS_NO, defaultValue.Fisno),           \n            Sthar_Gcmik: getValueOrDefault(netsisDataItem.STra_GCMIK, defaultValue.Sthar_Gcmik),\n            Sthar_Tarih: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.Sthar_Tarih),\n            Sthar_Gckod: \"G\",\n            Sthar_Aciklama:getValueOrDefault(netsisDataInvoice.CARI_KOD, null),\n            Sthar_Htur: \"H\",\n            Sthar_Ftirsip:\"4\",\n            Sthar_Bgtip:\"I\",\n            S_Yedek2:\"SFORIN\",\n            Sthar_Sipnum: getValueOrDefault(netsisDataItem.STra_SIPNUM, defaultValue.Sthar_Sipnum),\n            Sthar_Carikod: getValueOrDefault(netsisDataInvoice.CARI_KOD, null),\n            STra_SIPKONT: getValueOrDefault(netsisDataItem.STra_SIPKONT, defaultValue.STra_SIPKONT),\n            Stra_IrsKont: netsisDataItem.Stra_IrsKont,\n            Sira: getValueOrDefault(netsisDataItem.Sira, defaultValue.Sira),\n            Irsaliye_No: getValueOrDefault(netsisDataInvoice.FATIRS_NO, defaultValue.Fisno),       \n            Irsaliye_Tarih: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.Sthar_Tarih),\n            Sthar_Testar: getValueOrDefault(netsisDataItem.STra_testar, defaultValue.Sthar_Testar),\n            Olcubr: getValueOrDefault(1, defaultValue.Olcubr),\n            Vade_Tarihi: getValueOrDefault(netsisDataInvoice.ODEMETARIHI, defaultValue.ODEMETARIHI),\n            D_YEDEK10: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.D_YEDEK10),\n            DEPO_KODU: getValueOrDefault(netsisDataItem.DEPO_KODU, defaultValue.DEPO_KODU),\n            ProjeKodu: netsisDataItem.PROJE_KODU,\n            Plasiyer_Kodu: getValueOrDefault(netsisDataItem.Plasiyer_Kodu, defaultValue.Plasiyer_Kodu),\n            Ekalanneden: netsisDataItem.Ekalanneden,\n            Ekalan: netsisDataItem.Ekalan,\n            Ekalan1: netsisDataItem.Ekalan1,\n            FIYATTARIHI: getValueOrDefault(netsisDataInvoice.FIYATTARIHI, defaultValue.FIYATTARIHI),            \n            Sthar_Nf: getValueOrDefault(netsisDataItem.STra_NF, defaultValue.Sthar_Nf),\n            Sthar_Bf: getValueOrDefault(netsisDataItem.STra_BF, defaultValue.Sthar_Bf),  \n            Sthar_Dovtip: netsisDataItem?.STHAR_DOVTIP || 0,\n            Sthar_Dovfiat:netsisDataItem?.STra_DOVFIAT || 0\n        };\n        msg.dataPayload = itemData;\n    });   \n\n   \n    return [msg, null];\n} else {\n    // Hata mesajını düzenle\n    msg.payload = {\n        success: false,\n        errors: {\n            message: \"Data is either empty or not an array\"\n        }\n    };\n    msg.statusCode = 400;\n    return [null, msg]; // Hata durumu\n}",
+        "func": "let netsisDataItemList = msg.netsisDataPayload?.Kalems;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nlet errorDec = [];\n \nconst defaultValue = {\n    TransactSupport: null,\n    MuhasebelesmisBelge: null,\n    Stok_Kodu: null,\n    Fisno: null,\n    Sthar_Gcmik: null,\n    Sthar_Gckod: null,\n    Sthar_Tarih: null,\n    DEPO_KODU: null,\n    Sthar_Aciklama: null,\n    Sthar_Htur: null,\n    Sthar_Sipnum: null,\n    Sthar_Carikod: null,\n    STra_SIPKONT: null,\n    Sira: null,\n    Irsaliye_No: null,\n    Irsaliye_Tarih: null,\n    Sthar_Testar: null,\n    Olcubr: null,\n    Vade_Tarihi: null,\n    D_YEDEK10: null,\n    DuzeltmeTarihi: null,\n    Sthar_Nf: null,\n    Sthar_Bf: null,\n    Sthar_Kdv: null,\n    Sthar_Ftirsip: null,\n    Sthar_Bgtip: null,\n    Plasiyer_Kodu: null,\n    S_Yedek2: null,\n    FIYATTARIHI: null,\n    ODEMETARIHI:null\n};\nlet itemData;\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\n\n// Veri kontrolü\nif (Array.isArray(netsisDataItemList) && netsisDataItemList.length > 0) {\n    // Bize gelen post isteğinden alınacak veri netsisDataItemList\n    netsisDataItemList.forEach(netsisDataItem => {\n      \n          itemData = {\n            TransactSupport: true,\n            MuhasebelesmisBelge: true, \n            Stok_Kodu: getValueOrDefault(netsisDataItem.StokKodu, defaultValue.Stok_Kodu),\n            Fisno: getValueOrDefault(netsisDataInvoice.FATIRS_NO, defaultValue.Fisno),           \n            Sthar_Gcmik: getValueOrDefault(netsisDataItem.STra_GCMIK, defaultValue.Sthar_Gcmik),\n            Sthar_Tarih: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.Sthar_Tarih),\n            Sthar_Gckod: \"G\",\n            Sthar_Aciklama:getValueOrDefault(netsisDataInvoice.CARI_KOD, null),\n            Sthar_Htur: \"H\",\n            Sthar_Ftirsip:\"4\",\n            Sthar_Bgtip:\"I\",\n            S_Yedek2:\"SFORIN\",\n            Sthar_Kdv:getValueOrDefault(netsisDataItem.STra_KDV, 0),\n            Sthar_Sipnum: getValueOrDefault(netsisDataItem.STra_SIPNUM, defaultValue.Sthar_Sipnum),\n            Sthar_Carikod: getValueOrDefault(netsisDataInvoice.CARI_KOD, null),\n            STra_SIPKONT: getValueOrDefault(netsisDataItem.STra_SIPKONT, defaultValue.STra_SIPKONT),\n            Stra_IrsKont: netsisDataItem.Stra_IrsKont,\n            Sira: getValueOrDefault(netsisDataItem.Sira, defaultValue.Sira),\n            Irsaliye_No: getValueOrDefault(netsisDataInvoice.FATIRS_NO, defaultValue.Fisno),       \n            Irsaliye_Tarih: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.Sthar_Tarih),\n            Sthar_Testar: getValueOrDefault(netsisDataItem.STra_testar, defaultValue.Sthar_Testar),\n            Olcubr: getValueOrDefault(1, defaultValue.Olcubr),\n            Vade_Tarihi: getValueOrDefault(netsisDataInvoice.ODEMETARIHI, defaultValue.ODEMETARIHI),\n            D_YEDEK10: getValueOrDefault(netsisDataInvoice.Tarih, defaultValue.D_YEDEK10),\n            DEPO_KODU: getValueOrDefault(netsisDataItem.DEPO_KODU, defaultValue.DEPO_KODU),\n            ProjeKodu: netsisDataItem.PROJE_KODU,\n            Plasiyer_Kodu: getValueOrDefault(netsisDataItem.Plasiyer_Kodu, defaultValue.Plasiyer_Kodu),\n            Ekalanneden: netsisDataItem.Ekalanneden,\n            Ekalan: netsisDataItem.Ekalan,\n            Ekalan1: netsisDataItem.Ekalan1,\n            FIYATTARIHI: getValueOrDefault(netsisDataInvoice.FIYATTARIHI, defaultValue.FIYATTARIHI),            \n            Sthar_Nf: getValueOrDefault(netsisDataItem.STra_NF, defaultValue.Sthar_Nf),\n            Sthar_Bf: getValueOrDefault(netsisDataItem.STra_BF, defaultValue.Sthar_Bf),  \n            Sthar_Dovtip: netsisDataItem?.STHAR_DOVTIP || 0,\n            Sthar_Dovfiat:netsisDataItem?.STra_DOVFIAT || 0\n        };\n      \n    });   \n\n     msg.dataPayload = itemData;\n    return [msg, null];\n} else {\n    // Hata mesajını düzenle\n    msg.payload = {\n        success: false,\n        errors: {\n            message: \"Data is either empty or not an array\"\n        }\n    };\n    msg.statusCode = 400;\n    return [null, msg]; // Hata durumu\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1670,
-        "y": 340,
+        "x": 1630,
+        "y": 330,
         "wires": [
             [
                 "5a0258fea29e4d08"
@@ -20434,13 +20550,16 @@
                 "type": "str"
             }
         ],
-        "x": 1630,
+        "x": 1680,
         "y": 380,
         "wires": [
             [
-                "0bb745620aed0c74"
+                "0bb745620aed0c74",
+                "fe3a431b5793db6a"
             ],
-            []
+            [
+                "7575473c6d2c8a74"
+            ]
         ],
         "outputLabels": [
             "",
@@ -20453,8 +20572,8 @@
         "z": "9ef239d14888af27",
         "g": "a5d0bd7e0538715e",
         "name": "MssqlFatKalem",
-        "x": 1670,
-        "y": 470,
+        "x": 1680,
+        "y": 500,
         "wires": [
             [],
             [
@@ -20475,11 +20594,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1660,
-        "y": 430,
+        "x": 1650,
+        "y": 440,
         "wires": [
             [
-                "c75810f63ff5f8b0"
+                "c75810f63ff5f8b0",
+                "3fdde4abc487fc2e"
             ]
         ],
         "info": "CREATE PROCEDURE SP_S4IN_UPDATE_FATUIRS\r\n    @FisNo NVARCHAR(20),   -- Fiş numarası parametresi\r\n    @CariKodu NVARCHAR(50) -- Cari kod parametresi\r\nAS\r\nBEGIN\r\n    SET NOCOUNT ON;\r\n\r\n\t DECLARE @TotalAmount DECIMAL(18, 2);  -- Toplam Tutar  \r\n\tDECLARE @GrossAmount DECIMAL(18, 2);  -- Brüt Tutar  \r\n\tDECLARE @TotalVAT DECIMAL(18, 2);     -- Toplam KDV  \r\n\r\n    BEGIN TRY\r\n        -- 1. Toplam tutarı hesapla ve değişkene ata\r\n        SELECT \r\n            @TotalAmount = ISNULL(SUM((STHAR_NF * STHAR_GCMIK) * (1 + STHAR_KDV / 100.0)), 0),\r\n\t\t\t@GrossAmount = ISNULL(SUM(STHAR_BF * STHAR_GCMIK ), 0),\r\n\t\t\t@TotalVAT=ISNULL( SUM((STHAR_NF * STHAR_GCMIK)*(STHAR_KDV/100) ),0)\r\n        FROM TBLSTHAR WITH (NOLOCK)\r\n        WHERE FISNO = @FisNo\r\n        AND STHAR_ACIKLAMA = @CariKodu; \r\n        \r\n        BEGIN TRANSACTION;\r\n\r\n        -- 3. GENELTOPLAM ve brüt tutar  alanını güncelle\r\n        UPDATE TBLFATUIRS\r\n        SET GENELTOPLAM = @TotalAmount,\r\n\t\t BRUTTUTAR = @GrossAmount,\r\n\t\t KDV=@TotalVAT\r\n        WHERE FATIRS_NO = @FisNo\r\n        AND CARI_KODU = @CariKodu;       \r\n        COMMIT TRANSACTION;       \r\n\r\n    END TRY\r\n    BEGIN CATCH\r\n        \r\n        ROLLBACK TRANSACTION;\r\n\r\n        \r\n    END CATCH\r\nEND;\r\n"
@@ -20515,8 +20635,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
-        "y": 260,
+        "x": 1650,
+        "y": 250,
         "wires": [
             [
                 "289a0bef95410df6"
@@ -20545,7 +20665,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1650,
-        "y": 300,
+        "y": 290,
         "wires": [
             [
                 "29ff395eec903b96"
@@ -20570,6 +20690,110 @@
         "statusType": "auto",
         "x": 410,
         "y": 150,
+        "wires": []
+    },
+    {
+        "id": "3fdde4abc487fc2e",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 425",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1970,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b9761f83fc9e8ce6",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 426",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2030,
+        "y": 190,
+        "wires": []
+    },
+    {
+        "id": "5738e6743dd0dc6d",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 427",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "netsisTokenErrorMessage",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2060,
+        "y": 230,
+        "wires": []
+    },
+    {
+        "id": "fe3a431b5793db6a",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 428",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2060,
+        "y": 370,
+        "wires": []
+    },
+    {
+        "id": "7575473c6d2c8a74",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 429",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2050,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7ccf586cbdc8fab7",
+        "type": "debug",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "debug 431",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 140,
         "wires": []
     },
     {
@@ -21475,7 +21699,7 @@
         "type": "function",
         "z": "2a1dc06c4b793347",
         "name": "SetUSK",
-        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\nlet data = msg.payload.Data;\nconst requestBodyItem=msg.requestBody.data.Kalems[0];\nconst requestBody = msg.requestBody.data.Header;\n// Varsayılan JSON yapısı\nconst defaultData = {\n    Kalem: \n        {\n            Index: 0,\n            StokKodu: \"\",\n            GC: null,\n            DepoKodu: null,\n            OlcuBirimi: 0,\n            Miktar: 0.0,\n            Aciklama: \"\"\n        }\n    ,\n    Seri: [],\n    ShrinkageDetailList: [],\n    MamulFireSeri: [],\n    MuhasebelesmisBelge: false,\n    TransactSupport: true,\n    UretSon_FisNo: null,\n    UretSon_Tarih: utcNow,\n    UretSon_Depo: null,\n    UretSon_Mamul: null,\n    UretSon_SipNo:null,\n    UretSon_Miktar: 0.0,\n    UretSon_MalY1: 0.0,\n    UretSon_Maly2: 0.0,\n    Sube_Kodu: env.get('BranchCode'),\n    F_Yedek1: 0.00000000,\n    F_Yedek2: 0.0,\n    I_Yedek1: null,\n    I_Yedek2: 0,\n    B_Yedek1: 0,\n    B_Yedek2: 0,\n    Oncelik: 0,\n    KayitYapanKul: null,\n    KayitTarihi: utcNow,\n    Mamul_Olcu_Birimi: 0,\n    StokDepoKullan: false,\n    BAKIYE_DEPO: 0,\n    OTO_YMAM_STOK_KULLAN: false,\n    OTO_YMAM_GIRDI_CIKTI: false,\n    SeriSayisi: 0,\n    BelgeTipi: 1,\n    DepoOnceligi: 0,\n    HataKodu: 0,\n    SeriVarMi: false,\n    AltRecKullan: false,\n    KayitlaraGecilsin: true,\n    KaynakListCount: 0,\n    FireDepo: 0,\n    MamulFireSeriSayisi: 0,\n    ReceteGetir: true,    \n    S_Yedek3: 'NODE-RED'\n  \n};\n\n\nif (Array.isArray(data.BOMItemList) && data.BOMItemList.length>0)\n{\n\n    // Yeni JSON oluşturma\n    let uskDataNetsis = { ...defaultData };\n    let index_ = 0;\n    // BOMItemList kontrol ve işleme\n    uskDataNetsis.Kalem = data.BOMItemList.map((item, index) => {\n        index_ = index;\n        // Miktar ve Fiyat'ı işleyelim\n     \n   \n\n        return {\n\n            Index: index,\n            StokKodu: item.Ham_Kodu || defaultData.Kalem.StokKodu,\n            GC: 1,\n            DepoKodu: requestBodyItem.DEPO_KODU || defaultData.Kalem.DepoKodu,\n            OlcuBirimi: 0,\n            Miktar: (parseFloat(item.Miktar) / parseFloat(data.ReceteToplami)) * parseFloat(requestBodyItem.STra_GCMIK)  || 1,\n            Aciklama: requestBodyItem.StokKodu || \"\",\n  \n        };\n    });\n\n    // uskDataNetsis.Kalem.push({\n\n    //     Index: index_,\n    //     StokKodu: requestBodyItem.StokKodu || defaultData.Kalem.StokKodu,\n    //     GC: 0,\n    //     DepoKodu: requestBodyItem.Gir_Depo_Kodu || defaultData.Kalem.DepoKodu,\n    //     OlcuBirimi: 1,\n    //     Miktar: parseFloat(requestBodyItem.STra_GCMIK) || 1,\n    //     Aciklama: \"Uretim\",\n    // })\n\n   \n    uskDataNetsis.UretSon_Tarih = requestBody.Tarih;\n    uskDataNetsis.UretSon_Depo = parseInt(requestBodyItem.Gir_Depo_Kodu);\n    uskDataNetsis.UretSon_Mamul = requestBodyItem.StokKodu;\n    uskDataNetsis.UretSon_Miktar = parseFloat(requestBodyItem.STra_GCMIK);\n    uskDataNetsis.I_Yedek1 = requestBodyItem.DEPO_KODU;    \n    // uskDataNetsis.Mamul_Olcu_Birimi = 1;\n    uskDataNetsis.UretSon_SipNo = requestBody.FATIRS_NO;\n    // Tamamlanan JSON'u geri döndür\n    msg.dataPayload = uskDataNetsis;     \n    msg.flowName = \"STNFGRWC000V1_0\"\n    node.warn(msg.dataPayload);\n    return [msg,null];\n\n}\nelse{\n    // Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\n    msg.payload = { success: false, errors: `There is no recipe available for the relevant stock ${requestBodyItem.StokKodu} in the ERP system.` };\n    msg.statusCode = 400;\n    return [null, msg];\n\n}\n\n\n\n\n\n\n\n",
+        "func": "const getValueBelgeTip = (value) =>\n    value !== null && value !==\"\" && value !== undefined ? 1 : 0;\nconst utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\nlet data = msg.payload.Data;\nconst requestBodyItem=msg.requestBody.data.Kalems[0];\nconst requestBody = msg.requestBody.data.Header;\n// Varsayılan JSON yapısı\nconst defaultData = {\n    Kalem: \n        {\n            Index: 0,\n            StokKodu: \"\",\n            GC: null,\n            DepoKodu: null,\n            OlcuBirimi: 0,\n            Miktar: 0.0,\n            Aciklama: \"\"\n        }\n    ,\n    Seri: [],\n    ShrinkageDetailList: [],\n    MamulFireSeri: [],\n    MuhasebelesmisBelge: false,\n    TransactSupport: true,\n    UretSon_FisNo: null,\n    UretSon_Tarih: utcNow,\n    UretSon_Depo: null,\n    UretSon_Mamul: null,\n    UretSon_SipNo:null,\n    UretSon_Miktar: 0.0,\n    UretSon_MalY1: 0.0,\n    UretSon_Maly2: 0.0,\n    Sube_Kodu: env.get('BranchCode'),\n    F_Yedek1: 0.00000000,\n    F_Yedek2: 0.0,\n    I_Yedek1: null,\n    I_Yedek2: 0,\n    B_Yedek1: 0,\n    B_Yedek2: 0,\n    Oncelik: 0,\n    KayitYapanKul: null,\n    KayitTarihi: utcNow,\n    Mamul_Olcu_Birimi: 0,\n    StokDepoKullan: false,\n    BAKIYE_DEPO: 0,\n    OTO_YMAM_STOK_KULLAN: false,\n    OTO_YMAM_GIRDI_CIKTI: false,\n    SeriSayisi: 0,\n    BelgeTipi: 1,\n    DepoOnceligi: 0,\n    HataKodu: 0,\n    SeriVarMi: false,\n    AltRecKullan: false,\n    KayitlaraGecilsin: true,\n    KaynakListCount: 0,\n    FireDepo: 0,\n    MamulFireSeriSayisi: 0,\n    ReceteGetir: true,    \n    S_Yedek3: 'NODE-RED'\n  \n};\n\n\nif (Array.isArray(data.BOMItemList) && data.BOMItemList.length>0)\n{\n\n    // Yeni JSON oluşturma\n    let uskDataNetsis = { ...defaultData };\n    let index_ = 0;\n    // BOMItemList kontrol ve işleme\n    uskDataNetsis.Kalem = data.BOMItemList.map((item, index) => {\n        index_ = index;\n        // Miktar ve Fiyat'ı işleyelim\n     \n   \n\n        return {\n\n            Index: index,\n            StokKodu: item.Ham_Kodu || defaultData.Kalem.StokKodu,\n            GC: 1,\n            DepoKodu: requestBodyItem.DEPO_KODU || defaultData.Kalem.DepoKodu,\n            OlcuBirimi: 0,\n            Miktar: (parseFloat(item.Miktar) / parseFloat(data.ReceteToplami)) * parseFloat(requestBodyItem.STra_GCMIK)  || 1,\n            Aciklama: requestBodyItem.StokKodu || \"\",\n  \n        };\n    });\n\n    // uskDataNetsis.Kalem.push({\n\n    //     Index: index_,\n    //     StokKodu: requestBodyItem.StokKodu || defaultData.Kalem.StokKodu,\n    //     GC: 0,\n    //     DepoKodu: requestBodyItem.Gir_Depo_Kodu || defaultData.Kalem.DepoKodu,\n    //     OlcuBirimi: 1,\n    //     Miktar: parseFloat(requestBodyItem.STra_GCMIK) || 1,\n    //     Aciklama: \"Uretim\",\n    // })\n\n   \n    uskDataNetsis.UretSon_Tarih = requestBody.Tarih;\n    uskDataNetsis.UretSon_Depo = parseInt(requestBodyItem.Gir_Depo_Kodu);\n    uskDataNetsis.UretSon_Mamul = requestBodyItem.StokKodu;\n    uskDataNetsis.UretSon_Miktar = parseFloat(requestBodyItem.STra_GCMIK);\n    uskDataNetsis.I_Yedek1 = requestBodyItem.DEPO_KODU;    \n    // uskDataNetsis.Mamul_Olcu_Birimi = 1;\n    uskDataNetsis.UretSon_SipNo = requestBody.FATIRS_NO;\n    uskDataNetsis.BelgeTipi = getValueBelgeTip(requestBody.FATIRS_NO)\n    // Tamamlanan JSON'u geri döndür\n    msg.dataPayload = uskDataNetsis;     \n    msg.flowName = \"STNFGRWC000V1_0\"\n    node.warn(msg.dataPayload);\n    return [msg,null];\n\n}\nelse{\n    // Hata varsa, HTTP 400 yanıtı ile hata mesajlarını döndürün\n    msg.payload = { success: false, errors: `There is no recipe available for the relevant stock ${requestBodyItem.StokKodu} in the ERP system.` };\n    msg.statusCode = 400;\n    return [null, msg];\n\n}\n\n\n\n\n\n\n\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -21486,7 +21710,8 @@
         "y": 140,
         "wires": [
             [
-                "0c111866cedf437f"
+                "0c111866cedf437f",
+                "9861e249dd4cc24f"
             ],
             [
                 "7c08f884e028b66f",
@@ -21750,6 +21975,23 @@
         "statusType": "auto",
         "x": 1970,
         "y": 50,
+        "wires": []
+    },
+    {
+        "id": "9861e249dd4cc24f",
+        "type": "debug",
+        "z": "2a1dc06c4b793347",
+        "name": "debug 436",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 620,
         "wires": []
     },
     {
@@ -22195,7 +22437,7 @@
         "type": "function",
         "z": "03cb704bd5b0b530",
         "name": "function 140",
-        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\n// Get All Production\nlet data = msg.payload;\n\n// Varsayılan JSON yapısı\nconst documentData = {\n    Header: {\n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"WAI\",\n        ProductionType: \"PR\",\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: \"0\",\n        MaterialUnit: null,\n        TolerancePlusValue: \"0\",\n        ToleranceMinusValue: \"0\",\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: null,\n        DocDate: utcNow,\n        ProductionDate: utcNow,\n        ValidityBeginDate: null,\n        ValidityEndDate: null,\n        DatePg01: utcNow,\n        DatePg02: utcNow,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId: 0,\n        RefProductCode: null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: \n        {\n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ,\n    TaskItems: \n        {\n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        },\n    attributes: \n            {\n                attributeCode: null,\n                strValue: null,\n                dateValue: utcNow,\n                numValue: 0,\n                listedValue: null,\n                boolValue: true,\n                remoteName: null\n            }\n        \n    \n};\n\n// Helper function for null or undefined check\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Üretim verilerini dönüştür\nconst productionDataPayload = data.map(prod => ({\n    Header: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Header.PrdDocNo),\n        StateObject: getValueOrDefault(null, documentData.Header.StateObject),\n        DocState: getValueOrDefault(null, documentData.Header.DocState),\n        ProductionType: getValueOrDefault(null, documentData.Header.ProductionType),\n        Machine: getValueOrDefault(null, documentData.Header.Machine),\n        Shift: getValueOrDefault(null, documentData.Header.Shift),\n        ProductCode: getValueOrDefault(prod.STOK_KODU, documentData.Header.ProductCode),\n        Version: getValueOrDefault(null, documentData.Header.Version),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Header.TargetOperationQty),\n        OperationUnit: getValueOrDefault(prod.OLCU_BR1, documentData.Header.OperationUnit),\n        TargetMaterialQty: getValueOrDefault(null, documentData.Header.TargetMaterialQty),\n        MaterialQty: getValueOrDefault(null, documentData.Header.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Header.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Header.TolerancePlusValue),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Header.ToleranceMinusValue),\n        PostingDate: getValueOrDefault(null, documentData.Header.PostingDate), \n        NewDate: getValueOrDefault(prod.TARIH, documentData.Header.NewDate), \n        UpdDate: getValueOrDefault(null, documentData.Header.UpdDate), \n        DocDate: getValueOrDefault(prod.TARIH, documentData.Header.DocDate), \n        ProductionDate: getValueOrDefault(prod.TARIH, documentData.Header.ProductionDate), \n        ValidityBeginDate: getValueOrDefault(null, documentData.Header.ValidityBeginDate), \n        ValidityEndDate: getValueOrDefault(null, documentData.Header.ValidityEndDate),\n    },\n    Items: [{\n        PrdDocNo: getValueOrDefault(null, documentData.Items.PrdDocNo),\n        PrdItemNo: getValueOrDefault(null, documentData.Items.PrdItemNo),\n        StateObject: getValueOrDefault(null, documentData.Items.StateObject),\n        DocState: getValueOrDefault(null, documentData.Items.DocState),\n        ComponentId: getValueOrDefault(null, documentData.Items.ComponentId),\n        Machine: getValueOrDefault(null, documentData.Items.Machine),\n        MachineGroup: getValueOrDefault(null, documentData.Items.Machine),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        OperationUnit: getValueOrDefault(null, documentData.Items.Machine),\n        TargetMaterialQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        MaterialQty: getValueOrDefault(null, documentData.Items.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Items.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Items.TolerancePlusValue ),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Items.ToleranceMinusValue),\n        SubstitutionProductCode: getValueOrDefault(null, documentData.Items.SubstitutionProductCode),\n        AlternativeProductCode: getValueOrDefault(null, documentData.Items.AlternativeProductCode),\n        PDisassemblyWaste: getValueOrDefault(null, documentData.Items.PDisassemblyWaste),\n        NewUser: getValueOrDefault(null, documentData.Items.NewUser),\n        UpdUser: getValueOrDefault(null, documentData.Items.UpdUser),\n    }],\n       TaskItems: [] ,\n    //     PrdDocNo: getValueOrDefault(null, documentData.TaskItems.PrdDocNo),\n    //     Task: getValueOrDefault(null, documentData.TaskItems.Task),\n    //     ComponentId: getValueOrDefault(null, documentData.TaskItems.ComponentId),\n    //     TaskItemNo: getValueOrDefault(null, documentData.TaskItems.TaskItemNo),\n    //     MaterialQuantity: getValueOrDefault(null, documentData.TaskItems.MaterialQuantity),\n    //     MaterialUnit: getValueOrDefault(null, documentData.TaskItems.MaterialUnit),\n    //     PAutoConsumption: getValueOrDefault(null, documentData.TaskItems.PAutoConsumption),\n    //     Location: getValueOrDefault(null, documentData.TaskItems.Location),\n    // } ,\n    attributes:[\n         {\n             AttributeCode: getValueOrDefault(\"ETIKET\", documentData.attributes.attributeCode) ,\n             StrValue: getValueOrDefault(prod.ReportItem, documentData.attributes.strValue) ,\n             DateValue: null,\n             NumValue: null,\n             ListedValue: null,\n             BoolValue: null,\n             RemoteName: getValueOrDefault(\"ETIKET DIZAYN\", documentData.attributes.remoteName) \n         },\n        {\n            AttributeCode: getValueOrDefault(\"PINARIHRSERINUM\", documentData.attributes.attributeCode),\n            StrValue: getValueOrDefault(prod.PNRSERINUM, documentData.attributes.strValue),\n            DateValue: null,\n            NumValue: null,\n            ListedValue: null,\n            BoolValue: null,\n            RemoteName: getValueOrDefault(\"PINAR IHRACAT SERI NUMARASI\", documentData.attributes.remoteName)\n        },\n        {\n            AttributeCode: getValueOrDefault(\"VARDIYA\", documentData.attributes.attributeCode),\n            StrValue: getValueOrDefault(prod.VARDIYA, documentData.attributes.strValue),\n            DateValue: null,\n            NumValue: null,\n            ListedValue: null,\n            BoolValue: null,\n            RemoteName: getValueOrDefault(\"PINAR IHRACAT SERI NUMARASI\", documentData.attributes.remoteName)\n        }\n     ]\n}));\n\n\n\nconst result = {\n    requestId: \"\",\n    sender: \"node-red\",\n    data: productionDataPayload\n    \n};\nmsg.productionDataPayload=result;\nreturn msg;\n",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\n// Get All Production\nlet data = msg.payload;\n\n// Varsayılan JSON yapısı\nconst documentData = {\n    Header: {\n        PrdDocNo: null,\n        StateObject: \"WAI\",\n        DocState: \"WAI\",\n        ProductionType: \"PR\",\n        Machine: null,\n        Shift: null,\n        ProductCode: null,\n        Version: null,\n        TargetOperationQty: null,\n        OperationUnit: null,\n        TargetMaterialQty: null,\n        MaterialQty: \"0\",\n        MaterialUnit: null,\n        TolerancePlusValue: \"0\",\n        ToleranceMinusValue: \"0\",\n        PartnerSales: null,\n        PartnerShipment: null,\n        PartnerInventory: null,\n        PostingOperationDocNo: null,\n        PostingDate: utcNow,\n        NewDate: utcNow,\n        UpdDate: null,\n        DocDate: utcNow,\n        ProductionDate: utcNow,\n        ValidityBeginDate: null,\n        ValidityEndDate: null,\n        DatePg01: utcNow,\n        DatePg02: utcNow,\n        NewUser: null,\n        UpdUser: null,\n        Batch: null,\n        SerialId: 0,\n        RefProductCode: null,\n        RefVersion: null,\n        RefPrdDocNo: null,\n        RefDlvDocNo: null,\n        InventoryDocNo: null,\n        Text: {\n            Text01: null,\n            Text02: null,\n            Text03: null,\n            Text04: null,\n            Text05: null,\n            Text06: null,\n            Text07: null,\n            Text08: null,\n            Text09: null\n        }\n    },\n    Items: \n        {\n            PrdDocNo: null,\n            PrdItemNo: null,\n            StateObject: null,\n            DocState: null,\n            ComponentId: null,\n            Machine: null,\n            MachineGroup: null,\n            TargetOperationQty: null,\n            OperationUnit: null,\n            TargetMaterialQty: null,\n            MaterialQty: null,\n            MaterialUnit: null,\n            TolerancePlusValue: null,\n            ToleranceMinusValue: null,\n            SubstitutionProductCode: null,\n            AlternativeProductCode: null,\n            PDisassemblyWaste: null,\n            NewUser: null,\n            UpdUser: null\n        }\n    ,\n    TaskItems: \n        {\n            PrdDocNo: null,\n            Task: null,\n            ComponentId: null,\n            TaskItemNo: null,\n            MaterialQuantity: null,\n            MaterialUnit: null,\n            PAutoConsumption: null,\n            Location: null\n        },\n    attributes: \n            {\n                attributeCode: null,\n                strValue: null,\n                dateValue: utcNow,\n                numValue: 0,\n                listedValue: null,\n                boolValue: true,\n                remoteName: null\n            }\n        \n    \n};\n\n// Helper function for null or undefined check\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Üretim verilerini dönüştür\nconst productionDataPayload = data.map(prod => ({\n    Header: {\n        PrdDocNo: getValueOrDefault(prod.ISEMRINO, documentData.Header.PrdDocNo),\n        StateObject: getValueOrDefault(null, documentData.Header.StateObject),\n        DocState: getValueOrDefault(null, documentData.Header.DocState),\n        ProductionType: getValueOrDefault(null, documentData.Header.ProductionType),\n        Machine: getValueOrDefault(null, documentData.Header.Machine),\n        Shift: getValueOrDefault(null, documentData.Header.Shift),\n        ProductCode: getValueOrDefault(prod.STOK_KODU, documentData.Header.ProductCode),\n        Version: getValueOrDefault(null, documentData.Header.Version),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Header.TargetOperationQty),\n        OperationUnit: getValueOrDefault(prod.OLCU_BR1, documentData.Header.OperationUnit),\n        TargetMaterialQty: getValueOrDefault(null, documentData.Header.TargetMaterialQty),\n        MaterialQty: getValueOrDefault(null, documentData.Header.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Header.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Header.TolerancePlusValue),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Header.ToleranceMinusValue),\n        PostingDate: getValueOrDefault(null, documentData.Header.PostingDate), \n        NewDate: getValueOrDefault(prod.TARIH, documentData.Header.NewDate), \n        UpdDate: getValueOrDefault(null, documentData.Header.UpdDate), \n        DocDate: getValueOrDefault(prod.TARIH, documentData.Header.DocDate), \n        ProductionDate: getValueOrDefault(prod.TARIH, documentData.Header.ProductionDate), \n        ValidityBeginDate: getValueOrDefault(null, documentData.Header.ValidityBeginDate), \n        ValidityEndDate: getValueOrDefault(null, documentData.Header.ValidityEndDate),\n    },\n    Items: [{\n        PrdDocNo: getValueOrDefault(null, documentData.Items.PrdDocNo),\n        PrdItemNo: getValueOrDefault(null, documentData.Items.PrdItemNo),\n        StateObject: getValueOrDefault(null, documentData.Items.StateObject),\n        DocState: getValueOrDefault(null, documentData.Items.DocState),\n        ComponentId: getValueOrDefault(null, documentData.Items.ComponentId),\n        Machine: getValueOrDefault(null, documentData.Items.Machine),\n        MachineGroup: getValueOrDefault(null, documentData.Items.Machine),\n        TargetOperationQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        OperationUnit: getValueOrDefault(null, documentData.Items.Machine),\n        TargetMaterialQty: getValueOrDefault(prod.MIKTAR, documentData.Items.Machine),\n        MaterialQty: getValueOrDefault(null, documentData.Items.MaterialQty),\n        MaterialUnit: getValueOrDefault(null, documentData.Items.MaterialUnit),\n        TolerancePlusValue: getValueOrDefault(null, documentData.Items.TolerancePlusValue ),\n        ToleranceMinusValue: getValueOrDefault(null, documentData.Items.ToleranceMinusValue),\n        SubstitutionProductCode: getValueOrDefault(null, documentData.Items.SubstitutionProductCode),\n        AlternativeProductCode: getValueOrDefault(null, documentData.Items.AlternativeProductCode),\n        PDisassemblyWaste: getValueOrDefault(null, documentData.Items.PDisassemblyWaste),\n        NewUser: getValueOrDefault(null, documentData.Items.NewUser),\n        UpdUser: getValueOrDefault(null, documentData.Items.UpdUser),\n    }],\n       TaskItems: [] ,\n    //     PrdDocNo: getValueOrDefault(null, documentData.TaskItems.PrdDocNo),\n    //     Task: getValueOrDefault(null, documentData.TaskItems.Task),\n    //     ComponentId: getValueOrDefault(null, documentData.TaskItems.ComponentId),\n    //     TaskItemNo: getValueOrDefault(null, documentData.TaskItems.TaskItemNo),\n    //     MaterialQuantity: getValueOrDefault(null, documentData.TaskItems.MaterialQuantity),\n    //     MaterialUnit: getValueOrDefault(null, documentData.TaskItems.MaterialUnit),\n    //     PAutoConsumption: getValueOrDefault(null, documentData.TaskItems.PAutoConsumption),\n    //     Location: getValueOrDefault(null, documentData.TaskItems.Location),\n    // } ,\n    attributes:[\n         {\n             AttributeCode: getValueOrDefault(\"ETIKET\", documentData.attributes.attributeCode) ,\n             StrValue: getValueOrDefault(prod.ReportItem, documentData.attributes.strValue) ,\n             DateValue: null,\n             NumValue: null,\n             ListedValue: null,\n             BoolValue: null,\n             RemoteName: getValueOrDefault(\"ETIKET DIZAYN\", documentData.attributes.remoteName) \n         },\n        {\n            AttributeCode: getValueOrDefault(\"PINARIHRSERINUM\", documentData.attributes.attributeCode),\n            StrValue: getValueOrDefault(prod.PNRSERINUM, documentData.attributes.strValue),\n            DateValue: null,\n            NumValue: null,\n            ListedValue: null,\n            BoolValue: null,\n            RemoteName: getValueOrDefault(\"PINAR IHRACAT SERI NUMARASI\", documentData.attributes.remoteName)\n        },\n        {\n            AttributeCode: getValueOrDefault(\"VARDIYA\", documentData.attributes.attributeCode),\n            StrValue: getValueOrDefault(prod.VARDIYA, documentData.attributes.strValue),\n            DateValue: null,\n            NumValue: null,\n            ListedValue: null,\n            BoolValue: null,\n            RemoteName: getValueOrDefault(\"VARDIYA\", documentData.attributes.remoteName)\n        }\n     ]\n}));\n\n\n\nconst result = {\n    requestId: \"\",\n    sender: \"node-red\",\n    data: productionDataPayload\n    \n};\nmsg.productionDataPayload=result;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -22206,7 +22448,8 @@
         "y": 340,
         "wires": [
             [
-                "c6489662c8f86a78"
+                "c6489662c8f86a78",
+                "68fa1ea87c967d1d"
             ]
         ]
     },
@@ -22240,7 +22483,8 @@
         "y": 340,
         "wires": [
             [
-                "43e53292a235d42b"
+                "43e53292a235d42b",
+                "f687bdb322850bbe"
             ]
         ]
     },
@@ -22259,7 +22503,9 @@
         "x": 1370,
         "y": 330,
         "wires": [
-            [],
+            [
+                "c66e358c846eaf29"
+            ],
             []
         ]
     },
@@ -22300,6 +22546,54 @@
         "statusType": "auto",
         "x": 1280,
         "y": 250,
+        "wires": []
+    },
+    {
+        "id": "f687bdb322850bbe",
+        "type": "debug",
+        "z": "03cb704bd5b0b530",
+        "name": "debug 432",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 490,
+        "wires": []
+    },
+    {
+        "id": "68fa1ea87c967d1d",
+        "type": "debug",
+        "z": "03cb704bd5b0b530",
+        "name": "debug 433",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 490,
+        "wires": []
+    },
+    {
+        "id": "c66e358c846eaf29",
+        "type": "debug",
+        "z": "03cb704bd5b0b530",
+        "name": "debug 434",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 510,
         "wires": []
     },
     {
@@ -23028,7 +23322,8 @@
         "y": 60,
         "wires": [
             [
-                "8884be601ef59152"
+                "8884be601ef59152",
+                "88d50ae0020f16cd"
             ],
             []
         ],
@@ -23083,7 +23378,7 @@
         "type": "function",
         "z": "1bd2a61f8400e469",
         "name": "MongoQuery",
-        "func": "const query = `[\n  {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\",\n      \"TargetInventoryState\": { \"$ne\": \"SPC\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteNumber\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteDate\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\"\n      },\n      \"TotalQuantity\": { \"$sum\": \"$BaseQuantity\" },\n      \"DispatchNoteDateRaw\": { \"$first\": \"$DispatchNoteDateRaw\" },\n      \"ProductCode\": { \"$first\": \"$ProductCode\" },\n      \"BaseUnit\": { \"$first\": \"$BaseUnit\" },\n      \"TargetLocation\": { \"$first\": \"$TargetLocation\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n      \"DispatchNoteNumber\": \"$_id.DispatchNoteNumber\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        { \"$unwind\": \"$Items\" },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$Items.ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": { \"$ifNull\": [\"$Items.DocumentItemAttributes\", []] }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": { \"$eq\": [\"$$attr.AttributeCode\", \"TESLIM_TARIHI\"] }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$DocumentInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$PartnerDetails\", \"preserveNullAndEmptyArrays\": true } },\n {\n  \"$lookup\": {\n    \"from\": \"Location\",\n    \"let\": { \"locId\": \"$TargetLocation\" },\n    \"pipeline\": [\n      {\n        \"$match\": {\n          \"$expr\": {\n            \"$eq\": [\"$_id\", { \"$toObjectId\": \"$$locId\" }]\n          }\n        }\n      }\n    ],\n    \"as\": \"LocationInfo\"\n  }\n},\n\n  { \"$unwind\": { \"path\": \"$LocationInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$addFields\": {\n      \"DispatchNoteDate\": {\n        \"$dateToString\": {\n          \"format\": \"%Y-%m-%d\",\n          \"date\": {\n            \"$dateFromString\": {\n              \"dateString\": \"$DispatchNoteDateRaw\",\n              \"format\": \"%m/%d/%Y %H:%M:%S\"\n            }\n          }\n        }\n      },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          { \"$ifNull\": [\"$DocumentInfo.TESLIM_TARIHI\", false] },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n            \"$toDouble\": \"$TotalQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n\n\n\n`;\n\nmsg.query=query;\n \nreturn msg;",
+        "func": "const query = `[\n  {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\",\n      \"TargetInventoryState\": { \"$ne\": \"SPC\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteNumber\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteDate\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\"\n      },\n      \"TotalQuantity\": { \"$sum\": \"$BaseQuantity\" },\n      \"DispatchNoteDateRaw\": { \"$first\": \"$DispatchNoteDateRaw\" },\n      \"ProductCode\": { \"$first\": \"$ProductCode\" },\n      \"BaseUnit\": { \"$first\": \"$BaseUnit\" },\n      \"TargetLocation\": { \"$first\": \"$TargetLocation\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n      \"DispatchNoteNumber\": \"$_id.DispatchNoteNumber\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        { \"$unwind\": \"$Items\" },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$Items.ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": { \"$ifNull\": [\"$Items.DocumentItemAttributes\", []] }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": { \"$eq\": [\"$$attr.AttributeCode\", \"TESLIM_TARIHI\"] }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$DocumentInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$PartnerDetails\", \"preserveNullAndEmptyArrays\": true } },\n {\n  \"$lookup\": {\n    \"from\": \"Location\",\n    \"let\": { \"locId\": \"$TargetLocation\" },\n    \"pipeline\": [\n      {\n        \"$match\": {\n          \"$expr\": {\n            \"$eq\": [\"$_id\", { \"$toObjectId\": \"$$locId\" }]\n          }\n        }\n      }\n    ],\n    \"as\": \"LocationInfo\"\n  }\n},\n\n  { \"$unwind\": { \"path\": \"$LocationInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$addFields\": {\n      \"DispatchNoteDate\": {\n        \"$dateToString\": {\n          \"format\": \"%Y-%m-%d\",\n          \"date\": {\n            \"$dateFromString\": {\n              \"dateString\": \"$DispatchNoteDateRaw\",\n              \"format\": \"%m/%d/%Y %H:%M:%S\"\n            }\n          }\n        }\n      },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          { \"$ifNull\": [\"$DocumentInfo.TESLIM_TARIHI\", false] },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  \n  {\n    \"$lookup\": {\n      \"from\": \"DocumentQuantity\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        }],\n      \"as\": \"quantityData\"\n    }\n  },\n  {\n      \"$unwind\":\"$quantityData\"\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n            \"$toDouble\": \"$quantityData.UnloadingQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n\n\n\n`;\n\nmsg.query=query;\n \nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23103,22 +23398,22 @@
         "type": "function",
         "z": "1bd2a61f8400e469",
         "name": "Index",
-        "func": "let items = msg.listPayload;  \n\nlet index = msg.index||0;\nif (index >= items.length || items.length===0) {\n    return [null, msg]; \n}\n\nlet item = items[index];\nmsg.index = index;\n\nmsg.payload = item;\n\n\n//msg.flowName = msg.propIntegration?.code ||\"NTSP000V1_0\";\n \n\nreturn [msg, null];;",
+        "func": "let items = msg.listPayload;  \nnode.warn(items);\nnode.warn(msg.index);\nnode.warn(items.length);\nlet index = msg.index||0;\nif (index >= items.length || items.length===0) {\n    return [null, msg]; \n}\n\nlet item = items[index];\nmsg.index = index;\n\nmsg.payload = item;\n\n\n//msg.flowName = msg.propIntegration?.code ||\"NTSP000V1_0\";\n \n\nreturn [msg, null];;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 100,
+        "x": 610,
+        "y": 90,
         "wires": [
             [
-                "21f11f421b21c5f2",
-                "9ca276ce46458491",
-                "39583181acdadded"
+                "21f11f421b21c5f2"
             ],
-            []
+            [
+                "dc38e29dc1eec979"
+            ]
         ]
     },
     {
@@ -23145,43 +23440,11 @@
         "l": false
     },
     {
-        "id": "9ca276ce46458491",
-        "type": "debug",
-        "z": "1bd2a61f8400e469",
-        "name": "debug 396",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 230,
-        "wires": []
-    },
-    {
-        "id": "39583181acdadded",
-        "type": "debug",
-        "z": "1bd2a61f8400e469",
-        "name": "debug 398",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 370,
-        "wires": []
-    },
-    {
         "id": "6f12fc909f7caff0",
         "type": "function",
         "z": "1bd2a61f8400e469",
         "name": "Response Message",
-        "func": "msg.payload = {\n    Type: 2,\n    Sender: \"Node-Red-STNSREC0001.0\", //  \n    Detail: JSON.stringify(msg.netsisTokenErrorMessage) || \"Siparis Kapatılamadi Hata Meydana Geldi \",\n    DefinitionLang: `${msg.netsisDataPayload.FatUst.FATIRS_NO}`,\n    Data: [msg.netsisTokenErrorMessage],\n    Module: \"Node-Red-STNSREC0001.0\",\n};\nmsg.res = global.get('STNBWAY000V1_res')\nreturn msg;",
+        "func": "msg.payload = {\n    Type: 2,\n    Sender: \"Node-Red-STNBWAY000V1.0\", //  \n    Detail: JSON.stringify(msg.netsisTokenErrorMessage) || \"Siparis Kapatılamadi Hata Meydana Geldi \",\n    DefinitionLang: `${msg.netsisDataPayload.FatUst.FATIRS_NO}`,\n    Data: [msg.netsisTokenErrorMessage],\n    Module: \"Node-Red-STNBWAY000V1.0\",\n};\nmsg.res = global.get('STNBWAY000V1_res')\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23208,6 +23471,55 @@
         "x": 1480,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "88d50ae0020f16cd",
+        "type": "debug",
+        "z": "1bd2a61f8400e469",
+        "name": "debug 430",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6cb72e6aa08ecc21",
+        "type": "http response",
+        "z": "1bd2a61f8400e469",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 890,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "dc38e29dc1eec979",
+        "type": "function",
+        "z": "1bd2a61f8400e469",
+        "name": "Res",
+        "func": " msg.res=global.get('STNBWAY000V1_res')\n\nmsg.payload = {\n    Type: 0,\n    Sender: \"Node-Red-STNBWAY000V1.0\", //  \n    Detail: JSON.stringify(msg.netsisTokenErrorMessage) || \"BASARILI \",\n    DefinitionLang: `${msg.netsisDataPayload.FatUst.FATIRS_NO}`,\n    Data: [msg.netsisTokenErrorMessage || \"BASARILI\"],\n    Module: \"Node-Red-STNBWAY000V1.0\",\n};\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 290,
+        "wires": [
+            [
+                "6cb72e6aa08ecc21"
+            ]
+        ]
     },
     {
         "id": "bfdf8f915f026d47",
@@ -23239,7 +23551,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "16904a16559010b8",
         "name": "Get FatUst",
-        "func": " \nmsg.flowName =  \"S2NSWAY000V1_0\";\n \n// Sorguyu dinamik olarak oluştur\nlet query = `\nSELECT\n\nA.CARI_KODU,\n A.CARI_KOD2,\nA.KOD1,\nA.KOD2,\nTARIH,\nA.ODEMETARIHI,\nA.SIPARIS_TEST,\nA.D_YEDEK10,\nA.DOVBAZTAR,\nFEK.ACIK1,\nFEK.ACIK2,\nFEK.ACIK3,\nFEK.acik4,\nFEK.acik5,\nFEK.acik6,\nFEK.acik7,\nFEK.acik8,\nFEK.acik9,\nFEK.acik10,\nFEK.acik11,\nFEK.acik12,\nFEK.acik13,\nFEK.acik14,\nFEK.acik15,\nFEK.acik16,\nA.PROJE_KODU,\nA.GEN_ISK1T,\nA.GEN_ISK2T,\nA.GEN_ISK3T,\nA.GEN_ISK1O,\nA.GEN_ISK2O,\nA.GEN_ISK3O,\nDOVIZ_TIPI,\nKDV,\nFAT_ALTM2,\nFAT_ALTM1,\nODEMEGUNU,\nCASE\n    WHEN PLA_KODU IS NULL THEN CS.PLASIYER_KODU\n    ELSE PLA_KODU\nEND AS PLASIYER_KODU\n\nFROM TBLSIPAMAS A\nJOIN TBLCASABIT CS ON A.CARI_KODU=CS.CARI_KOD\nJOIN TBLFATUEK FEK ON FEK.FATIRSNO=A.FATIRS_NO AND FEK.CKOD=A.CARI_KODU AND FEK.FKOD=6\nWHERE FATIRS_NO='${msg.orderNumber}' AND  FTIRSIP=6 and CARI_KOD='${msg.orderCustomerCode}'\n \n`;\n\n \nmsg.query=query;\n\nreturn msg;\n ",
+        "func": " \nmsg.flowName =  \"S2NSWAY000V1_0\";\n \n// Sorguyu dinamik olarak oluştur\nlet query = `\nSELECT\n\nA.CARI_KODU,\n A.CARI_KOD2,\nA.KOD1,\nA.KOD2,\nTARIH,\nA.ODEMETARIHI,\nA.SIPARIS_TEST,\nA.D_YEDEK10,\nA.DOVBAZTAR,\nFEK.ACIK1,\nFEK.ACIK2,\nFEK.ACIK3,\nFEK.acik4,\nFEK.acik5,\nFEK.acik6,\nFEK.acik7,\nFEK.acik8,\nFEK.acik9,\nFEK.acik10,\nFEK.acik11,\nFEK.acik12,\nFEK.acik13,\nFEK.acik14,\nFEK.acik15,\nFEK.acik16,\nA.PROJE_KODU,\nA.GEN_ISK1T,\nA.GEN_ISK2T,\nA.GEN_ISK3T,\nA.GEN_ISK1O,\nA.GEN_ISK2O,\nA.GEN_ISK3O,\nDOVIZ_TIPI,\nKDV,\nFAT_ALTM2,\nFAT_ALTM1,\nODEMEGUNU,\nCASE\n    WHEN PLA_KODU IS NULL THEN CS.PLASIYER_KODU\n    ELSE PLA_KODU\nEND AS PLASIYER_KODU,\nCS.ISKONTO_ORANI\n\nFROM TBLSIPAMAS A\nJOIN TBLCASABIT CS ON A.CARI_KODU=CS.CARI_KOD\nJOIN TBLFATUEK FEK ON FEK.FATIRSNO=A.FATIRS_NO AND FEK.CKOD=A.CARI_KODU AND FEK.FKOD=6\nWHERE FATIRS_NO='${msg.orderNumber}' AND  FTIRSIP=6 and CARI_KOD='${msg.orderCustomerCode}'\n \n`;\n\n \nmsg.query=query;\n\nreturn msg;\n ",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -23322,7 +23634,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "16904a16559010b8",
         "name": "SetFatUst",
-        "func": "\n\n\nlet data = msg.payload[0];\n\n// Gelen data'nın array olup olmadığını kontrol et\nif (!data ) {\n    msg.payload = {\n        success: false, errors: {\n            message: \"Data is either empty or not an array\",\n            query: msg.query\n        }\n    };\n    msg.statusCode = 400;\n\n    return [null, msg];\n}\n\nmsg.netsisDataPayload.FatUst={}\nmsg.netsisDataPayload.FatUst.CariKod = data.CARI_KODU;\nmsg.netsisDataPayload.FatUst.CARI_KOD2 = data.CARI_KOD2;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLA_KODU;\nmsg.netsisDataPayload.FatUst.SIPARIS_TEST = data.SIPARIS_TEST; \nmsg.netsisDataPayload.FatUst.FIYATTARIHI = data.DOVBAZTAR;\nmsg.netsisDataPayload.FatUst.ODEMETARIHI = data.ODEMETARIHI;\nmsg.netsisDataPayload.FatUst.KOD1 = data.KOD1;\nmsg.netsisDataPayload.FatUst.KOD2 = data.KOD2;\nmsg.netsisDataPayload.FatUst.KDV = data.KDV;\nmsg.netsisDataPayload.FatUst.FAT_ALTM1 = data.FAT_ALTM1;\nmsg.netsisDataPayload.FatUst.FAT_ALTM2 = data.FAT_ALTM2;\nmsg.netsisDataPayload.FatUst.ODEMEGUNU = data.ODEMEGUNU;\nmsg.netsisDataPayload.FatUst.EKACK1 = data.ACIK1;\nmsg.netsisDataPayload.FatUst.EKACK2 = data.ACIK2;\nmsg.netsisDataPayload.FatUst.EKACK3 = data.ACIK3;\nmsg.netsisDataPayload.FatUst.EKACK4 = data.acik4;\nmsg.netsisDataPayload.FatUst.EKACK5 = data.acik5;\nmsg.netsisDataPayload.FatUst.EKACK6 = data.acik6;\nmsg.netsisDataPayload.FatUst.EKACK7 = data.acik7;\nmsg.netsisDataPayload.FatUst.EKACK8 = data.acik8;\nmsg.netsisDataPayload.FatUst.EKACK9 = data.acik9;\nmsg.netsisDataPayload.FatUst.EKACK10 = data.acik10;\nmsg.netsisDataPayload.FatUst.EKACK11 = data.acik11;\nmsg.netsisDataPayload.FatUst.EKACK12 = data.acik12;\nmsg.netsisDataPayload.FatUst.EKACK13 = data.acik13;\nmsg.netsisDataPayload.FatUst.EKACK14 = data.acik14;\nmsg.netsisDataPayload.FatUst.EKACK15 = data.acik15;\nmsg.netsisDataPayload.FatUst.EKACK16 = data.acik16;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLASIYER_KODU;\nmsg.netsisDataPayload.FatUst.Proje_Kodu = data.PROJE_KODU;\nmsg.netsisDataPayload.FatUst.GEN_ISK1T = data.GEN_ISK1T;\nmsg.netsisDataPayload.FatUst.GEN_ISK2T = data.GEN_ISK2T;\nmsg.netsisDataPayload.FatUst.GEN_ISK3T = data.GEN_ISK3T;\nmsg.netsisDataPayload.FatUst.GEN_ISK1O = data.GEN_ISK1o;\nmsg.netsisDataPayload.FatUst.GEN_ISK2O = data.GEN_ISK2o;\nmsg.netsisDataPayload.FatUst.GEN_ISK3O = data.GEN_ISK3o;\nreturn [msg,null];",
+        "func": "\n\n\nlet data = msg.payload[0];\n\n// Gelen data'nın array olup olmadığını kontrol et\nif (!data ) {\n    msg.payload = {\n        success: false, errors: {\n            message: \"Data is either empty or not an array\",\n            query: msg.query\n        }\n    };\n    msg.statusCode = 400;\n\n    return [null, msg];\n}\n\nmsg.netsisDataPayload.FatUst={}\nmsg.netsisDataPayload.FatUst.CariKod = data.CARI_KODU;\nmsg.netsisDataPayload.FatUst.CARI_KOD2 = data.CARI_KOD2;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLA_KODU;\nmsg.netsisDataPayload.FatUst.SIPARIS_TEST = data.SIPARIS_TEST; \nmsg.netsisDataPayload.FatUst.FIYATTARIHI = data.SIPARIS_TEST;\nmsg.netsisDataPayload.FatUst.ODEMETARIHI = data.ODEMETARIHI;\nmsg.netsisDataPayload.FatUst.KOD1 = data.KOD1;\nmsg.netsisDataPayload.FatUst.KOD2 = data.KOD2;\nmsg.netsisDataPayload.FatUst.KDV = data.KDV;\nmsg.netsisDataPayload.FatUst.FAT_ALTM1 = data.FAT_ALTM1;\nmsg.netsisDataPayload.FatUst.FAT_ALTM2 = data.FAT_ALTM2;\nmsg.netsisDataPayload.FatUst.ODEMEGUNU = data.ODEMEGUNU;\nmsg.netsisDataPayload.FatUst.EKACK1 = data.ACIK1;\nmsg.netsisDataPayload.FatUst.EKACK2 = data.ACIK2;\nmsg.netsisDataPayload.FatUst.EKACK3 = data.ACIK3;\nmsg.netsisDataPayload.FatUst.EKACK4 = data.acik4;\nmsg.netsisDataPayload.FatUst.EKACK5 = data.acik5;\nmsg.netsisDataPayload.FatUst.EKACK6 = data.acik6;\nmsg.netsisDataPayload.FatUst.EKACK7 = data.acik7;\nmsg.netsisDataPayload.FatUst.EKACK8 = data.acik8;\nmsg.netsisDataPayload.FatUst.EKACK9 = data.acik9;\nmsg.netsisDataPayload.FatUst.EKACK10 = data.acik10;\nmsg.netsisDataPayload.FatUst.EKACK11 = data.acik11;\nmsg.netsisDataPayload.FatUst.EKACK12 = data.acik12;\nmsg.netsisDataPayload.FatUst.EKACK13 = data.acik13;\nmsg.netsisDataPayload.FatUst.EKACK14 = data.acik14;\nmsg.netsisDataPayload.FatUst.EKACK15 = data.acik15;\nmsg.netsisDataPayload.FatUst.EKACK16 = data.acik16;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLASIYER_KODU;\nmsg.netsisDataPayload.FatUst.Proje_Kodu = data.PROJE_KODU;\n// msg.netsisDataPayload.FatUst.GEN_ISK1T = data.GEN_ISK1T;\n// msg.netsisDataPayload.FatUst.GEN_ISK2T = data.GEN_ISK2T;\n// msg.netsisDataPayload.FatUst.GEN_ISK3T = data.GEN_ISK3T;\nmsg.netsisDataPayload.FatUst.GEN_ISK1O =  data.ISKONTO_ORANI|| data.GEN_ISK1o;\n// msg.netsisDataPayload.FatUst.GEN_ISK2O = data.GEN_ISK2o;\n// msg.netsisDataPayload.FatUst.GEN_ISK3O = data.GEN_ISK3o;\nreturn [msg,null];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -23333,7 +23645,8 @@
         "y": 200,
         "wires": [
             [
-                "20bcba265930f94d"
+                "20bcba265930f94d",
+                "2e5c284295dbc5ac"
             ],
             [
                 "b3c654be09303b9e"
@@ -23412,7 +23725,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "SEND NETSIS",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\nmsg.FatNo = msg.payload.Data;\nlet isEInvoiceCustomer= msg.isEInvoiceCustomer;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 0,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: isEInvoiceCustomer,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 0,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\n \nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\nmsg.FatNo = msg.payload.Data;\nlet isEInvoiceCustomer= msg.isEInvoiceCustomer;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 0,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: isEInvoiceCustomer,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            // STra_NF: 0,\n            // STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 0,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\n \nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23423,7 +23736,8 @@
         "y": 430,
         "wires": [
             [
-                "16406d8afb15ea70"
+                "16406d8afb15ea70",
+                "c35a5e34d59bfb9f"
             ]
         ]
     },
@@ -23482,7 +23796,6 @@
         "y": 470,
         "wires": [
             [
-                "596a2a2f7ed22c37",
                 "e7d50390a81a996e"
             ],
             [
@@ -23548,7 +23861,8 @@
             [
                 "4f3e3fca3f7026f9"
             ]
-        ]
+        ],
+        "info": "ALTER  FUNCTION IS_EINVOICE_CUSTOMER (@CARI_KOD NVARCHAR(50))  \r\nRETURNS BIT  \r\nAS  \r\nBEGIN  \r\n    DECLARE @Result BIT;  \r\n  \r\n    IF EXISTS (  \r\n\r\n\tSELECT 1\r\nFROM NETSIS..TBLEFATCARI A WITH (NOLOCK)\r\nLEFT JOIN TBLCASABIT B WITH (NOLOCK) \r\n    ON A.IDENTIFIER = B.VERGI_NUMARASI\r\nLEFT JOIN TBLCASABITEK C WITH (NOLOCK)\r\n    ON A.IDENTIFIER = C.TCKIMLIKNO\r\nWHERE A.AKTIF = 'E'\r\n  AND (\r\n        B.CARI_KOD = @CARI_KOD \r\n        OR C.CARI_KOD = @CARI_KOD \r\n      )\r\n\r\n        \r\n    )  \r\n    BEGIN  \r\n        SET @Result = 1; -- Kayıt varsa TRUE (1)  \r\n    END  \r\n    ELSE  \r\n    BEGIN  \r\n        SET @Result = 0; -- Kayıt yoksa FALSE (0)  \r\n    END  \r\n  \r\n    RETURN @Result;  \r\nEND  "
     },
     {
         "id": "4f3e3fca3f7026f9",
@@ -23572,7 +23886,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "GetInvoiceNumber",
-        "func": "\nmsg.isEInvoiceCustomer=msg.payload[0].IS_EINVOICE_CUSTOMER || false;\n\nmsg.dataPayload=\n{\n  Code: msg.isEInvoiceCustomer== true? \"X40\":\"A40\",\n  DocumentType: 0,\n  Use64BitService: true\n}\nreturn msg;",
+        "func": "\nmsg.isEInvoiceCustomer=msg.payload[0].IS_EINVOICE_CUSTOMER || false;\n\nmsg.dataPayload=\n{\n  Code: msg.isEInvoiceCustomer== true? \"X40\":\"W40\",\n  DocumentType: 0,\n  Use64BitService: true\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23650,7 +23964,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "Taslak Oluştur",
-        "func": "msg.gibFatNo=msg.payload.Data.FatUst.GIB_FATIRS_NO;\n\nmsg.dataPayload=\n{\n    \"BelgeNo\": msg.FatNo,\n    \"Tip\": msg.isEInvoiceCustomer== true? 1:0,\n    \"DizaynNo\": 8,\n    \"DizaynKontrol\": true\n}\nreturn msg;",
+        "func": "msg.gibFatNo=msg.payload.Data.FatUst.GIB_FATIRS_NO;\n\nmsg.dataPayload=\n{\n    \"BelgeNo\": msg.FatNo,\n    \"Tip\": msg.isEInvoiceCustomer== true? 1:0,\n    \"DizaynNo\": msg.isEInvoiceCustomer== true? 8:17,\n    \"DizaynKontrol\": true\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23714,7 +24028,7 @@
             "content-type": "application/json"
         },
         "x": 1390,
-        "y": 160,
+        "y": 170,
         "wires": []
     },
     {
@@ -23871,6 +24185,42 @@
         "statusType": "auto",
         "x": 1440,
         "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c35a5e34d59bfb9f",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 441",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2e5c284295dbc5ac",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "16904a16559010b8",
+        "name": "debug 442",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "netsisDataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 210,
         "wires": []
     },
     {
@@ -24151,7 +24501,7 @@
         "type": "function",
         "z": "a7ee580a04fce715",
         "name": "Map",
-        "func": "// Eşleştirme için kullanılan nesne\nconst netsisData = {\n    RootAdi: \"RootAdi\",\n    Sevk_Tarihi: \"Sevk_Tarihi\"\n    \n};\n\n// Gelen veriyi kontrol et\nconst data = msg.req?.body?.Data;\nif (!Array.isArray(data)) {\n    node.error(\"Data dizisi bulunamadi veya geçersiz\", msg);\n    return null;\n}\n\n// Sonucu oluştur\nconst result = Object.keys(netsisData).reduce((acc, key) => {\n    const field = netsisData[key];\n    const foundItem = data.find(x => x.attributeName === field);\n    if (foundItem) {\n        acc[key] = foundItem.attributeValue;\n    }\n    return acc;\n}, {});\n\n// Çıktıyı ayarla\nmsg.netsisDataPayload = result;\nreturn msg;\n",
+        "func": "// Eşleştirme için kullanılan nesne\nconst netsisData = {\n    RootAdi: \"RootAdi\",\n    Sevk_Tarihi: \"Sevk_Tarihi\"\n    \n};\n\n// Gelen veriyi kontrol et\nconst data = msg.req?.body?.Data || msg.payload;\nif (!Array.isArray(data)) {\n    node.error(\"Data dizisi bulunamadi veya geçersiz\", msg);\n    return null;\n}\n\n// Sonucu oluştur\nconst result = Object.keys(netsisData).reduce((acc, key) => {\n    const field = netsisData[key];\n    const foundItem = data.find(x => x.attributeName === field);\n    if (foundItem) {\n        acc[key] = foundItem.attributeValue;\n    }\n    return acc;\n}, {});\n\n// Çıktıyı ayarla\nmsg.netsisDataPayload = result;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -24598,7 +24948,7 @@
         "z": "9a81aa788c97846f",
         "g": "7f0d10fd6c405ddc",
         "name": "Get FatUst",
-        "func": " \nmsg.flowName =  \"S2NSWAY000V1_0\";\n \n// Sorguyu dinamik olarak oluştur\nlet query = `SELECT\n    A.CARI_KODU,\n    A.KOD1,\n    A.KOD2,\n    A.TARIH,\n    A.ODEMETARIHI,\n    A.SIPARIS_TEST,\n    A.D_YEDEK10,\n    A.DOVBAZTAR,\n    fek.ACIK1, fek.ACIK2, fek.ACIK3, fek.ACIK4, fek.ACIK5,\n    fek.ACIK6, fek.ACIK7, fek.ACIK8, fek.ACIK9, fek.ACIK10,\n    fek.ACIK11, fek.ACIK12, fek.ACIK13, fek.ACIK14, fek.ACIK15, fek.ACIK16,\n    A.PROJE_KODU,\n    A.GEN_ISK1T, a.GEN_ISK2T, a.GEN_ISK3T,\n    A.GEN_ISK1O, a.GEN_ISK2O, a.GEN_ISK3O,\n    DOVIZ_TIPI,\n    A.KDV,\n    A.FAT_ALTM2,\n    A.FAT_ALTM1,\n    A.ODEMEGUNU,\n    ISNULL(a.PLA_KODU, cs.PLASIYER_KODU) AS PLASIYER_KODU,\n    ek.KT_PLAKA_6 AS TASIYICI_PLAKA,    \n    A.CARI_KOD2,  \n    ISNULL(ek.KT_SOFOR_6,ek.KT_TASIYICI_ADI_6) AS TASIYICI_SOFORADI,\n\tISNULL(ek.KT_TASIYICIVKN_6,ek.KT_TC_SOFOR_6) TASIYICI_TCORVKN,\n     (\n SELECT SUM(\n SP.STHAR_GCMIK * \n    CASE \n        WHEN S.OLCU_BR1 = 'PL' THEN 1.0\n        WHEN S.OLCU_BR2 = 'PL' THEN CAST(S.PAY_1 AS FLOAT) / NULLIF(CAST(S.PAYDA_1 AS FLOAT), 0)\n        WHEN S.OLCU_BR3 = 'PL' THEN CAST(S.PAY2 AS FLOAT) / NULLIF(CAST(S.PAYDA2 AS FLOAT), 0)\n        WHEN B.OLCUBIRIMI='PL' THEN  CAST(B.PAY AS FLOAT) / NULLIF(CAST(B.PAYDA AS FLOAT), 0)     \n\t\tELSE 0\n    END) AS CarpanliMiktar\nFROM TBLSIPATRA SP \nLEFT JOIN TBLSTBIRIM B ON B.KOD =SP.STOK_KODU\nLEFT JOIN TBLSTSABIT S  ON S.STOK_KODU=SP.STOK_KODU\n WHERE SP.FISNO=A.FATIRS_NO) AS PL_ADET\n     \nFROM TBLSIPAMAS A\nJOIN TBLCASABIT cs ON a.CARI_KODU = cs.CARI_KOD\nJOIN TBLFATUEK fek ON fek.FATIRSNO = a.FATIRS_NO AND fek.CKOD = a.CARI_KODU AND fek.FKOD = 6\nJOIN TBLSIPAMASSAHAEK ek ON ek.FATIRS_NO = a.FATIRS_NO AND ek.CARI_KODU = a.CARI_KODU \nWHERE A.FATIRS_NO='${msg.orderNumber}' AND  A.FTIRSIP=6 and A.CARI_KODU='${msg.orderCustomerCode}'\n \n`;\n\n \nmsg.query=query;\n\nreturn msg;\n ",
+        "func": " \nmsg.flowName =  \"S2NSWAY000V1_0\";\n \n// Sorguyu dinamik olarak oluştur\nlet query = `SELECT\n    A.CARI_KODU,\n    A.KOD1,\n    A.KOD2,\n    A.TARIH,\n    A.ODEMETARIHI,\n    A.SIPARIS_TEST,\n    A.D_YEDEK10,\n    A.DOVBAZTAR,\n    fek.ACIK1, fek.ACIK2, fek.ACIK3, fek.ACIK4, fek.ACIK5,\n    fek.ACIK6, fek.ACIK7, fek.ACIK8, fek.ACIK9, fek.ACIK10,\n    fek.ACIK11, fek.ACIK12, fek.ACIK13, fek.ACIK14, fek.ACIK15, fek.ACIK16,\n    A.PROJE_KODU,\n    A.GEN_ISK1T, a.GEN_ISK2T, a.GEN_ISK3T,\n    A.GEN_ISK1O, a.GEN_ISK2O, a.GEN_ISK3O,\n    DOVIZ_TIPI,\n    A.KDV,\n    A.FAT_ALTM2,\n    A.FAT_ALTM1,\n    A.ODEMEGUNU,\n    ISNULL(a.PLA_KODU, cs.PLASIYER_KODU) AS PLASIYER_KODU,\n    ek.KT_PLAKA_6 AS TASIYICI_PLAKA,    \n    A.CARI_KOD2,  \n    ISNULL(ek.KT_SOFOR_6,ek.KT_TASIYICI_ADI_6) AS TASIYICI_SOFORADI,\n\tISNULL(ek.KT_TASIYICIVKN_6,ek.KT_TC_SOFOR_6) TASIYICI_TCORVKN,\n     (\n SELECT SUM(\n SP.STHAR_GCMIK * \n    CASE \n        WHEN S.OLCU_BR1 = 'PL' THEN 1.0\n        WHEN S.OLCU_BR2 = 'PL' THEN CAST(S.PAY_1 AS FLOAT) / NULLIF(CAST(S.PAYDA_1 AS FLOAT), 0)\n        WHEN S.OLCU_BR3 = 'PL' THEN CAST(S.PAY2 AS FLOAT) / NULLIF(CAST(S.PAYDA2 AS FLOAT), 0)\n        WHEN B.OLCUBIRIMI='PL' THEN  CAST(B.PAY AS FLOAT) / NULLIF(CAST(B.PAYDA AS FLOAT), 0)     \n\t\tELSE 0\n    END) AS CarpanliMiktar\nFROM TBLSIPATRA SP \nLEFT JOIN TBLSTBIRIM B ON B.KOD =SP.STOK_KODU\nLEFT JOIN TBLSTSABIT S  ON S.STOK_KODU=SP.STOK_KODU\n WHERE SP.FISNO=A.FATIRS_NO) AS PL_ADET\n  ,CS.ISKONTO_ORANI\n     \nFROM TBLSIPAMAS A\nJOIN TBLCASABIT cs ON a.CARI_KODU = cs.CARI_KOD\nJOIN TBLFATUEK fek ON fek.FATIRSNO = a.FATIRS_NO AND fek.CKOD = a.CARI_KODU AND fek.FKOD = 6\nJOIN TBLSIPAMASSAHAEK ek ON ek.FATIRS_NO = a.FATIRS_NO AND ek.CARI_KODU = a.CARI_KODU \nWHERE A.FATIRS_NO='${msg.orderNumber}' AND  A.FTIRSIP=6 and A.CARI_KODU='${msg.orderCustomerCode}'\n \n`;\n\n \nmsg.query=query;\n\nreturn msg;\n ",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -24681,7 +25031,7 @@
         "z": "9a81aa788c97846f",
         "g": "7f0d10fd6c405ddc",
         "name": "SetFatUst",
-        "func": "\n\n\nlet data = msg.payload[0];\n\n// Gelen data'nın array olup olmadığını kontrol et\nif (!data ) {\n    msg.payload = {\n        success: false, errors: {\n            message: \"Data is either empty or not an array\",\n            query: msg.query\n        }\n    };\n    msg.statusCode = 400;\n\n    return [null, msg];\n}\n\nmsg.netsisDataPayload.FatUst={}\nmsg.netsisDataPayload.EIrsEkBilgi = {}\n\nmsg.netsisDataPayload.FatUst.CariKod = data.CARI_KODU;\nmsg.netsisDataPayload.FatUst.CARI_KOD2 = data.CARI_KOD2;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLA_KODU;\nmsg.netsisDataPayload.FatUst.SIPARIS_TEST = data.SIPARIS_TEST; \nmsg.netsisDataPayload.FatUst.FIYATTARIHI = data.DOVBAZTAR;\nmsg.netsisDataPayload.FatUst.ODEMETARIHI = data.ODEMETARIHI;\nmsg.netsisDataPayload.FatUst.KOD1 = data.KOD1;\nmsg.netsisDataPayload.FatUst.KOD2 = data.KOD2;\nmsg.netsisDataPayload.FatUst.KDV = data.KDV;\nmsg.netsisDataPayload.FatUst.FAT_ALTM1 = data.FAT_ALTM1;\nmsg.netsisDataPayload.FatUst.FAT_ALTM2 = data.FAT_ALTM2;\nmsg.netsisDataPayload.FatUst.ODEMEGUNU = data.ODEMEGUNU;\nmsg.netsisDataPayload.FatUst.EKACK1 = data.ACIK1;\nmsg.netsisDataPayload.FatUst.EKACK2 = data.ACIK2;\nmsg.netsisDataPayload.FatUst.EKACK3 = data.ACIK3;\nmsg.netsisDataPayload.FatUst.EKACK4 = data.acik4;\nmsg.netsisDataPayload.FatUst.EKACK5 = data.acik5;\nmsg.netsisDataPayload.FatUst.EKACK6 = data.acik6;\nmsg.netsisDataPayload.FatUst.EKACK7 = data.acik7;\nmsg.netsisDataPayload.FatUst.EKACK8 = data.acik8;\nmsg.netsisDataPayload.FatUst.EKACK9 = data.acik9;\nmsg.netsisDataPayload.FatUst.EKACK10 = data.acik10;\nmsg.netsisDataPayload.FatUst.EKACK11 = data.acik11;\nmsg.netsisDataPayload.FatUst.EKACK12 = data.acik12;\nmsg.netsisDataPayload.FatUst.EKACK13 = data.acik13;\nmsg.netsisDataPayload.FatUst.EKACK14 = data.acik14;\nmsg.netsisDataPayload.FatUst.EKACK15 = data.acik15;\nmsg.netsisDataPayload.FatUst.EKACK16 = data.acik16;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLASIYER_KODU;\nmsg.netsisDataPayload.FatUst.Proje_Kodu = data.PROJE_KODU;\nmsg.netsisDataPayload.FatUst.GEN_ISK1T = data.GEN_ISK1T;\nmsg.netsisDataPayload.FatUst.GEN_ISK2T = data.GEN_ISK2T;\nmsg.netsisDataPayload.FatUst.GEN_ISK3T = data.GEN_ISK3T;\nmsg.netsisDataPayload.FatUst.GEN_ISK1O = data.GEN_ISK1o;\nmsg.netsisDataPayload.FatUst.GEN_ISK2O = data.GEN_ISK2o;\nmsg.netsisDataPayload.FatUst.GEN_ISK3O = data.GEN_ISK3o;\n\n\n\n// TASITICI BILGILERI\n\nmsg.RootInfo={};\nmsg.RootInfo.TASIYICI_PLAKA = data.TASIYICI_PLAKA;\nmsg.RootInfo.TASIYICI_SOFORADI = data.TASIYICI_SOFORADI;\nmsg.RootInfo.TASIYICI_TCORVKN = data.TASIYICI_TCORVKN;\nmsg.RootInfo.PL_ADET = data.PL_ADET;\n\n\n\n \n\nreturn [msg,null];",
+        "func": "\n\n\nlet data = msg.payload[0];\n\n// Gelen data'nın array olup olmadığını kontrol et\nif (!data ) {\n    msg.payload = {\n        success: false, errors: {\n            message: \"Data is either empty or not an array\",\n            query: msg.query\n        }\n    };\n    msg.statusCode = 400;\n\n    return [null, msg];\n}\n\nmsg.netsisDataPayload.FatUst={}\nmsg.netsisDataPayload.EIrsEkBilgi = {}\n\nmsg.netsisDataPayload.FatUst.CariKod = data.CARI_KODU;\nmsg.netsisDataPayload.FatUst.CARI_KOD2 = data.CARI_KOD2;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLA_KODU;\nmsg.netsisDataPayload.FatUst.SIPARIS_TEST = data.SIPARIS_TEST; \nmsg.netsisDataPayload.FatUst.FIYATTARIHI = data.SIPARIS_TEST;\nmsg.netsisDataPayload.FatUst.ODEMETARIHI = data.ODEMETARIHI;\nmsg.netsisDataPayload.FatUst.KOD1 = data.KOD1;\nmsg.netsisDataPayload.FatUst.KOD2 = data.KOD2;\nmsg.netsisDataPayload.FatUst.KDV = data.KDV;\nmsg.netsisDataPayload.FatUst.FAT_ALTM1 = data.FAT_ALTM1;\nmsg.netsisDataPayload.FatUst.FAT_ALTM2 = data.FAT_ALTM2;\nmsg.netsisDataPayload.FatUst.ODEMEGUNU = data.ODEMEGUNU;\nmsg.netsisDataPayload.FatUst.EKACK1 = data.ACIK1;\nmsg.netsisDataPayload.FatUst.EKACK2 = data.ACIK2;\nmsg.netsisDataPayload.FatUst.EKACK3 = data.ACIK3;\nmsg.netsisDataPayload.FatUst.EKACK4 = data.acik4;\nmsg.netsisDataPayload.FatUst.EKACK5 = data.acik5;\nmsg.netsisDataPayload.FatUst.EKACK6 = data.acik6;\nmsg.netsisDataPayload.FatUst.EKACK7 = data.acik7;\nmsg.netsisDataPayload.FatUst.EKACK8 = data.acik8;\nmsg.netsisDataPayload.FatUst.EKACK9 = data.acik9;\nmsg.netsisDataPayload.FatUst.EKACK10 = data.acik10;\nmsg.netsisDataPayload.FatUst.EKACK11 = data.acik11;\nmsg.netsisDataPayload.FatUst.EKACK12 = data.acik12;\nmsg.netsisDataPayload.FatUst.EKACK13 = data.acik13;\nmsg.netsisDataPayload.FatUst.EKACK14 = data.acik14;\nmsg.netsisDataPayload.FatUst.EKACK15 = data.acik15;\nmsg.netsisDataPayload.FatUst.EKACK16 = data.acik16;\nmsg.netsisDataPayload.FatUst.PLA_KODU = data.PLASIYER_KODU;\nmsg.netsisDataPayload.FatUst.Proje_Kodu = data.PROJE_KODU;\n// msg.netsisDataPayload.FatUst.GEN_ISK1T = data.GEN_ISK1T;\n// msg.netsisDataPayload.FatUst.GEN_ISK2T = data.GEN_ISK2T;\n// msg.netsisDataPayload.FatUst.GEN_ISK3T = data.GEN_ISK3T;\nmsg.netsisDataPayload.FatUst.GEN_ISK1O = data.ISKONTO_ORANI|| data.GEN_ISK1o;\n// msg.netsisDataPayload.FatUst.GEN_ISK2O = data.GEN_ISK2o;\n// msg.netsisDataPayload.FatUst.GEN_ISK3O = data.GEN_ISK3o;\n\n\n\n// TASITICI BILGILERI\n\nmsg.RootInfo={};\nmsg.RootInfo.TASIYICI_PLAKA = data.TASIYICI_PLAKA;\nmsg.RootInfo.TASIYICI_SOFORADI = data.TASIYICI_SOFORADI;\nmsg.RootInfo.TASIYICI_TCORVKN = data.TASIYICI_TCORVKN;\nmsg.RootInfo.PL_ADET = data.PL_ADET;\n\n\n\n \n\nreturn [msg,null];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -24705,7 +25055,7 @@
         "z": "9a81aa788c97846f",
         "g": "7f0d10fd6c405ddc",
         "name": "SetFatKalem",
-        "func": "let data = msg.payload;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nmsg.netsisDataPayload.Kalems =[]\nlet errorDec=[];\n// Veri kontrolü\nif (Array.isArray(data) && data.length > 0 ) {\n    //bize gelen post isteğinden alıacak veri netsisDataItemList alınacak \n    data.forEach(netsisData => {\n        //gelen veri kısıtı ile alıacak  netsis sipariş datası netsisData\n       \n       \n        if (netsisData)\n         {\n            let itemData = {\n                StokKodu: netsisData.STOK_KODU,\n                Sira: netsisData.SIRA,\n                STra_GCMIK: netsisData.PL_ADET,\n                STra_TAR: netsisDataInvoice.Tarih,\n                ...(netsisData.kur >0 ? {\n                    STra_NF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    STra_BF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    DOVIZ_TURU: netsisData.STHAR_DOVTIP,\n                    DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVTIP: netsisData.STHAR_DOVTIP\n                }:{\n                    STra_NF: netsisData.STHAR_NF,\n                    STra_BF: netsisData.STHAR_BF\n                }),\n               \n                STra_SIPNUM: netsisData.FISNO,\n                ProjeKodu: netsisData.PROJE_KODU,\n                STra_SIPKONT:netsisData.STRA_SIPKONT,\n                Stra_IrsKont: netsisData.STRA_SIPKONT,\n                STra_HTUR: \"H\",\n                DEPO_KODU: netsisData.DEPO_KODU,\n                Firmadovtut: netsisData.STra_GCMIK,\n                STra_SatIsk: netsisData.STHAR_SATISK,\n                STra_SatIsk2: netsisData.STHAR_SATISK2,\n                STra_SatIsk3: netsisData.STRA_SATISK3,\n                STra_SatIsk4: netsisData.STRA_SATISK4,\n                STra_SatIsk5: netsisData.STRA_SATISK5,\n                STra_SatIsk6: netsisData.STRA_SATISK6,\n                STra_ODEGUN: netsisDataInvoice.ODEMEGUNU,\n                //SatirBaziAciks: Array.from({ length: 10 }, (_, i) => netsisData[`ACIKLAMA1${i+1}`]) ,\n                Plasiyer_Kodu: netsisData.PLASIYER_KODU,\n                Ekalanneden: netsisData.EKALAN_NEDEN,\n                Ekalan: netsisData.EKALAN,\n                Ekalan1: netsisData.EKALAN1,\n                STra_testar: netsisData.STHAR_TESTAR,\n                Olcubr: netsisData.OLCUBR,\n                STra_CARI_KOD: netsisData.STHAR_CARIKOD,\n                STra_GC: \"C\",\n                Stra_FiiliTar: netsisDataInvoice.Tarih,\n                D_YEDEK10: netsisDataInvoice.Tarih\n\n            }        \n           \n            msg.netsisDataPayload.Kalems.push(itemData)\n\n         }\n         else {\n            errorDec.push(`No record was found in Netsis for this order (${netsisDataInvoice.FATIRS_NO}).Stock Code: ${netsisData?.STOK_KODU }`)\n            \n         }\n          \n\n          \n    });\n    if (errorDec.length > 0){\n        msg.payload = {\n            success: false,\n             errors: {\n                message: errorDec\n\n            }\n        };\n        msg.statusCode = 400;\n\n        return [null, msg]; // Hata durumu\n    }\n    msg.payload = msg.netsisDataPayload;\n    return [msg,null ]\n}  \n   \n  else {\n    // Hata mesajını düzenle\n    msg.payload = { success: false, errors: {\n        message: \"Data is either empty or not an array\" \n      \n    }};\n    msg.statusCode = 400;\n\n    return [null, msg]; // Hata durumu\n}\n\n\n ",
+        "func": "let data = msg.payload;\nlet netsisDataInvoice = msg.netsisDataPayload?.FatUst;\n\nmsg.netsisDataPayload.Kalems =[]\nlet errorDec=[];\n// Veri kontrolü\nif (Array.isArray(data) && data.length > 0 ) {\n    //bize gelen post isteğinden alıacak veri netsisDataItemList alınacak \n    data.forEach(netsisData => {\n        //gelen veri kısıtı ile alıacak  netsis sipariş datası netsisData\n       \n       \n        if (netsisData)\n         {\n            let itemData = {\n                StokKodu: netsisData.STOK_KODU,\n                Sira: netsisData.SIRA,\n                STra_GCMIK: netsisData.PL_ADET,\n                STra_TAR: netsisDataInvoice.Tarih,\n                ...(netsisData.kur >0 ? {\n                    STra_NF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    STra_BF: netsisData.STHAR_DOVFIAT * netsisData.kur,\n                    DOVIZ_TURU: netsisData.STHAR_DOVTIP,\n                    DOVTIP: netsisData.STHAR_DOVTIP,\n                    STra_DOVTIP: netsisData.STHAR_DOVTIP\n                }:{\n                    STra_NF: netsisData.STHAR_NF,\n                    STra_BF: netsisData.STHAR_BF\n                }),\n               STra_KDV:netsisData.STHAR_KDV,\n                STra_SIPNUM: netsisData.FISNO,\n                ProjeKodu: netsisData.PROJE_KODU,\n                STra_SIPKONT:netsisData.STRA_SIPKONT,\n                Stra_IrsKont: netsisData.STRA_SIPKONT,\n                STra_HTUR: \"H\",\n                DEPO_KODU: netsisData.DEPO_KODU,\n                Firmadovtut: netsisData.STra_GCMIK,\n                STra_SatIsk: netsisData.STHAR_SATISK,\n                STra_SatIsk2: netsisData.STHAR_SATISK2,\n                STra_SatIsk3: netsisData.STRA_SATISK3,\n                STra_SatIsk4: netsisData.STRA_SATISK4,\n                STra_SatIsk5: netsisData.STRA_SATISK5,\n                STra_SatIsk6: netsisData.STRA_SATISK6,\n                STra_ODEGUN: netsisDataInvoice.ODEMEGUNU,\n                //SatirBaziAciks: Array.from({ length: 10 }, (_, i) => netsisData[`ACIKLAMA1${i+1}`]) ,\n                Plasiyer_Kodu: netsisData.PLASIYER_KODU,\n                Ekalanneden: netsisData.EKALAN_NEDEN,\n                Ekalan: netsisData.EKALAN,\n                Ekalan1: netsisData.EKALAN1,\n                STra_testar: netsisData.STHAR_TESTAR,\n                Olcubr: netsisData.OLCUBR,\n                STra_CARI_KOD: netsisData.STHAR_CARIKOD,\n                STra_GC: \"C\",\n                Stra_FiiliTar: netsisDataInvoice.Tarih,\n                D_YEDEK10: netsisDataInvoice.Tarih\n\n            }        \n           \n            msg.netsisDataPayload.Kalems.push(itemData)\n\n         }\n         else {\n            errorDec.push(`No record was found in Netsis for this order (${netsisDataInvoice.FATIRS_NO}).Stock Code: ${netsisData?.STOK_KODU }`)\n            \n         }\n          \n\n          \n    });\n    if (errorDec.length > 0){\n        msg.payload = {\n            success: false,\n             errors: {\n                message: errorDec\n\n            }\n        };\n        msg.statusCode = 400;\n\n        return [null, msg]; // Hata durumu\n    }\n    msg.payload = msg.netsisDataPayload;\n    return [msg,null ]\n}  \n   \n  else {\n    // Hata mesajını düzenle\n    msg.payload = { success: false, errors: {\n        message: \"Data is either empty or not an array\" \n      \n    }};\n    msg.statusCode = 400;\n\n    return [null, msg]; // Hata durumu\n}\n\n\n ",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -24716,7 +25066,8 @@
         "y": 220,
         "wires": [
             [
-                "684dc9db1dd3463a"
+                "684dc9db1dd3463a",
+                "55619b73c7a1b9f0"
             ],
             [
                 "28fb3eda907bf994"
@@ -24783,18 +25134,19 @@
         "z": "9a81aa788c97846f",
         "g": "a4c5260a2239eb4a",
         "name": "SEND NETSIS",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\nlet fullName = msg.RootInfo.TASIYICI_SOFORADI || \"\";\n\n// İsmi boşluklara göre parçala\nlet nameParts = fullName.trim().split(\" \");\n\n// İlk kelimeyi ad olarak al\nlet firstName = nameParts[0] || \"\";\n\n// Geri kalan her şeyi soyad olarak birleştir\nlet lastName = nameParts.slice(1).join(\" \") || \"Bilinmiyor\";\n\nmsg.FatNo = msg.payload.Data;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        CARI_KOD2:null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {      \n        PLAKA: msg.RootInfo.TASIYICI_PLAKA || null,\n        // TASIYICIVKN: msg.RootInfo.KT_TASIYICIVKN_6 ,\n        // TASIYICIADI: msg.RootInfo.KT_TASIYICI_ADI_6 || msg.RootInfo.TASIYICI_SOFORADI,\n        // TASIYICIILCE: msg.RootInfo.TASIYICI_CARI_ILCE,\n        // TASIYICIIL: msg.RootInfo.TASIYICI_CARI_IL,\n        // TASIYICIULKE: msg.RootInfo.TASIYICI_ULKEADI,\n        // TASIYICIPOSTAKODU: msg.RootInfo.TASIYICI_POSTAKODU,\n        SOFOR1ADI: firstName ,\n        SOFOR1SOYADI: lastName,\n        SOFOR1ACIKLAMA: \"SFRONIN\",\n        SOFOR1TCKN: msg.RootInfo.TASIYICI_TCORVKN, \n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n\n    Kalems: \n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    \n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 0,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n \n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems;\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nresult.EIrsEkBilgi=defaultValue.EIrsEkBilgi;\n\n\n//kalemlere PL kadar cıkış yap\n\nconst PLItem=defaultValue.Kalems;\nconst maxSira = Math.max(\n    ...result.Kalems\n        .map(obj => obj.Sira)  // Sira değerlerini al\n        .filter(sira => sira !== null && sira !== undefined) // null ve undefined olanları çıkar\n);\nconst refOrderItem = result.Kalems?.[0];\n\nPLItem.StokKodu =\"100110\";\nPLItem.Sira=maxSira+1;\n//PLItem.STra_FATIRSNO = msg.payload.Data;\nPLItem.STra_GCMIK = msg.RootInfo.PL_ADET;\n \nPLItem.Plasiyer_Kodu = refOrderItem.Plasiyer_Kodu;\nPLItem.ProjeKodu = refOrderItem.ProjeKodu;\nPLItem.STra_FTIRSIP = refOrderItem.STra_FTIRSIP ;\nPLItem.DEPO_KODU = \"1\";\nPLItem.STra_SIPNUM=null;\n\n\nresult.Kalems.push(PLItem)\nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\nlet fullName = msg.RootInfo.TASIYICI_SOFORADI || \"\";\n\n// İsmi boşluklara göre parçala\nlet nameParts = fullName.trim().split(\" \");\n\n// İlk kelimeyi ad olarak al\nlet firstName = nameParts[0] || \"\";\n\n// Geri kalan her şeyi soyad olarak birleştir\nlet lastName = nameParts.slice(1).join(\" \") || \"Bilinmiyor\";\n\nmsg.FatNo = msg.payload.Data;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        CARI_KOD2:null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {      \n        PLAKA: msg.RootInfo.TASIYICI_PLAKA || null,\n        // TASIYICIVKN: msg.RootInfo.KT_TASIYICIVKN_6 ,\n        // TASIYICIADI: msg.RootInfo.KT_TASIYICI_ADI_6 || msg.RootInfo.TASIYICI_SOFORADI,\n        // TASIYICIILCE: msg.RootInfo.TASIYICI_CARI_ILCE,\n        // TASIYICIIL: msg.RootInfo.TASIYICI_CARI_IL,\n        // TASIYICIULKE: msg.RootInfo.TASIYICI_ULKEADI,\n        // TASIYICIPOSTAKODU: msg.RootInfo.TASIYICI_POSTAKODU,\n        SOFOR1ADI: firstName ,\n        SOFOR1SOYADI: lastName,\n        SOFOR1ACIKLAMA: \"\",\n        SOFOR1TCKN: msg.RootInfo.TASIYICI_TCORVKN, \n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n\n    Kalems: \n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            // STra_NF: 0,\n            // STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    \n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 2,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: true,    \n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n \n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems;\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nresult.EIrsEkBilgi=defaultValue.EIrsEkBilgi;\n\n\n//kalemlere PL kadar cıkış yap\n\nconst PLItem=defaultValue.Kalems;\nconst maxSira = Math.max(\n    ...result.Kalems\n        .map(obj => obj.Sira)  // Sira değerlerini al\n        .filter(sira => sira !== null && sira !== undefined) // null ve undefined olanları çıkar\n);\nconst refOrderItem = result.Kalems?.[0];\n\nPLItem.StokKodu =\"100110\";\nPLItem.Sira=maxSira+1;\n//PLItem.STra_FATIRSNO = msg.payload.Data;\nPLItem.STra_GCMIK = msg.RootInfo.PL_ADET;\n \nPLItem.Plasiyer_Kodu = refOrderItem.Plasiyer_Kodu;\nPLItem.ProjeKodu = refOrderItem.ProjeKodu;\nPLItem.STra_FTIRSIP = refOrderItem.STra_FTIRSIP ;\nPLItem.DEPO_KODU = \"1\";\nPLItem.STra_SIPNUM=null;\n\n\nresult.Kalems.push(PLItem)\nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 480,
+        "x": 660,
+        "y": 460,
         "wires": [
             [
-                "85729c6b5003de2d"
+                "85729c6b5003de2d",
+                "5d3951ed4a433cec"
             ]
         ]
     },
@@ -24849,11 +25201,11 @@
                 "type": "str"
             }
         ],
-        "x": 680,
+        "x": 640,
         "y": 520,
         "wires": [
             [
-                "eb4c99d365e1a4ff"
+                "b1c74d2118042252"
             ],
             [
                 "2958c6d8acacb567"
@@ -24937,8 +25289,7 @@
         "y": 570,
         "wires": [
             [
-                "36f4ad3b8d30e7d9",
-                "6e3b85241689506a"
+                "36f4ad3b8d30e7d9"
             ],
             [
                 "2958c6d8acacb567"
@@ -24955,14 +25306,14 @@
         "z": "9a81aa788c97846f",
         "g": "a4c5260a2239eb4a",
         "name": "Taslak Oluştur",
-        "func": "msg.gibFatNo = msg.payload.Data.FatUst.GIB_FATIRS_NO;\nmsg.dataPayload=\n{\n    \"BelgeNo\": msg.FatNo,\n    \"Tip\": 2,\n    \"DizaynNo\": 14,\n    \"DizaynKontrol\": true\n}\nreturn msg;",
+        "func": "msg.gibFatNo = msg.payload.Data.FatUst.GIB_FATIRS_NO;\nmsg.dataPayload=\n{\n    \"BelgeNo\": msg.FatNo,\n    \"Tip\": 2,\n    \"DizaynNo\": 19,\n    \"DizaynKontrol\": true\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 910,
         "y": 450,
         "wires": [
             [
@@ -25109,23 +25460,6 @@
         "wires": []
     },
     {
-        "id": "6e3b85241689506a",
-        "type": "debug",
-        "z": "9a81aa788c97846f",
-        "g": "a4c5260a2239eb4a",
-        "name": "debug 412",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 490,
-        "y": 620,
-        "wires": []
-    },
-    {
         "id": "d4200f42526d143e",
         "type": "debug",
         "z": "9a81aa788c97846f",
@@ -25140,6 +25474,58 @@
         "statusType": "auto",
         "x": 1210,
         "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5d3951ed4a433cec",
+        "type": "debug",
+        "z": "9a81aa788c97846f",
+        "g": "a4c5260a2239eb4a",
+        "name": "debug 418",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "55619b73c7a1b9f0",
+        "type": "debug",
+        "z": "9a81aa788c97846f",
+        "g": "7f0d10fd6c405ddc",
+        "name": "debug 420",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 230,
+        "wires": []
+    },
+    {
+        "id": "b1c74d2118042252",
+        "type": "debug",
+        "z": "9a81aa788c97846f",
+        "g": "a4c5260a2239eb4a",
+        "name": "debug 421",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 700,
         "wires": []
     },
     {
@@ -26875,7 +27261,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 740,
-        "y": 1020,
+        "y": 1030,
         "wires": []
     },
     {
@@ -27628,7 +28014,8 @@
         "y": 2130,
         "wires": [
             [
-                "acde09f1a34fecf2"
+                "acde09f1a34fecf2",
+                "7cc1fb2b36ec1359"
             ]
         ],
         "info": "{\r\n   \"header\":{\r\n      \"OrderNo\":null,\r\n      \"Date\":\"2024-12-16 00:00:00\",\r\n      \"User\":\"MEHMET\"\r\n   },\r\n   \"Items\":[\r\n      {\r\n         \"ItemNo\":\"1\",\r\n         \"Material\":\"50007\",\r\n         \"Quantity\":\"2\",\r\n         \"Unit\":\"\",\r\n         \"OrderLineNo\":\"1\",\r\n         \"WarehouseCode\":\"6\",\r\n         \"TargetWarehouseCode\":\"1\"\r\n      } \r\n   ]\r\n}\r\n "
@@ -28476,7 +28863,7 @@
         "z": "97e7314f695bb652",
         "g": "1416aa57eea7f6ab",
         "name": "function 162",
-        "func": "msg.payload=\n  [\n      {\n         \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"MEGA1\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"08-04-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
+        "func": "msg.payload=\n  [\n      {\n         \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"PLS35KC3891\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"21-05-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -28487,9 +28874,27 @@
         "y": 1550,
         "wires": [
             [
-                "6d34ab8d4702b766"
+                "812e303095ba860b"
             ]
         ]
+    },
+    {
+        "id": "7cc1fb2b36ec1359",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "94df2c76b014e91a",
+        "name": "debug 435",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 2080,
+        "wires": []
     },
     {
         "id": "1",
@@ -29006,18 +29411,12 @@
             [
                 "a83e1f4b90df6f2f"
             ],
-            [
-                "7bd7f234ee5da2ee"
-            ],
-            [
-                "a2ea21ad28271f74"
-            ],
+            [],
+            [],
             [
                 "2cb8b6d49a195dc0"
             ],
-            [
-                "3dba327d631822fb"
-            ],
+            [],
             [
                 "3fab78e36c929868"
             ],
@@ -29135,8 +29534,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 340,
-        "y": 90,
+        "x": 350,
+        "y": 70,
         "wires": [
             [
                 "bb93ba3fc38d50e5"
@@ -29288,8 +29687,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 480,
-        "y": 160,
+        "x": 220,
+        "y": 150,
         "wires": [
             [
                 "629c9123d024fac8"
@@ -29380,53 +29779,6 @@
         ]
     },
     {
-        "id": "1d8833610f154a0f",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 600,
-        "y": 270,
-        "wires": [
-            [
-                "c57431a9b01adf7d"
-            ]
-        ]
-    },
-    {
-        "id": "c57431a9b01adf7d",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 158",
-        "func": "\nconst netsisData = {\n    FatNo: \"documentNo\",\n    OrderLineNo: \"documentItemNo\",\n    Material: \"productCode\",\n};\n\n\n\n\n\nnode.warn(Object.keys(netsisData));\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d93df556fdf693ad",
         "type": "function",
         "z": "6ef8732eb0726477",
@@ -29466,6 +29818,100 @@
         "wires": []
     },
     {
+        "id": "ff170e0c45ceb2dc",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 417",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 270,
+        "wires": []
+    },
+    {
+        "id": "ceba35ae61a81394",
+        "type": "subflow:317a0e3edab25639",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "x": 560,
+        "y": 350,
+        "wires": [
+            [
+                "4bab64018a2fc76b"
+            ],
+            [
+                "9ea35723ea5860c7"
+            ]
+        ]
+    },
+    {
+        "id": "6e2338a651f9d311",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 330,
+        "wires": [
+            [
+                "ceba35ae61a81394"
+            ]
+        ]
+    },
+    {
+        "id": "4bab64018a2fc76b",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 439",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "9ea35723ea5860c7",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 440",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 380,
+        "wires": []
+    },
+    {
         "id": "e469652da2e82b7e",
         "type": "function",
         "z": "7561b3f399701088",
@@ -29477,8 +29923,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 240,
+        "x": 710,
+        "y": 200,
         "wires": [
             [
                 "2ab64c341d490673"
