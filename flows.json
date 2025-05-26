@@ -63,6 +63,14 @@
         "env": []
     },
     {
+        "id": "9d5362b5c7d0e603",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "fa51d0694c73d14f",
         "type": "subflow",
         "name": "Get Token SFORINAPI",
@@ -4463,12 +4471,13 @@
             "8b47b3b4858c86a6",
             "867c61b784b598db",
             "e618837363f35d3a",
-            "c35a5e34d59bfb9f"
+            "c35a5e34d59bfb9f",
+            "74dbcaba543a86d8"
         ],
         "x": 154,
         "y": 299,
         "w": 1682,
-        "h": 342
+        "h": 362
     },
     {
         "id": "7f0d10fd6c405ddc",
@@ -4584,7 +4593,9 @@
             "55fbd934494ddc31",
             "d4200f42526d143e",
             "5d3951ed4a433cec",
-            "b1c74d2118042252"
+            "b1c74d2118042252",
+            "d437c2190e2d503c",
+            "593718fd5412c8f3"
         ],
         "x": 244,
         "y": 399,
@@ -23725,7 +23736,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "SEND NETSIS",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\nmsg.FatNo = msg.payload.Data;\nlet isEInvoiceCustomer= msg.isEInvoiceCustomer;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 0,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: isEInvoiceCustomer,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            // STra_NF: 0,\n            // STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 0,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: true,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\n \nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\nmsg.FatNo = msg.payload.Data;\nlet isEInvoiceCustomer= msg.isEInvoiceCustomer;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 0,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: isEInvoiceCustomer,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 0,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: false,\n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems[0];\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\n \nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23886,7 +23897,7 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "GetInvoiceNumber",
-        "func": "\nmsg.isEInvoiceCustomer=msg.payload[0].IS_EINVOICE_CUSTOMER || false;\n\nmsg.dataPayload=\n{\n  Code: msg.isEInvoiceCustomer== true? \"X40\":\"W40\",\n  DocumentType: 0,\n  Use64BitService: true\n}\nreturn msg;",
+        "func": "\nmsg.isEInvoiceCustomer=msg.payload[0].IS_EINVOICE_CUSTOMER || false;\n\nmsg.dataPayload=\n{\n  Code: msg.isEInvoiceCustomer== true? \"X40\":\"W40\",\n  DocumentType: 0,\n  Use64BitService: true\n}\n\nmsg.restUrl=msg.isEInvoiceCustomer== true? \"api/v2/ItemSlips/NewEItemSlipsNumber\":\"api/v2/ItemSlips/NewNumber\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23897,7 +23908,8 @@
         "y": 550,
         "wires": [
             [
-                "0d436ae81e2371de"
+                "0d436ae81e2371de",
+                "74dbcaba543a86d8"
             ]
         ]
     },
@@ -23907,13 +23919,6 @@
         "z": "22db7f4bcd69fa91",
         "g": "d10910f84c58e11b",
         "name": "",
-        "env": [
-            {
-                "name": "RestUrl",
-                "value": "api/v2/ItemSlips/NewEItemSlipsNumber",
-                "type": "str"
-            }
-        ],
         "x": 360,
         "y": 590,
         "wires": [
@@ -24221,6 +24226,24 @@
         "statusType": "auto",
         "x": 320,
         "y": 210,
+        "wires": []
+    },
+    {
+        "id": "74dbcaba543a86d8",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 445",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 620,
         "wires": []
     },
     {
@@ -25134,7 +25157,7 @@
         "z": "9a81aa788c97846f",
         "g": "a4c5260a2239eb4a",
         "name": "SEND NETSIS",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\nlet fullName = msg.RootInfo.TASIYICI_SOFORADI || \"\";\n\n// İsmi boşluklara göre parçala\nlet nameParts = fullName.trim().split(\" \");\n\n// İlk kelimeyi ad olarak al\nlet firstName = nameParts[0] || \"\";\n\n// Geri kalan her şeyi soyad olarak birleştir\nlet lastName = nameParts.slice(1).join(\" \") || \"Bilinmiyor\";\n\nmsg.FatNo = msg.payload.Data;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        CARI_KOD2:null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {      \n        PLAKA: msg.RootInfo.TASIYICI_PLAKA || null,\n        // TASIYICIVKN: msg.RootInfo.KT_TASIYICIVKN_6 ,\n        // TASIYICIADI: msg.RootInfo.KT_TASIYICI_ADI_6 || msg.RootInfo.TASIYICI_SOFORADI,\n        // TASIYICIILCE: msg.RootInfo.TASIYICI_CARI_ILCE,\n        // TASIYICIIL: msg.RootInfo.TASIYICI_CARI_IL,\n        // TASIYICIULKE: msg.RootInfo.TASIYICI_ULKEADI,\n        // TASIYICIPOSTAKODU: msg.RootInfo.TASIYICI_POSTAKODU,\n        SOFOR1ADI: firstName ,\n        SOFOR1SOYADI: lastName,\n        SOFOR1ACIKLAMA: \"\",\n        SOFOR1TCKN: msg.RootInfo.TASIYICI_TCORVKN, \n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n\n    Kalems: \n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            // STra_NF: 0,\n            // STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    \n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 2,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: true,    \n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n \n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems;\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nresult.EIrsEkBilgi=defaultValue.EIrsEkBilgi;\n\n\n//kalemlere PL kadar cıkış yap\n\nconst PLItem=defaultValue.Kalems;\nconst maxSira = Math.max(\n    ...result.Kalems\n        .map(obj => obj.Sira)  // Sira değerlerini al\n        .filter(sira => sira !== null && sira !== undefined) // null ve undefined olanları çıkar\n);\nconst refOrderItem = result.Kalems?.[0];\n\nPLItem.StokKodu =\"100110\";\nPLItem.Sira=maxSira+1;\n//PLItem.STra_FATIRSNO = msg.payload.Data;\nPLItem.STra_GCMIK = msg.RootInfo.PL_ADET;\n \nPLItem.Plasiyer_Kodu = refOrderItem.Plasiyer_Kodu;\nPLItem.ProjeKodu = refOrderItem.ProjeKodu;\nPLItem.STra_FTIRSIP = refOrderItem.STra_FTIRSIP ;\nPLItem.DEPO_KODU = \"1\";\nPLItem.STra_SIPNUM=null;\n\n\nresult.Kalems.push(PLItem)\nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\n \n\nconst year = utcNow.getFullYear();\n\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\n\nvar formattedDate = year + '-' + month + '-' + day;\n\n\nlet fullName = msg.RootInfo.TASIYICI_SOFORADI || \"\";\n\n// İsmi boşluklara göre parçala\nlet nameParts = fullName.trim().split(\" \");\n\n// İlk kelimeyi ad olarak al\nlet firstName = nameParts[0] || \"\";\n\n// Geri kalan her şeyi soyad olarak birleştir\nlet lastName = nameParts.slice(1).join(\" \") || \"Bilinmiyor\";\n\nmsg.FatNo = msg.payload.Data;\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        CARI_KOD2:null,\n        FATIRS_NO: msg.payload.Data,\n        Tarih: formattedDate,\n        SIPARIS_TEST: formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 2,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: formattedDate,\n        KDV_DAHILMI: false,\n        PLA_KODU: null,\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,      \n        FIYATTARIHI: formattedDate,\n        ODEMETARIHI: formattedDate,\n        KOSULTARIHI: formattedDate,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {      \n        PLAKA: msg.RootInfo.TASIYICI_PLAKA || null,\n        // TASIYICIVKN: msg.RootInfo.KT_TASIYICIVKN_6 ,\n        // TASIYICIADI: msg.RootInfo.KT_TASIYICI_ADI_6 || msg.RootInfo.TASIYICI_SOFORADI,\n        // TASIYICIILCE: msg.RootInfo.TASIYICI_CARI_ILCE,\n        // TASIYICIIL: msg.RootInfo.TASIYICI_CARI_IL,\n        // TASIYICIULKE: msg.RootInfo.TASIYICI_ULKEADI,\n        // TASIYICIPOSTAKODU: msg.RootInfo.TASIYICI_POSTAKODU,\n        SOFOR1ADI: firstName ,\n        SOFOR1SOYADI: lastName,\n        SOFOR1ACIKLAMA: \"\",\n        SOFOR1TCKN: msg.RootInfo.TASIYICI_TCORVKN, \n        SOFOR2ADI: null,\n        SOFOR2SOYADI: null,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: null,\n        SOFOR3ADI: null,\n        SOFOR3SOYADI: null,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: null,\n        SEVKTAR: formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n\n    Kalems: \n        {\n            StokKodu: null,\n            Sira: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU:null,\n            DOVTIP:null,\n            STra_DOVTIP:0,\n            STra_HTUR: \"H\",\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: null,\n            Ekalanneden: null,\n            Ekalan: null,\n            Ekalan1: null,\n            STra_testar: formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            STra_FTIRSIP: null,\n            STra_CARI_KOD: null,\n            STra_GC: \"C\",\n            DEPO_KODU: 0,\n            STra_ACIK: null,\n            TesMik: 0,\n            Stra_FiiliTar: formattedDate,\n            D_YEDEK10: formattedDate,\n            STra_SIPKONT:null,\n            Stra_IrsKont:null,\n            Firmadovtut:0,\n            STra_SatIsk:null,\n            STra_SatIsk2:null,\n            STra_SatIsk3:null,\n            STra_SatIsk4:null,\n            STra_SatIsk5:null,\n            STra_SatIsk6:null,\n            STra_ODEGUN:null,\n            SatirBaziAciks:null,\n            S_Yedek2:'SFORIN'\n            \n        },\n    \n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.payload_netsis.data || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n     // gelen post isteğin itemlerin sayısı\n    KalemAdedi:msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 2,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FiyatSistemineGoreHesapla: false,    \n    FatUst: {},\n    EIrsEkBilgi: {},\n    Kalems: []\n    \n};\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n \n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nresult.Kalems = kalemlerData.map((kalem) => {\n    const defaultKalem = defaultValue.Kalems;\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nresult.EIrsEkBilgi=defaultValue.EIrsEkBilgi;\n\n\n//kalemlere PL kadar cıkış yap\n\nconst PLItem=defaultValue.Kalems;\nconst maxSira = Math.max(\n    ...result.Kalems\n        .map(obj => obj.Sira)  // Sira değerlerini al\n        .filter(sira => sira !== null && sira !== undefined) // null ve undefined olanları çıkar\n);\nconst refOrderItem = result.Kalems?.[0];\n\nPLItem.StokKodu =\"100110\";\nPLItem.Sira=maxSira+1;\n//PLItem.STra_FATIRSNO = msg.payload.Data;\nPLItem.STra_GCMIK = msg.RootInfo.PL_ADET ==0 ? 1:msg.RootInfo.PL_ADET;\n \nPLItem.Plasiyer_Kodu = refOrderItem.Plasiyer_Kodu;\nPLItem.ProjeKodu = refOrderItem.ProjeKodu;\nPLItem.STra_FTIRSIP = refOrderItem.STra_FTIRSIP ;\nPLItem.DEPO_KODU = \"1\";\nPLItem.STra_SIPNUM=null;\n\n\nresult.Kalems.push(PLItem)\nmsg.dataPayload = result;\n\nmsg.flowName=\"S2N_RECEVING_URL\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -25208,7 +25231,8 @@
                 "b1c74d2118042252"
             ],
             [
-                "2958c6d8acacb567"
+                "2958c6d8acacb567",
+                "d437c2190e2d503c"
             ]
         ],
         "outputLabels": [
@@ -25233,7 +25257,8 @@
         "y": 600,
         "wires": [
             [
-                "40c425937dc52dc6"
+                "40c425937dc52dc6",
+                "593718fd5412c8f3"
             ]
         ]
     },
@@ -25526,6 +25551,40 @@
         "statusType": "auto",
         "x": 760,
         "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d437c2190e2d503c",
+        "type": "debug",
+        "z": "9a81aa788c97846f",
+        "g": "a4c5260a2239eb4a",
+        "name": "debug 443",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "593718fd5412c8f3",
+        "type": "debug",
+        "z": "9a81aa788c97846f",
+        "g": "a4c5260a2239eb4a",
+        "name": "debug 444",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 590,
         "wires": []
     },
     {
@@ -28863,7 +28922,7 @@
         "z": "97e7314f695bb652",
         "g": "1416aa57eea7f6ab",
         "name": "function 162",
-        "func": "msg.payload=\n  [\n      {\n         \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"PLS35KC3891\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"21-05-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
+        "func": "msg.payload=\n  [\n      {\n         \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"METROPOL1\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"24-05-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -28874,7 +28933,7 @@
         "y": 1550,
         "wires": [
             [
-                "812e303095ba860b"
+                "6d34ab8d4702b766"
             ]
         ]
     },
@@ -29534,7 +29593,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 350,
+        "x": 340,
         "y": 70,
         "wires": [
             [
@@ -29988,5 +30047,96 @@
                 "e469652da2e82b7e"
             ]
         ]
+    },
+    {
+        "id": "1c177cfdb3b29691",
+        "type": "function",
+        "z": "9d5362b5c7d0e603",
+        "name": "GetInvoiceNumber",
+        "func": " \nmsg.dataPayload=\n{\n  Code: \"W40\",\n  DocumentType: 0,\n  Use64BitService: false,\n \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "f641de82fe9590b2"
+            ]
+        ]
+    },
+    {
+        "id": "f641de82fe9590b2",
+        "type": "subflow:fc936f675a46124b",
+        "z": "9d5362b5c7d0e603",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemSlips/NewNumber",
+                "type": "str"
+            }
+        ],
+        "x": 939,
+        "y": 322,
+        "wires": [
+            [
+                "996672436b379771"
+            ],
+            []
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "787ed3845982ac04",
+        "type": "inject",
+        "z": "9d5362b5c7d0e603",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 680,
+        "y": 260,
+        "wires": [
+            [
+                "1c177cfdb3b29691"
+            ]
+        ]
+    },
+    {
+        "id": "996672436b379771",
+        "type": "debug",
+        "z": "9d5362b5c7d0e603",
+        "name": "debug 446",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 280,
+        "wires": []
     }
 ]
