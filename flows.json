@@ -1891,6 +1891,10 @@
                     {
                         "id": "c75810f63ff5f8b0",
                         "port": 0
+                    },
+                    {
+                        "id": "ddccb2cde4a43821",
+                        "port": 0
                     }
                 ]
             },
@@ -4071,7 +4075,9 @@
             "b071bb445e7d186c",
             "23327e292123f24b",
             "700c657d22d0cacb",
-            "7f60799e78528bfc"
+            "7f60799e78528bfc",
+            "564682156e777069",
+            "84833f21e45d49c4"
         ],
         "x": 64,
         "y": 269,
@@ -4277,12 +4283,13 @@
             "fa7a75c7734fa67c",
             "358d0fba9413ea32",
             "f1ac2bb4123070d2",
-            "74f34ff289a840e0"
+            "74f34ff289a840e0",
+            "0a93b6b0235ab44b"
         ],
         "x": 34,
-        "y": 1259,
+        "y": 1249,
         "w": 642,
-        "h": 132
+        "h": 142
     },
     {
         "id": "7fa9daa49aea977c",
@@ -4715,19 +4722,21 @@
             "c9ae78118c25c668",
             "6a9947be10b41dfa",
             "289a0bef95410df6",
-            "260e396473311b1b",
             "3fdde4abc487fc2e",
             "b9761f83fc9e8ce6",
             "5738e6743dd0dc6d",
             "fe3a431b5793db6a",
             "7575473c6d2c8a74",
             "7ccf586cbdc8fab7",
-            "3e11708962d48809"
+            "3e11708962d48809",
+            "b0e17be596a10349",
+            "5348958f88920d67",
+            "ddccb2cde4a43821"
         ],
         "x": 94,
-        "y": 59,
+        "y": -11,
         "w": 2082,
-        "h": 512
+        "h": 582
     },
     {
         "id": "16904a16559010b8",
@@ -4971,12 +4980,13 @@
         "nodes": [
             "a006333aa90bf58b",
             "f7b7bd98b919958c",
-            "89ec2f16c612017d"
+            "89ec2f16c612017d",
+            "f951e92a7a12628e"
         ],
         "x": 44,
-        "y": 1089,
+        "y": 1079,
         "w": 702,
-        "h": 112
+        "h": 122
     },
     {
         "id": "ea9c9fb8ccb11447",
@@ -18591,7 +18601,7 @@
         "z": "4a994836a6392703",
         "g": "4ffcfc17d9807587",
         "name": "JSON",
-        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\nconst documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"DWN\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: null,\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: {\n        AttributeCode: null,\n        StrValue: null,\n        DateValue: utcNow,\n        NumValue: null,\n        ListedValue: null,\n        BoolValue: null,\n        RemoteName: null\n    },\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"DWN\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: \n                            {\n                                AttributeCode:null ,\n                                StrValue:null ,\n                                DateValue: utcNow,\n                                NumValue: null,\n                                ListedValue: null,\n                                BoolValue: null,\n                                RemoteName: null \n                            },\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n             documentStorageLocations: {\n                PickFrom: \n                    {\n                         plant: env.get('documentStorageLocations_Plant'),\n                        warehous: null,\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                PutawayTo:\n                    {\n                        plant:env.get('documentStorageLocations_Plant'),\n                        warehouse: \"\",\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                \"IsObligatory\": true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: {\n        addedDate: utcNow,\n        updateDate: null,\n        note: null,\n        addedBy: null,\n        updatedBy: null\n    },\n    Id: \"\"\n};\nconst netsisProductTypes = msg.netsisProductTypes;\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\nconst getValueProductType = (value) => {\n    const found = netsisProductTypes.find(x => x.key === value);\n    return found?.productTypeCodeName === \"ENDİREKT ÜRÜNLER\" || false;\n};\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n        node.warn(order.ROOTADI);\n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(order.overallStatus, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.createdOn, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.orderdeliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(order.soldTo, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.boughtFrom, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(order.shipTo, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(\n                [\n                    ...(order.documantTypeCode == \"MS\" && order.plaka ? [{\n                        AttributeCode: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.plaka, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.rootAdi ? [{\n                        AttributeCode: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.rootAdi, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                   \n                    ...(order.documantTypeCode == \"MS\" && order.sevkNot ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sevkNot, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.sofor ? [{\n                        AttributeCode: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sofor, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    \n                    ...(order.documantTypeCode == \"MS\" && order.orderdeliveryDate ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(order.orderdeliveryDate, documentData.documentAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciAdi ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciAdi, documentData.documentAttributes.StrValue), \n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciVkn ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciVkn, documentData.documentAttributes.StrValue), \n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.RemoteName)\n\n                    }] : [])\n                ]\n                \n                , documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n               \n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(item.baseQuantity, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(item.baseUnit, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(item.status != \"ISS\" ? getValueProductType(item.groupCode) ? \"PRC\" : item.status : item.status, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: [\n                    {\n                        AttributeCode: getValueOrDefault(\"TESLIM_TARIHI\", documentData.items[0].documentItemAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(item.deliveryDate, documentData.items[0].documentItemAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"KALEMIN TESLIM TARIHI\", documentData.items[0].documentItemAttributes.RemoteName)\n                    }],\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                   documentStorageLocations: {\n                 PickFrom: item.pickFrom ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), documentData.items[0]?.documentStorageLocations?.PickFrom?.plant),\n                    warehouse: getValueOrDefault(item.pickFrom?.toString(), documentData.items[0]?.documentStorageLocations?.PickFrom?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.shelf)\n                }]\n                : [],\n            \n                 PutawayTo: item.putawayTo ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), \n                        documentData.items[0]?.documentStorageLocations?.PutawayTo?.plant),\n                    warehouse: getValueOrDefault(item.putawayTo?.toString(),documentData.items[0]?.documentStorageLocations?.PutawayTo?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.shelf)\n                }]\n                : [],\n    \n                IsObligatory: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n                \n            })) : [],\n            Notes: order.documantTypeCode == \"MS\" && order?.acik1 ? [{\n                addedDate: utcNow,\n                updateDate: null,\n                note: order?.acik1,\n                addedBy: null,\n                updatedBy: null\n\n            }] : []\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData\n        \n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\nconst documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"DWN\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: null,\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: {\n        AttributeCode: null,\n        StrValue: null,\n        DateValue: utcNow,\n        NumValue: null,\n        ListedValue: null,\n        BoolValue: null,\n        RemoteName: null\n    },\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"DWN\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes:\n            {\n                AttributeCode: null,\n                StrValue: null,\n                DateValue: utcNow,\n                NumValue: null,\n                ListedValue: null,\n                BoolValue: null,\n                RemoteName: null\n            },\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n            documentStorageLocations: {\n                PickFrom:\n                {\n                    plant: env.get('documentStorageLocations_Plant'),\n                    warehous: null,\n                    area: null,\n                    shelf: null\n                }\n                ,\n                PutawayTo:\n                {\n                    plant: env.get('documentStorageLocations_Plant'),\n                    warehouse: \"\",\n                    area: null,\n                    shelf: null\n                }\n                ,\n                \"IsObligatory\": true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: {\n        addedDate: utcNow,\n        updateDate: null,\n        note: null,\n        addedBy: null,\n        updatedBy: null\n    },\n    Id: \"\"\n};\nconst netsisProductTypes = msg.netsisProductTypes;\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\nconst getValueProductType = (value) => {\n    const found = netsisProductTypes.find(x => x.key === value);\n    return found?.productTypeCodeName === \"ENDİREKT ÜRÜNLER\" || false;\n};\nlet data = msg.netsisOrderPayload_;\n\nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n        node.warn(order.ROOTADI);\n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(order.overallStatus, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.createdOn, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.orderdeliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(order.soldTo, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.boughtFrom, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(order.shipTo, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(\n                [\n                    ...(order.documantTypeCode == \"MS\" && order.plaka ? [{\n                        AttributeCode: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.plaka, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.rootAdi ? [{\n                        AttributeCode: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.rootAdi, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n\n                    ...(order.documantTypeCode == \"MS\" && order.sevkNot ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sevkNot, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.sofor ? [{\n                        AttributeCode: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sofor, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n\n                    ...(order.documantTypeCode == \"MS\" && order.orderdeliveryDate ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(order.orderdeliveryDate, documentData.documentAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciAdi ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciAdi, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciVkn ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciVkn, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.RemoteName)\n\n                    }] : [])\n                ]\n\n                , documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n\n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(item.baseQuantity, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(item.baseUnit, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(item.status != \"ISS\" ? getValueProductType(item.groupCode) ? \"PRC\" : item.status : item.status, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: [\n                    {\n                        AttributeCode: getValueOrDefault(\"TESLIM_TARIHI\", documentData.items[0].documentItemAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(item.deliveryDate, documentData.items[0].documentItemAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"KALEMIN TESLIM TARIHI\", documentData.items[0].documentItemAttributes.RemoteName)\n                    }],\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                documentStorageLocations: {\n                    PickFrom: item.pickFrom ? [{\n                        plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), documentData.items[0]?.documentStorageLocations?.PickFrom?.plant),\n                        warehouse: getValueOrDefault(item.pickFrom?.toString(), documentData.items[0]?.documentStorageLocations?.PickFrom?.warehouse),\n                        area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.area),\n                        shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.shelf)\n                    }]\n                        : [],\n\n                    PutawayTo: item.putawayTo ? [{\n                        plant: getValueOrDefault(env.get('documentStorageLocations_Plant'),\n                            documentData.items[0]?.documentStorageLocations?.PutawayTo?.plant),\n                        warehouse: getValueOrDefault(item.putawayTo?.toString(), documentData.items[0]?.documentStorageLocations?.PutawayTo?.warehouse),\n                        area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.area),\n                        shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.shelf)\n                    }]\n                        : [],\n\n                    IsObligatory: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n\n            })) : [],\n            Notes: order.documantTypeCode == \"MS\" && order?.acik1 ? [{\n                addedDate: utcNow,\n                updateDate: null,\n                note: order?.acik1,\n                addedBy: null,\n                updatedBy: null\n\n            }] : []\n\n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData\n\n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n\n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -18602,7 +18612,8 @@
         "y": 450,
         "wires": [
             [
-                "e0b5b2e8ae455ae7"
+                "e0b5b2e8ae455ae7",
+                "84833f21e45d49c4"
             ]
         ]
     },
@@ -18863,6 +18874,44 @@
         "statusType": "auto",
         "x": 360,
         "y": 310,
+        "wires": []
+    },
+    {
+        "id": "564682156e777069",
+        "type": "function",
+        "z": "4a994836a6392703",
+        "d": true,
+        "g": "4ffcfc17d9807587",
+        "name": "JSON V1",
+        "func": "const utcNow = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));\nconst documentData = {\n    docNum: \"\",\n    state: {\n        State: \"ACT\",\n        ProcessingState: \"WAI\",\n        SyncState: \"DWN\"\n    },\n    externalNum: \"\",\n    company: \"\",\n    documentType: {\n        Code: \"\",\n        Definition: \"\",\n        CounterCode: \"\",\n        Direction: \"\",\n        IsTwoStep: null,\n        Id: \"\"\n    },\n    documentDate: {\n        CreatedOn: null,\n        UpdatedOn: null,\n        LastMovedOn: null,\n        LastReceiptOn: null,\n        LastSyncedOn: null,\n        DocDate: null,\n        PlanedDate: null,\n        DeliveryDate: null\n    },\n    docCompanies: {\n        SoldTo: null,\n        BoughtFrom: null,\n        Transit: null,\n        ShipTo: null\n    },\n    documentAttributes: {\n        AttributeCode: null,\n        StrValue: null,\n        DateValue: utcNow,\n        NumValue: null,\n        ListedValue: null,\n        BoolValue: null,\n        RemoteName: null\n    },\n    documentUser: {\n        CreatedBy: \"node-red\",\n        UpdatedBy: null\n    },\n    childDocuments: null,\n    parentDocument: null,\n    documentStorageLocations: {\n        PickFrom: [],\n        PutawayTo: [],\n        IsObligatory: true\n    },\n    documentFiles: [],\n    items: [\n        {\n            ItemNo: null,\n            DocNum: \"\",\n            ProductCode: \"\",\n            Quantity: null,\n            Unit: \"\",\n            BaseQuantity: null,\n            BaseUnit: null,\n            state: {\n                State: \"ACT\",\n                ProcessingState: \"WAI\",\n                SyncState: \"DWN\"\n            },\n            reference: {\n                ErpOrder: \"\",\n                ErpOrderItemNum: \"\"\n            },\n            itemBatch: [],\n            itemSerials: [],\n            itemTolerance: {\n                PercentagePlus: 0,\n                PercentageMinus: 0,\n                QuantityPlus: 0,\n                QuantityMinus: 0,\n                Unit: 0\n            },\n            documentFiles: [],\n            documentItemAttributes: \n                            {\n                                AttributeCode:null ,\n                                StrValue:null ,\n                                DateValue: utcNow,\n                                NumValue: null,\n                                ListedValue: null,\n                                BoolValue: null,\n                                RemoteName: null \n                            },\n            description: {\n                DefinitionLang: \"\",\n                ShortenedDefinitionLang: \"\",\n                LongDescriptionLang: \"\"\n            },\n             documentStorageLocations: {\n                PickFrom: \n                    {\n                         plant: env.get('documentStorageLocations_Plant'),\n                        warehous: null,\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                PutawayTo:\n                    {\n                        plant:env.get('documentStorageLocations_Plant'),\n                        warehouse: \"\",\n                        area: null,\n                        shelf: null\n                    }\n                ,\n                \"IsObligatory\": true\n            },\n            notes: [],\n            Id: \"\"\n        }\n    ],\n    notes: {\n        addedDate: utcNow,\n        updateDate: null,\n        note: null,\n        addedBy: null,\n        updatedBy: null\n    },\n    Id: \"\"\n};\nconst netsisProductTypes = msg.netsisProductTypes;\n// Utility function to get a value or default from template\nconst getValueOrDefault = (value, defaultValue) => value !== null && value !== undefined ? value : defaultValue;\nconst getValueProductType = (value) => {\n    const found = netsisProductTypes.find(x => x.key === value);\n    return found?.productTypeCodeName === \"ENDİREKT ÜRÜNLER\" || false;\n};\nlet data = msg.netsisOrderPayload_;\n \nif (data && Array.isArray(data)) {\n    const transformedData = data.map(order => {\n        node.warn(order.ROOTADI);\n        return {\n            docNum: getValueOrDefault(order.docNum, documentData.docNum),\n            state: {\n                State: getValueOrDefault(null, documentData.state.State),\n                ProcessingState: getValueOrDefault(order.overallStatus, documentData.state.ProcessingState),\n                SyncState: getValueOrDefault(null, documentData.state.SyncState)\n            },\n            externalNum: getValueOrDefault(order.docNum, documentData.externalNum),\n            company: getValueOrDefault(order.company, documentData.company),\n            documentType: msg.getAllDocumentTypesrPayload && Array.isArray(msg.getAllDocumentTypesrPayload)\n                ? msg.getAllDocumentTypesrPayload.find(doctype => doctype.code == order.documantTypeCode)\n                : {},\n            documentDate: {\n                CreatedOn: getValueOrDefault(order.createdOn, documentData.documentDate.CreatedOn),\n                UpdatedOn: getValueOrDefault(null, documentData.documentDate.UpdatedOn),\n                LastMovedOn: getValueOrDefault(null, documentData.documentDate.LastMovedOn),\n                LastReceiptOn: getValueOrDefault(null, documentData.documentDate.LastReceiptOn),\n                LastSyncedOn: getValueOrDefault(null, documentData.documentDate.LastSyncedOn),\n                DocDate: getValueOrDefault(order.createdOn, documentData.documentDate.DocDate),\n                PlanedDate: getValueOrDefault(order.createdOn, documentData.documentDate.PlanedDate),\n                DeliveryDate: getValueOrDefault(order.orderdeliveryDate, documentData.documentDate.DeliveryDate)\n            },\n            docCompanies: {\n                SoldTo: getValueOrDefault(order.soldTo, documentData.docCompanies.SoldTo),\n                BoughtFrom: getValueOrDefault(order.boughtFrom, documentData.docCompanies.BoughtFrom),\n                Transit: getValueOrDefault(null, documentData.docCompanies.Transit),\n                ShipTo: getValueOrDefault(order.shipTo, documentData.docCompanies.ShipTo)\n            },\n            documentAttributes: getValueOrDefault(\n                [\n                    ...(order.documantTypeCode == \"MS\" && order.plaka ? [{\n                        AttributeCode: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.plaka, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"PLAKA\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.rootAdi ? [{\n                        AttributeCode: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.rootAdi, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"ROOTADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                   \n                    ...(order.documantTypeCode == \"MS\" && order.sevkNot ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sevkNot, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_NOT\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.sofor ? [{\n                        AttributeCode: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.sofor, documentData.documentAttributes.StrValue),\n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SOFOR\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    \n                    ...(order.documantTypeCode == \"MS\" && order.orderdeliveryDate ? [{\n                        AttributeCode: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(order.orderdeliveryDate, documentData.documentAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"SEVK_TARIHI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciAdi ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciAdi, documentData.documentAttributes.StrValue), \n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIADI\", documentData.documentAttributes.RemoteName)\n\n                    }] : []),\n                    ...(order.documantTypeCode == \"MS\" && order.tasiyiciVkn ? [{\n                        AttributeCode: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.AttributeCode),\n                        StrValue: getValueOrDefault(order.tasiyiciVkn, documentData.documentAttributes.StrValue), \n                        DateValue: null,\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"TASIYICIVKN\", documentData.documentAttributes.RemoteName)\n\n                    }] : [])\n                ]\n                \n                , documentData.documentAttributes),\n            documentUser: {\n                CreatedBy: getValueOrDefault(null, documentData.documentUser.CreatedBy),\n                UpdatedBy: getValueOrDefault(null, documentData.documentUser.UpdatedBy)\n            },\n            childDocuments: getValueOrDefault(null, documentData.childDocuments),\n            parentDocument: getValueOrDefault(null, documentData.parentDocument),\n            documentStorageLocations: {\n                PickFrom: getValueOrDefault(null, documentData.documentStorageLocations.PickFrom),\n                PutawayTo: getValueOrDefault(null, documentData.documentStorageLocations.PutawayTo),\n                IsObligatory: getValueOrDefault(null, documentData.documentStorageLocations.IsObligatory)\n            },\n            documentFiles: getValueOrDefault(null, documentData.documentFiles),\n            items: order.items ? order.items.map(item => ({\n               \n                ItemNo: getValueOrDefault(item.itemNo, documentData.items[0].ItemNo),\n                DocNum: getValueOrDefault(order.docNum, documentData.docNum),\n                ProductCode: getValueOrDefault(item.productCode, documentData.items[0].ProductCode),\n                Quantity: getValueOrDefault(item.quantity, documentData.items[0].Quantity),\n                Unit: getValueOrDefault(item.unit, documentData.items[0].Unit),\n                BaseQuantity: getValueOrDefault(item.baseQuantity, documentData.items[0].BaseQuantity),\n                BaseUnit: getValueOrDefault(item.baseUnit, documentData.items[0].BaseUnit),\n                state: {\n                    State: getValueOrDefault(null, documentData.items[0].state.State),\n                    ProcessingState: getValueOrDefault(item.status != \"ISS\" ? getValueProductType(item.groupCode) ? \"PRC\" : item.status : item.status, documentData.items[0].state.ProcessingState),\n                    SyncState: getValueOrDefault(null, documentData.items[0].state.SyncState)\n                },\n                reference: {\n                    ErpOrder: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrder),\n                    ErpOrderItemNum: getValueOrDefault(order.docNum, documentData.items[0].reference.ErpOrderItemNum)\n                },\n                itemBatch: getValueOrDefault(null, documentData.items[0].itemBatch),\n                itemSerials: getValueOrDefault(null, documentData.items[0].itemSerials),\n                itemTolerance: {\n                    PercentagePlus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentagePlus),\n                    PercentageMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.PercentageMinus),\n                    QuantityPlus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityPlus),\n                    QuantityMinus: getValueOrDefault(null, documentData.items[0].itemTolerance.QuantityMinus),\n                    Unit: getValueOrDefault(null, documentData.items[0].itemTolerance.Unit)\n                },\n                documentFiles: getValueOrDefault(null, documentData.items[0].documentFiles),\n                documentItemAttributes: [\n                    {\n                        AttributeCode: getValueOrDefault(\"TESLIM_TARIHI\", documentData.items[0].documentItemAttributes.AttributeCode),\n                        StrValue: null,\n                        DateValue: getValueOrDefault(item.deliveryDate, documentData.items[0].documentItemAttributes.DateValue),\n                        NumValue: null,\n                        ListedValue: null,\n                        BoolValue: null,\n                        RemoteName: getValueOrDefault(\"KALEMIN TESLIM TARIHI\", documentData.items[0].documentItemAttributes.RemoteName)\n                    }],\n                description: {\n                    DefinitionLang: getValueOrDefault(item.definitionLang, documentData.items[0].description.DefinitionLang),\n                    ShortenedDefinitionLang: getValueOrDefault(null, documentData.items[0].description.ShortenedDefinitionLang),\n                    LongDescriptionLang: getValueOrDefault(null, documentData.items[0].description.LongDescriptionLang)\n                },\n                   documentStorageLocations: {\n                 PickFrom: item.pickFrom ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), documentData.items[0]?.documentStorageLocations?.PickFrom?.plant),\n                    warehouse: getValueOrDefault(item.pickFrom?.toString(), documentData.items[0]?.documentStorageLocations?.PickFrom?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PickFrom?.shelf)\n                }]\n                : [],\n            \n                 PutawayTo: item.putawayTo ? [{\n                    plant: getValueOrDefault(env.get('documentStorageLocations_Plant'), \n                        documentData.items[0]?.documentStorageLocations?.PutawayTo?.plant),\n                    warehouse: getValueOrDefault(item.putawayTo?.toString(),documentData.items[0]?.documentStorageLocations?.PutawayTo?.warehouse),\n                    area: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.area),\n                    shelf: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.PutawayTo?.shelf)\n                }]\n                : [],\n    \n                IsObligatory: getValueOrDefault(null, documentData.items[0]?.documentStorageLocations?.IsObligatory)\n                },\n                notes: getValueOrDefault(null, documentData.items[0].notes),\n                \n            })) : [],\n            Notes: order.documantTypeCode == \"MS\" && order?.acik1 ? [{\n                addedDate: utcNow,\n                updateDate: null,\n                note: order?.acik1,\n                addedBy: null,\n                updatedBy: null\n\n            }] : []\n           \n        };\n    });\n\n    const result = {\n        requestId: \"\",\n        sender: \"node-red\",\n        data: transformedData\n        \n    };\n\n    msg.netsis2s4inBuyerAndSellerOrder = result;\n   \n} else {\n    node.warn(\"1111\");\n    // Hata mesajı\n    msg.payload = \"Unmatched account codes or netsis2s4inBuyerAndSellerOrder array is missing or not in expected format.\";\n}\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 310,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84833f21e45d49c4",
+        "type": "debug",
+        "z": "4a994836a6392703",
+        "g": "4ffcfc17d9807587",
+        "name": "debug 516",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "netsis2s4inBuyerAndSellerOrder",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 370,
         "wires": []
     },
     {
@@ -21017,8 +21066,7 @@
         "y": 190,
         "wires": [
             [
-                "4502f908659e379c",
-                "260e396473311b1b"
+                "b0e17be596a10349"
             ]
         ],
         "outputLabels": [
@@ -21410,24 +21458,6 @@
         "info": "Hata Kodu : 402\r\nDetay : \r\n\r\n<ErrorHeader>\r\nError Time : 2/28/2025 12:28:44 PM\r\nKernel Version : 9.0.57.0\r\nKernel Address : 12B11CA4\r\nObject Address : 18D85F70\r\nObject Name : NXObj_TFatura18D85F70\r\nClass Name : TFatura\r\n</ErrorHeader>\r\n<Hata>\r\nMK0000000000005 Nolu Evrak Daha önceden kaydedilmişNetOpenX50.Fatura\r\n\r\nKONTROL BU HATA KODU VAR ISE 1 CIKIS \r\nOTHERWISE 2"
     },
     {
-        "id": "260e396473311b1b",
-        "type": "debug",
-        "z": "9ef239d14888af27",
-        "g": "a5d0bd7e0538715e",
-        "name": "debug 397",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "netsisDataPayload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 150,
-        "wires": []
-    },
-    {
         "id": "3fdde4abc487fc2e",
         "type": "debug",
         "z": "9ef239d14888af27",
@@ -21547,6 +21577,74 @@
         "x": 1300,
         "y": 530,
         "wires": []
+    },
+    {
+        "id": "b0e17be596a10349",
+        "type": "function",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "Sipariş aktarıldımı kontrol",
+        "func": "\nmsg.flowName = \"STNSINV000V1\";\n\n// Sorguyu dinamik olarak oluştur\nlet query = `\nSELECT \n    CASE \n        WHEN EXISTS (\n            SELECT 1 \n            FROM TBLSTHAR \n            WHERE FISNO = '${msg.netsisDataPayload.FatUst.FATIRS_NO}' AND STRA_SIPKONT=${msg.netsisDataPayload.Kalems[0].Sira}\n        )\n        THEN 1 \n        ELSE 0 \n    END AS KayitVarMi;\n \n`;\n\n\nmsg.query = query;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 30,
+        "wires": [
+            [
+                "5348958f88920d67"
+            ]
+        ]
+    },
+    {
+        "id": "5348958f88920d67",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "MssqlFatUst",
+        "x": 420,
+        "y": 70,
+        "wires": [
+            [
+                "ddccb2cde4a43821"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ddccb2cde4a43821",
+        "type": "switch",
+        "z": "9ef239d14888af27",
+        "g": "a5d0bd7e0538715e",
+        "name": "",
+        "property": "payload[0].KayitVarMi",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 110,
+        "wires": [
+            [],
+            [
+                "2ca966aede7939dc"
+            ]
+        ]
     },
     {
         "id": "013efbbba054d98c",
@@ -23811,7 +23909,7 @@
         "type": "function",
         "z": "23b1b01cc4ce5a0d",
         "name": "new v2",
-        "func": "// MongoDB veri işleme ve bağlantı fonksiyonu\nlet mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\nconst isDubug = msg?.propIntegration?.isDebugMode || false; // default false\nmsg.isDubug = isDubug;\n\n// MongoDB config kontrolü\nif (!allIntegrationCode) {\n    node.error(\"Integration codes not found\");\n    return null;\n}\nmongoData = allIntegrationCode.find(item => item.path === env.get('MongoDbNamePath'));\nif (!mongoData) {\n    node.error(\"MongoDB configuration not found for path: \" + env.get('MongoDbNamePath'));\n    return null;\n}\n\n// Koleksiyon kontrolü\nconst collectionName = env.get('collection');\nif (!collectionName) {\n    node.error(\"Collection name not specified\");\n    return null;\n}\n\n// MongoDB client kontrolü\nconst mongodb = global.get('mongodb');\nif (!mongodb) {\n    node.error(\"MongoDB client not found in global context\");\n    return null;\n}\n\n// Bağlantı bilgileri\nconst user = mongoData.user ? encodeURIComponent(mongoData.user) : '';\nconst password = mongoData.pass ? encodeURIComponent(mongoData.pass) : '';\nconst host = mongoData.server;\nconst database = mongoData.database;\n\nif (!host) {\n    node.error(\"Server information is missing. Available fields: \" + Object.keys(mongoData).join(\", \"));\n    return null;\n}\n\n// Kullanıcı/şifre yoksa URI'yi ona göre kur\nconst hasAuth = !!(user && password);\nconst creds = hasAuth ? `${user}:${password}@` : '';\nconst uri = `mongodb://${creds}${host}/${database}${hasAuth ? '?authSource=admin' : ''}`;\n\n// Parametreler\nconst IsUpdated = !!env.get('IsUpdated');         // updateMany modu\nconst IsDelete = !!env.get('IsDelete');          // delete modu\n\nconst rawQuery = (msg.query && msg.query !== \"\") ? msg.query : env.get('query');\n\nif (isDubug) {\n    msg.reqQuery = rawQuery;\n    msg.reqFlags = { IsUpdated, IsDelete };\n}\n\n// Yardımcı: güvenli JSON parse\nfunction parseJSONSafe(v) {\n    if (typeof v === \"string\") {\n        try { return JSON.parse(v); } catch (e) {\n            throw new Error(\"Query JSON parse failed: \" + e.message);\n        }\n    }\n    return v;\n}\n\n// Ana işlem\nlet client;\ntry {\n    mongodb.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })\n        .then(_client => {\n            client = _client;\n            const db = client.db(database);\n            const coll = db.collection(collectionName);\n\n            // 1) UPDATE\n            if (IsUpdated) {\n                // Beklenen format: { update: { filter: {...}, update: {...}, options?: {...} } }\n                const q = parseJSONSafe(rawQuery);\n                const upd = q?.update;\n                if (!upd || !upd.filter || !upd.update) {\n                    throw new Error(\"Update mode requires: { update: { filter: {...}, update: {...}, options?: {...} } }\");\n                }\n                const { filter, update, options } = upd;\n                return coll.updateMany(filter, update, options || {});\n            }\n\n            // 2) DELETE\n            if (IsDelete) {\n                // Desteklenen formatlar:\n                //  a) Basit filtre: { Location: \"...\" }\n                //  b) Ayrıntılı: { filter: {...}, options?: {...} }\n                const del = parseJSONSafe(rawQuery) || {};\n                const filter = del.filter ?? del; // filter alanı yoksa objenin kendisini filtre say\n                const options = del.options || {};               \n\n                if (!filter || typeof filter !== 'object' || Array.isArray(filter)) {\n                    throw new Error(\"Delete filter must be an object. Given: \" + JSON.stringify(filter));\n                }\n\n                \n                return coll.deleteMany(filter, options);\n            }\n\n            // 3) AGGREGATE (default)\n            // Beklenen: pipeline array (ör. [{ $match: {...} }, { $project: {...} }])\n            const pipeline = parseJSONSafe(rawQuery);\n            if (!Array.isArray(pipeline)) {\n                throw new Error(\"Aggregate mode requires an array pipeline. Given: \" + typeof pipeline);\n            }\n            return coll.aggregate(pipeline).toArray();\n        })\n        .then(result => {\n            // Başarılı sonuç\n            msg.payload = result;\n            node.send([msg, null]);\n        })\n        .catch(err => {\n            // Hata durumu\n            msg.error = 'MongoDB Error: ' + err.message;\n            msg.errorDescription = msg.error;\n            node.send([null, msg]);\n            node.error(err.message);\n        })\n        .finally(() => {\n            if (client) {\n                try { client.close(); } catch (e) { /* ignore */ }\n            }\n        });\n} catch (err) {\n    // Genel hata\n    msg.error = 'Connection Error: ' + err.message;\n    msg.errorDescription = msg.error;\n    node.send([null, msg]);\n    node.error(err.message);\n}\n",
+        "func": "// MongoDB veri işleme ve bağlantı fonksiyonu\nlet mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\nconst isDubug = msg?.propIntegration?.isDebugMode || false; // default false\nmsg.isDubug = isDubug;\n\n// MongoDB config kontrolü\nif (!allIntegrationCode) {\n    node.error(\"Integration codes not found\");\n    return null;\n}\nmongoData = allIntegrationCode.find(item => item.path === env.get('MongoDbNamePath'));\nif (!mongoData) {\n    node.error(\"MongoDB configuration not found for path: \" + env.get('MongoDbNamePath'));\n    return null;\n}\n\n// Koleksiyon kontrolü\nconst collectionName = env.get('collection');\nif (!collectionName) {\n    node.error(\"Collection name not specified\");\n    return null;\n}\n\n// MongoDB client kontrolü\nconst mongodb = global.get('mongodb');\nif (!mongodb) {\n    node.error(\"MongoDB client not found in global context\");\n    return null;\n}\n\n// Bağlantı bilgileri\nconst user = mongoData.user ? encodeURIComponent(mongoData.user) : '';\nconst password = mongoData.pass ? encodeURIComponent(mongoData.pass) : '';\nconst host = mongoData.server;\nconst database = mongoData.database;\n\nif (!host) {\n    node.error(\"Server information is missing. Available fields: \" + Object.keys(mongoData).join(\", \"));\n    return null;\n}\n\n// Kullanıcı/şifre yoksa URI'yi ona göre kur\nconst hasAuth = !!(user && password);\nconst creds = hasAuth ? `${user}:${password}@` : '';\nconst uri = `mongodb://${creds}${host}/${database}${hasAuth ? '?authSource=admin' : ''}`;\n\n// Parametreler\nconst IsUpdated = !!env.get('IsUpdated');         // updateMany modu\nconst IsDelete = !!env.get('IsDelete');          // delete modu\n\nconst rawQuery = (msg.query && msg.query !== \"\") ? msg.query : env.get('query');\n\nif (isDubug) {\n    msg.reqQuery = rawQuery;\n    msg.reqFlags = { IsUpdated, IsDelete };\n}\n\n// Yardımcı: güvenli JSON parse\nfunction parseJSONSafe(v) {\n    if (typeof v === \"string\") {\n        try { return JSON.parse(v); } catch (e) {\n            throw new Error(\"Query JSON parse failed: \" + e.message);\n        }\n    }\n    return v;\n}\n\n// Ana işlem\nlet client;\ntry {\n    mongodb.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })\n        .then(_client => {\n            client = _client;\n            const db = client.db(database);\n            const coll = db.collection(collectionName);\n\n            // 1) UPDATE\n            if (IsUpdated) {\n                // Beklenen format: { update: { filter: {...}, update: {...}, options?: {...} } }\n                const q = parseJSONSafe(rawQuery);\n                const upd = q?.update;\n                if (!upd || !upd.filter || !upd.update) {\n                    throw new Error(\"Update mode requires: { update: { filter: {...}, update: {...}, options?: {...} } }\");\n                }\n                const { filter, update, options } = upd;\n                node.warn(options);\n                return coll.updateMany(filter, update, options || {});\n            }\n\n            // 2) DELETE\n            if (IsDelete) {\n                // Desteklenen formatlar:\n                //  a) Basit filtre: { Location: \"...\" }\n                //  b) Ayrıntılı: { filter: {...}, options?: {...} }\n                const del = parseJSONSafe(rawQuery) || {};\n                const filter = del.filter ?? del; // filter alanı yoksa objenin kendisini filtre say\n                const options = del.options || {};               \n\n                if (!filter || typeof filter !== 'object' || Array.isArray(filter)) {\n                    throw new Error(\"Delete filter must be an object. Given: \" + JSON.stringify(filter));\n                }\n\n                \n                return coll.deleteMany(filter, options);\n            }\n\n            // 3) AGGREGATE (default)\n            // Beklenen: pipeline array (ör. [{ $match: {...} }, { $project: {...} }])\n            const pipeline = parseJSONSafe(rawQuery);\n            if (!Array.isArray(pipeline)) {\n                throw new Error(\"Aggregate mode requires an array pipeline. Given: \" + typeof pipeline);\n            }\n            return coll.aggregate(pipeline).toArray();\n        })\n        .then(result => {\n            // Başarılı sonuç\n            msg.payload = result;\n            node.send([msg, null]);\n        })\n        .catch(err => {\n            // Hata durumu\n            msg.error = 'MongoDB Error: ' + err.message;\n            msg.errorDescription = msg.error;\n            node.send([null, msg]);\n            node.error(err.message);\n        })\n        .finally(() => {\n            if (client) {\n                try { client.close(); } catch (e) { /* ignore */ }\n            }\n        });\n} catch (err) {\n    // Genel hata\n    msg.error = 'Connection Error: ' + err.message;\n    msg.errorDescription = msg.error;\n    node.send([null, msg]);\n    node.error(err.message);\n}\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -23922,11 +24020,11 @@
         "type": "subflow:9ef239d14888af27",
         "z": "1bd2a61f8400e469",
         "name": "STNBWAY000V1",
-        "x": 830,
-        "y": 110,
+        "x": 790,
+        "y": 60,
         "wires": [
             [
-                "e70015ba24feb483"
+                "9dddba898593ecb3"
             ],
             [
                 "dc9bfe6f028800a7"
@@ -23949,8 +24047,8 @@
         "y": 130,
         "wires": [
             [
-                "5fe17ef42c1afeb2",
-                "119a20c4c9022cb7"
+                "119a20c4c9022cb7",
+                "5fe17ef42c1afeb2"
             ]
         ],
         "icon": "node-red/mongodb.svg",
@@ -24002,7 +24100,7 @@
         "type": "function",
         "z": "1bd2a61f8400e469",
         "name": "Map",
-        "func": "// Eşleştirme için kullanılan nesne\nconst netsisData = {\n    FatNo: \"documentNo\",\n    OrderLineNo: \"documentItemNo\",\n    Material: \"productCode\",\n};\n\n// Gelen veriyi kontrol et\nconst data = msg.req?.body?.Data;\nif (!Array.isArray(data)) {\n    node.error(\"Data dizisi bulunamadi veya geçersiz\", msg);\n    return null;\n}\n\n// Sonucu oluştur\nconst result = Object.keys(netsisData).reduce((acc, key) => {\n    const field = netsisData[key];\n    const foundItem = data.find(x => x.attributeSyncField === field);\n    if (foundItem) {\n        acc[key] = foundItem.attributeValue;\n    }\n    return acc;\n}, {});\n\n// Çıktıyı ayarla\nmsg.netsisDataPayload = result;\nreturn msg;\n",
+        "func": "// Eşleştirme için kullanılan nesne\nconst netsisData = {\n    FatNo: \"documentNo\",\n    OrderLineNo: \"documentItemNo\",\n    Material: \"productCode\",\n};\n\n// Gelen veriyi kontrol et\nconst data = msg.req?.body?.Data || msg.payload.Data;\nif (!Array.isArray(data)) {\n    node.error(\"Data dizisi bulunamadi veya geçersiz\", msg);\n    return null;\n}\n\n// Sonucu oluştur\nconst result = Object.keys(netsisData).reduce((acc, key) => {\n    const field = netsisData[key];\n    const foundItem = data.find(x => x.attributeSyncField === field);\n    if (foundItem) {\n        acc[key] = foundItem.attributeValue;\n    }\n    return acc;\n}, {});\n\n// Çıktıyı ayarla\nmsg.netsisDataPayload = result;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -24051,30 +24149,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1100,
-        "y": 80,
+        "x": 900,
+        "y": 180,
         "wires": [
             [
                 "7e9d458f7dfede83"
             ]
         ]
-    },
-    {
-        "id": "7e9d458f7dfede83",
-        "type": "subflow:d296b4008b6072d8",
-        "z": "1bd2a61f8400e469",
-        "name": "",
-        "x": 1335,
-        "y": 60,
-        "wires": [
-            [
-                "8884be601ef59152",
-                "88d50ae0020f16cd"
-            ],
-            []
-        ],
-        "l": false,
-        "info": "CREATE PROCEDURE  S4INCloseOrderStatusUpdate\r\n    @FisNo NVARCHAR(50),\r\n    @StokKodu NVARCHAR(50),\r\n    @Sira INT\r\n    \r\nAS\r\nBEGIN\r\n    SET NOCOUNT ON;\r\n\r\n    UPDATE TBLSIPATRA\r\n    SET STHAR_HTUR = 'K'\r\n    WHERE FISNO = @FisNo \r\n      AND STOK_KODU = @StokKodu \r\n      AND SIRA = @Sira;\r\n\r\n\r\n\t \r\nEND;\r\n"
     },
     {
         "id": "dc9bfe6f028800a7",
@@ -24088,8 +24169,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
-        "y": 130,
+        "x": 1060,
+        "y": 120,
         "wires": [
             [
                 "01e5ad7224792174"
@@ -24124,7 +24205,7 @@
         "type": "function",
         "z": "1bd2a61f8400e469",
         "name": "MongoQueryV2",
-        "func": "const query = `[\n  {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\"\n     \n    }\n  },\n  \n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteNumber\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteDate\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n        \"AdjustedQuantity\": {\n        \"$cond\": [\n          { \"$eq\": [\"$OperationType.OpCode\", \"OP00208\"] },\n          { \"$multiply\": [\"$BaseQuantity\", -1] },\n         \"$BaseQuantity\"\n        ]\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\"\n        \n      },\n      \"TotalQuantity\": { \"$sum\": \"$AdjustedQuantity\" },\n      \"DispatchNoteDateRaw\": { \"$first\": \"$DispatchNoteDateRaw\" },\n      \"DispatchNoteNumber\": { \"$first\": \"$DispatchNoteNumber\" },\n      \"ProductCode\": { \"$first\": \"$ProductCode\" },\n      \"BaseUnit\": { \"$first\": \"$BaseUnit\" },\n      \"TargetLocation\": { \"$first\": \"$TargetLocation\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n      \"DispatchNoteNumber\": \"$DispatchNoteNumber\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        { \"$unwind\": \"$Items\" },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$Items.ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": { \"$ifNull\": [\"$Items.DocumentItemAttributes\", []] }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": { \"$eq\": [\"$$attr.AttributeCode\", \"TESLIM_TARIHI\"] }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$DocumentInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$PartnerDetails\", \"preserveNullAndEmptyArrays\": true } },\n {\n  \"$lookup\": {\n    \"from\": \"Location\",\n    \"let\": { \"locId\": \"$TargetLocation\" },\n    \"pipeline\": [\n      {\n        \"$match\": {\n          \"$expr\": {\n            \"$eq\": [\"$_id\", { \"$toObjectId\": \"$$locId\" }]\n          }\n        }\n      }\n    ],\n    \"as\": \"LocationInfo\"\n  }\n},\n\n  { \"$unwind\": { \"path\": \"$LocationInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$addFields\": {\n         \"DispatchNoteDate\": {\n              \"$dateToString\": {\n                \"format\": \"%Y-%m-%d\",\n                \"date\": {\n                  \"$dateAdd\": {\n                    \"startDate\": {\n                      \"$dateFromString\": {\n                        \"dateString\": \"$DispatchNoteDateRaw\",\n                        \"format\": \"%m/%d/%Y %H:%M:%S\"\n                      }\n                    },\n                    \"unit\": \"hour\",\n                    \"amount\": 3\n                  }\n                }\n              }\n            },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          { \"$ifNull\": [\"$DocumentInfo.TESLIM_TARIHI\", false] },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  \n  {\n    \"$lookup\": {\n      \"from\": \"DocumentQuantity\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        }],\n      \"as\": \"quantityData\"\n    }\n  },\n  {\n      \"$unwind\":\"$quantityData\"\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n           \"$toDouble\": \"$TotalQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n\n\n`;\n\nmsg.query=query;\n \nreturn msg;",
+        "func": "const query = `[\n  {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\"\n     \n    }\n  },\n  \n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteNumber\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteDate\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n        \"AdjustedQuantity\": {\n        \"$cond\": [\n          { \"$eq\": [\"$OperationType.OpCode\", \"OP00208\"] },\n          { \"$multiply\": [\"$BaseQuantity\", -1] },\n         \"$BaseQuantity\"\n        ]\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\",\n          \"DispatchNoteNo\": \"$DispatchNoteNumber\"\n        \n      },\n      \"TotalQuantity\": { \"$sum\": \"$AdjustedQuantity\" },\n      \"DispatchNoteDateRaw\": { \"$first\": \"$DispatchNoteDateRaw\" },\n    \n      \"ProductCode\": { \"$first\": \"$ProductCode\" },\n      \"BaseUnit\": { \"$first\": \"$BaseUnit\" },\n      \"TargetLocation\": { \"$first\": \"$TargetLocation\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n       \"DispatchNoteNumber\": \"$_id.DispatchNoteNo\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        { \"$unwind\": \"$Items\" },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$Items.ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": { \"$ifNull\": [\"$Items.DocumentItemAttributes\", []] }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": { \"$eq\": [\"$$attr.AttributeCode\", \"TESLIM_TARIHI\"] }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$DocumentInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$PartnerDetails\", \"preserveNullAndEmptyArrays\": true } },\n {\n  \"$lookup\": {\n    \"from\": \"Location\",\n    \"let\": { \"locId\": \"$TargetLocation\" },\n    \"pipeline\": [\n      {\n        \"$match\": {\n          \"$expr\": {\n            \"$eq\": [\"$_id\", { \"$toObjectId\": \"$$locId\" }]\n          }\n        }\n      }\n    ],\n    \"as\": \"LocationInfo\"\n  }\n},\n\n  { \"$unwind\": { \"path\": \"$LocationInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$addFields\": {\n         \"DispatchNoteDate\": {\n              \"$dateToString\": {\n                \"format\": \"%Y-%m-%d\",\n                \"date\": {\n                  \"$dateAdd\": {\n                    \"startDate\": {\n                      \"$dateFromString\": {\n                        \"dateString\": \"$DispatchNoteDateRaw\",\n                        \"format\": \"%m/%d/%Y %H:%M:%S\"\n                      }\n                    },\n                    \"unit\": \"hour\",\n                    \"amount\": 3\n                  }\n                }\n              }\n            },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          { \"$ifNull\": [\"$DocumentInfo.TESLIM_TARIHI\", false] },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  \n  {\n    \"$lookup\": {\n      \"from\": \"DocumentQuantity\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        }],\n      \"as\": \"quantityData\"\n    }\n  },\n  {\n      \"$unwind\":\"$quantityData\"\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n           \"$toDouble\": \"$TotalQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n\n\n`;\n\nmsg.query=query;\n \nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -24152,14 +24233,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 90,
+        "x": 600,
+        "y": 70,
         "wires": [
             [
                 "21f11f421b21c5f2"
             ],
             [
-                "dc38e29dc1eec979"
+                "dc38e29dc1eec979",
+                "e70015ba24feb483"
             ]
         ]
     },
@@ -24304,7 +24386,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1480,
-        "y": 380,
+        "y": 390,
         "wires": []
     },
     {
@@ -24382,12 +24464,47 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 400,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "9dddba898593ecb3",
+        "type": "function",
+        "z": "1bd2a61f8400e469",
+        "name": "set index ",
+        "func": " \n msg.index = msg.index+1;\n \n \n \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 70,
+        "wires": [
+            [
+                "8884be601ef59152"
+            ]
+        ]
+    },
+    {
+        "id": "7e9d458f7dfede83",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "1bd2a61f8400e469",
+        "name": "",
+        "x": 1065,
+        "y": 190,
+        "wires": [
+            [],
+            []
+        ],
+        "l": false,
+        "info": "CREATE PROCEDURE  S4INCloseOrderStatusUpdate\r\n    @FisNo NVARCHAR(50),\r\n    @StokKodu NVARCHAR(50),\r\n    @Sira INT\r\n    \r\nAS\r\nBEGIN\r\n    SET NOCOUNT ON;\r\n\r\n    UPDATE TBLSIPATRA\r\n    SET STHAR_HTUR = 'K'\r\n    WHERE FISNO = @FisNo \r\n      AND STOK_KODU = @StokKodu \r\n      AND SIRA = @Sira;\r\n\r\n\r\n\t \r\nEND;\r\n"
     },
     {
         "id": "bfdf8f915f026d47",
@@ -27059,8 +27176,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 355,
-        "y": 70,
+        "x": 145,
+        "y": 50,
         "wires": [
             [
                 "6705288fd4ddbfa6"
@@ -27074,7 +27191,7 @@
         "type": "function",
         "z": "2ad6940233ab0133",
         "name": "MongoQueryV2",
-        "func": "const documentNo = msg.payload.Data[0]?.documentNo||null;\nconst documentItemNo = msg.payload.Data[0]?.documentItemNo || null;\nconst newShipNum = msg.payload.Data[0].NewShipNum;\nconst irsaliyeNum = msg.payload.Data[0].irsaliyeNum;\nconst query =   {\n  update: {\n    filter: {\n      DocumentNo: documentNo,\n      DocumentItemNo: documentItemNo,\n      SourceInventoryState: \"SPC\",\n      TargetInventoryState: \"UNL\"\n    },\n    update: {\n      $set: {\n        \"TransactionAttributes.$[elem].AttributeValue\": newShipNum\n      }\n    },\n    options: {\n      arrayFilters: [\n        {\n          \"elem.AttributeName\": \"DispatchNoteNumber\",\n          \"elem.AttributeValue\": irsaliyeNum\n        }\n      ]\n    }\n  }\n};\n;\n\nmsg.query=query;\n \nreturn msg;",
+        "func": "const documentNo = msg.payload.Data[0]?.documentNo || null;\nconst documentItemNo = msg.payload.Data[0]?.documentItemNo || null;\nconst newShipNum = msg.payload.Data[0].NewShipNum;\nconst irsaliyeNum = msg.payload.Data[0].irsaliyeNum;\nconst customerCode = msg.payload.Data[0].customerCode;\nconst query = {\n  update: {\n    filter: {\n      DocumentNo: documentNo,\n      DocumentItemNo: documentItemNo,\n      // SourceInventoryState: \"WHS\",\n      // TargetInventoryState: \"WHS\",      \n    },\n    update: {\n      $set: {\n        \"TransactionAttributes.$[elem].AttributeValue\": newShipNum\n      }\n    },\n    options: {\n      arrayFilters: [\n        {\n          \"elem.AttributeName\": \"DispatchNoteNumber\",\n          \"elem.AttributeValue\": irsaliyeNum\n        } \n      ]\n    }\n  }\n};\n;\n\n// Eğer customerCode doluysa koşullu olarak TransactionAttributes ekle\nif (customerCode && customerCode !== '') {\n  query.update.filter.TransactionAttributes = {\n    \"$elemMatch\": {\n      \"AttributeName\": \"CustomerCode\",\n      \"AttributeValue\": customerCode\n    }\n  };\n}\n\nmsg.query = query;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -27085,7 +27202,8 @@
         "y": 110,
         "wires": [
             [
-                "3fc8ff0644c76df6"
+                "3fc8ff0644c76df6",
+                "2c3af9d9fbb0351a"
             ]
         ]
     },
@@ -27168,6 +27286,42 @@
         },
         "x": 730,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "625c046cbfc54c1c",
+        "type": "function",
+        "z": "2ad6940233ab0133",
+        "d": true,
+        "name": "MongoQueryV2",
+        "func": "const documentNo = msg.payload.Data[0]?.documentNo||null;\nconst documentItemNo = msg.payload.Data[0]?.documentItemNo || null;\nconst newShipNum = msg.payload.Data[0].NewShipNum;\nconst irsaliyeNum = msg.payload.Data[0].irsaliyeNum;\nconst query =   {\n  update: {\n    filter: {\n      DocumentNo: documentNo,\n      DocumentItemNo: documentItemNo,\n      SourceInventoryState: \"SPC\",\n      TargetInventoryState: \"UNL\"\n    },\n    update: {\n      $set: {\n        \"TransactionAttributes.$[elem].AttributeValue\": newShipNum\n      }\n    },\n    options: {\n      arrayFilters: [\n        {\n          \"elem.AttributeName\": \"DispatchNoteNumber\",\n          \"elem.AttributeValue\": irsaliyeNum\n        }\n      ]\n    }\n  }\n};\n;\n\nmsg.query=query;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c3af9d9fbb0351a",
+        "type": "debug",
+        "z": "2ad6940233ab0133",
+        "name": "debug 515",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "query",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 250,
         "wires": []
     },
     {
@@ -27538,7 +27692,7 @@
         "z": "94eb378f85b6e7bb",
         "g": "b33aae025374f94d",
         "name": "function 5",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\nconst year = utcNow.getFullYear();\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\nvar formattedDate = year + '-' + month + '-' + day;\nlet originalDate = msg.netsisDataPayload?.FatUst?.Tarih; // \"27-06-2025\"\nnode.warn(originalDate);\n// Gün, ay, yıl olarak parçala\nlet [day_, month_, year_] = originalDate.split(\"-\");\n\n// originalDate=`${year_}-${month_}-${day_}`;\nconst hours = String(utcNow.getHours()).padStart(2, '0');\nconst minutes = String(utcNow.getMinutes()).padStart(2, '0');\noriginalDate = `${year_}-${month_}-${day_} ${hours}:${minutes}`;\nmsg.netsisDataPayload.FatUst.Tarih = originalDate;\n\n\n\nconst defaultValue = {\n    FatUst: {        \n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: originalDate||formattedDate, \n        SIPARIS_TEST:  originalDate||formattedDate,     \n        Tip: 3,\n        KOD1: null,\n        KOD2: null,\n        TIPI:4,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: false,\n        PLA_KODU: \"MERKEZ\",\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: originalDate || formattedDate, \n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        //KS_KODU: \"100\",\n        FIYATTARIHI:null,\n        ODEMETARIHI:null,\n        KOSULTARIHI:null,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 0,\n            STra_IAF:1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: originalDate || formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: 0,\n            DOVTIP: 0,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: \"MERKEZ\",           \n            STra_testar: originalDate || formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,                        \n            DEPO_KODU: 0,                     \n            Stra_FiiliTar: originalDate || formattedDate,\n            D_YEDEK10: originalDate || formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: 1,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,           \n            S_Yedek2:'SFORIN'\n\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.netsisDataPayload || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},  \n    Kalems: []\n    \n};\n \n \n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n   \n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n \n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nconst defaultKalem = defaultValue.Kalems[0];\nresult.Kalems = kalemlerData.map((kalem) => {\n     defaultValue.Kalems[0].Sira +=1\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\n\nmsg.flowName =\"STNRDN000V1.0\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\nconst year = utcNow.getFullYear();\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\nvar formattedDate = year + '-' + month + '-' + day;\nlet originalDate = msg.netsisDataPayload?.FatUst?.Tarih; // \"27-06-2025\"\nnode.warn(originalDate);\n// Gün, ay, yıl olarak parçala\nlet [day_, month_, year_] = originalDate.split(\"-\");\n\n// originalDate=`${year_}-${month_}-${day_}`;\nconst hours = String(utcNow.getHours()).padStart(2, '0');\nconst minutes = String(utcNow.getMinutes()).padStart(2, '0');\noriginalDate = `${year_}-${month_}-${day_} ${hours}:${minutes}`;\nmsg.netsisDataPayload.FatUst.Tarih = originalDate;\n\n\n\nconst defaultValue = {\n    FatUst: {        \n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: originalDate||formattedDate, \n        SIPARIS_TEST:  originalDate||formattedDate,   \n         D_YEDEK10: originalDate || formattedDate,  \n        Tip: 3,\n        KOD1: null,\n        KOD2: null,\n        TIPI:4,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: false,\n        PLA_KODU: \"MERKEZ\",\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: originalDate || formattedDate, \n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        //KS_KODU: \"100\",\n        FIYATTARIHI:null,\n        ODEMETARIHI:null,\n        KOSULTARIHI:null,\n        FAT_ALTM1:null,\n        FAT_ALTM2:null,\n        ODEMEGUNU:null,\n        GEN_ISK1T:null,\n        GEN_ISK2T:null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 0,\n            STra_IAF:1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: originalDate || formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: 0,\n            DOVTIP: 0,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: \"MERKEZ\",           \n            STra_testar: originalDate || formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,                        \n            DEPO_KODU: 0,                     \n            Stra_FiiliTar: originalDate || formattedDate,\n            D_YEDEK10: originalDate || formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: 1,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,           \n            S_Yedek2:'SFORIN'\n\n            \n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.netsisDataPayload || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},  \n    Kalems: []\n    \n};\n \n \n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n   \n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n \n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nconst defaultKalem = defaultValue.Kalems[0];\nresult.Kalems = kalemlerData.map((kalem) => {\n     defaultValue.Kalems[0].Sira +=1\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\n\nmsg.flowName =\"STNRDN000V1.0\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -28754,7 +28908,7 @@
         "type": "function",
         "z": "3ab9e684f951f1bf",
         "name": "function 172",
-        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\nconst year = utcNow.getFullYear();\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\nvar formattedDate = year + '-' + month + '-' + day;\nlet originalDate = msg.netsisDataPayload?.FatUst?.Tarih; // \"27-06-2025\"\nnode.warn(originalDate);\n// Gün, ay, yıl olarak parçala\nlet [day_, month_, year_] = originalDate.split(\"-\");\nconst hours = String(utcNow.getHours()).padStart(2, '0');\nconst minutes = String(utcNow.getMinutes()).padStart(2, '0');\noriginalDate = `${year_}-${month_}-${day_} ${hours}:${minutes}`;\nmsg.netsisDataPayload.FatUst.Tarih = originalDate;\n\n \n\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: originalDate || formattedDate,\n        SIPARIS_TEST: originalDate || formattedDate,\n        Tip: 2,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 4,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: false,\n        PLA_KODU: \"MERKEZ\",\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: originalDate || formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        //KS_KODU: \"100\",\n        FIYATTARIHI: null,\n        ODEMETARIHI: null,\n        KOSULTARIHI: null,\n        FAT_ALTM1: null,\n        FAT_ALTM2: null,\n        ODEMEGUNU: null,\n        GEN_ISK1T: null,\n        GEN_ISK2T: null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {\n        PLAKA: msg.copyNetsisDataPayload.PLAKA || null,\n        TASIYICIVKN: msg.copyNetsisDataPayload.TASIYICI_VKN,\n        TASIYICIADI: msg.copyNetsisDataPayload.TASIYICI_NAME,\n        TASIYICIILCE: msg.copyNetsisDataPayload.ILCE || \"IZMIR\",\n        TASIYICIIL: msg.copyNetsisDataPayload.IL || \"IZMIR\",\n        TASIYICIULKE: msg.copyNetsisDataPayload.ULKE || \"TR\",\n        TASIYICIPOSTAKODU: msg.copyNetsisDataPayload.POSTA_KODU || \"35000\",\n        SOFOR1ADI: msg.copyNetsisDataPayload.SOFOR1AD,\n        SOFOR1SOYADI: msg.copyNetsisDataPayload.SOFOR1SOYAD,\n        SOFOR1ACIKLAMA: \"\",\n        SOFOR1TCKN: msg.copyNetsisDataPayload.SOFOR1TC,\n        SOFOR2ADI: msg.copyNetsisDataPayload.SOFOR2AD,\n        SOFOR2SOYADI: msg.copyNetsisDataPayload.SOFOR2SOYAD,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: msg.copyNetsisDataPayload?.SOFOR2TC,\n        SOFOR3ADI: msg.copyNetsisDataPayload.SOFOR3AD,\n        SOFOR3SOYADI: msg.copyNetsisDataPayload.SOFOR3SOYAD,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: msg.copyNetsisDataPayload?.SOFOR3TC,\n        SEVKTAR: formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 0,\n            STra_IAF: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: originalDate || formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: 0,\n            DOVTIP: 0,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: \"MERKEZ\",\n            STra_testar: originalDate || formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            DEPO_KODU: 0,\n            Stra_FiiliTar: originalDate || formattedDate,\n            D_YEDEK10: originalDate || formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: 1,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,\n            S_Yedek2: 'SFORIN'\n\n\n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.netsisDataPayload || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    Kalems: [],\n    EIrsEkBilgi: defaultValue.EIrsEkBilgi\n\n};\n\n\n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nconst defaultKalem = defaultValue.Kalems[0];\nresult.Kalems = kalemlerData.map((kalem) => {\n    defaultValue.Kalems[0].Sira += 1\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\n\nmsg.flowName = \"STNRDN000V1.0\"\nreturn msg;\n",
+        "func": "// Şu anki zamana Al\nconst utcNow = new Date(Date.now() + (3 * 60 * 60 * 1000));\nconst year = utcNow.getFullYear();\n// Ayı al ve iki basamaklı formatta ayarla\nconst month = String(utcNow.getMonth() + 1).padStart(2, '0'); // Aylar 0'dan başlar, bu yüzden +1 ekliyorum\n// Günü al ve iki basamaklı formatta ayarla\nconst day = String(utcNow.getDate()).padStart(2, '0');\nvar formattedDate = year + '-' + month + '-' + day;\nlet originalDate = msg.netsisDataPayload?.FatUst?.Tarih; // \"27-06-2025\"\nnode.warn(originalDate);\n// Gün, ay, yıl olarak parçala\nlet [day_, month_, year_] = originalDate.split(\"-\");\nconst hours = String(utcNow.getHours()).padStart(2, '0');\nconst minutes = String(utcNow.getMinutes()).padStart(2, '0');\noriginalDate = `${year_}-${month_}-${day_} ${hours}:${minutes}`;\nmsg.netsisDataPayload.FatUst.Tarih = originalDate;\n\n \n\n\nconst defaultValue = {\n    FatUst: {\n        Sube_Kodu: env.get('BranchCode'),\n        CariKod: null,\n        FATIRS_NO: null,\n        Tarih: originalDate || formattedDate,\n        SIPARIS_TEST: originalDate || formattedDate,\n        Tip: 2,\n        D_YEDEK10: originalDate || formattedDate,\n        KOD1: null,\n        KOD2: null,\n        TIPI: 4,\n        Aciklama: \"SFORIN\",\n        SIPARIS_NUMARASI: null,\n        ENTEGRE_TRH: null,\n        KDV_DAHILMI: false,\n        PLA_KODU: \"MERKEZ\",\n        Proje_Kodu: null,\n        EKACK1: null,\n        EKACK2: null,\n        EKACK3: null,\n        EKACK4: null,\n        EKACK5: null,\n        EKACK6: null,\n        EKACK7: null,\n        EKACK8: null,\n        EKACK9: null,\n        EKACK10: null,\n        EKACK11: null,\n        EKACK12: null,\n        EKACK13: null,\n        EKACK14: null,\n        EKACK15: null,\n        EKACK16: null,\n        FiiliTarih: originalDate || formattedDate,\n        EfaturaCarisiMi: true,\n        EIrsaliye: true,\n        //KS_KODU: \"100\",\n        FIYATTARIHI: null,\n        ODEMETARIHI: null,\n        KOSULTARIHI: null,\n        FAT_ALTM1: null,\n        FAT_ALTM2: null,\n        ODEMEGUNU: null,\n        GEN_ISK1T: null,\n        GEN_ISK2T: null,\n        GEN_ISK3T: null,\n        GEN_ISK1O: null,\n        GEN_ISK2O: null,\n        GEN_ISK3O: null\n    },\n    EIrsEkBilgi: {\n        PLAKA: msg.copyNetsisDataPayload.PLAKA || null,\n        TASIYICIVKN: msg.copyNetsisDataPayload.TASIYICI_VKN,\n        TASIYICIADI: msg.copyNetsisDataPayload.TASIYICI_NAME,\n        TASIYICIILCE: msg.copyNetsisDataPayload.ILCE || \"IZMIR\",\n        TASIYICIIL: msg.copyNetsisDataPayload.IL || \"IZMIR\",\n        TASIYICIULKE: msg.copyNetsisDataPayload.ULKE || \"TR\",\n        TASIYICIPOSTAKODU: msg.copyNetsisDataPayload.POSTA_KODU || \"35000\",\n        SOFOR1ADI: msg.copyNetsisDataPayload.SOFOR1AD,\n        SOFOR1SOYADI: msg.copyNetsisDataPayload.SOFOR1SOYAD,\n        SOFOR1ACIKLAMA: \"\",\n        SOFOR1TCKN: msg.copyNetsisDataPayload.SOFOR1TC,\n        SOFOR2ADI: msg.copyNetsisDataPayload.SOFOR2AD,\n        SOFOR2SOYADI: msg.copyNetsisDataPayload.SOFOR2SOYAD,\n        SOFOR2ACIKLAMA: null,\n        SOFOR2TCKN: msg.copyNetsisDataPayload?.SOFOR2TC,\n        SOFOR3ADI: msg.copyNetsisDataPayload.SOFOR3AD,\n        SOFOR3SOYADI: msg.copyNetsisDataPayload.SOFOR3SOYAD,\n        SOFOR3ACIKLAMA: null,\n        SOFOR3TCKN: msg.copyNetsisDataPayload?.SOFOR3TC,\n        SEVKTAR: originalDate || formattedDate,\n        DORSEPLAKA1: null,\n        DORSEPLAKA2: null,\n        DORSEPLAKA3: null,\n        MATBUKULLANILSIN: false,\n    },\n    Kalems: [\n        {\n            STra_HTUR: \"H\",\n            STra_GC: \"G\",\n            StokKodu: null,\n            Sira: 0,\n            STra_IAF: 1,\n            STra_FATIRSNO: null,\n            STra_GCMIK: 0,\n            STra_TAR: originalDate || formattedDate,\n            STra_NF: 0,\n            STra_BF: 0,\n            STra_KDV: 0,\n            DOVIZ_TURU: 0,\n            DOVTIP: 0,\n            STra_DOVTIP: 0,\n            STra_SIPNUM: null,\n            Plasiyer_Kodu: \"MERKEZ\",\n            STra_testar: originalDate || formattedDate,\n            Olcubr: 1,\n            ProjeKodu: null,\n            DEPO_KODU: 0,\n            Stra_FiiliTar: originalDate || formattedDate,\n            D_YEDEK10: originalDate || formattedDate,\n            STra_SIPKONT: null,\n            Stra_IrsKont: 1,\n            Firmadovtut: 0,\n            STra_SatIsk: null,\n            STra_SatIsk2: null,\n            STra_SatIsk3: null,\n            STra_SatIsk4: null,\n            STra_SatIsk5: null,\n            STra_SatIsk6: null,\n            STra_ODEGUN: null,\n            SatirBaziAciks: null,\n            S_Yedek2: 'SFORIN'\n\n\n        },\n    ],\n};\n\n// null veya undefined kontrolü için yardımcı fonksiyon\nconst getValueOrDefault = (value, defaultValue) =>\n    value !== null && value !== undefined ? value : defaultValue;\n\n// Gelen payload üzerinde işlem yapıyoruz\nconst incomingData = msg.netsisDataPayload || {}; // Gelen veri yoksa boş bir nesne olarak başlat\n\nconst result = {\n    KalemAdedi: msg.netsisDataPayload.Kalems.length,\n    FaturaTip: 3,\n    KosulMalFazlasiIsle: true,\n    SonNumaraYazilsin: true,\n    OtomatikCevrimYapilsin: true,\n    FatUst: {},\n    Kalems: [],\n    EIrsEkBilgi: defaultValue.EIrsEkBilgi\n\n};\n\n\n\n\n\n\n// FatUst alanlarını doldur\nconst fatUstData = incomingData.FatUst || {}; // Gelen FatUst yoksa boş nesne kullan\nfor (const key in defaultValue.FatUst) {\n\n    result.FatUst[key] = getValueOrDefault(\n        fatUstData[key],\n        defaultValue.FatUst[key]\n    );\n}\n\n\n\n// Kalemler için özel işlem\nconst kalemlerData = incomingData.Kalems || []; // Gelen Kalems yoksa boş dizi kullan\nconst defaultKalem = defaultValue.Kalems[0];\nresult.Kalems = kalemlerData.map((kalem) => {\n    defaultValue.Kalems[0].Sira += 1\n    const processedKalem = {};\n    for (const key in defaultKalem) {\n        processedKalem[key] = getValueOrDefault(kalem[key], defaultKalem[key]);\n    }\n    return processedKalem;\n});\n\nmsg.dataPayload = result;\n\nmsg.flowName = \"STNRDN000V1.0\"\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -33076,7 +33230,7 @@
         "z": "97e7314f695bb652",
         "g": "1416aa57eea7f6ab",
         "name": "function 162",
-        "func": "msg.payload=\n  [\n      {\n        \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"METROPOL1\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"07-10-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
+        "func": "msg.payload=\n  [\n      {\n        \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"SERTEL2\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"30-10-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -34164,6 +34318,62 @@
         "x": 2110,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "f951e92a7a12628e",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "549a4dca03d0fc64",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"RequestId\":null,\"Sender\":\"MobileAttributeEdit - handleButtonClick\",\"Data\":[{\"irsaliyeNum\":\"I40000000000062\",\"NewShipNum\":\"I40000000000063\",\"customerCode\":\"262\"}],\"Current\":[],\"requestId\":\"1f62be83-7708-420f-b8eb-6a3b18be9fb0\",\"methodName\":\"http://192.168.25.9:8000/UpdateShipmentNum\",\"clientPath\":\"/operations/kabulIslemleri/alistanIadeOlustur\",\"sender\":\"OP00928\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
+        "payloadType": "json",
+        "x": 290,
+        "y": 1120,
+        "wires": [
+            [
+                "89ec2f16c612017d"
+            ]
+        ]
+    },
+    {
+        "id": "0a93b6b0235ab44b",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "a49dbe2ba93bc9f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Data\":[{\"attributeName\":\"UrunKodu\",\"attributeValue\":\"70018\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"Birim\",\"attributeValue\":\"KG\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"BelgeNumarasi\",\"attributeValue\":\"000000000000676\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"KalemNumarasi\",\"attributeValue\":\"12\",\"attributeSyncField\":\"documentItemNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"NUMERIC\"},{\"attributeName\":\"Miktar\",\"attributeValue\":\"1000.0\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DepoKodu\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"Default\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"MatchValue\"},{\"attributeName\":\"Teslim_Tarihi\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"PartnerKodu\",\"attributeValue\":\"3710\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ItemProcessingState\",\"attributeValue\":\"ISS\",\"attributeSyncField\":\"itemProcessingState\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNBWAY000V1\",\"PreRequest\":null,\"requestId\":\"7f7cb622-83a5-4733-868c-7dd86a03706b\",\"methodName\":\"wmsmaster/api/WmsMaster/UpdateDocumentService\",\"clientPath\":\"/operations/kabulIslemleri/EditShipNum\",\"sender\":\"OP00923\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
+        "payloadType": "json",
+        "x": 450,
+        "y": 1290,
+        "wires": [
+            [
+                "f1ac2bb4123070d2"
+            ]
+        ]
     },
     {
         "id": "1",
@@ -35273,6 +35483,136 @@
         "statusType": "auto",
         "x": 1190,
         "y": 130,
+        "wires": []
+    },
+    {
+        "id": "954a1b4db7afe20a",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "MongoQueryV2",
+        "func": "const documentNo = msg.payload.Data[0]?.documentNo || null;\nconst documentItemNo = msg.payload.Data[0]?.documentItemNo || null;\nconst newShipNum = msg.payload.Data[0].NewShipNum;\nconst irsaliyeNum = msg.payload.Data[0].irsaliyeNum;\nconst customerCode = msg.payload.Data[0].customerCode;\nconst query = {\n  update: {\n    filter: {\n      DocumentNo: null,\n      DocumentItemNo: null,\n      SourceInventoryState: \"WHS\",\n      TargetInventoryState: \"WHS\"\n    },\n    update: {\n      $set: {\n        \"TransactionAttributes.$[elem].AttributeValue\": newShipNum\n      }\n    },\n    options: {\n      arrayFilters: [\n        {\n          \"elem.AttributeName\": \"DispatchNoteNumber\",\n          \"elem.AttributeValue\": irsaliyeNum\n        },\n        {\n          \"elem.AttributeName\": \"CustomerCode\",\n          \"elem.AttributeValue\": customerCode\n        }\n      ]\n    }\n  }\n};\n;\n\nmsg.query = query;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 270,
+        "wires": [
+            [
+                "da5dd76cc66909b5",
+                "1b635b2c80ba217f"
+            ]
+        ]
+    },
+    {
+        "id": "da5dd76cc66909b5",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "Type",
+                "value": "Sales_Waybill",
+                "type": "str"
+            }
+        ],
+        "x": 255,
+        "y": 310,
+        "wires": [
+            [
+                "319250a54206db4d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "319250a54206db4d",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "Movement",
+                "type": "str"
+            },
+            {
+                "name": "IsUpdated",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 305,
+        "y": 310,
+        "wires": [
+            [
+                "019f59913988b795"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "0a0d1f53faa652ee",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "query",
+                "v": "{\"update\":{\"filter\":{\"DocumentNo\":null,\"DocumentItemNo\":null,\"SourceInventoryState\":\"WHS\",\"TargetInventoryState\":\"WHS\"},\"update\":{\"$set\":{\"TransactionAttributes.$[elem].AttributeValue\":\"I40000000000063\"}},\"options\":{\"arrayFilters\":[{\"elem.AttributeName\":\"DispatchNoteNumber\",\"elem.AttributeValue\":\"I40000000000062\"},{\"elem.AttributeName\":\"CustomerCode\",\"elem.AttributeValue\":\"262\"}]}}}",
+                "vt": "json"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "954a1b4db7afe20a"
+            ]
+        ]
+    },
+    {
+        "id": "019f59913988b795",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 513",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1b635b2c80ba217f",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 514",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 240,
         "wires": []
     },
     {
