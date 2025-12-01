@@ -2824,6 +2824,49 @@
         "color": "#DDAA99"
     },
     {
+        "id": "592314a9c289c4b1",
+        "type": "subflow",
+        "name": "ImportStockCountList2Netsis",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0489d2b83709715a"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 600,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "0216c991d6943810",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 970,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "d7144503f23029bf",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "f95fc539736e93fc",
         "type": "group",
         "z": "f1a7c99c.1d3f48",
@@ -4075,9 +4118,7 @@
             "b071bb445e7d186c",
             "23327e292123f24b",
             "700c657d22d0cacb",
-            "7f60799e78528bfc",
-            "564682156e777069",
-            "84833f21e45d49c4"
+            "564682156e777069"
         ],
         "x": 64,
         "y": 269,
@@ -4287,9 +4328,9 @@
             "0a93b6b0235ab44b"
         ],
         "x": 34,
-        "y": 1249,
+        "y": 1239,
         "w": 642,
-        "h": 142
+        "h": 152
     },
     {
         "id": "7fa9daa49aea977c",
@@ -4339,7 +4380,8 @@
         "nodes": [
             "1dfb5c135fbec4e2",
             "622a25d6c2eb4419",
-            "6ce70b3c30648697"
+            "6ce70b3c30648697",
+            "62972576686fe00e"
         ],
         "x": 34,
         "y": 1409,
@@ -5239,6 +5281,30 @@
         "y": 209,
         "w": 342,
         "h": 122
+    },
+    {
+        "id": "1de397d16145b320",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "370cc3f5fa8e3a2f",
+            "1b7f1ffc2029c1c1",
+            "fd54f7a65adcc857",
+            "8f1923a946fb4923"
+        ],
+        "x": 34,
+        "y": 2419,
+        "w": 802,
+        "h": 132
     },
     {
         "id": "873c9acca903bcab",
@@ -18590,8 +18656,7 @@
         "y": 450,
         "wires": [
             [
-                "b35aeea817a34da1",
-                "7f60799e78528bfc"
+                "b35aeea817a34da1"
             ]
         ]
     },
@@ -18612,8 +18677,7 @@
         "y": 450,
         "wires": [
             [
-                "e0b5b2e8ae455ae7",
-                "84833f21e45d49c4"
+                "e0b5b2e8ae455ae7"
             ]
         ]
     },
@@ -18859,24 +18923,6 @@
         "l": false
     },
     {
-        "id": "7f60799e78528bfc",
-        "type": "debug",
-        "z": "4a994836a6392703",
-        "g": "4ffcfc17d9807587",
-        "name": "debug 508",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "query",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 310,
-        "wires": []
-    },
-    {
         "id": "564682156e777069",
         "type": "function",
         "z": "4a994836a6392703",
@@ -18895,24 +18941,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "84833f21e45d49c4",
-        "type": "debug",
-        "z": "4a994836a6392703",
-        "g": "4ffcfc17d9807587",
-        "name": "debug 516",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "netsis2s4inBuyerAndSellerOrder",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 370,
-        "wires": []
     },
     {
         "id": "107498694ec2a151",
@@ -19649,9 +19677,7 @@
         "x": 1180,
         "y": 70,
         "wires": [
-            [
-                "d29433a87086878f"
-            ]
+            []
         ]
     },
     {
@@ -19984,42 +20010,8 @@
         "x": 1180,
         "y": 110,
         "wires": [
-            [
-                "941e17d89b49f97b"
-            ]
+            []
         ]
-    },
-    {
-        "id": "d29433a87086878f",
-        "type": "debug",
-        "z": "fc936f675a46124b",
-        "name": "debug 315",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1580,
-        "y": 70,
-        "wires": []
-    },
-    {
-        "id": "941e17d89b49f97b",
-        "type": "debug",
-        "z": "fc936f675a46124b",
-        "name": "debug 316",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1550,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "a3dad7ab3fe1bc68",
@@ -20070,26 +20062,8 @@
         "x": 1180,
         "y": 160,
         "wires": [
-            [
-                "5bf8954bef341f4c"
-            ]
+            []
         ]
-    },
-    {
-        "id": "5bf8954bef341f4c",
-        "type": "debug",
-        "z": "fc936f675a46124b",
-        "name": "debug 463",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1430,
-        "y": 170,
-        "wires": []
     },
     {
         "id": "d1f0be44a0e8f7f8",
@@ -23508,8 +23482,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1110,
-        "y": 640,
+        "x": 1190,
+        "y": 590,
         "wires": []
     },
     {
@@ -24111,7 +24085,7 @@
         "y": 100,
         "wires": [
             [
-                "9fa0455c9c44b0dd"
+                "ec0f9f06cd75df6b"
             ]
         ]
     },
@@ -24204,6 +24178,7 @@
         "id": "9fa0455c9c44b0dd",
         "type": "function",
         "z": "1bd2a61f8400e469",
+        "d": true,
         "name": "MongoQueryV2",
         "func": "const query = `[\n  {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\"\n     \n    }\n  },\n  \n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteNumber\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$TransactionAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": { \"$eq\": [\"$$a.AttributeName\", \"DispatchNoteDate\"] }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n        \"AdjustedQuantity\": {\n        \"$cond\": [\n          { \"$eq\": [\"$OperationType.OpCode\", \"OP00208\"] },\n          { \"$multiply\": [\"$BaseQuantity\", -1] },\n         \"$BaseQuantity\"\n        ]\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\",\n          \"DispatchNoteNo\": \"$DispatchNoteNumber\"\n        \n      },\n      \"TotalQuantity\": { \"$sum\": \"$AdjustedQuantity\" },\n      \"DispatchNoteDateRaw\": { \"$first\": \"$DispatchNoteDateRaw\" },\n    \n      \"ProductCode\": { \"$first\": \"$ProductCode\" },\n      \"BaseUnit\": { \"$first\": \"$BaseUnit\" },\n      \"TargetLocation\": { \"$first\": \"$TargetLocation\" }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n       \"DispatchNoteNumber\": \"$_id.DispatchNoteNo\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        { \"$unwind\": \"$Items\" },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$Items.ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": { \"$ifNull\": [\"$Items.DocumentItemAttributes\", []] }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": { \"$eq\": [\"$$attr.AttributeCode\", \"TESLIM_TARIHI\"] }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$DocumentInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  { \"$unwind\": { \"path\": \"$PartnerDetails\", \"preserveNullAndEmptyArrays\": true } },\n {\n  \"$lookup\": {\n    \"from\": \"Location\",\n    \"let\": { \"locId\": \"$TargetLocation\" },\n    \"pipeline\": [\n      {\n        \"$match\": {\n          \"$expr\": {\n            \"$eq\": [\"$_id\", { \"$toObjectId\": \"$$locId\" }]\n          }\n        }\n      }\n    ],\n    \"as\": \"LocationInfo\"\n  }\n},\n\n  { \"$unwind\": { \"path\": \"$LocationInfo\", \"preserveNullAndEmptyArrays\": true } },\n  {\n    \"$addFields\": {\n         \"DispatchNoteDate\": {\n              \"$dateToString\": {\n                \"format\": \"%Y-%m-%d\",\n                \"date\": {\n                  \"$dateAdd\": {\n                    \"startDate\": {\n                      \"$dateFromString\": {\n                        \"dateString\": \"$DispatchNoteDateRaw\",\n                        \"format\": \"%m/%d/%Y %H:%M:%S\"\n                      }\n                    },\n                    \"unit\": \"hour\",\n                    \"amount\": 3\n                  }\n                }\n              }\n            },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          { \"$ifNull\": [\"$DocumentInfo.TESLIM_TARIHI\", false] },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  \n  {\n    \"$lookup\": {\n      \"from\": \"DocumentQuantity\",\n      \"let\": { \"docNum\": \"$DocNum\", \"itemNo\": \"$ItemNo\" },\n      \"pipeline\": [\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                { \"$eq\": [\"$DocNum\", \"$$docNum\"] },\n                { \"$eq\": [\"$ItemNo\", \"$$itemNo\"] }\n              ]\n            }\n          }\n        }],\n      \"as\": \"quantityData\"\n    }\n  },\n  {\n      \"$unwind\":\"$quantityData\"\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n           \"$toDouble\": \"$TotalQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n\n\n`;\n\nmsg.query=query;\n \nreturn msg;",
         "outputs": 1,
@@ -24212,14 +24187,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 140,
+        "x": 295,
+        "y": 20,
         "wires": [
-            [
-                "5df29750d100a86f",
-                "c4e08765e79bb59c"
-            ]
-        ]
+            []
+        ],
+        "l": false
     },
     {
         "id": "a93bfe04a399b238",
@@ -24422,7 +24395,8 @@
         "y": 340,
         "wires": [
             [
-                "26ea873451ef04d5"
+                "26ea873451ef04d5",
+                "6664eaf78bfb49c6"
             ]
         ]
     },
@@ -24448,7 +24422,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "query",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 430,
@@ -24464,8 +24439,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 400,
@@ -24505,6 +24480,44 @@
         ],
         "l": false,
         "info": "CREATE PROCEDURE  S4INCloseOrderStatusUpdate\r\n    @FisNo NVARCHAR(50),\r\n    @StokKodu NVARCHAR(50),\r\n    @Sira INT\r\n    \r\nAS\r\nBEGIN\r\n    SET NOCOUNT ON;\r\n\r\n    UPDATE TBLSIPATRA\r\n    SET STHAR_HTUR = 'K'\r\n    WHERE FISNO = @FisNo \r\n      AND STOK_KODU = @StokKodu \r\n      AND SIRA = @Sira;\r\n\r\n\r\n\t \r\nEND;\r\n"
+    },
+    {
+        "id": "ec0f9f06cd75df6b",
+        "type": "function",
+        "z": "1bd2a61f8400e469",
+        "name": "MongoQueryV3",
+        "func": "const query = `\n  [\n   {\n    \"$match\": {\n      \"DocumentNo\": \"${msg.netsisDataPayload.FatNo}\",\n      \"DocumentItemNo\": ${msg.netsisDataPayload.OrderLineNo},\n      \"ProductCode\": \"${msg.netsisDataPayload.Material}\"\n     \n    }\n  },\n  {\n    \"$addFields\": {\n      \"SafeAttributes\": {\n        \"$ifNull\": [\n          \"$TransactionAttributes\",\n          []\n        ]\n      },\n      \"AdjustedQuantity\": {\n        \"$cond\": [\n          {\n            \"$eq\": [\n              \"$OperationType.OpCode\",\n              \"OP00208\"\n            ]\n          },\n          {\n            \"$multiply\": [\n              \"$BaseQuantity\",\n              -1\n            ]\n          },\n          \"$BaseQuantity\"\n        ]\n      }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DispatchNoteNumber\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$SafeAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": {\n                      \"$eq\": [\n                        \"$$a.AttributeName\",\n                        \"DispatchNoteNumber\"\n                      ]\n                    }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$let\": {\n          \"vars\": {\n            \"attr\": {\n              \"$arrayElemAt\": [\n                {\n                  \"$filter\": {\n                    \"input\": \"$SafeAttributes\",\n                    \"as\": \"a\",\n                    \"cond\": {\n                      \"$eq\": [\n                        \"$$a.AttributeName\",\n                        \"DispatchNoteDate\"\n                      ]\n                    }\n                  }\n                },\n                0\n              ]\n            }\n          },\n          \"in\": \"$$attr.AttributeValue\"\n        }\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$DocumentNo\",\n        \"ItemNo\": \"$DocumentItemNo\",\n        \"SerialNo\": \"$SerialNo\"\n      },\n      \"ResolvedDispatchNoteNumber\": {\n        \"$max\": \"$DispatchNoteNumber\"\n      },\n      \"ResolvedDispatchNoteDateRaw\": {\n        \"$max\": \"$DispatchNoteDateRaw\"\n      },\n      \"NetQuantity\": {\n        \"$sum\": \"$AdjustedQuantity\"\n      },\n      \"ProductCode\": {\n        \"$first\": \"$ProductCode\"\n      },\n      \"BaseUnit\": {\n        \"$first\": \"$BaseUnit\"\n      },\n      \"TargetLocation\": {\n        \"$first\": \"$TargetLocation\"\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"DocNum\": \"$_id.DocNum\",\n        \"ItemNo\": \"$_id.ItemNo\",\n        \"DispatchNoteNo\": \"$ResolvedDispatchNoteNumber\"\n      },\n      \"TotalQuantity\": {\n        \"$sum\": \"$NetQuantity\"\n      },\n      \"DispatchNoteDateRaw\": {\n        \"$first\": \"$ResolvedDispatchNoteDateRaw\"\n      },\n      \"ProductCode\": {\n        \"$first\": \"$ProductCode\"\n      },\n      \"BaseUnit\": {\n        \"$first\": \"$BaseUnit\"\n      },\n      \"TargetLocation\": {\n        \"$first\": \"$TargetLocation\"\n      }\n    }\n  },\n  {\n    \"$match\": {\n      \"TotalQuantity\": {\n        \"$ne\": 0\n      }\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DocNum\": \"$_id.DocNum\",\n      \"ItemNo\": \"$_id.ItemNo\",\n      \"DispatchNoteNumber\": \"$_id.DispatchNoteNo\"\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Document\",\n      \"let\": {\n        \"docNum\": \"$DocNum\",\n        \"itemNo\": \"$ItemNo\"\n      },\n      \"pipeline\": [\n        {\n          \"$unwind\": \"$Items\"\n        },\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$and\": [\n                {\n                  \"$eq\": [\n                    \"$DocNum\",\n                    \"$$docNum\"\n                  ]\n                },\n                {\n                  \"$eq\": [\n                    \"$Items.ItemNo\",\n                    \"$$itemNo\"\n                  ]\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"$addFields\": {\n            \"TESLIM_TARIHI\": {\n              \"$let\": {\n                \"vars\": {\n                  \"attributes\": {\n                    \"$ifNull\": [\n                      \"$Items.DocumentItemAttributes\",\n                      []\n                    ]\n                  }\n                },\n                \"in\": {\n                  \"$arrayElemAt\": [\n                    {\n                      \"$filter\": {\n                        \"input\": \"$$attributes\",\n                        \"as\": \"attr\",\n                        \"cond\": {\n                          \"$eq\": [\n                            \"$$attr.AttributeCode\",\n                            \"TESLIM_TARIHI\"\n                          ]\n                        }\n                      }\n                    },\n                    0\n                  ]\n                }\n              }\n            },\n            \"PartnerCode\": \"$DocCompanies.BoughtFrom\",\n            \"ItemNo\": \"$Items.ItemNo\",\n            \"ProductCode\": \"$Items.ProductCode\",\n            \"BaseUnit\": \"$Items.BaseUnit\"\n          }\n        },\n        {\n          \"$project\": {\n            \"_id\": 0,\n            \"TESLIM_TARIHI\": \"$TESLIM_TARIHI.DateValue\",\n            \"PartnerCode\": 1,\n            \"ItemNo\": 1,\n            \"ProductCode\": 1,\n            \"BaseUnit\": 1\n          }\n        }\n      ],\n      \"as\": \"DocumentInfo\"\n    }\n  },\n  {\n    \"$unwind\": {\n      \"path\": \"$DocumentInfo\",\n      \"preserveNullAndEmptyArrays\": true\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Partner\",\n      \"localField\": \"DocumentInfo.PartnerCode\",\n      \"foreignField\": \"Code\",\n      \"as\": \"PartnerDetails\"\n    }\n  },\n  {\n    \"$unwind\": {\n      \"path\": \"$PartnerDetails\",\n      \"preserveNullAndEmptyArrays\": true\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Location\",\n      \"let\": {\n        \"locId\": \"$TargetLocation\"\n      },\n      \"pipeline\": [\n        {\n          \"$match\": {\n            \"$expr\": {\n              \"$eq\": [\n                \"$_id\",\n                {\n                  \"$toObjectId\": \"$$locId\"\n                }\n              ]\n            }\n          }\n        }\n      ],\n      \"as\": \"LocationInfo\"\n    }\n  },\n  {\n    \"$unwind\": {\n      \"path\": \"$LocationInfo\",\n      \"preserveNullAndEmptyArrays\": true\n    }\n  },\n  {\n    \"$addFields\": {\n      \"DispatchNoteDate\": {\n        \"$dateToString\": {\n          \"format\": \"%Y-%m-%d\",\n          \"date\": {\n            \"$dateAdd\": {\n              \"startDate\": {\n                \"$dateFromString\": {\n                  \"dateString\": \"$DispatchNoteDateRaw\",\n                  \"format\": \"%m/%d/%Y %H:%M:%S\"\n                }\n              },\n              \"unit\": \"hour\",\n              \"amount\": 3\n            }\n          }\n        }\n      },\n      \"DeliveryDate\": {\n        \"$cond\": [\n          {\n            \"$ifNull\": [\n              \"$DocumentInfo.TESLIM_TARIHI\",\n              false\n            ]\n          },\n          {\n            \"$dateToString\": {\n              \"format\": \"%Y-%m-%d\",\n              \"date\": \"$DocumentInfo.TESLIM_TARIHI\"\n            }\n          },\n          null\n        ]\n      }\n    }\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n      \"header\": {\n        \"OrderNo\": \"$DocNum\",\n        \"Date\": \"$DeliveryDate\",\n        \"PartnerCode\": \"$PartnerDetails.Code\",\n        \"DispatchNoteNumber\": \"$DispatchNoteNumber\",\n        \"DispatchNoteDate\": \"$DispatchNoteDate\"\n      },\n      \"Items\": [\n        {\n          \"ItemNo\": {\n            \"$toString\": \"$ItemNo\"\n          },\n          \"Material\": \"$ProductCode\",\n          \"Quantity\": {\n            \"$toDouble\": \"$TotalQuantity\"\n          },\n          \"Unit\": \"$BaseUnit\",\n          \"OrderLineNo\": \"$ItemNo\",\n          \"WarehouseCode\": \"$LocationInfo.Code\"\n        }\n      ]\n    }\n  }\n]\n`;\n\nmsg.query=query;\n \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 150,
+        "wires": [
+            [
+                "5df29750d100a86f",
+                "c4e08765e79bb59c"
+            ]
+        ]
+    },
+    {
+        "id": "6664eaf78bfb49c6",
+        "type": "debug",
+        "z": "1bd2a61f8400e469",
+        "name": "debug 518",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 430,
+        "wires": []
     },
     {
         "id": "bfdf8f915f026d47",
@@ -30276,6 +30289,228 @@
         "wires": []
     },
     {
+        "id": "0489d2b83709715a",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "MongoQuery",
+        "func": "const query = ` [\n  {\n    \"$match\": {\n      \"Location\": { \"$exists\": true, \"$ne\": \"\", \"$ne\": null },\n       \"CountName\":\"${msg.payload.data[0].countName}\",\n      \"SubCountName\":\"${msg.payload.data[0].subCountName}\"\n    }\n  },\n  {\n    \"$addFields\": {\n      \"LocationObjectId\": { \"$toObjectId\": \"$Location\" }\n    }\n  },\n  {\n    \"$lookup\": {\n      \"from\": \"Location\",\n      \"localField\": \"LocationObjectId\",\n      \"foreignField\": \"_id\",\n      \"as\": \"LocationInfo\"\n    }\n  },\n  {\n    \"$match\": {\n      \"LocationInfo\": { \"$ne\": [] }\n    }\n  },\n  \n  {\n    \"$addFields\": {\n      \"DepoKodu\": {\n        \"$arrayElemAt\": [\"$LocationInfo.Code\", 0]\n      }\n    }\n  },\n  {\n    \"$group\": {\n      \"_id\": {\n        \"UrunKodu\": \"$ProductCode\",\n        \"DepoKodu\": \"$DepoKodu\",\n        \"AnaBirim\": \"$BaseUnit\"\n      },\n      \"ToplamMiktar\": { \"$sum\": \"$BaseQuantity\" }\n    }\n  },\n  {\n    \"$project\": {\n      \"_id\": 0,\n       \"StokKodu\": \"$_id.UrunKodu\",\n      \"DepoKodu\": \"$_id.DepoKodu\",\n      \"Olcubr\": \"0\",\n      \"Miktar\": { \"$toDouble\": \"$ToplamMiktar\" }\n    }\n  } \n]\n\n`;\n\nmsg.query = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 70,
+        "wires": [
+            [
+                "f982c78296503eb0"
+            ]
+        ]
+    },
+    {
+        "id": "f982c78296503eb0",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "592314a9c289c4b1",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "StockCount",
+                "type": "str"
+            }
+        ],
+        "x": 155,
+        "y": 110,
+        "wires": [
+            [
+                "aa73a976290a7679"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "aa73a976290a7679",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "NewSAYIM_KODU",
+        "func": "\nvar now = new Date();\nvar tarihFormatli = now.getFullYear() + \"-\" +\n    String(now.getMonth() + 1).padStart(2, '0') + \"-\" +\n    String(now.getDate()).padStart(2, '0')\nlet query = `\nDECLARE @NextSequence   INT;\nDECLARE @NewSAYIM_KODU  NVARCHAR(15);\nDECLARE @Tarih          DATE = '${tarihFormatli}';\n\nIF EXISTS (SELECT 1 FROM TBLSAYIM WHERE TARIH = @Tarih)\nBEGIN\n  \n    SELECT TOP 1 \n           @NewSAYIM_KODU = SAYIM_KODU\n    FROM TBLSAYIM\n    WHERE TARIH = @Tarih\n    ORDER BY SAYIM_KODU DESC;  \nEND\nELSE\nBEGIN\n   \n    SELECT TOP 1 \n           @NextSequence = CAST(SUBSTRING(SAYIM_KODU, 5, LEN(SAYIM_KODU)) AS INT) + 1\n    FROM TBLSAYIM\n    WHERE SAYIM_KODU LIKE 'S4IN%'\n    ORDER BY CAST(SUBSTRING(SAYIM_KODU, 5, LEN(SAYIM_KODU)) AS INT) DESC;\n\n    IF @NextSequence IS NULL\n        SET @NextSequence = 1;\n\n    SET @NewSAYIM_KODU = 'S4IN' + RIGHT('00000000000' + CAST(@NextSequence AS NVARCHAR(11)), 11);\nEND\n\nSELECT @NewSAYIM_KODU AS YeniSayimKodu;\n\n\n`;\n\nmsg.query = query;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 205,
+        "y": 110,
+        "wires": [
+            [
+                "ecd4578828c1f3e0"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "ecd4578828c1f3e0",
+        "type": "subflow:d296b4008b6072d8",
+        "z": "592314a9c289c4b1",
+        "name": "MssqlFatKalem",
+        "env": [
+            {
+                "name": "ResultMessage",
+                "value": "newResult",
+                "type": "str"
+            }
+        ],
+        "x": 265,
+        "y": 110,
+        "wires": [
+            [
+                "16522cab59ace837"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "16522cab59ace837",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "MAP",
+        "func": "\nvar now = new Date();\nvar tarihFormatli = now.getFullYear() + \"-\" +\n    String(now.getMonth() + 1).padStart(2, '0') + \"-\" +\n    String(now.getDate()).padStart(2, '0') \n    // + \" \" + String(now.getHours()).padStart(2, '0') + \":\" +\n    // String(now.getMinutes()).padStart(2, '0') + \":\" +\n    // String(now.getSeconds()).padStart(2, '0');\n\n\nvar yeniListe = [];\nvar newResult = msg.newResult[0].YeniSayimKodu;\n// 3. Adım: Gelen veriyi (msg.payload) döngüye al\nif (Array.isArray(msg.payload)) {\n    msg.payload.forEach(function (item) {\n\n        // Her bir satır için yeni obje oluşturuluyor\n        var yeniKayit = {\n            \"SayimKodu\": newResult, \n            \"SayimTarihi\": tarihFormatli,   \n            \"StokKodu\": item.StokKodu,\n            \"DepoKodu\": parseInt(item.DepoKodu), \n            \"Miktar\": item.Miktar,\n            \"Olcubr\": parseInt(item.Olcubr)  \n        };\n\n        \n        yeniListe.push(yeniKayit);\n    });\n}\n\n\nmsg.payload = yeniListe;\n\nmsg.queue = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "process_queue"
+            ]
+        ]
+    },
+    {
+        "id": "process_queue",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "2. Sıradakini Al (Dağıtıcı)",
+        "func": "\nvar liste = msg.queue || [];\nif (liste.length > 0) {\n    // Listenin başındaki elemanı al (ve listeden sil)   \n    var siradakiIslem = liste.shift();\n    msg.dataPayload = siradakiIslem;\n    msg.queue = liste;\n    return [msg, null];\n    \n} else {\n  \n    return [null, msg];\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 335,
+        "y": 160,
+        "wires": [
+            [
+                "38c394d036ea67a9"
+            ],
+            [
+                "0216c991d6943810"
+            ]
+        ],
+        "icon": "font-awesome/fa-location-arrow",
+        "l": false
+    },
+    {
+        "id": "5cb8dc8812fd9e48",
+        "type": "link in",
+        "z": "592314a9c289c4b1",
+        "name": "link in 15",
+        "links": [
+            "690d6be4cc82c93a"
+        ],
+        "x": 335,
+        "y": 120,
+        "wires": [
+            [
+                "process_queue"
+            ]
+        ]
+    },
+    {
+        "id": "38c394d036ea67a9",
+        "type": "subflow:fc936f675a46124b",
+        "z": "592314a9c289c4b1",
+        "name": "",
+        "env": [
+            {
+                "name": "RestUrl",
+                "value": "api/v2/ItemCounting",
+                "type": "str"
+            }
+        ],
+        "x": 580,
+        "y": 150,
+        "wires": [
+            [
+                "690d6be4cc82c93a"
+            ],
+            [
+                "d7144503f23029bf"
+            ]
+        ],
+        "outputLabels": [
+            "",
+            "ErrorMessage"
+        ]
+    },
+    {
+        "id": "0216c991d6943810",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "res",
+        "func": "msg.payload = {\n    type: 0,\n    sender: \"ImportStockCountList2Netsis\",  \n    detail: \"İSLEM BASARILI\",\n    definitionLang: \"İSLEM BASARILI\",\n    data: [],\n    module: \"ImportStockCountList2Netsis\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "690d6be4cc82c93a",
+        "type": "link out",
+        "z": "592314a9c289c4b1",
+        "name": "link out 25",
+        "mode": "link",
+        "links": [
+            "5cb8dc8812fd9e48"
+        ],
+        "x": 865,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "d7144503f23029bf",
+        "type": "function",
+        "z": "592314a9c289c4b1",
+        "name": "Response Message",
+        "func": "msg.payload = {\n    type: 2,\n    sender: \"Node-Red-ImportStockCountList2Netsis\", //  \n    detail: JSON.stringify(msg.netsisTokenErrorMessage) || \"Sayım aktarım Hata Meydana Geldi \",\n    definitionLang: `${msg.netsisTokenErrorMessage}`,\n    data: [msg.netsisTokenErrorMessage],\n    module: \"ImportStockCountList2Netsis\",\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 210,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "cce8f946aa3f45d9",
         "type": "http response",
         "z": "97e7314f695bb652",
@@ -33032,7 +33267,8 @@
         "y": 1480,
         "wires": [
             [
-                "6ce70b3c30648697"
+                "6ce70b3c30648697",
+                "62972576686fe00e"
             ]
         ],
         "info": "{\r\n   \"header\":{\r\n      \"OrderNo\":\"000000000000007\",\r\n      \"Date\":\"2024-12-16 00:00:00\",\r\n      \"User\":\"MEHMET\"\r\n   },\r\n   \"Items\":[\r\n      {\r\n         \"ItemNo\":\"1\",\r\n         \"Material\":\"60030\",\r\n         \"Quantity\":\"1000\",\r\n         \"Unit\":\"\",\r\n         \"OrderLineNo\":\"1\",\r\n         \"WarehouseCode\":\"8\",\r\n         \"TargetWarehouseCode\":\"\"\r\n      },\r\n      {\r\n         \"ItemNo\":\"2\",\r\n         \"Material\":\"60029\",\r\n         \"Quantity\":\"1000\",\r\n         \"Unit\":\"\",\r\n         \"OrderLineNo\":\"2\",\r\n         \"WarehouseCode\":\"8\",\r\n         \"TargetWarehouseCode\":\"\"\r\n      }\r\n   ]\r\n}\r\n "
@@ -34365,15 +34601,93 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"Data\":[{\"attributeName\":\"UrunKodu\",\"attributeValue\":\"70018\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"Birim\",\"attributeValue\":\"KG\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"BelgeNumarasi\",\"attributeValue\":\"000000000000676\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"KalemNumarasi\",\"attributeValue\":\"12\",\"attributeSyncField\":\"documentItemNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"NUMERIC\"},{\"attributeName\":\"Miktar\",\"attributeValue\":\"1000.0\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DepoKodu\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"Default\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"MatchValue\"},{\"attributeName\":\"Teslim_Tarihi\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"PartnerKodu\",\"attributeValue\":\"3710\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ItemProcessingState\",\"attributeValue\":\"ISS\",\"attributeSyncField\":\"itemProcessingState\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNBWAY000V1\",\"PreRequest\":null,\"requestId\":\"7f7cb622-83a5-4733-868c-7dd86a03706b\",\"methodName\":\"wmsmaster/api/WmsMaster/UpdateDocumentService\",\"clientPath\":\"/operations/kabulIslemleri/EditShipNum\",\"sender\":\"OP00923\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
+        "payload": "{\"Data\":[{\"attributeName\":\"UrunKodu\",\"attributeValue\":\"60007\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"Birim\",\"attributeValue\":\"KG\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"BelgeNumarasi\",\"attributeValue\":\"000000000001083\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"KalemNumarasi\",\"attributeValue\":\"2\",\"attributeSyncField\":\"documentItemNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"NUMERIC\"},{\"attributeName\":\"Miktar\",\"attributeValue\":\"2800\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DepoKodu\",\"attributeValue\":\"30\",\"attributeSyncField\":\"targetLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"Teslim_Tarihi\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"PartnerKodu\",\"attributeValue\":\"3706\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ItemProcessingState\",\"attributeValue\":\"ISS\",\"attributeSyncField\":\"itemProcessingState\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNBWAY000V1\",\"PreRequest\":null,\"requestId\":\"82a5e23a-533e-41f9-b869-737006e33aa2\",\"methodName\":\"wmsmaster/api/WmsMaster/UpdateDocumentService\",\"clientPath\":\"/operations/kaliteIslemleri/siparisKapatma\",\"sender\":\"OP00211\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
         "payloadType": "json",
-        "x": 450,
-        "y": 1290,
+        "x": 500,
+        "y": 1280,
         "wires": [
             [
                 "f1ac2bb4123070d2"
             ]
         ]
+    },
+    {
+        "id": "370cc3f5fa8e3a2f",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "1de397d16145b320",
+        "name": "",
+        "url": "ImportStockCountList2Netsis",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 2460,
+        "wires": [
+            [
+                "1b7f1ffc2029c1c1"
+            ]
+        ],
+        "info": "{\r\n   \"header\":{\r\n      \"OrderNo\":\"TEST0000000001\",\r\n      \"Date\":\"2024-12-16 00:00:00\",\r\n      \"User\":\"MEHMET\"\r\n   },\r\n   \"Items\":[\r\n      {\r\n        \r\n         \"Material\":\"StokKodu1\",\r\n         \"Quantity\":\"1\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"1\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      },\r\n      {\r\n         \r\n         \"Material\":\"StokKodu2\",\r\n         \"Quantity\":\"2\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"2\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      }\r\n   ]\r\n}\r\n "
+    },
+    {
+        "id": "fd54f7a65adcc857",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1de397d16145b320",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 750,
+        "y": 2510,
+        "wires": []
+    },
+    {
+        "id": "1b7f1ffc2029c1c1",
+        "type": "subflow:592314a9c289c4b1",
+        "z": "97e7314f695bb652",
+        "g": "1de397d16145b320",
+        "name": "",
+        "x": 520,
+        "y": 2470,
+        "wires": [
+            [
+                "fd54f7a65adcc857"
+            ],
+            [
+                "fd54f7a65adcc857"
+            ]
+        ]
+    },
+    {
+        "id": "8f1923a946fb4923",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "1de397d16145b320",
+        "name": "SAYIM",
+        "info": "",
+        "x": 120,
+        "y": 2510,
+        "wires": []
+    },
+    {
+        "id": "62972576686fe00e",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "a349a564e122784c",
+        "name": "debug 519",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 1450,
+        "wires": []
     },
     {
         "id": "1",
@@ -35123,8 +35437,8 @@
         "type": "subflow:e269717c57799658",
         "z": "68459bb5ee15fc71",
         "name": "",
-        "x": 1060,
-        "y": 550,
+        "x": 1010,
+        "y": 480,
         "wires": [
             [],
             []
@@ -35148,207 +35462,6 @@
         "wires": []
     },
     {
-        "id": "aa73a976290a7679",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "GIB_FATIRSNO",
-        "func": "\n\n\nlet query = `\nSELECT  TOP 1 GIB_FATIRS_NO,CARI_KODU  FROM TBLEFATURA\n \n\n`;\n\nmsg.query = query;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 480,
-        "wires": [
-            [
-                "ecd4578828c1f3e0"
-            ]
-        ],
-        "info": "E-BELGE  DIZAYNINI ALAMK ISICIN TASLAK OLUSTURMAK LAZIM ONDAN SONRA CIKTIYI ALABILRIZ"
-    },
-    {
-        "id": "ecd4578828c1f3e0",
-        "type": "subflow:d296b4008b6072d8",
-        "z": "6ef8732eb0726477",
-        "name": "MssqlFatKalem",
-        "env": [
-            {
-                "name": "ResultMessage",
-                "value": "payload[0]",
-                "type": "str"
-            }
-        ],
-        "x": 890,
-        "y": 520,
-        "wires": [
-            [
-                "ca631a3924671905"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "1dab1ffcedaeb813",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 630,
-        "y": 440,
-        "wires": [
-            [
-                "aa73a976290a7679"
-            ]
-        ]
-    },
-    {
-        "id": "ca631a3924671905",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 487",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "f3b291e96d03417a",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 690,
-        "y": 700,
-        "wires": [
-            [
-                "3ba84d7dba38c61f"
-            ]
-        ]
-    },
-    {
-        "id": "f982c78296503eb0",
-        "type": "subflow:23b1b01cc4ce5a0d",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "collection",
-                "value": "ProductionDoc",
-                "type": "str"
-            },
-            {
-                "name": "IsUpdated",
-                "value": "true",
-                "type": "bool"
-            }
-        ],
-        "x": 1005,
-        "y": 760,
-        "wires": [
-            [
-                "622606d95d393f04"
-            ]
-        ],
-        "icon": "node-red/mongodb.svg",
-        "l": false
-    },
-    {
-        "id": "4c3ae20661561d27",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "Type",
-                "value": "ProductionDoc",
-                "type": "str"
-            }
-        ],
-        "x": 945,
-        "y": 760,
-        "wires": [
-            [
-                "f982c78296503eb0"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "3ba84d7dba38c61f",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "MongoQueryV2",
-        "func": "\nconst query =   {\n  update: {\n    filter: {\n       \"Header.PrdDocNo\": {\"$in\":[\n  \"I00000000001725\"\n]}\n    },\n    update: {\n      $set: {\n        \"Header.StateObject\": \"CNF\",\n        \"Header.DocState\": \"CNF\"\n        \n      }\n    },\n    \n  }\n};\n;\n\nmsg.query=query;\n \nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 940,
-        "y": 710,
-        "wires": [
-            [
-                "4c3ae20661561d27"
-            ]
-        ]
-    },
-    {
-        "id": "622606d95d393f04",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 489",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1130,
-        "y": 770,
-        "wires": []
-    },
-    {
         "id": "4153cb3efdc069ed",
         "type": "inject",
         "z": "6ef8732eb0726477",
@@ -35369,8 +35482,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 990,
-        "y": 310,
+        "x": 168.0000114440918,
+        "y": 195.9999942779541,
         "wires": [
             [
                 "d8da384f12006faf"
@@ -35389,8 +35502,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1210,
-        "y": 300,
+        "x": 388.0000114440918,
+        "y": 185.9999942779541,
         "wires": [
             [
                 "363b0c7bfa86853a"
@@ -35410,8 +35523,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1370,
-        "y": 290,
+        "x": 548.0000114440918,
+        "y": 175.9999942779541,
         "wires": []
     },
     {
@@ -35435,8 +35548,8 @@
         "topic": "",
         "payload": "{\"Data\":[{\"attributeName\":\"Barcode\",\"attributeValue\":\"11\",\"attributeSyncField\":\"serialNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"LOOKUPTEXT\"},{\"attributeName\":\"ProductCode\",\"attributeValue\":\"\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BatchNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"batchNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseUnit\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseQuantity\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationQuantity\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"USE-URTTAR\",\"attributeValue\":null,\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"DATE\"},{\"attributeName\":\"USE-SKT\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ProductName\",\"attributeValue\":\"\",\"attributeSyncField\":\"productName\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DocumentNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"Location\",\"attributeValue\":\"\",\"attributeSyncField\":\"sourceLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"HSE-TargetLocation\",\"attributeValue\":\"6782bf295b29d7f18d82ad0e\",\"attributeSyncField\":\"targetLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"MamulKodu\",\"attributeValue\":\"30004\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNWTRF000V1\",\"PreRequest\":\"contains-material\",\"requestId\":\"b810ae3e-82f4-414c-bc3f-9556b3180d9d\",\"methodName\":\"wmsmaster/api/WmsMaster/SubmitMobileButton\",\"clientPath\":\"/operations/uretim/Ismriuretimesevk\",\"sender\":\"OP00214\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
         "payloadType": "json",
-        "x": 660,
-        "y": 120,
+        "x": 160,
+        "y": 110,
         "wires": [
             [
                 "77b1c51b9189d698"
@@ -35460,8 +35573,8 @@
                 "type": "str"
             }
         ],
-        "x": 920,
-        "y": 120,
+        "x": 420,
+        "y": 110,
         "wires": [
             [
                 "9bc0b53093b262d8"
@@ -35481,138 +35594,25 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 130,
+        "x": 690,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "954a1b4db7afe20a",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "MongoQueryV2",
-        "func": "const documentNo = msg.payload.Data[0]?.documentNo || null;\nconst documentItemNo = msg.payload.Data[0]?.documentItemNo || null;\nconst newShipNum = msg.payload.Data[0].NewShipNum;\nconst irsaliyeNum = msg.payload.Data[0].irsaliyeNum;\nconst customerCode = msg.payload.Data[0].customerCode;\nconst query = {\n  update: {\n    filter: {\n      DocumentNo: null,\n      DocumentItemNo: null,\n      SourceInventoryState: \"WHS\",\n      TargetInventoryState: \"WHS\"\n    },\n    update: {\n      $set: {\n        \"TransactionAttributes.$[elem].AttributeValue\": newShipNum\n      }\n    },\n    options: {\n      arrayFilters: [\n        {\n          \"elem.AttributeName\": \"DispatchNoteNumber\",\n          \"elem.AttributeValue\": irsaliyeNum\n        },\n        {\n          \"elem.AttributeName\": \"CustomerCode\",\n          \"elem.AttributeValue\": customerCode\n        }\n      ]\n    }\n  }\n};\n;\n\nmsg.query = query;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 280,
-        "y": 270,
-        "wires": [
-            [
-                "da5dd76cc66909b5",
-                "1b635b2c80ba217f"
-            ]
-        ]
-    },
-    {
-        "id": "da5dd76cc66909b5",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "Type",
-                "value": "Sales_Waybill",
-                "type": "str"
-            }
-        ],
-        "x": 255,
-        "y": 310,
-        "wires": [
-            [
-                "319250a54206db4d"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "319250a54206db4d",
-        "type": "subflow:23b1b01cc4ce5a0d",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "collection",
-                "value": "Movement",
-                "type": "str"
-            },
-            {
-                "name": "IsUpdated",
-                "value": "true",
-                "type": "bool"
-            }
-        ],
-        "x": 305,
-        "y": 310,
-        "wires": [
-            [
-                "019f59913988b795"
-            ]
-        ],
-        "icon": "node-red/mongodb.svg",
-        "l": false
-    },
-    {
-        "id": "0a0d1f53faa652ee",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "query",
-                "v": "{\"update\":{\"filter\":{\"DocumentNo\":null,\"DocumentItemNo\":null,\"SourceInventoryState\":\"WHS\",\"TargetInventoryState\":\"WHS\"},\"update\":{\"$set\":{\"TransactionAttributes.$[elem].AttributeValue\":\"I40000000000063\"}},\"options\":{\"arrayFilters\":[{\"elem.AttributeName\":\"DispatchNoteNumber\",\"elem.AttributeValue\":\"I40000000000062\"},{\"elem.AttributeName\":\"CustomerCode\",\"elem.AttributeValue\":\"262\"}]}}}",
-                "vt": "json"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 150,
-        "y": 200,
-        "wires": [
-            [
-                "954a1b4db7afe20a"
-            ]
-        ]
-    },
-    {
-        "id": "019f59913988b795",
+        "id": "c54121dcfd4edf4c",
         "type": "debug",
         "z": "6ef8732eb0726477",
-        "name": "debug 513",
+        "name": "debug 517",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "1b635b2c80ba217f",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 514",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 240,
+        "x": 800,
+        "y": 450,
         "wires": []
     },
     {
