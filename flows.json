@@ -8,13 +8,6 @@
         "env": []
     },
     {
-        "id": "f1a7c99c.1d3f48",
-        "type": "tab",
-        "label": "Excel to JSON Flow",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "68459bb5ee15fc71",
         "type": "tab",
         "label": "Flow 23",
@@ -23,17 +16,24 @@
         "env": []
     },
     {
-        "id": "6ef8732eb0726477",
+        "id": "f1a7c99c.1d3f48",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Excel to JSON Flow",
         "disabled": false,
-        "info": "",
-        "env": []
+        "info": ""
     },
     {
         "id": "3aca90fb83019832",
         "type": "tab",
         "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6ef8732eb0726477",
+        "type": "tab",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -1091,8 +1091,8 @@
         ],
         "out": [
             {
-                "x": 1030,
-                "y": 130,
+                "x": 1020,
+                "y": 230,
                 "wires": [
                     {
                         "id": "131dbe6786cec9dd",
@@ -1129,6 +1129,50 @@
                 "name": "Method",
                 "type": "str",
                 "value": "POST"
+            },
+            {
+                "name": "Port",
+                "type": "num",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-support",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "ReturnType",
+                "type": "str",
+                "value": "3",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "a parsed JSON object"
+                                },
+                                "v": "3"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "a UTF-8 String"
+                                },
+                                "v": "2"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "a binary buffer"
+                                },
+                                "v": "1"
+                            }
+                        ]
+                    }
+                }
             }
         ],
         "meta": {},
@@ -2258,6 +2302,16 @@
             },
             {
                 "name": "IsDelete",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "IsFindOne",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "IsInsert",
                 "type": "bool",
                 "value": "false"
             }
@@ -4357,7 +4411,10 @@
             "9b2c68f26c2623e0",
             "1f56c8919c07a708",
             "eb331c8c32deaa1d",
-            "3b388fa9be5fa075"
+            "3b388fa9be5fa075",
+            "3048e28b63eedb0c",
+            "89abb0f7437480aa",
+            "7df78c4afc54b7cb"
         ],
         "x": 104,
         "y": 159,
@@ -4848,12 +4905,16 @@
             "4d96959c13e58a44",
             "ce3a6305846b1400",
             "7b114eb4805baccf",
-            "63ad62e1bd71e6b9"
+            "63ad62e1bd71e6b9",
+            "fb74b2378b21e8d7",
+            "2c25f62033f3b69a",
+            "e248adad12207067",
+            "e86c345063fe8164"
         ],
         "x": 154,
         "y": 329,
         "w": 1452,
-        "h": 462
+        "h": 472
     },
     {
         "id": "7f0d10fd6c405ddc",
@@ -5305,6 +5366,53 @@
         "y": 2419,
         "w": 802,
         "h": 132
+    },
+    {
+        "id": "1c5cd39a8f035c84",
+        "type": "group",
+        "z": "97e7314f695bb652",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "d68c2da129a4bfbc",
+            "77b61fe1fa6b8269",
+            "626a6dc1177761af",
+            "2f6a47a831f68f1d",
+            "efeae8782d3aef34",
+            "52e27629a32caac8",
+            "6b3a7a11c87037c2",
+            "303e539222641e16",
+            "3082fdb76bc2c9ba",
+            "3ecb06e5466b38df",
+            "ee926e23815da6b5",
+            "4dabf19a11e4fad4",
+            "73ac2dbb8fd646cc",
+            "85513e4cd7ad2173",
+            "ecc0824550b7ec74",
+            "4e2356d3171e0b76",
+            "936b0e5ca8f68a22",
+            "25243570f5faef04",
+            "b4ea972af3657496",
+            "c1cb6d116bc933b1",
+            "e64fa7020e60a995",
+            "97db3126f1ae2e58",
+            "35da08047ea7459a",
+            "050445f13e8722ae",
+            "3edef30ae3d0ca81",
+            "2bdcb2dd3f06128b",
+            "a563cb8a659e43c7"
+        ],
+        "x": -16,
+        "y": 2589,
+        "w": 1222,
+        "h": 392
     },
     {
         "id": "873c9acca903bcab",
@@ -16224,7 +16332,7 @@
         "type": "function",
         "z": "e35d14410b661a09",
         "name": "Get Sforin Category",
-        "func": "let baseUrl = global.get(\"SFORIN_URL\");\n msg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\n\nmsg.url=baseUrl+env.get(\"Url\");\n\nmsg.payload=msg.dataPayload;\n\n \nreturn msg;",
+        "func": " \nlet baseUrl = global.get(\"SFORIN_URL\");  \nlet newPort = env.get(\"Port\");           \nlet endpoint = env.get(\"Url\");          \n\n\nif (newPort && baseUrl) {\n    var parcalar = baseUrl.split(\"/\");\n    // parcalar[2] -> ip:port kısmıdır. Sadece IP'yi alıyoruz.\n    var safIp = parcalar[2].split(\":\")[0];\n    // Yeni temiz adresi oluşturuyoruz (Sonuna / koyarak)\n    baseUrl = \"http://\" + safIp + \":\" + newPort + \"/\";\n}\n\n\n\n\nmsg.headers = {\n    Authorization: \"Bearer \" + global.get(\"SforinToken\")\n};\n\n\nmsg.payload = msg.dataPayload;\n \nmsg.url = baseUrl + endpoint;\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -16262,8 +16370,8 @@
                 "valueValue": ""
             }
         ],
-        "x": 820,
-        "y": 60,
+        "x": 950,
+        "y": 20,
         "wires": [
             []
         ]
@@ -16275,7 +16383,9 @@
         "name": "",
         "scope": [
             "6512429d8162770c",
-            "b16378eb5fe5eb63"
+            "b16378eb5fe5eb63",
+            "3a3fc93b4fbfbaf0",
+            "f8c1e70867cc95a3"
         ],
         "uncaught": false,
         "x": 120,
@@ -16394,8 +16504,8 @@
                 "type": "str"
             }
         ],
-        "x": 1100,
-        "y": 200,
+        "x": 1070,
+        "y": 290,
         "wires": [
             []
         ]
@@ -16412,8 +16522,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 190,
+        "x": 790,
+        "y": 230,
         "wires": [
             [
                 "3902efa95b9ee105"
@@ -16508,7 +16618,7 @@
         "y": 70,
         "wires": [
             [
-                "6512429d8162770c"
+                "22f949d874ad76d4"
             ],
             [
                 "b16378eb5fe5eb63"
@@ -16538,29 +16648,116 @@
                 "valueValue": ""
             }
         ],
-        "x": 790,
-        "y": 100,
+        "x": 940,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22f949d874ad76d4",
+        "type": "switch",
+        "z": "e35d14410b661a09",
+        "name": "",
+        "property": "ReturnType",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 750,
+        "y": 50,
         "wires": [
             [
-                "edea23a90abcd648"
+                "6512429d8162770c"
+            ],
+            [
+                "3a3fc93b4fbfbaf0"
+            ],
+            [
+                "f8c1e70867cc95a3"
+            ],
+            [
+                "6512429d8162770c"
             ]
         ]
     },
     {
-        "id": "edea23a90abcd648",
-        "type": "debug",
+        "id": "3a3fc93b4fbfbaf0",
+        "type": "http request",
         "z": "e35d14410b661a09",
-        "name": "debug 360",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 40,
-        "wires": []
+        "name": "Sforin Post",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 950,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8c1e70867cc95a3",
+        "type": "http request",
+        "z": "e35d14410b661a09",
+        "name": "Sforin Post",
+        "method": "POST",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 950,
+        "y": 100,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "1683e5b00b9f78c7",
@@ -21637,10 +21834,12 @@
         "y": 330,
         "wires": [
             [
-                "c166e897452ea0a2"
+                "c166e897452ea0a2",
+                "89abb0f7437480aa"
             ],
             [
-                "fa471c42192040e0"
+                "fa471c42192040e0",
+                "7df78c4afc54b7cb"
             ]
         ],
         "outputLabels": [
@@ -21789,7 +21988,8 @@
         "y": 330,
         "wires": [
             [
-                "013efbbba054d98c"
+                "013efbbba054d98c",
+                "3048e28b63eedb0c"
             ]
         ],
         "info": "{\r\n  \"FatUst\": {\r\n     \"Tarih\": \"2024-11-13 00:00:00\",\r\n     \"ENTEGRE_TRH\": \"2024-11-13 00:00:00\",\r\n      \"FiiliTarih\": \"2024-11-14 00:00:00\"\r\n  },\r\n  \"KalemAdedi\": 3,\r\n  \"Kalems\": [\r\n    {\r\n      \"StokKodu\": \"20022\",\r\n      \"Sira\": 1,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 1,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6,\r\n       \"STra_testar\": \"2024-11-13 00:00:00\"\r\n       \"D_YEDEK10\": \"2024-11-11 00:00:00\"  //teslim Tarih\r\n    },\r\n    {\r\n      \"StokKodu\": \"30001\",\r\n      \"Sira\": 2,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 3,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    },\r\n    {\r\n      \"StokKodu\": \"20023\",\r\n      \"Sira\": 3,\r\n      \"STra_GCMIK\": 1,\r\n      \"Olcubr\": 4,\r\n      \"DEPO_KODU\": 1,\r\n      \"Gir_Depo_Kodu\": 6\r\n    }\r\n  ]\r\n}\r\n"
@@ -21869,6 +22069,58 @@
                 "18f417bd7132171d"
             ]
         ]
+    },
+    {
+        "id": "3048e28b63eedb0c",
+        "type": "debug",
+        "z": "5d0772e7b4d40c7d",
+        "g": "7fa9daa49aea977c",
+        "name": "debug 530",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "89abb0f7437480aa",
+        "type": "debug",
+        "z": "5d0772e7b4d40c7d",
+        "g": "7fa9daa49aea977c",
+        "name": "debug 531",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7df78c4afc54b7cb",
+        "type": "debug",
+        "z": "5d0772e7b4d40c7d",
+        "g": "7fa9daa49aea977c",
+        "name": "debug 532",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 390,
+        "wires": []
     },
     {
         "id": "7807e8f98cd6f630",
@@ -23883,7 +24135,7 @@
         "type": "function",
         "z": "23b1b01cc4ce5a0d",
         "name": "new v2",
-        "func": "// MongoDB veri işleme ve bağlantı fonksiyonu\nlet mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\nconst isDubug = msg?.propIntegration?.isDebugMode || false; // default false\nmsg.isDubug = isDubug;\n\n// MongoDB config kontrolü\nif (!allIntegrationCode) {\n    node.error(\"Integration codes not found\");\n    return null;\n}\nmongoData = allIntegrationCode.find(item => item.path === env.get('MongoDbNamePath'));\nif (!mongoData) {\n    node.error(\"MongoDB configuration not found for path: \" + env.get('MongoDbNamePath'));\n    return null;\n}\n\n// Koleksiyon kontrolü\nconst collectionName = env.get('collection');\nif (!collectionName) {\n    node.error(\"Collection name not specified\");\n    return null;\n}\n\n// MongoDB client kontrolü\nconst mongodb = global.get('mongodb');\nif (!mongodb) {\n    node.error(\"MongoDB client not found in global context\");\n    return null;\n}\n\n// Bağlantı bilgileri\nconst user = mongoData.user ? encodeURIComponent(mongoData.user) : '';\nconst password = mongoData.pass ? encodeURIComponent(mongoData.pass) : '';\nconst host = mongoData.server;\nconst database = mongoData.database;\n\nif (!host) {\n    node.error(\"Server information is missing. Available fields: \" + Object.keys(mongoData).join(\", \"));\n    return null;\n}\n\n// Kullanıcı/şifre yoksa URI'yi ona göre kur\nconst hasAuth = !!(user && password);\nconst creds = hasAuth ? `${user}:${password}@` : '';\nconst uri = `mongodb://${creds}${host}/${database}${hasAuth ? '?authSource=admin' : ''}`;\n\n// Parametreler\nconst IsUpdated = !!env.get('IsUpdated');         // updateMany modu\nconst IsDelete = !!env.get('IsDelete');          // delete modu\n\nconst rawQuery = (msg.query && msg.query !== \"\") ? msg.query : env.get('query');\n\nif (isDubug) {\n    msg.reqQuery = rawQuery;\n    msg.reqFlags = { IsUpdated, IsDelete };\n}\n\n// Yardımcı: güvenli JSON parse\nfunction parseJSONSafe(v) {\n    if (typeof v === \"string\") {\n        try { return JSON.parse(v); } catch (e) {\n            throw new Error(\"Query JSON parse failed: \" + e.message);\n        }\n    }\n    return v;\n}\n\n// Ana işlem\nlet client;\ntry {\n    mongodb.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })\n        .then(_client => {\n            client = _client;\n            const db = client.db(database);\n            const coll = db.collection(collectionName);\n\n            // 1) UPDATE\n            if (IsUpdated) {\n                // Beklenen format: { update: { filter: {...}, update: {...}, options?: {...} } }\n                const q = parseJSONSafe(rawQuery);\n                const upd = q?.update;\n                if (!upd || !upd.filter || !upd.update) {\n                    throw new Error(\"Update mode requires: { update: { filter: {...}, update: {...}, options?: {...} } }\");\n                }\n                const { filter, update, options } = upd;\n                node.warn(options);\n                return coll.updateMany(filter, update, options || {});\n            }\n\n            // 2) DELETE\n            if (IsDelete) {\n                // Desteklenen formatlar:\n                //  a) Basit filtre: { Location: \"...\" }\n                //  b) Ayrıntılı: { filter: {...}, options?: {...} }\n                const del = parseJSONSafe(rawQuery) || {};\n                const filter = del.filter ?? del; // filter alanı yoksa objenin kendisini filtre say\n                const options = del.options || {};               \n\n                if (!filter || typeof filter !== 'object' || Array.isArray(filter)) {\n                    throw new Error(\"Delete filter must be an object. Given: \" + JSON.stringify(filter));\n                }\n\n                \n                return coll.deleteMany(filter, options);\n            }\n\n            // 3) AGGREGATE (default)\n            // Beklenen: pipeline array (ör. [{ $match: {...} }, { $project: {...} }])\n            const pipeline = parseJSONSafe(rawQuery);\n            if (!Array.isArray(pipeline)) {\n                throw new Error(\"Aggregate mode requires an array pipeline. Given: \" + typeof pipeline);\n            }\n            return coll.aggregate(pipeline).toArray();\n        })\n        .then(result => {\n            // Başarılı sonuç\n            msg.payload = result;\n            node.send([msg, null]);\n        })\n        .catch(err => {\n            // Hata durumu\n            msg.error = 'MongoDB Error: ' + err.message;\n            msg.errorDescription = msg.error;\n            node.send([null, msg]);\n            node.error(err.message);\n        })\n        .finally(() => {\n            if (client) {\n                try { client.close(); } catch (e) { /* ignore */ }\n            }\n        });\n} catch (err) {\n    // Genel hata\n    msg.error = 'Connection Error: ' + err.message;\n    msg.errorDescription = msg.error;\n    node.send([null, msg]);\n    node.error(err.message);\n}\n",
+        "func": "// MongoDB veri işleme ve bağlantı fonksiyonu\nlet mongoData = null;\nlet allIntegrationCode = global.get('allIntegrationCode');\nconst isDubug = msg?.propIntegration?.isDebugMode || false; // default false\nmsg.isDubug = isDubug;\n\n// MongoDB config kontrolü\nif (!allIntegrationCode) {\n    node.error(\"Integration codes not found\");\n    return null;\n}\nmongoData = allIntegrationCode.find(item => item.path === env.get('MongoDbNamePath'));\nif (!mongoData) {\n    node.error(\"MongoDB configuration not found for path: \" + env.get('MongoDbNamePath'));\n    return null;\n}\n\n// Koleksiyon kontrolü\nconst collectionName = env.get('collection');\nif (!collectionName) {\n    node.error(\"Collection name not specified\");\n    return null;\n}\n\n// MongoDB client kontrolü\nconst mongodb = global.get('mongodb');\nif (!mongodb) {\n    node.error(\"MongoDB client not found in global context\");\n    return null;\n}\n\n// Bağlantı bilgileri\nconst user = mongoData.user ? encodeURIComponent(mongoData.user) : '';\nconst password = mongoData.pass ? encodeURIComponent(mongoData.pass) : '';\nconst host = mongoData.server;\nconst database = mongoData.database;\n\nif (!host) {\n    node.error(\"Server information is missing. Available fields: \" + Object.keys(mongoData).join(\", \"));\n    return null;\n}\n\n// Kullanıcı/şifre yoksa URI'yi ona göre kur\nconst hasAuth = !!(user && password);\nconst creds = hasAuth ? `${user}:${password}@` : '';\nconst uri = `mongodb://${creds}${host}/${database}${hasAuth ? '?authSource=admin' : ''}`;\n\n// Parametreler\nconst IsUpdated = !!env.get('IsUpdated');         // updateMany modu\nconst IsDelete = !!env.get('IsDelete'); \nconst IsFindOne = !!env.get('IsFindOne');           \nconst IsInsert = !!env.get('IsInsert');           \n\nconst rawQuery = (msg.query && msg.query !== \"\") ? msg.query : env.get('query');\n\nif (isDubug) {\n    msg.reqQuery = rawQuery;\n    msg.reqFlags = { IsUpdated, IsDelete,IsFindOne,IsInsert };\n}\n\n// Yardımcı: güvenli JSON parse\nfunction parseJSONSafe(v) {\n    if (typeof v === \"string\") {\n        try { return JSON.parse(v); } catch (e) {\n            throw new Error(\"Query JSON parse failed: \" + e.message);\n        }\n    }\n    return v;\n}\n\n// Ana işlem\nlet client;\ntry {\n    mongodb.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })\n        .then(_client => {\n            client = _client;\n            const db = client.db(database);\n            const coll = db.collection(collectionName);\n\n            // 1) UPDATE\n            if (IsUpdated) {\n                // Beklenen format: { update: { filter: {...}, update: {...}, options?: {...} } }\n                const q = parseJSONSafe(rawQuery);\n                const upd = q?.update;\n                if (!upd || !upd.filter || !upd.update) {\n                    throw new Error(\"Update mode requires: { update: { filter: {...}, update: {...}, options?: {...} } }\");\n                }\n                const { filter, update, options } = upd;\n               \n                return coll.updateMany(filter, update, options || {});\n            }\n\n            // 2) DELETE\n            if (IsDelete) {\n                // Desteklenen formatlar:\n                //  a) Basit filtre: { Location: \"...\" }\n                //  b) Ayrıntılı: { filter: {...}, options?: {...} }\n                const del = parseJSONSafe(rawQuery) || {};\n                const filter = del.filter ?? del; // filter alanı yoksa objenin kendisini filtre say\n                const options = del.options || {};               \n\n                if (!filter || typeof filter !== 'object' || Array.isArray(filter)) {\n                    throw new Error(\"Delete filter must be an object. Given: \" + JSON.stringify(filter));\n                }\n\n                \n                return coll.deleteMany(filter, options);\n            }\n\n            if (IsFindOne) \n            {\n                // Beklenen format: { update: { filter: {...} } }\n                const q = parseJSONSafe(rawQuery);\n                const upd = q?.update;\n                if (!upd || !upd.filter) {\n                    throw new Error(\"filter mode requires: { update: { filter: {...} } }\");\n                }\n                const { filter} = upd;\n                \n                return coll.findOne(filter);\n            }\n            // 4) INSERT (YENİ EKLENEN KISIM)\n            if (IsInsert) {\n                const doc = parseJSONSafe(rawQuery);\n\n                if (!doc || typeof doc !== 'object') {\n                    throw new Error(\"Insert mode requires a JSON object or array.\");\n                }\n\n                // Dizi gelirse toplu ekle (insertMany), obje gelirse tek ekle (insertOne)\n                if (Array.isArray(doc)) {\n                    return coll.insertMany(doc);\n                } else {\n                    return coll.insertOne(doc);\n                }\n            }\n\n            // 3) AGGREGATE (default)\n            // Beklenen: pipeline array (ör. [{ $match: {...} }, { $project: {...} }])\n            const pipeline = parseJSONSafe(rawQuery);\n            if (!Array.isArray(pipeline)) {\n                throw new Error(\"Aggregate mode requires an array pipeline. Given: \" + typeof pipeline);\n            }\n            return coll.aggregate(pipeline).toArray();\n        })\n        .then(result => {\n            // Başarılı sonuç\n            msg.payload = result;\n            node.send([msg, null]);\n        })\n        .catch(err => {\n            // Hata durumu\n            msg.error = 'MongoDB Error: ' + err.message;\n            msg.errorDescription = msg.error;\n            node.send([null, msg]);\n            node.error(err.message);\n        })\n        .finally(() => {\n            if (client) {\n                try { client.close(); } catch (e) { /* ignore */ }\n            }\n        });\n} catch (err) {\n    // Genel hata\n    msg.error = 'Connection Error: ' + err.message;\n    msg.errorDescription = msg.error;\n    node.send([null, msg]);\n    node.error(err.message);\n}\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -25123,10 +25375,12 @@
         "y": 580,
         "wires": [
             [
-                "03567b0df0d469f1"
+                "03567b0df0d469f1",
+                "fb74b2378b21e8d7"
             ],
             [
-                "fb613f7945c328e1"
+                "fb613f7945c328e1",
+                "2c25f62033f3b69a"
             ]
         ]
     },
@@ -25177,8 +25431,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 160,
+        "x": 1250,
+        "y": 150,
         "wires": []
     },
     {
@@ -25198,10 +25452,12 @@
         "y": 750,
         "wires": [
             [
-                "03567b0df0d469f1"
+                "03567b0df0d469f1",
+                "e248adad12207067"
             ],
             [
-                "fb613f7945c328e1"
+                "fb613f7945c328e1",
+                "e86c345063fe8164"
             ]
         ],
         "outputLabels": [
@@ -25276,6 +25532,74 @@
                 "d6ddde0b93070b47"
             ]
         ]
+    },
+    {
+        "id": "fb74b2378b21e8d7",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 521",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2c25f62033f3b69a",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 522",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 730,
+        "wires": []
+    },
+    {
+        "id": "e248adad12207067",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 523",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 730,
+        "wires": []
+    },
+    {
+        "id": "e86c345063fe8164",
+        "type": "debug",
+        "z": "22db7f4bcd69fa91",
+        "g": "d10910f84c58e11b",
+        "name": "debug 524",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 760,
+        "wires": []
     },
     {
         "id": "b81ca77b6c47979b",
@@ -25454,8 +25778,8 @@
         "type": "subflow:22db7f4bcd69fa91",
         "z": "a7ee580a04fce715",
         "name": "S2N SALES INVOICE",
-        "x": 740,
-        "y": 200,
+        "x": 730,
+        "y": 170,
         "wires": [
             [
                 "6759b21ca829f00a"
@@ -25653,8 +25977,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 250,
+        "x": 690,
+        "y": 240,
         "wires": [
             [
                 "cf31d964faabdff3"
@@ -25785,7 +26109,9 @@
         "x": 1205,
         "y": 330,
         "wires": [
-            []
+            [
+                "2d600761fc2688f3"
+            ]
         ],
         "icon": "node-red/mongodb.svg",
         "l": false
@@ -25809,6 +26135,22 @@
                 "3b4ca15731eb4acf"
             ]
         ]
+    },
+    {
+        "id": "2d600761fc2688f3",
+        "type": "debug",
+        "z": "a7ee580a04fce715",
+        "name": "debug 520",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 340,
+        "wires": []
     },
     {
         "id": "36fb8f3d03f5079e",
@@ -26774,7 +27116,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
+        "x": 1270,
         "y": 240,
         "wires": []
     },
@@ -29207,10 +29549,12 @@
         "y": 210,
         "wires": [
             [
-                "b48a9ddc6094ea28"
+                "b48a9ddc6094ea28",
+                "47d2b6e2d16b1034"
             ],
             [
-                "42473eaf5734168f"
+                "42473eaf5734168f",
+                "ac171749faf6a19a"
             ]
         ],
         "outputLabels": [
@@ -29234,7 +29578,8 @@
         "y": 170,
         "wires": [
             [
-                "432fd15df5c664c4"
+                "432fd15df5c664c4",
+                "8c3aebf25979e22d"
             ]
         ],
         "info": "E-BELGE  DIZAYNINI ALAMK ISICIN TASLAK OLUSTURMAK LAZIM ONDAN SONRA CIKTIYI ALABILRIZ"
@@ -29816,10 +30161,12 @@
         "y": 230,
         "wires": [
             [
-                "5f354216ba6c4aff"
+                "5f354216ba6c4aff",
+                "99d85db0da88e068"
             ],
             [
-                "bb03706602b3fdf7"
+                "bb03706602b3fdf7",
+                "fddfbe8ae204d868"
             ]
         ],
         "outputLabels": [
@@ -30013,6 +30360,87 @@
         ],
         "x": 1105,
         "y": 130,
+        "wires": []
+    },
+    {
+        "id": "99d85db0da88e068",
+        "type": "debug",
+        "z": "f3de0ac6bfb0216b",
+        "name": "debug 525",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "fddfbe8ae204d868",
+        "type": "debug",
+        "z": "f3de0ac6bfb0216b",
+        "name": "debug 526",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "47d2b6e2d16b1034",
+        "type": "debug",
+        "z": "f3de0ac6bfb0216b",
+        "name": "debug 527",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1590,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "ac171749faf6a19a",
+        "type": "debug",
+        "z": "f3de0ac6bfb0216b",
+        "name": "debug 528",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8c3aebf25979e22d",
+        "type": "debug",
+        "z": "f3de0ac6bfb0216b",
+        "name": "debug 529",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "dataPayload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 310,
         "wires": []
     },
     {
@@ -33466,7 +33894,7 @@
         "z": "97e7314f695bb652",
         "g": "1416aa57eea7f6ab",
         "name": "function 162",
-        "func": "msg.payload=\n  [\n      {\n        \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"PLS35KC3891\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"20-11-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
+        "func": "msg.payload=\n  [\n      {\n        \"attributeName\":\"RootAdi\",\n        \"attributeValue\":\"PLS35KC3891\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"ROOTADI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      },\n      {\n         \"attributeName\":\"Sevk_Tarihi\",\n         \"attributeValue\":\"08-12-2025\",\n         \"attributeSyncField\":\"MatchValue\",\n         \"attributeGroup\":\"Default\",\n         \"attributeRelatedEntityType\":\"MOBILE\",\n         \"attributeAttributeSyncField\":\"SEVK_TARIHI\",\n         \"isAttributeRequired\":true,\n         \"attributeType\":\"STRING\"\n      }\n   ]\n   \n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -34690,6 +35118,924 @@
         "wires": []
     },
     {
+        "id": "d68c2da129a4bfbc",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "OP01 ENVANTER İŞLEMLERİ",
+        "info": "",
+        "x": 200,
+        "y": 2630,
+        "wires": []
+    },
+    {
+        "id": "77b61fe1fa6b8269",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "url": "/OP01104ST-Assigned",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 2670,
+        "wires": [
+            [
+                "3ecb06e5466b38df"
+            ]
+        ],
+        "info": "{\r\n   \"header\":{\r\n      \"OrderNo\":\"TEST0000000001\",\r\n      \"Date\":\"2024-12-16 00:00:00\",\r\n      \"User\":\"MEHMET\"\r\n   },\r\n   \"Items\":[\r\n      {\r\n        \r\n         \"Material\":\"StokKodu1\",\r\n         \"Quantity\":\"1\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"1\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      },\r\n      {\r\n         \r\n         \"Material\":\"StokKodu2\",\r\n         \"Quantity\":\"2\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"2\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      }\r\n   ]\r\n}\r\n "
+    },
+    {
+        "id": "2f6a47a831f68f1d",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "Movement",
+                "type": "str"
+            },
+            {
+                "name": "IsUpdated",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 595,
+        "y": 2700,
+        "wires": [
+            [
+                "6b3a7a11c87037c2"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "626a6dc1177761af",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "Type",
+                "value": "IsShipmentMatchingOrder",
+                "type": "str"
+            }
+        ],
+        "x": 335,
+        "y": 2700,
+        "wires": [
+            [
+                "efeae8782d3aef34"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "efeae8782d3aef34",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "function 174",
+        "func": "\nvar filter = {\n    \"MovementCode\": msg.payload.MovementCode,\n    \"TransactionAttributes.AttributeName\": \"Assigned\" \n};\n\n\nvar updateCommand = {\n    \"$set\": {\n        \"TransactionAttributes.$.AttributeValue\": \"false\"\n    }\n};\n\n// 3. ÇIKTI FORMATI:\nmsg.query = {\n    update: {\n        filter: filter,\n        update: updateCommand,\n        options: {} // Çoklu güncelleme gerekiyorsa { multi: true } eklenebilir\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 2700,
+        "wires": [
+            [
+                "2f6a47a831f68f1d"
+            ]
+        ]
+    },
+    {
+        "id": "52e27629a32caac8",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 800,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "6b3a7a11c87037c2",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "function 175",
+        "func": " msg.payload = {\n        type: 0\n       \n    };\n    msg.res = global.get('OP01104ST-Assigned_res')\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 655,
+        "y": 2700,
+        "wires": [
+            [
+                "52e27629a32caac8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "303e539222641e16",
+        "type": "comment",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "Zimmet Geri alma ",
+        "info": "Zimmete için verilen stok  geri alındııgında movement tablosunda false cekıyoruz raporlarda karşımıza cıkmıyor",
+        "x": 430,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "3082fdb76bc2c9ba",
+        "type": "subflow:f353afe31d73612e",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "SourceJson",
+                "value": "{\"MovementCode\":\"MovementCode\"}",
+                "type": "json"
+            },
+            {
+                "name": "ResultMessage",
+                "value": "payload",
+                "type": "str"
+            }
+        ],
+        "x": 160,
+        "y": 2710,
+        "wires": [
+            [
+                "626a6dc1177761af"
+            ]
+        ]
+    },
+    {
+        "id": "4e2356d3171e0b76",
+        "type": "inject",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"RequestId\":null,\"Sender\":\"MobileAttributeEdit - handleButtonClick\",\"Data\":[{\"labelCode\":\"MPE.INGILTERE\",\"printerName\":\"RULO\",\"copyCount\":1,\"productCode\":\"91476\",\"productName\":\"MEKAP BEYAZ 060 DERİ İŞ AYAKKABISI - 37 NUMARA\",\"Barkod\":\"AYKMB060D3702\"}],\"Current\":[],\"requestId\":\"7d66d3a2-96d4-46ee-b088-ef3f7237bb3c\",\"methodName\":\"http://192.168.25.9:8000/OP01103-PrintTemplate\",\"clientPath\":\"/operations/Envanter/BarkodBasim\",\"sender\":\"OP01103\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 2900,
+        "wires": [
+            [
+                "4dabf19a11e4fad4"
+            ]
+        ]
+    },
+    {
+        "id": "3ecb06e5466b38df",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "Params",
+        "func": "global.set('OP01104ST-Assigned_res',msg.res)\n \n \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 295,
+        "y": 2660,
+        "wires": [
+            [
+                "3082fdb76bc2c9ba"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "ee926e23815da6b5",
+        "type": "http in",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "url": "/OP01103-PrintTemplate",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 2800,
+        "wires": [
+            [
+                "2bdcb2dd3f06128b"
+            ]
+        ],
+        "info": "{\r\n   \"header\":{\r\n      \"OrderNo\":\"TEST0000000001\",\r\n      \"Date\":\"2024-12-16 00:00:00\",\r\n      \"User\":\"MEHMET\"\r\n   },\r\n   \"Items\":[\r\n      {\r\n        \r\n         \"Material\":\"StokKodu1\",\r\n         \"Quantity\":\"1\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"1\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      },\r\n      {\r\n         \r\n         \"Material\":\"StokKodu2\",\r\n         \"Quantity\":\"2\",\r\n         \"Unit\":\"KG\",\r\n         \"OrderLineNo\":\"2\",\r\n         \"WarehouseCode\":\"1\",\r\n         \"TargetWarehouseCode\":\"6\"\r\n      }\r\n   ]\r\n}\r\n "
+    },
+    {
+        "id": "4dabf19a11e4fad4",
+        "type": "subflow:f353afe31d73612e",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "SourceJson",
+                "value": "{\"labelCode\":\"labelCode\",\"printerName\":\"printerName\",\"copyCount\":\"copyCount\",\"productCode\":\"productCode\",\"productName\":\"productName\",\"barkod\":\"Barkod\"}",
+                "type": "json"
+            },
+            {
+                "name": "ResultMessage",
+                "value": "printTemplate",
+                "type": "str"
+            }
+        ],
+        "x": 315,
+        "y": 2830,
+        "wires": [
+            [
+                "73ac2dbb8fd646cc"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "73ac2dbb8fd646cc",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "Type",
+                "value": "IsShipmentMatchingOrder",
+                "type": "str"
+            }
+        ],
+        "x": 355,
+        "y": 2840,
+        "wires": [
+            [
+                "85513e4cd7ad2173"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "85513e4cd7ad2173",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "mongo Json",
+        "func": "\n \n\nvar updateCommand = {\n    \"$set\": {\n        \"ProductCode\": msg.printTemplate.productCode,\n        \"ProductName\": msg.printTemplate.productName,\n        \"Barcode\": msg.printTemplate.barkod,\n        \"LabelCode\": msg.printTemplate.labelCode,\n        \"PrinterName\": msg.printTemplate.printerName,\n\n    }\n};\n\n \nmsg.query = {\n    update: {\n        filter: {} ,\n        update: updateCommand,\n        options: {} \n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2840,
+        "wires": [
+            [
+                "ecc0824550b7ec74"
+            ]
+        ]
+    },
+    {
+        "id": "ecc0824550b7ec74",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "ProductBarcodePrintView",
+                "type": "str"
+            },
+            {
+                "name": "IsUpdated",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 595,
+        "y": 2840,
+        "wires": [
+            [
+                "936b0e5ca8f68a22"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "936b0e5ca8f68a22",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "mongo Json",
+        "func": "var filter = {\n    \"Name\": \"ProductBarcode\"\n    \n};\n \n\n \n\n \nmsg.query = {\n    update: {\n        filter: filter ,\n        update: {},\n        options: {} \n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 655,
+        "y": 2840,
+        "wires": [
+            [
+                "25243570f5faef04"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "25243570f5faef04",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "ReportItem",
+                "type": "str"
+            },
+            {
+                "name": "IsFindOne",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 745,
+        "y": 2840,
+        "wires": [
+            [
+                "c1cb6d116bc933b1",
+                "050445f13e8722ae"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "b4ea972af3657496",
+        "type": "subflow:e35d14410b661a09",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "Url",
+                "value": "api/v1/Report/Export",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "5008",
+                "type": "num"
+            },
+            {
+                "name": "ReturnType",
+                "value": "1",
+                "type": "str"
+            }
+        ],
+        "x": 900,
+        "y": 2840,
+        "wires": [
+            [
+                "e64fa7020e60a995"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c1cb6d116bc933b1",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "function 176",
+        "func": "var rawData = msg.payload.LayoutData.toString('base64');\n \n\nlet data = {\n    data: rawData,\n    type: \"pdf\",\n    parameters: []\n}\n\nlet request= \n{\n  requestId: null,\n  sender: \"node-red\",\n    clientPath: null,\n    methodName: null,\n  data: [\n      data\n  ],\n  current: []\n}\nmsg.dataPayload = request;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 2800,
+        "wires": [
+            [
+                "b4ea972af3657496"
+            ]
+        ]
+    },
+    {
+        "id": "e64fa7020e60a995",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "mongo Json",
+        "func": "const base64Pdf = msg.payload.toString(\"base64\");\n\n\nmsg.query = {\n    Base64String: Buffer.from(base64Pdf, \"base64\"),\n    PrinterName: msg.printTemplate?.printerName || \"\",\n    IsPrinted: false,\n    SysDateTime: new Date().toISOString()\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 625,
+        "y": 2940,
+        "wires": [
+            [
+                "97db3126f1ae2e58",
+                "35da08047ea7459a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "97db3126f1ae2e58",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "LabelTemplatePdf",
+                "type": "str"
+            },
+            {
+                "name": "IsInsert",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 685,
+        "y": 2940,
+        "wires": [
+            [
+                "a563cb8a659e43c7"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
+    },
+    {
+        "id": "35da08047ea7459a",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "debug 536",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "query",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 2940,
+        "wires": []
+    },
+    {
+        "id": "050445f13e8722ae",
+        "type": "debug",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "debug 541",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.LayoutData[-1]",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 2670,
+        "wires": []
+    },
+    {
+        "id": "3edef30ae3d0ca81",
+        "type": "http response",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 870,
+        "y": 2940,
+        "wires": []
+    },
+    {
+        "id": "2bdcb2dd3f06128b",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "Params",
+        "func": "global.set('OP01103-PrintTemplate_res',msg.res)\n \n \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 295,
+        "y": 2790,
+        "wires": [
+            [
+                "4dabf19a11e4fad4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a563cb8a659e43c7",
+        "type": "function",
+        "z": "97e7314f695bb652",
+        "g": "1c5cd39a8f035c84",
+        "name": "function 177",
+        "func": " msg.payload = {\n        type: 0\n       \n    };\nmsg.res = global.get('OP01103-PrintTemplate_res')\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 745,
+        "y": 2940,
+        "wires": [
+            [
+                "3edef30ae3d0ca81"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "f4973aa11bd2c838",
+        "type": "comment",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "info": "Tetiklenecek cron ayarlaması ve node-red entegrasyon parametrelerini okur",
+        "x": 130,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "89b91074653e42f8",
+        "type": "switch",
+        "z": "68459bb5ee15fc71",
+        "name": "flowName Switch",
+        "property": "payload.flowName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "NTSP000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NTSC000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NTSBSO000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "DelIntLogO000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "INTSYNC000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NTSPD000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "STNRI000V1.0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 645,
+        "y": 200,
+        "wires": [
+            [
+                "9c64778cbb22874a"
+            ],
+            [],
+            [],
+            [],
+            [
+                "2cb8b6d49a195dc0"
+            ],
+            [],
+            [
+                "3fab78e36c929868"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "676cf3610d10c8e3",
+        "type": "split",
+        "z": "68459bb5ee15fc71",
+        "name": "Flow Name Split",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 585,
+        "y": 200,
+        "wires": [
+            [
+                "89b91074653e42f8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a83e1f4b90df6f2f",
+        "type": "subflow:a464cb4f18f8f1f5",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 220,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "17de0232786154c4",
+        "type": "function",
+        "z": "68459bb5ee15fc71",
+        "name": "Set Prop",
+        "func": "// node.warn(\"start\");\n \nmsg.payload=global.get('allIntegrationParameters')\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 505,
+        "y": 210,
+        "wires": [
+            [
+                "676cf3610d10c8e3"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bb93ba3fc38d50e5",
+        "type": "subflow:79ed7abbe7cc27ac",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 435,
+        "y": 200,
+        "wires": [
+            [
+                "17de0232786154c4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4925ffd17a7f6459",
+        "type": "cronplus",
+        "z": "68459bb5ee15fc71",
+        "name": "Cron Scheduler",
+        "outputField": "",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "bb93ba3fc38d50e5",
+                "ea0fdcb8b96f34a9"
+            ]
+        ]
+    },
+    {
+        "id": "3694d2189d43b4f7",
+        "type": "inject",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "bb93ba3fc38d50e5"
+            ]
+        ]
+    },
+    {
+        "id": "ea9fa413f8ea865b",
+        "type": "function",
+        "z": "68459bb5ee15fc71",
+        "name": "Set Cron",
+        "func": "msg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": \"0 */12 * * *\",\n    \"payloadType\": \"json\",\n    \"payload\": { \"action\":\"Test\"}\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "4925ffd17a7f6459"
+            ]
+        ]
+    },
+    {
+        "id": "f6314757a576dd0c",
+        "type": "inject",
+        "z": "68459bb5ee15fc71",
+        "name": "Inject JSON",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "ea9fa413f8ea865b"
+            ]
+        ]
+    },
+    {
+        "id": "9c64778cbb22874a",
+        "type": "subflow:b9701e9ae1caaffd",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 170,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7bd7f234ee5da2ee",
+        "type": "subflow:f62922f2ea3dfbe6",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1010,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a2ea21ad28271f74",
+        "type": "subflow:e02241cc3f021318",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2cb8b6d49a195dc0",
+        "type": "subflow:1053798a29903688",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1010,
+        "y": 350,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3dba327d631822fb",
+        "type": "subflow:c823b85caa289042",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1000,
+        "y": 410,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3fab78e36c929868",
+        "type": "subflow:e269717c57799658",
+        "z": "68459bb5ee15fc71",
+        "name": "",
+        "x": 1010,
+        "y": 480,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ea0fdcb8b96f34a9",
+        "type": "debug",
+        "z": "68459bb5ee15fc71",
+        "name": "debug 456",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 310,
+        "wires": []
+    },
+    {
         "id": "1",
         "type": "inject",
         "z": "f1a7c99c.1d3f48",
@@ -35136,486 +36482,6 @@
         "info": "SADECE STOK TIPLERINI CEKICEK ISEK 1.CIKIS"
     },
     {
-        "id": "f4973aa11bd2c838",
-        "type": "comment",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "info": "Tetiklenecek cron ayarlaması ve node-red entegrasyon parametrelerini okur",
-        "x": 130,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "89b91074653e42f8",
-        "type": "switch",
-        "z": "68459bb5ee15fc71",
-        "name": "flowName Switch",
-        "property": "payload.flowName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "NTSP000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "NTSC000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "NTSBSO000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "DelIntLogO000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "INTSYNC000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "NTSPD000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "STNRI000V1.0",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 645,
-        "y": 200,
-        "wires": [
-            [
-                "9c64778cbb22874a"
-            ],
-            [],
-            [],
-            [],
-            [
-                "2cb8b6d49a195dc0"
-            ],
-            [],
-            [
-                "3fab78e36c929868"
-            ],
-            []
-        ],
-        "l": false
-    },
-    {
-        "id": "676cf3610d10c8e3",
-        "type": "split",
-        "z": "68459bb5ee15fc71",
-        "name": "Flow Name Split",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 585,
-        "y": 200,
-        "wires": [
-            [
-                "89b91074653e42f8"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "a83e1f4b90df6f2f",
-        "type": "subflow:a464cb4f18f8f1f5",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 220,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "17de0232786154c4",
-        "type": "function",
-        "z": "68459bb5ee15fc71",
-        "name": "Set Prop",
-        "func": "// node.warn(\"start\");\n \nmsg.payload=global.get('allIntegrationParameters')\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 505,
-        "y": 210,
-        "wires": [
-            [
-                "676cf3610d10c8e3"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "bb93ba3fc38d50e5",
-        "type": "subflow:79ed7abbe7cc27ac",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 435,
-        "y": 200,
-        "wires": [
-            [
-                "17de0232786154c4"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "4925ffd17a7f6459",
-        "type": "cronplus",
-        "z": "68459bb5ee15fc71",
-        "name": "Cron Scheduler",
-        "outputField": "",
-        "timeZone": "",
-        "storeName": "",
-        "commandResponseMsgOutput": "output1",
-        "defaultLocation": "",
-        "defaultLocationType": "default",
-        "outputs": 1,
-        "options": [],
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "bb93ba3fc38d50e5",
-                "ea0fdcb8b96f34a9"
-            ]
-        ]
-    },
-    {
-        "id": "3694d2189d43b4f7",
-        "type": "inject",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 340,
-        "y": 60,
-        "wires": [
-            [
-                "bb93ba3fc38d50e5"
-            ]
-        ]
-    },
-    {
-        "id": "ea9fa413f8ea865b",
-        "type": "function",
-        "z": "68459bb5ee15fc71",
-        "name": "Set Cron",
-        "func": "msg.payload = {\n    \"command\": \"add\",\n    \"name\": \"dynamic-cron\",\n    \"expression\": \"0 */12 * * *\",\n    \"payloadType\": \"json\",\n    \"payload\": { \"action\":\"Test\"}\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 130,
-        "y": 180,
-        "wires": [
-            [
-                "4925ffd17a7f6459"
-            ]
-        ]
-    },
-    {
-        "id": "f6314757a576dd0c",
-        "type": "inject",
-        "z": "68459bb5ee15fc71",
-        "name": "Inject JSON",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 140,
-        "wires": [
-            [
-                "ea9fa413f8ea865b"
-            ]
-        ]
-    },
-    {
-        "id": "9c64778cbb22874a",
-        "type": "subflow:b9701e9ae1caaffd",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 170,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "7bd7f234ee5da2ee",
-        "type": "subflow:f62922f2ea3dfbe6",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1010,
-        "y": 260,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "a2ea21ad28271f74",
-        "type": "subflow:e02241cc3f021318",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2cb8b6d49a195dc0",
-        "type": "subflow:1053798a29903688",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1010,
-        "y": 350,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "3dba327d631822fb",
-        "type": "subflow:c823b85caa289042",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1000,
-        "y": 410,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "3fab78e36c929868",
-        "type": "subflow:e269717c57799658",
-        "z": "68459bb5ee15fc71",
-        "name": "",
-        "x": 1010,
-        "y": 480,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "ea0fdcb8b96f34a9",
-        "type": "debug",
-        "z": "68459bb5ee15fc71",
-        "name": "debug 456",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 310,
-        "y": 310,
-        "wires": []
-    },
-    {
-        "id": "4153cb3efdc069ed",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 168.0000114440918,
-        "y": 195.9999942779541,
-        "wires": [
-            [
-                "d8da384f12006faf"
-            ]
-        ]
-    },
-    {
-        "id": "d8da384f12006faf",
-        "type": "function",
-        "z": "6ef8732eb0726477",
-        "name": "function 173",
-        "func": "msg[\"aa\"]=\"aaa11\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 388.0000114440918,
-        "y": 185.9999942779541,
-        "wires": [
-            [
-                "363b0c7bfa86853a"
-            ]
-        ]
-    },
-    {
-        "id": "363b0c7bfa86853a",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 494",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 548.0000114440918,
-        "y": 175.9999942779541,
-        "wires": []
-    },
-    {
-        "id": "c43718d78c3f82fc",
-        "type": "inject",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"Data\":[{\"attributeName\":\"Barcode\",\"attributeValue\":\"11\",\"attributeSyncField\":\"serialNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"LOOKUPTEXT\"},{\"attributeName\":\"ProductCode\",\"attributeValue\":\"\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BatchNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"batchNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseUnit\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseQuantity\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationQuantity\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"USE-URTTAR\",\"attributeValue\":null,\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"DATE\"},{\"attributeName\":\"USE-SKT\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ProductName\",\"attributeValue\":\"\",\"attributeSyncField\":\"productName\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DocumentNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"Location\",\"attributeValue\":\"\",\"attributeSyncField\":\"sourceLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"HSE-TargetLocation\",\"attributeValue\":\"6782bf295b29d7f18d82ad0e\",\"attributeSyncField\":\"targetLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"MamulKodu\",\"attributeValue\":\"30004\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNWTRF000V1\",\"PreRequest\":\"contains-material\",\"requestId\":\"b810ae3e-82f4-414c-bc3f-9556b3180d9d\",\"methodName\":\"wmsmaster/api/WmsMaster/SubmitMobileButton\",\"clientPath\":\"/operations/uretim/Ismriuretimesevk\",\"sender\":\"OP00214\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
-        "payloadType": "json",
-        "x": 160,
-        "y": 110,
-        "wires": [
-            [
-                "77b1c51b9189d698"
-            ]
-        ]
-    },
-    {
-        "id": "77b1c51b9189d698",
-        "type": "subflow:f353afe31d73612e",
-        "z": "6ef8732eb0726477",
-        "name": "",
-        "env": [
-            {
-                "name": "SourceJson",
-                "value": "{\"Miktar\":\"operationQuantity\",\"MamulKodu\":\"MamulKodu\"}",
-                "type": "json"
-            },
-            {
-                "name": "ResultMessage",
-                "value": "Result",
-                "type": "str"
-            }
-        ],
-        "x": 420,
-        "y": 110,
-        "wires": [
-            [
-                "9bc0b53093b262d8"
-            ]
-        ]
-    },
-    {
-        "id": "9bc0b53093b262d8",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 499",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "c54121dcfd4edf4c",
-        "type": "debug",
-        "z": "6ef8732eb0726477",
-        "name": "debug 517",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 450,
-        "wires": []
-    },
-    {
         "id": "87d93ae7d0737884",
         "type": "catch",
         "z": "3aca90fb83019832",
@@ -35735,5 +36601,170 @@
         "x": 580,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "4153cb3efdc069ed",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 168.0000114440918,
+        "y": 195.9999942779541,
+        "wires": [
+            [
+                "7937bfb4dae837d2"
+            ]
+        ]
+    },
+    {
+        "id": "c43718d78c3f82fc",
+        "type": "inject",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Data\":[{\"attributeName\":\"Barcode\",\"attributeValue\":\"11\",\"attributeSyncField\":\"serialNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"LOOKUPTEXT\"},{\"attributeName\":\"ProductCode\",\"attributeValue\":\"\",\"attributeSyncField\":\"productCode\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BatchNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"batchNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseUnit\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationUnit\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"BaseQuantity\",\"attributeValue\":\"\",\"attributeSyncField\":\"operationQuantity\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"USE-URTTAR\",\"attributeValue\":null,\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"DATE\"},{\"attributeName\":\"USE-SKT\",\"attributeValue\":\"\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"ProductName\",\"attributeValue\":\"\",\"attributeSyncField\":\"productName\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"DocumentNo\",\"attributeValue\":\"\",\"attributeSyncField\":\"documentNo\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"Location\",\"attributeValue\":\"\",\"attributeSyncField\":\"sourceLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":false,\"attributeType\":\"STRING\"},{\"attributeName\":\"HSE-TargetLocation\",\"attributeValue\":\"6782bf295b29d7f18d82ad0e\",\"attributeSyncField\":\"targetLocation\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"},{\"attributeName\":\"MamulKodu\",\"attributeValue\":\"30004\",\"attributeSyncField\":\"MatchValue\",\"attributeGroup\":\"Default\",\"attributeRelatedEntityType\":\"MOBILE\",\"attributeAttributeSyncField\":\"MatchValue\",\"isAttributeRequired\":true,\"attributeType\":\"STRING\"}],\"PostRequest\":\"STNWTRF000V1\",\"PreRequest\":\"contains-material\",\"requestId\":\"b810ae3e-82f4-414c-bc3f-9556b3180d9d\",\"methodName\":\"wmsmaster/api/WmsMaster/SubmitMobileButton\",\"clientPath\":\"/operations/uretim/Ismriuretimesevk\",\"sender\":\"OP00214\",\"current\":[{\"key\":\"UserId\",\"value\":\"Metropol Un\"},{\"key\":\"Company\",\"value\":\"metropolun\"},{\"key\":\"Language\",\"value\":\"tr\"}]}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 110,
+        "wires": [
+            [
+                "77b1c51b9189d698"
+            ]
+        ]
+    },
+    {
+        "id": "77b1c51b9189d698",
+        "type": "subflow:f353afe31d73612e",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "SourceJson",
+                "value": "{\"Miktar\":\"operationQuantity\",\"MamulKodu\":\"MamulKodu\"}",
+                "type": "json"
+            },
+            {
+                "name": "ResultMessage",
+                "value": "Result",
+                "type": "str"
+            }
+        ],
+        "x": 420,
+        "y": 110,
+        "wires": [
+            [
+                "9bc0b53093b262d8"
+            ]
+        ]
+    },
+    {
+        "id": "9bc0b53093b262d8",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 499",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c54121dcfd4edf4c",
+        "type": "debug",
+        "z": "6ef8732eb0726477",
+        "name": "debug 517",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 450,
+        "wires": []
+    },
+    {
+        "id": "7937bfb4dae837d2",
+        "type": "function",
+        "z": "6ef8732eb0726477",
+        "name": "mongo Json",
+        "func": "var filter = {\n    \"Name\": \"ProductBarcode\"\n    \n};\n \n\n \n\n \nmsg.query = {\n    \n \n  ProductCode: \"91476\",\n  ProductName: \"MEKAP BEYAZ 060 DERİ İŞ AYAKKABISI - 37 NUMARA\",\n  Barcode: \"AYKMB060D3702\",\n  LabelCode: \"MPE.INGILTERE\",\n  PrinterName: \"RULO\"\n \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 395,
+        "y": 250,
+        "wires": [
+            [
+                "921c2697e6c4e633"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "921c2697e6c4e633",
+        "type": "subflow:23b1b01cc4ce5a0d",
+        "z": "6ef8732eb0726477",
+        "name": "",
+        "env": [
+            {
+                "name": "collection",
+                "value": "ProductBarcodePrintView",
+                "type": "str"
+            },
+            {
+                "name": "IsInsert",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 455,
+        "y": 250,
+        "wires": [
+            [
+                "c54121dcfd4edf4c"
+            ]
+        ],
+        "icon": "node-red/mongodb.svg",
+        "l": false
     }
 ]
